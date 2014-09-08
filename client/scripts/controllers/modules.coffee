@@ -16,8 +16,6 @@ angular.module('otttoApp')
       $scope.modules = modules.getList().$object
       $scope.types = types.getList().$object
 
-      console.log ModulesService
-
     
     $scope.activate = (module) ->
       $scope.module = module

@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     clean = require('gulp-clean'),
+    watch = require('gulp-watch'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
@@ -27,20 +28,20 @@ gulp.task('clean', function() {
     .pipe(clean());
 });
 
-gulp.task('default', [ 'build' ]);
+gulp.task('default', [ 'build', 'watch' ]);
 
-gulp.task('build', [ 'styles', 'scripts', 'assets' ]);
+gulp.task('build', [ 'build-styles', 'build-scripts', 'build-assets' ]);
 
-gulp.task('styles', function() {
+gulp.task('build-styles', function() {
   return gulp.src([ './client/styles/main.scss' ])
     .pipe(sass())
     .pipe(rename('screen.css'))
     .pipe(gulp.dest('.tmp/public/styles/'))
 });
 
-gulp.task('scripts', [ 'scripts-vendor', 'scripts-application' ]);
+gulp.task('build-scripts', [ 'build-scripts-vendor', 'build-scripts-application' ]);
 
-gulp.task('scripts-vendor', function() {
+gulp.task('build-scripts-vendor', function() {
   return gulp.src([
       'bower_components/lodash/dist/lodash.js',
       'bower_components/modernizr/modernizr.js',
@@ -48,24 +49,42 @@ gulp.task('scripts-vendor', function() {
       'bower_components/angular/angular.js',
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-route/angular-route.js',
-      'bower_components/restangular/dist/restangular.js'
+      'bower_components/restangular/dist/restangular.js',
+      'bower_components/bootstrap-sass-official/javascripts/bootstrap.js'
     ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('.tmp/public/scripts/'));
 });
 
-gulp.task('scripts-application', function() {
+gulp.task('build-scripts-application', function() {
   return gulp.src([ './client/scripts/**/*.coffee' ])
     .pipe(coffee())
     .pipe(concat('application.js'))
     .pipe(gulp.dest('.tmp/public/scripts/'));
 });
 
-gulp.task('assets', function() {
+gulp.task('build-assets', function() {
   return gulp.src([
       './client/**/*',
       '!./client/{scripts,styles}',
       '!./client/{scripts,styles}/**/*'
     ])
     .pipe(gulp.dest('.tmp/public/'));
+});
+
+gulp.task('watch', [ 'watch-styles', 'watch-scripts', 'watch-assets' ]);
+
+gulp.task('watch-styles', function() {
+  return gulp.watch([ './client/styles/**/*.scss' ], [ 'build-styles' ]);
+});
+
+gulp.task('watch-scripts', function() {
+  return gulp.watch([ './client/scripts/**/*.coffee' ], [ 'build-scripts' ]);
+});
+
+gulp.task('watch-assets', function() {
+  return gulp.watch([ './client/**/*',
+      '!./client/{scripts,styles}',
+      '!./client/{scripts,styles}/**/*'
+    ], [ 'build-assets' ]);
 });
