@@ -22,22 +22,22 @@ var options = {
     };
 
 gulp.task('clean', function() {
-  return gulp.src([ './public' ])
+  return gulp.src([ '.tmp/public' ])
     .pipe(clean());
 });
 
 gulp.task('styles', function() {
   return gulp.src([ './client/styles/main.scss' ])
     .pipe(sass())
-    .pipe(rename('stylesheet.css'))
-    .pipe(gulp.dest('./public/styles/'))
+    .pipe(rename('screen.css'))
+    .pipe(gulp.dest('.tmp/public/styles/'))
 });
 
 gulp.task('scripts', function() {
   return gulp.src([ './client/scripts/app.coffee' ], { read: false })
     .pipe(browserify(options.browserify))
     .pipe(rename('application.js'))
-    .pipe(gulp.dest('./public/scripts/'));
+    .pipe(gulp.dest('.tmp/public/scripts/'));
 });
 
 gulp.task('assets', function() {
@@ -45,7 +45,9 @@ gulp.task('assets', function() {
     './client/**/*',
     '!./client/{scripts,styles,views}',
     '!./client/{scripts,styles,views}/**/*'
-  ]).pipe(gulp.dest('./public/'));
+  ]).pipe(gulp.dest('.tmp/public/'));
 });
 
-gulp.task('build', ['styles', 'scripts', 'assets']);
+gulp.task('build', [ 'styles', 'scripts', 'assets' ]);
+
+gulp.task('default', [ 'build' ]);
