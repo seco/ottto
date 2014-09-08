@@ -5,15 +5,18 @@
     "Justin Jones <justin@jstnjns.com>"
   ],
   "main": "app.js",
-  "moduleType": [
-    "es6"
-  ],
   "license": "MIT",
   "private": true,
   "dependencies": {
     "angular": "~1.2.23",
     "angular-route": "~1.2.23",
+    "angular-resource": "~1.2.23",
     "modernizr": "~2.8.3",
-    "bootstrap": "~3.2.0"
+    "bootstrap-sass-official": "~3.2.0+2",
+    "restangular": "~1.4.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.16",
+    "angular-scenario": "1.2.16"
   }
 }
