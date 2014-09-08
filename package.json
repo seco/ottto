@@ -35,14 +35,11 @@
   },
   "author": "justin",
   "devDependencies": {
-    "browserify": "^5.11.1",
-    "coffeeify": "^0.7.0",
     "gulp": "^3.8.8",
-    "gulp-browserify": "^0.5.0",
     "gulp-clean": "^0.3.1",
+    "gulp-coffee": "^2.2.0",
     "gulp-concat": "^2.4.0",
     "gulp-rename": "^1.2.0",
-    "gulp-sass": "^0.7.3",
-    "uglifyify": "^2.5.0"
+    "gulp-sass": "^0.7.3"
   }
 }

@@ -10,12 +10,8 @@
 ###
 angular
   .module('otttoApp', [
-    'ngAnimate'
-    'ngCookies'
     'ngResource'
     'ngRoute'
-    'ngSanitize'
-    'ngTouch'
     'restangular'
   ])
 

@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
-    browserify = require('gulp-browserify');
+    coffee = require('gulp-coffee');
 
 var production = false;
 
@@ -42,6 +42,7 @@ gulp.task('scripts', [ 'scripts-vendor', 'scripts-application' ]);
 
 gulp.task('scripts-vendor', function() {
   return gulp.src([
+      'bower_components/lodash/dist/lodash.js',
       'bower_components/modernizr/modernizr.js',
       'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
@@ -54,17 +55,17 @@ gulp.task('scripts-vendor', function() {
 });
 
 gulp.task('scripts-application', function() {
-  return gulp.src([ './client/scripts/app.coffee' ], { read: false })
-    .pipe(browserify(options.browserify))
-    .pipe(rename('application.js'))
+  return gulp.src([ './client/scripts/**/*.coffee' ])
+    .pipe(coffee())
+    .pipe(concat('application.js'))
     .pipe(gulp.dest('.tmp/public/scripts/'));
 });
 
 gulp.task('assets', function() {
   return gulp.src([
       './client/**/*',
-      '!./client/{scripts,styles,views}',
-      '!./client/{scripts,styles,views}/**/*'
+      '!./client/{scripts,styles}',
+      '!./client/{scripts,styles}/**/*'
     ])
     .pipe(gulp.dest('.tmp/public/'));
 });
