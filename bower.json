@@ -1,0 +1,19 @@
+{
+  "name": "Ottto",
+  "version": "0.0.0",
+  "authors": [
+    "Justin Jones <justin@jstnjns.com>"
+  ],
+  "main": "app.js",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.23",
+    "angular-route": "~1.2.23",
+    "modernizr": "~2.8.3",
+    "bootstrap": "~3.2.0"
+  }
+}

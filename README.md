@@ -1,4 +1,3 @@
-ottto
-=====
+# Ottto
 
-Home Automation
+a [Sails](http://sailsjs.org) application
