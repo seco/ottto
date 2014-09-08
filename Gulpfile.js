@@ -46,6 +46,7 @@ gulp.task('build-scripts-vendor', function() {
       'bower_components/lodash/dist/lodash.js',
       'bower_components/modernizr/modernizr.js',
       'bower_components/jquery/dist/jquery.js',
+      'bower_components/socket.io-client/socket.io.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-route/angular-route.js',
