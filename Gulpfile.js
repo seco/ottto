@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     clean = require('gulp-clean'),
+    concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     browserify = require('gulp-browserify');
@@ -26,6 +27,10 @@ gulp.task('clean', function() {
     .pipe(clean());
 });
 
+gulp.task('default', [ 'build' ]);
+
+gulp.task('build', [ 'styles', 'scripts', 'assets' ]);
+
 gulp.task('styles', function() {
   return gulp.src([ './client/styles/main.scss' ])
     .pipe(sass())
@@ -33,7 +38,22 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('.tmp/public/styles/'))
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts', [ 'scripts-vendor', 'scripts-application' ]);
+
+gulp.task('scripts-vendor', function() {
+  return gulp.src([
+      'bower_components/modernizr/modernizr.js',
+      'bower_components/jquery/dist/jquery.js',
+      'bower_components/angular/angular.js',
+      'bower_components/angular-resource/angular-resource.js',
+      'bower_components/angular-route/angular-route.js',
+      'bower_components/restangular/dist/restangular.js'
+    ])
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('.tmp/public/scripts/'));
+});
+
+gulp.task('scripts-application', function() {
   return gulp.src([ './client/scripts/app.coffee' ], { read: false })
     .pipe(browserify(options.browserify))
     .pipe(rename('application.js'))
@@ -42,12 +62,9 @@ gulp.task('scripts', function() {
 
 gulp.task('assets', function() {
   return gulp.src([
-    './client/**/*',
-    '!./client/{scripts,styles,views}',
-    '!./client/{scripts,styles,views}/**/*'
-  ]).pipe(gulp.dest('.tmp/public/'));
+      './client/**/*',
+      '!./client/{scripts,styles,views}',
+      '!./client/{scripts,styles,views}/**/*'
+    ])
+    .pipe(gulp.dest('.tmp/public/'));
 });
-
-gulp.task('build', [ 'styles', 'scripts', 'assets' ]);
-
-gulp.task('default', [ 'build' ]);
