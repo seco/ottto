@@ -1,8 +1,67 @@
 <h1>Module Types</h1>
 
-<ul>
-  <li ng-repeat="type in types">
-    <h3>{{type.label}}</h3>
-    <p>{{type.type}}</p>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-md-4">
+    <div class="list-group" ng-show="types.length > 0">
+      <a class="list-group-item"
+        ng-click="activate(type)"
+        ng-repeat="type in types">
+
+        <h3 class="list-group-item-heading">
+          {{type.name}}
+        </h3>
+      </a>
+    </div>
+
+    <div class="well" ng-show="types.length < 1">
+      No types...
+    </div>
+
+    <a class="btn btn-primary" ng-click="blank()">New Type</a>
+  </div>
+
+  <div class="col-md-8">
+    <ng-form="moduleForm" ng-if="type" class="form-horizontal">
+      <fieldset>
+        <div class="form-group">
+          <label class="control-label col-md-2">Name</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control"
+              ng-model="type.name"
+              ng-required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-md-2">Type</label>
+          <div class="col-md-10">
+            <select class="form-control"
+              ng-model="type.type"
+              ng-options="direction for direction in ['boolean','float', 'string']">
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-md-2">Direction</label>
+          <div class="col-md-10">
+            <select class="form-control"
+              ng-model="type.direction"
+              ng-options="direction for direction in ['input','output']">
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="buttons">
+        <div class="form-group">
+          <div class="col-md-10 col-md-offset-2">
+            <a class="btn btn-primary" ng-click="save()">Save</a>
+            <a class="btn btn-default" ng-click="cancel()">Cancel</a>
+            <a class="btn btn-danger" ng-click="delete()">Delete</a>
+          </div>
+        </div>
+      </fieldset>
+    </ng-form>
+  </div>
+</div>

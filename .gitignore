@@ -9,3 +9,6 @@ bower_components
 # Public
 .tmp
 public
+
+# IDE
+*.sublime-*

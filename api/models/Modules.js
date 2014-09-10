@@ -30,7 +30,7 @@ module.exports = {
 
       ModuleTypes
         .findOne({ id: obj.typeId })
-        .done(function foundInput(error, type) {
+        .exec(function foundInput(error, type) {
           obj.type = type;
         });
 
