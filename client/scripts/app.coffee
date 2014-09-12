@@ -12,6 +12,7 @@ angular
   .module('otttoApp', [
     'ngResource'
     'ngRoute'
+    'ActiveRecord'
     'restangular'
   ])
 

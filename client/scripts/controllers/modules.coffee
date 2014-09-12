@@ -1,41 +1,33 @@
 'use strict'
 
-###*
- # @ngdoc function
- # @name otttoApp.controller:ModulesCtrl
- # @description
- # # ModulesCtrl
- # Controller of the otttoApp
-###
 angular.module('otttoApp')
-  .controller 'ModulesCtrl', ($scope, Restangular, ModulesService) ->
-    modules = Restangular.service 'modules'
+  .controller 'ModulesCtrl', ($scope, Restangular, Module) ->
     types = Restangular.service 'moduletypes'
 
     $scope.init = ->
-      $scope.modules = modules.getList().$object
+      $scope.modules = do Module.fetch
       $scope.types = types.getList().$object
 
     
     $scope.activate = (module) ->
-      $scope.module = module
+      $scope.active = module
 
 
     $scope.blank = ->
-      $scope.module = {}
+      $scope.active = {}
 
 
     $scope.save = ->
-      do $scope.module.save
+      do $scope.active.save
 
 
     $scope.cancel = ->
-      delete $scope.module
+      delete $scope.active
 
 
     $scope.delete = ->
-      console.log $scope.module
-      do $scope.module.remove
+      console.log $scope.active
+      # do $scope.active.remove
     
 
     do $scope.init
