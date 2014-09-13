@@ -18,13 +18,13 @@
   </div>
 
   <div class="col-md-8">
-    <ng-form="moduleForm" ng-if="module" class="form-horizontal">
+    <ng-form="moduleForm" ng-if="active" class="form-horizontal">
       <fieldset>
         <div class="form-group">
           <label class="control-label col-md-2">Name</label>
           <div class="col-md-10">
             <input type="text" class="form-control"
-              ng-model="module.name"
+              ng-model="active.name"
               ng-required>
           </div>
         </div>
@@ -33,7 +33,7 @@
           <label class="control-label col-md-2">Type</label>
           <div class="col-md-10">
             <select class="form-control"
-              ng-model="module.typeId"
+              ng-model="active.typeId"
               ng-options="type.id as type.name for type in types">
             </select>
           </div>

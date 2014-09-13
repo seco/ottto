@@ -1,12 +1,11 @@
 'use strict'
 
 angular.module('otttoApp')
-  .controller 'ModulesCtrl', ($scope, Restangular, Module) ->
-    types = Restangular.service 'moduletypes'
+  .controller 'ModulesCtrl', ($scope, Modules, ModuleTypes) ->
 
     $scope.init = ->
-      $scope.modules = do Module.fetch
-      $scope.types = types.getList().$object
+      Modules.fetchAll().then (modules) -> $scope.modules = modules
+      ModuleTypes.fetchAll().then (types) -> $scope.types = types
 
     
     $scope.activate = (module) ->

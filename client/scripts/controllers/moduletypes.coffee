@@ -8,32 +8,31 @@
  # Controller of the otttoApp
 ###
 angular.module('otttoApp')
-  .controller 'ModuletypesCtrl', ($scope, Restangular) ->
-    types = Restangular.service 'moduletypes'
+  .controller 'ModuletypesCtrl', ($scope, ModuleTypes) ->
 
     $scope.init = ->
-      $scope.types = types.getList().$object
+      ModuleTypes.fetchAll().then (types) -> $scope.types = types
 
 
-    $scope.activate = (type) ->
-      $scope.type = type
+    $scope.activate = (active) ->
+      $scope.active = active
 
 
     $scope.blank = ->
-      $scope.type = {}
+      $scope.active = {}
 
 
     $scope.save = ->
-      do $scope.type.save
+      do $scope.active.save
 
 
     $scope.cancel = ->
-      delete $scope.type
+      delete $scope.active
 
 
     $scope.delete = ->
-      console.log $scope.type
-      do $scope.type.remove
+      console.log $scope.active
+      do $scope.active.remove
 
 
     do $scope.init

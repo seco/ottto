@@ -21,13 +21,13 @@
   </div>
 
   <div class="col-md-8">
-    <ng-form="moduleForm" ng-if="type" class="form-horizontal">
+    <ng-form="moduleForm" ng-if="active" class="form-horizontal">
       <fieldset>
         <div class="form-group">
           <label class="control-label col-md-2">Name</label>
           <div class="col-md-10">
             <input type="text" class="form-control"
-              ng-model="type.name"
+              ng-model="active.name"
               ng-required>
           </div>
         </div>
@@ -36,7 +36,7 @@
           <label class="control-label col-md-2">Type</label>
           <div class="col-md-10">
             <select class="form-control"
-              ng-model="type.type"
+              ng-model="active.type"
               ng-options="direction for direction in ['boolean','float', 'string']">
             </select>
           </div>
@@ -46,7 +46,7 @@
           <label class="control-label col-md-2">Direction</label>
           <div class="col-md-10">
             <select class="form-control"
-              ng-model="type.direction"
+              ng-model="active.direction"
               ng-options="direction for direction in ['input','output']">
             </select>
           </div>

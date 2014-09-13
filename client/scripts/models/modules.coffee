@@ -1,20 +1,5 @@
 angular.module('otttoApp')
-  .factory 'Module', (ActiveRecord) ->
-
-    ActiveRecord.fetch = (id) ->
-      $object = {}
-
-      if id
-        @fetchOne(id).then (module) ->
-          $object = module
-
-      else
-        @fetchAll().then (modules) =>
-          $object = modules
-
-      $object
-
-
+  .factory 'Modules', (ActiveRecord, ModuleTypes) ->
 
     ActiveRecord.extend
 
