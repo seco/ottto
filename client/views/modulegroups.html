@@ -1,47 +1,18 @@
-<h1>Module Groups</h1>
+<h1>Groups</h1>
 
 <div class="row">
-  <div class="col-md-4">
-    <div class="list-group" ng-show="groups.length > 0">
-      <a class="list-group-item"
-        ng-click="activate(group)"
-        ng-repeat="group in groups">
-
-        <h3 class="list-group-item-heading">
-          {{group.name}}
-        </h3>
-      </a>
+  <div class="col-md-4" ng-repeat="group in groups">
+    <div class="form-group">
+      <label for="name"></label>
+      <input type="text" name="name" class="form-control" ng-model="group.name">
     </div>
 
-    <div class="well" ng-show="groups.length < 1">
-      No groups...
+    <div class="form-group">
+      <a class="btn btn-primary" ng-click="save(group)">Save</a>
+      <a class="btn btn-danger" ng-click="delete(group)">Delete</a>
     </div>
-
-    <a class="btn btn-primary" ng-click="blank()">New Group</a>
-  </div>
-
-  <div class="col-md-8">
-    <ng-form="moduleForm" ng-if="active" class="form-horizontal">
-      <fieldset>
-        <div class="form-group">
-          <label class="control-label col-md-2">Name</label>
-          <div class="col-md-10">
-            <input type="text" class="form-control"
-              ng-model="active.name"
-              ng-required>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset class="buttons">
-        <div class="form-group">
-          <div class="col-md-10 col-md-offset-2">
-            <a class="btn btn-primary" ng-click="save()">Save</a>
-            <a class="btn btn-default" ng-click="cancel()">Cancel</a>
-            <a class="btn btn-danger" ng-click="delete()">Delete</a>
-          </div>
-        </div>
-      </fieldset>
-    </ng-form>
   </div>
 </div>
+
+<hr>
+<a class="btn btn-primary" ng-click="new()">New</a>

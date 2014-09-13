@@ -7,25 +7,16 @@ angular.module('otttoApp')
       do fetch
 
 
-    $scope.activate = (active) ->
-      $scope.active = active
-
-
-    $scope.blank = ->
-      $scope.active = new ModuleGroups
+    $scope.new = ->
+      $scope.groups.push new ModuleGroups
 
 
     $scope.save = ->
       $scope.active.$save().then fetch
 
 
-    $scope.cancel = ->
-      delete $scope.active
-
-
     $scope.delete = ->
       $scope.active.$destroy().then fetch
-      delete $scope.active
 
 
     fetch = ->

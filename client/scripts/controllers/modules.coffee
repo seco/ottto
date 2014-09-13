@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('otttoApp')
-  .controller 'ModulesController', ($scope, Modules, ModuleTypes) ->
+  .controller 'ModulesController', ($scope, Modules, ModuleTypes, ModuleGroups) ->
 
     $scope.init = ->
       do fetch
@@ -13,6 +13,7 @@ angular.module('otttoApp')
 
     $scope.blank = ->
       $scope.active = new Modules
+      window.active = $scope.active
 
 
     $scope.save = ->
@@ -31,6 +32,7 @@ angular.module('otttoApp')
     fetch = ->
       Modules.fetchAll().then (modules) -> $scope.modules = modules
       ModuleTypes.fetchAll().then (types) -> $scope.types = types
+      ModuleGroups.fetchAll().then (groups) -> $scope.groups = groups
     
 
     do $scope.init
