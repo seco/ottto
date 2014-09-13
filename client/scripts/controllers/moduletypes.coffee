@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('otttoApp')
-  .controller 'ModuletypesController', ($scope, ModuleTypes) ->
+  .controller 'ModuleTypesController', ($scope, ModuleTypes) ->
 
     $scope.init = ->
       do fetch

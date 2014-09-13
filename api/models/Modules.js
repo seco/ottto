@@ -16,25 +16,12 @@ module.exports = {
       required: true
     },
 
-    typeId: {
-      type: 'integer',
-      required: true
+    type: {
+      model: 'ModuleTypes'
     },
 
-    state: {
-      type: 'integer'
-    },
-
-    toJSON: function() {
-      var obj = this.toObject();
-
-      ModuleTypes
-        .findOne({ id: obj.typeId })
-        .exec(function foundInput(error, type) {
-          obj.type = type;
-        });
-
-      return obj;
+    group: {
+      model: 'ModuleGroups'
     },
 
     on: function(event) {
