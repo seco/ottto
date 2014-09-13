@@ -4,8 +4,7 @@ angular.module('otttoApp')
   .controller 'ModulesCtrl', ($scope, Modules, ModuleTypes) ->
 
     $scope.init = ->
-      Modules.fetchAll().then (modules) -> $scope.modules = modules
-      ModuleTypes.fetchAll().then (types) -> $scope.types = types
+      do fetch
 
     
     $scope.activate = (module) ->
@@ -13,11 +12,11 @@ angular.module('otttoApp')
 
 
     $scope.blank = ->
-      $scope.active = {}
+      $scope.active = new Modules
 
 
     $scope.save = ->
-      do $scope.active.save
+      $scope.active.$save().then fetch
 
 
     $scope.cancel = ->
@@ -25,8 +24,13 @@ angular.module('otttoApp')
 
 
     $scope.delete = ->
-      console.log $scope.active
-      # do $scope.active.remove
+      $scope.active.$destroy().then fetch
+      delete $scope.active
+
+
+    fetch = ->
+      Modules.fetchAll().then (modules) -> $scope.modules = modules
+      ModuleTypes.fetchAll().then (types) -> $scope.types = types
     
 
     do $scope.init

@@ -87,7 +87,7 @@ module.exports = {
     cb();
   },
 
-  afterDestroy: function(cb) {
+  afterDestroy: function(records, cb) {
     Events
       .find({
         'moduleId': this.id
