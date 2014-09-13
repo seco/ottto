@@ -13,11 +13,6 @@ module.exports = {
       type: 'string',
       required: true
     },
-  
-    moduleIds: {
-      type: 'array',
-      required: true
-    },
 
     toJSON: function() {
       var obj = this.toObject();

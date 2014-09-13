@@ -8,21 +8,15 @@
  # Controller of the otttoApp
 ###
 angular.module('otttoApp')
-  .controller 'RulesCtrl', ($scope) ->
+  .controller 'RulesController', ($scope) ->
 
 
     $scope.init = ->
-      $scope.modules = Restangular.all('modules').getList().$object
-      $scope.actions = [
-        {
-          id: 0
-          name: 'Off'
-        }
-        {
-          id: 1
-          name: 'On'
-        }
-      ]
+      do fetch
+
+
+    fetch = ->
+      console.log 'fetching'
 
 
     do $scope.init

@@ -20,16 +20,19 @@ angular
     $routeProvider
       .when '/',
         templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
+        controller: 'MainController'
       .when '/modules',
         templateUrl: 'views/modules.html'
-        controller: 'ModulesCtrl'
+        controller: 'ModulesController'
+      .when '/moduletypes',
+        templateUrl: 'views/moduletypes.html'
+        controller: 'ModuleTypesController'
+      .when '/modulegroups',
+        templateUrl: 'views/modulegroups.html'
+        controller: 'ModuleGroupsController'
       .when '/rules',
         templateUrl: 'views/rules.html'
         controller: 'RulesCtrl'
-      .when '/moduletypes',
-        templateUrl: 'views/moduletypes.html'
-        controller: 'ModuletypesCtrl'
       .otherwise
         redirectTo: '/'
         
