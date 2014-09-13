@@ -13,7 +13,6 @@ angular
     'ngResource'
     'ngRoute'
     'ActiveRecord'
-    'restangular'
   ])
 
   
@@ -33,7 +32,4 @@ angular
         controller: 'ModuletypesCtrl'
       .otherwise
         redirectTo: '/'
-
-
-  .config (RestangularProvider) ->
-    RestangularProvider.setBaseUrl 'http://localhost:1337'
+        

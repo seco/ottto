@@ -13,7 +13,6 @@
     "angular-resource": "~1.2.23",
     "modernizr": "~2.8.3",
     "bootstrap-sass-official": "~3.2.0+2",
-    "restangular": "~1.4.0",
     "socket.io-client": "~1.1.0",
     "angular-activerecord": "~0.2.1"
   },

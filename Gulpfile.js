@@ -51,7 +51,6 @@ gulp.task('build-scripts-vendor', function() {
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-activerecord/src/angular-activerecord.js',
       'bower_components/angular-route/angular-route.js',
-      'bower_components/restangular/dist/restangular.js',
       'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js'
     ])
     .pipe(concat('vendor.js'))
