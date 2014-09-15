@@ -33,7 +33,7 @@
           <label class="control-label col-md-2">Type</label>
           <div class="col-md-10">
             <select class="form-control"
-              ng-model="active.type"
+              ng-model="active.type.id"
               ng-options="type.id as type.name for type in types">
             </select>
           </div>
@@ -43,7 +43,7 @@
           <label class="control-label col-md-2">Groups</label>
           <div class="col-md-10">
             <select class="form-control"
-              ng-model="active.group"
+              ng-model="active.group.id"
               ng-options="group.id as group.name for group in groups">
             </select>
           </div>
