@@ -14,16 +14,9 @@ module.exports = {
       required: true
     },
 
-    type: {
-      type: 'string',
-      required: true,
-      in: [ 'boolean', 'float', 'string' ]
-    },
-
-    direction: {
-      type: 'string',
-      required: true,
-      in: [ 'input', 'output' ]
+    values: {
+      type: 'json',
+      required: true
     }
   
   }

@@ -3,6 +3,12 @@
 angular.module('otttoApp')
   .controller 'ModuleTypesController', ($scope, ModuleTypes) ->
 
+    $scope.valueTypes = [
+      'boolean'
+      'float'
+      'string'
+    ]
+
     $scope.init = ->
       do fetch
 
@@ -11,7 +17,7 @@ angular.module('otttoApp')
       $scope.active = active
 
 
-    $scope.blank = ->
+    $scope.new = ->
       $scope.active = new ModuleTypes
 
 
@@ -26,6 +32,11 @@ angular.module('otttoApp')
     $scope.delete = ->
       $scope.active.$destroy().then fetch
       delete $scope.active
+
+
+    $scope.addValue = ->
+      $scope.active.values = new Array if not Array.isArray $scope.active.values
+      $scope.active.values?.push {}
 
 
     fetch = ->

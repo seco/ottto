@@ -17,7 +17,7 @@
       No types...
     </div>
 
-    <a class="btn btn-primary" ng-click="blank()">New Type</a>
+    <a class="btn btn-primary" ng-click="new()">New</a>
   </div>
 
   <div class="col-md-8">
@@ -33,22 +33,24 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-2">Type</label>
+          <label class="control-label col-md-2">Values</label>
           <div class="col-md-10">
-            <select class="form-control"
-              ng-model="active.type"
-              ng-options="direction for direction in ['boolean','float', 'string']">
-            </select>
-          </div>
-        </div>
+            <div class="row" ng-repeat="value in active.values">
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Name"
+                  ng-model="value.name">
+              </div>
 
-        <div class="form-group">
-          <label class="control-label col-md-2">Direction</label>
-          <div class="col-md-10">
-            <select class="form-control"
-              ng-model="active.direction"
-              ng-options="direction for direction in ['input','output']">
-            </select>
+              <div class="col-md-6">
+                <select name="type" class="form-control"
+                  ng-options="type for type in valueTypes"
+                  ng-model="value.type"></select>
+              </div>
+            </div>
+
+            <hr>
+
+            <a class="btn btn-default" ng-click="addValue()">Add</a>
           </div>
         </div>
       </fieldset>
