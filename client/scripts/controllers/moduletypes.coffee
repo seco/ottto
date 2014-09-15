@@ -7,7 +7,7 @@ angular.module('otttoApp')
       'boolean'
       'float'
       'string'
-      'color'
+      'options'
     ]
 
     $scope.init = ->
@@ -35,9 +35,14 @@ angular.module('otttoApp')
       delete $scope.active
 
 
-    $scope.addValue = ->
-      $scope.active.values = new Array if not Array.isArray $scope.active.values
-      $scope.active.values?.push {}
+    $scope.addValue = (type) ->
+      type.values = new Array if not Array.isArray type.values
+      type.values?.push {}
+
+
+    $scope.addOption = (value) ->
+      value.options = new Array if not Array.isArray value.options
+      value.options?.push {}
 
 
     fetch = ->

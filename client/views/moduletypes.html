@@ -48,6 +48,9 @@
 
                 <hr>
 
+                <!-- String -->
+
+                <!-- Float -->
                 <div ng-show="value.type == 'float'">
                   <div class="form-group">
                     <div class="col-sm-4">
@@ -65,30 +68,57 @@
                         ng-model="value.step">
                     </div>
                   </div>
-                </div>
 
-                <div ng-show="value.type == 'boolean'">
                   <div class="form-group">
-                    <div class="col-sm-6">
-                      <input type="text" name="min" class="form-control" placeholder="Truthy"
-                        ng-model="value.truthy">
-                    </div>
-
-                    <div class="col-sm-6">
-                      <input type="text" name="max" class="form-control" placeholder="Falsey"
-                        ng-model="value.falsey">
+                    <div class="col-xs-12">
+                      <input type="number" name="default" class="form-control" ng-model="value.default">
                     </div>
                   </div>
                 </div>
 
-                <input type="text" name="default" class="form-control" placeholder="Default Value"
-                  ng-model="value.default">
+                <!-- Boolean -->
+                <div ng-show="value.type == 'boolean'">
+                  <div class="form-group">
+                    <div class="col-xs-6">
+                      <input type="text" name="min" class="form-control" placeholder="Truthy"
+                        ng-model="value.truthy">
+                    </div>
+
+                    <div class="col-xs-6">
+                      <input type="text" name="max" class="form-control" placeholder="Falsey"
+                        ng-model="value.falsey">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-xs-12">
+                      <input type="checkbox" name="default" ng-model="value.default">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Options -->
+                <div ng-show="value.type == 'options'">
+                  <div class="form-group" ng-repeat="option in value.options">
+                    <div class="col-sm-6">
+                      <input type="text" name="min" class="form-control" placeholder="Value"
+                        ng-model="option.value">
+                    </div>
+
+                    <div class="col-sm-6">
+                      <input type="text" name="max" class="form-control" placeholder="Label"
+                        ng-model="option.label">
+                    </div>
+                  </div>
+
+                  <a class="btn btn-default" ng-click="addOption(value)">Add Option</a>
+                </div>
               </div>
             </div>
 
             <hr>
 
-            <a class="btn btn-default" ng-click="addValue()">Add</a>
+            <a class="btn btn-default" ng-click="addValue(active)">Add Value</a>
           </div>
         </div>
       </fieldset>
