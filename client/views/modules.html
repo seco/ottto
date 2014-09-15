@@ -17,8 +17,33 @@
     <a class="btn btn-primary" ng-click="blank()">New</a>
   </div>
 
-  <div class="col-md-8">
-    <ng-form="moduleForm" ng-if="active" class="form-horizontal">
+  <div class="col-md-8" ng-if="active">
+    <div class="well">
+      <h2>{{active.name}}</h2>
+
+      <div ng-repeat="value in active.type.values">
+
+        {{value.name}}
+
+        <div ng-show="value.type == 'float'">
+          <input type="range"
+            min="{{value.min}}"
+            max="{{value.max}}"
+            step="{{value.step}}"
+            ng-model="active.values[value.name]">
+
+          {{active.values[value.name]}}%
+        </div>
+
+        <div ng-show="value.type == 'boolean'">
+          <input type="checkbox"
+            ng-model="active.values[value.name]">
+        </div>
+      </div>
+
+    </div>
+
+    <ng-form="moduleForm" class="form-horizontal">
       <fieldset>
         <div class="form-group">
           <label class="control-label col-md-2">Name</label>

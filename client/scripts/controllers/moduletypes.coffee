@@ -7,6 +7,7 @@ angular.module('otttoApp')
       'boolean'
       'float'
       'string'
+      'color'
     ]
 
     $scope.init = ->

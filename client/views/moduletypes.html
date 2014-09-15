@@ -35,7 +35,7 @@
         <div class="form-group">
           <label class="control-label col-md-2">Values</label>
           <div class="col-md-10">
-            <div class="row" ng-repeat="value in active.values">
+            <div class="form-group" ng-repeat="value in active.values">
               <div class="col-md-6">
                 <input type="text" name="name" class="form-control" placeholder="Name"
                   ng-model="value.name">
@@ -45,6 +45,44 @@
                 <select name="type" class="form-control"
                   ng-options="type for type in valueTypes"
                   ng-model="value.type"></select>
+
+                <hr>
+
+                <div ng-show="value.type == 'float'">
+                  <div class="form-group">
+                    <div class="col-sm-4">
+                      <input type="text" name="min" class="form-control" placeholder="Min"
+                        ng-model="value.min">
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input type="text" name="max" class="form-control" placeholder="Max"
+                        ng-model="value.max">
+                    </div>
+
+                    <div class="col-sm-4">
+                      <input type="text" name="step" class="form-control" placeholder="Step"
+                        ng-model="value.step">
+                    </div>
+                  </div>
+                </div>
+
+                <div ng-show="value.type == 'boolean'">
+                  <div class="form-group">
+                    <div class="col-sm-6">
+                      <input type="text" name="min" class="form-control" placeholder="Truthy"
+                        ng-model="value.truthy">
+                    </div>
+
+                    <div class="col-sm-6">
+                      <input type="text" name="max" class="form-control" placeholder="Falsey"
+                        ng-model="value.falsey">
+                    </div>
+                  </div>
+                </div>
+
+                <input type="text" name="default" class="form-control" placeholder="Default Value"
+                  ng-model="value.default">
               </div>
             </div>
 
