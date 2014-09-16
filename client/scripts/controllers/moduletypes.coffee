@@ -7,7 +7,8 @@ angular.module('otttoApp')
       'boolean'
       'float'
       'string'
-      'options'
+      'radios'
+      'checkboxes'
     ]
 
     $scope.init = ->

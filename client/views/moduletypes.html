@@ -35,93 +35,123 @@
         <div class="form-group">
           <label class="control-label col-md-2">Values</label>
           <div class="col-md-10">
-            <div class="form-group" ng-repeat="value in active.values">
+            <div class="row" ng-repeat="value in active.values">
               <div class="col-md-6">
                 <input type="text" name="name" class="form-control" placeholder="Name"
                   ng-model="value.name">
               </div>
 
               <div class="col-md-6">
-                <select name="type" class="form-control"
-                  ng-options="type for type in valueTypes"
-                  ng-model="value.type"></select>
-
-                <hr>
-
-                <!-- String -->
-
-                <!-- Float -->
-                <div ng-show="value.type == 'float'">
-                  <div class="form-group">
-                    <div class="col-sm-4">
-                      <input type="text" name="min" class="form-control" placeholder="Min"
-                        ng-model="value.min">
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" name="max" class="form-control" placeholder="Max"
-                        ng-model="value.max">
-                    </div>
-
-                    <div class="col-sm-4">
-                      <input type="text" name="step" class="form-control" placeholder="Step"
-                        ng-model="value.step">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="col-xs-12">
-                      <input type="number" name="default" class="form-control" ng-model="value.default">
-                    </div>
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <select name="type" class="form-control"
+                      ng-options="type for type in valueTypes"
+                      ng-model="value.type"></select>
                   </div>
                 </div>
 
-                <!-- Boolean -->
-                <div ng-show="value.type == 'boolean'">
-                  <div class="form-group">
-                    <div class="col-xs-6">
-                      <input type="text" name="min" class="form-control" placeholder="Truthy"
-                        ng-model="value.truthy">
+                <div ng-switch="value.type">
+                  <!-- String -->
+                  <div ng-switch-when="string">
+                    
+                  </div>
+                  
+                  <!-- Float -->
+                  <div ng-switch-when="float">
+                    <div class="form-group">
+                      <div class="col-sm-4">
+                        <input type="text" name="min" class="form-control" placeholder="Min"
+                          ng-model="value.min">
+                      </div>
+
+                      <div class="col-sm-4">
+                        <input type="text" name="max" class="form-control" placeholder="Max"
+                          ng-model="value.max">
+                      </div>
+
+                      <div class="col-sm-4">
+                        <input type="text" name="step" class="form-control" placeholder="Step"
+                          ng-model="value.step">
+                      </div>
                     </div>
 
-                    <div class="col-xs-6">
-                      <input type="text" name="max" class="form-control" placeholder="Falsey"
-                        ng-model="value.falsey">
+                    <div class="form-group">
+                      <div class="col-xs-12">
+                        <input type="number" name="default" class="form-control" placeholder="Default"
+                          ng-model="value.default">
+                      </div>
                     </div>
                   </div>
 
-                  <div class="form-group">
-                    <div class="col-xs-12">
-                      <input type="checkbox" name="default" ng-model="value.default">
+                  <!-- Boolean -->
+                  <div ng-switch-when="boolean">
+                    <div class="form-group">
+                      <div class="col-xs-6">
+                        <input type="text" name="min" class="form-control" placeholder="Truthy"
+                          ng-model="value.truthy">
+                      </div>
+
+                      <div class="col-xs-6">
+                        <input type="text" name="max" class="form-control" placeholder="Falsey"
+                          ng-model="value.falsey">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-xs-12">
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" name="default" ng-model="value.default">
+                            Default
+                          </label>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- Options -->
-                <div ng-show="value.type == 'options'">
-                  <div class="form-group" ng-repeat="option in value.options">
-                    <div class="col-sm-6">
-                      <input type="text" name="min" class="form-control" placeholder="Value"
-                        ng-model="option.value">
+                  <!-- Radios -->
+                  <div ng-switch-when="radios">
+                    <div class="form-group" ng-repeat="option in value.options">
+                      <div class="col-sm-6">
+                        <input type="text" name="value" class="form-control" placeholder="Value"
+                          ng-model="option.value">
+                      </div>
+
+                      <div class="col-sm-6">
+                        <input type="text" name="label" class="form-control" placeholder="Label"
+                          ng-model="option.label">
+                      </div>
                     </div>
 
-                    <div class="col-sm-6">
-                      <input type="text" name="max" class="form-control" placeholder="Label"
-                        ng-model="option.label">
-                    </div>
+                    <a class="btn btn-xs btn-primary" ng-click="addOption(value)">Add Option</a>
                   </div>
 
-                  <a class="btn btn-default" ng-click="addOption(value)">Add Option</a>
+                  <!-- Checkboxes -->
+                  <div ng-switch-when="checkboxes">
+                    <div class="form-group" ng-repeat="option in value.options">
+                      <div class="col-sm-6">
+                        <input type="text" name="value" class="form-control" placeholder="Value"
+                          ng-model="option.value">
+                      </div>
+
+                      <div class="col-sm-6">
+                        <input type="text" name="label" class="form-control" placeholder="Label"
+                          ng-model="option.label">
+                      </div>
+                    </div>
+
+                    <a class="btn btn-default" ng-click="addOption(value)">Add Option</a>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <hr>
 
             <a class="btn btn-default" ng-click="addValue(active)">Add Value</a>
           </div>
         </div>
       </fieldset>
+
+      <hr>
 
       <fieldset class="buttons">
         <div class="form-group">

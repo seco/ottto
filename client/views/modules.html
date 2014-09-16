@@ -11,6 +11,11 @@
           {{module.name}}
           <span class="badge badge-primary">{{module.group.name}}</span>
         </h3>
+
+        <dl>
+          <dt ng-repeat-start="value in module.type.values">{{value.name}}</dt>
+          <dd ng-repeat-end>{{module.values[value.name]}}</dd>
+        </dl>
       </a>
     </div>
 
@@ -21,23 +26,55 @@
     <div class="well">
       <h2>{{active.name}}</h2>
 
-      <div ng-repeat="value in active.type.values">
+      <div class="form-group" ng-repeat="value in active.type.values">
 
-        {{value.name}}
+        <label for="{{value.name}}">{{value.name}}</label>
 
-        <div ng-show="value.type == 'float'">
-          <input type="range"
-            min="{{value.min}}"
-            max="{{value.max}}"
-            step="{{value.step}}"
-            ng-model="active.values[value.name]">
+        <div ng-switch="value.type">
 
-          {{active.values[value.name]}}%
-        </div>
+          <!-- Float -->
+          <div ng-switch-when="float">
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="input-group">
+                  <input type="text" name="{{value.name}}" class="form-control"
+                    ng-model="active.values[value.name]">
+                  
+                  <span class="input-group-addon">%</span>
+                </div>
+              </div>
 
-        <div ng-show="value.type == 'boolean'">
-          <input type="checkbox"
-            ng-model="active.values[value.name]">
+              <div class="col-xs-8">
+                <input type="range"
+                  min="{{value.min}}"
+                  max="{{value.max}}"
+                  step="{{value.step}}"
+                  ng-model="active.values[value.name]">
+              </div>
+            </div>
+          </div>
+
+          <!-- Boolean -->
+          <div ng-switch-when="boolean">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="{{value.name}}"
+                  ng-model="active.values[value.name]"
+                  ng-change="active.$save()">
+                On
+              </label>
+            </div>
+          </div>
+
+          <!-- Radio -->
+          <div ng-switch-when="radios">
+            <label class="radio-inline" ng-repeat="option in value.options">
+              <input type="radio" name="{{value.name}}" value="{{option.value}}"
+                ng-model="active.values[value.name]">
+              {{option.label}}
+            </label>
+          </div>
+
         </div>
       </div>
 

@@ -24,6 +24,10 @@ module.exports = {
       model: 'ModuleGroups'
     },
 
+    values: {
+      type: 'json'
+    },
+
     on: function(event) {
       if (!event) throw('An event is required to "on".');
 
