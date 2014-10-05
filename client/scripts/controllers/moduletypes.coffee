@@ -41,9 +41,15 @@ angular.module('otttoApp')
       type.values?.push {}
 
 
+    $scope.removeValue = (type, value) ->
+      type.values.splice( type.values.indexOf(value), 1 )
+
+
     $scope.addOption = (value) ->
       value.options = new Array if not Array.isArray value.options
       value.options?.push {}
+
+
 
 
     fetch = ->

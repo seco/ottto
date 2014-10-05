@@ -35,8 +35,14 @@
         <div class="form-group">
           <label class="control-label col-md-2">Values</label>
           <div class="col-md-10">
+
             <div class="row" ng-repeat="value in active.values">
-              <div class="col-md-6">
+              <div class="col-md-1">
+                <a class="btn btn-danger"
+                  ng-click="removeValue(active, value)">&times;</a>
+              </div>
+
+              <div class="col-md-5">
                 <input type="text" name="name" class="form-control" placeholder="Name"
                   ng-model="value.name">
               </div>
@@ -53,9 +59,9 @@
                 <div ng-switch="value.type">
                   <!-- String -->
                   <div ng-switch-when="string">
-                    
+
                   </div>
-                  
+
                   <!-- Float -->
                   <div ng-switch-when="float">
                     <div class="form-group">
