@@ -238,8 +238,11 @@
   },
   "schema": {
     "events": {
-      "moduleId": {
-        "type": "integer"
+      "module": {
+        "type": "integer",
+        "model": "modules",
+        "foreignKey": true,
+        "alias": "module"
       },
       "action": {
         "type": "string"

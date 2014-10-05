@@ -11,7 +11,7 @@ var _ = require('underscore'),
 module.exports = {
 
   attributes: {
-      
+
     // User-given name to the rule for easy targeting
     name: {
       type: 'string',
@@ -34,37 +34,8 @@ module.exports = {
     actions: {
       type: 'array',
       required: true
-    },
-
-    toJSON: function() {
-      var obj = this.toObject();
-
-      Modules
-        .findOne({ id: obj.inputId })
-        .done(function foundInput(error, input) {
-          obj.input = input;
-        });
-
-      Modules
-        .findOne({ id: obj.outputId })
-        .done(function foundOutput(error, output) {
-          obj.output = output;
-        });
-
-      return obj;
-    },
-
-    do: function() {
-      var obj = this.toObject();
-
-      Modules
-        .find({ id: obj.outputId })
-        .done(function foundOutput(error, outputs) {
-          _(outputs).each(function(output) {
-            output.do(obj.action);
-          });
-        });
     }
+
   }
 
 };
