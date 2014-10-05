@@ -20,9 +20,11 @@ nrf.begin(function () {
   rx.on('data', function (d) {
 
     if( d.readInt8(0) == 2 ) {
-      console.log(
-        JSON.parse(buffer.toString('utf-8'))
-      );
+      try {
+        console.log(
+          JSON.parse(buffer.toString('utf-8'))
+        );
+      } catch(e) {}
 
       buffer = new Buffer(0);
       return;
