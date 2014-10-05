@@ -1,3 +1,5 @@
+if(process.platform != 'linux') return;
+
 var NRF24 = require("nrf"),
     spiDev = "/dev/spidev0.0",
     cePin = 24, irqPin = 25,
