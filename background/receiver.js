@@ -1,7 +1,7 @@
 var NRF24 = require("nrf"),
     spiDev = "/dev/spidev0.0",
     cePin = 24, irqPin = 25,
-    pipes = [0xF0F0F0F0E1, 0xF0F0F0F0D2];
+    pipes = [ 0xF0F0F0F0E1, 0xF0F0F0F0D2 ];
 
 var nrf = NRF24.connect(spiDev, cePin, irqPin);
 

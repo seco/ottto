@@ -11,7 +11,7 @@ Modules
         .find({
           inputId: module.id
         })
-        .done(function foundCrons(error, rules) {
+        .exec(function foundCrons(error, rules) {
           _(rules).each(function createCron(rule) {
 
             new CronJob(

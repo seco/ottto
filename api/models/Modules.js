@@ -10,7 +10,7 @@ var _ = require('underscore');
 module.exports = {
 
   attributes: {
-  
+
     name: {
       type: 'string',
       required: true
@@ -54,7 +54,7 @@ module.exports = {
         })
         .then(function() {});
     },
-    
+
     do: function(action) {
       console.log('do: ', action);
       if (action === undefined || !Radio.send) {
