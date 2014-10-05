@@ -37,9 +37,9 @@ void loop(void) {
     motion_state = motion_val;
 
     if( motion_state )
-      send("on");
+      send("{motion:1}");
     else
-      send("off");
+      send("{motion:0}");
 
   }
 
