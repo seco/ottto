@@ -9,7 +9,7 @@ nrf.channel(0x4c)
   .transmitPower('PA_MAX')
   .dataRate('1Mbps')
   .crcBytes(2)
-  .autoRetransmit({ count: 15, delay: 4000 });
+  .autoRetransmit({ count: 10, delay: 100 });
 
 nrf.begin(function () {
 
