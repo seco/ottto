@@ -1,0 +1,399 @@
+{
+  "data": {
+    "events": [],
+    "modulegroups": [
+      {
+        "name": "Hallway",
+        "id": 2,
+        "createdAt": "2014-09-13T07:26:52.743Z",
+        "updatedAt": "2014-09-16T01:56:13.754Z"
+      },
+      {
+        "name": "Porch",
+        "id": 3,
+        "createdAt": "2014-09-13T07:26:56.401Z",
+        "updatedAt": "2014-09-16T09:23:43.333Z"
+      },
+      {
+        "name": "Kitchen",
+        "id": 4,
+        "createdAt": "2014-09-13T07:27:05.294Z",
+        "updatedAt": "2014-09-16T01:33:04.641Z"
+      }
+    ],
+    "moduletypes": [
+      {
+        "name": "Light Bulb",
+        "values": [
+          {
+            "type": "float",
+            "name": "Intensity",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "default": "0"
+          },
+          {
+            "name": "Power",
+            "type": "boolean",
+            "truthy": "On",
+            "falsey": "Off",
+            "default": "false"
+          }
+        ],
+        "id": 1,
+        "createdAt": "2014-09-10T08:54:41.493Z",
+        "updatedAt": "2014-09-16T09:23:43.332Z"
+      },
+      {
+        "name": "Motion Sensor",
+        "values": [
+          {
+            "name": "Motion",
+            "type": "boolean",
+            "truthy": "Active",
+            "falsey": "Inactive",
+            "default": "false"
+          },
+          {
+            "name": "Sensitivity",
+            "type": "radios",
+            "options": [
+              {
+                "value": "low",
+                "label": "Low"
+              },
+              {
+                "value": "med",
+                "label": "Medium"
+              },
+              {
+                "value": "high",
+                "label": "High"
+              }
+            ]
+          }
+        ],
+        "id": 2,
+        "createdAt": "2014-09-10T08:54:57.482Z",
+        "updatedAt": "2014-09-16T08:55:34.824Z"
+      },
+      {
+        "name": "RGB Bulb",
+        "values": [
+          {
+            "name": "Intensity",
+            "type": "float",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "default": 0
+          },
+          {
+            "name": "Color",
+            "type": "string"
+          },
+          {
+            "name": "Power",
+            "type": "boolean",
+            "truthy": "On",
+            "falsey": "Off"
+          }
+        ],
+        "id": 5,
+        "createdAt": "2014-09-16T08:48:33.557Z",
+        "updatedAt": "2014-09-16T08:56:21.780Z"
+      },
+      {
+        "name": "Door Lock",
+        "values": [
+          {
+            "name": "Status",
+            "type": "boolean",
+            "truthy": "Locked",
+            "falsey": "Unlocked"
+          }
+        ],
+        "id": 6,
+        "createdAt": "2014-09-16T08:57:18.945Z",
+        "updatedAt": "2014-09-16T08:57:18.945Z"
+      },
+      {
+        "name": "Contact Sensor",
+        "values": [
+          {
+            "name": "Status",
+            "type": "boolean",
+            "truthy": "Closed",
+            "falsey": "Open",
+            "default": true
+          }
+        ],
+        "id": 7,
+        "createdAt": "2014-09-16T08:58:35.329Z",
+        "updatedAt": "2014-09-16T08:58:35.329Z"
+      },
+      {
+        "name": "Climate Sensor",
+        "values": [
+          {
+            "name": "Temperature",
+            "type": "float",
+            "min": "-120",
+            "max": "120",
+            "step": "1",
+            "default": 0
+          },
+          {
+            "name": "Humidity",
+            "type": "float",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "default": 0
+          }
+        ],
+        "id": 8,
+        "createdAt": "2014-09-16T09:00:55.505Z",
+        "updatedAt": "2014-09-16T09:00:55.505Z"
+      },
+      {
+        "name": "Video Camera",
+        "values": [
+          {
+            "name": "Power",
+            "type": "boolean",
+            "truthy": "On",
+            "falsey": "Off"
+          }
+        ],
+        "id": 9,
+        "createdAt": "2014-09-16T09:02:22.470Z",
+        "updatedAt": "2014-09-16T09:02:22.470Z"
+      },
+      {
+        "name": "Outlet Switch",
+        "values": [
+          {
+            "name": "Power",
+            "type": "boolean",
+            "truthy": "On",
+            "falsey": "Off"
+          }
+        ],
+        "id": 10,
+        "createdAt": "2014-09-16T09:02:56.872Z",
+        "updatedAt": "2014-09-16T09:02:56.872Z"
+      }
+    ],
+    "modules": [
+      {
+        "name": "Porch Light",
+        "type": 1,
+        "group": 3,
+        "values": {
+          "Intensity": "70",
+          "power": true,
+          "Power": true
+        },
+        "id": 8,
+        "createdAt": "2014-09-13T07:48:45.278Z",
+        "updatedAt": "2014-09-16T09:23:43.344Z"
+      },
+      {
+        "name": "Hallway Motion",
+        "type": 2,
+        "group": 2,
+        "values": {
+          "Motion": true,
+          "Sensitivity": "med"
+        },
+        "id": 9,
+        "createdAt": "2014-09-13T07:49:26.266Z",
+        "updatedAt": "2014-09-16T01:56:13.768Z"
+      },
+      {
+        "name": "Kitchen Light",
+        "type": 1,
+        "group": 4,
+        "values": {
+          "Intensity": "25"
+        },
+        "id": 15,
+        "createdAt": "2014-09-13T08:18:34.898Z",
+        "updatedAt": "2014-09-16T01:33:04.658Z"
+      },
+      {
+        "name": "Hallway Light",
+        "type": 1,
+        "group": 2,
+        "id": 16,
+        "createdAt": "2014-10-05T07:40:20.834Z",
+        "updatedAt": "2014-10-05T07:40:20.834Z"
+      }
+    ],
+    "ruleactions": [],
+    "ruleconditions": [],
+    "rules": []
+  },
+  "schema": {
+    "events": {
+      "moduleId": {
+        "type": "integer"
+      },
+      "action": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "modulegroups": {
+      "name": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "moduletypes": {
+      "name": {
+        "type": "string"
+      },
+      "values": {
+        "type": "json"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "modules": {
+      "name": {
+        "type": "string"
+      },
+      "type": {
+        "type": "integer",
+        "model": "moduletypes",
+        "foreignKey": true,
+        "alias": "type"
+      },
+      "group": {
+        "type": "integer",
+        "model": "modulegroups",
+        "foreignKey": true,
+        "alias": "group"
+      },
+      "values": {
+        "type": "json"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "ruleactions": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "ruleconditions": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "rules": {
+      "name": {
+        "type": "string"
+      },
+      "conditions": {
+        "type": "array"
+      },
+      "event": {
+        "type": "string"
+      },
+      "actions": {
+        "type": "array"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "events": {},
+    "modulegroups": {
+      "id": 4
+    },
+    "moduletypes": {
+      "id": 10
+    },
+    "modules": {
+      "id": 16
+    },
+    "ruleactions": {},
+    "ruleconditions": {},
+    "rules": {}
+  }
+}
