@@ -5,7 +5,7 @@ Modules
   .find({
     type: 'timer'
   })
-  .done(function(error, modules) {
+  .exec(function(error, modules) {
     _(modules).each(function(module) {
       Rules
         .find({

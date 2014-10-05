@@ -21,7 +21,7 @@ nrf.begin(function () {
 
     if( d.readInt8(0) == 2 ) {
       console.log(
-        JSON.parse(buffer.toString('utf-8'))
+        buffer.toString('utf-8')
       );
 
       buffer = new Buffer(0);
