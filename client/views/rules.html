@@ -3,8 +3,9 @@
 <div class="row">
   <div class="col-md-4">
     <div class="list-group">
-      <div class="list-group-item"
-        ng-repeat="rule in rules">
+      <a class="list-group-item"
+        ng-repeat="rule in rules"
+        ng-click="activate(rule)">
         <h4 class="list-group-item-heading">{{rule.name}}</h4>
         <p class="list-group-item-text">
           {{rule.conditions.length}}
@@ -17,7 +18,7 @@
             count="rule.actions.length"
             when="{'one': 'Action', 'other': 'Actions'}"></span>
         </p>
-      </div>
+      </a>
     </div>
 
     <a class="btn btn-primary"
@@ -89,13 +90,25 @@
                   <option value=">">is greater than</option>
                   <option value="<">is less than</option>
                   <option value="> x <">is between</option>
-                  <option value="< x >">is outside of</option>
                 </select>
 
-                <input type="number" class="form-control"
-                  ng-min="value.min"
-                  ng-max="value.max"
-                  ng-model="condition.argument">
+                <span ng-show="condition.operator">
+                  <input type="number" class="form-control"
+                    ng-min="value.min"
+                    ng-max="value.max"
+                    ng-model="condition.argument.0">
+
+                  <span ng-show="condition.operator == '> x <'">
+                    and
+
+                    <input type="number" class="form-control"
+                      ng-min="value.min"
+                      ng-max="value.max"
+                      ng-model="condition.argument.1">
+                  </span>
+
+                  {{value.metric}}
+                </span>
               </span>
 
               <span ng-switch-when="string">String</span>

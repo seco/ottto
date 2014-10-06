@@ -24,6 +24,10 @@ angular.module('otttoApp')
       do fetch
 
 
+    $scope.activate = (rule) ->
+      $scope.active = rule
+
+
     $scope.addRule = ->
       $scope.rules.push {
         name: 'New Rule'
