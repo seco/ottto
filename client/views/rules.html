@@ -102,12 +102,12 @@
                     and
 
                     <input type="number" class="form-control"
-                      ng-min="value.min"
-                      ng-max="value.max"
+                      ng-min="condition.$value.min"
+                      ng-max="condition.$value.max"
                       ng-model="condition.argument.1">
                   </span>
 
-                  {{value.metric}}
+                  {{condition.$value.metric}}
                 </span>
               </span>
 
@@ -157,8 +157,18 @@
       <hr>
 
       <a class="btn btn-primary"
-        ng-click="active.$save()">
+        ng-click="save()">
         Save
+      </a>
+
+      <a class="btn btn-default"
+        ng-click="cancel()">
+        Cancel
+      </a>
+
+      <a class="btn btn-danger"
+        ng-click="delete()">
+        Delete
       </a>
     </div>
   </div>

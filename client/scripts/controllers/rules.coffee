@@ -8,17 +8,15 @@
  # Controller of the otttoApp
 ###
 angular.module('otttoApp')
-  .controller 'RulesController', ($scope, Modules, ModuleTypes) ->
+  .controller 'RulesController', ($scope, Rules, Modules, ModuleTypes) ->
 
-    $scope.rules = []
+    # $scope.active =
+    #   name: 'Custom Rule'
+    #   operator: '&&'
+    #   conditions: []
+    #   actions: []
 
-    $scope.active =
-      name: 'Custom Rule'
-      operator: '&&'
-      conditions: []
-      actions: []
-
-    $scope.rules.push $scope.active
+    # $scope.rules.push $scope.active
 
     $scope.init = ->
       do fetch
@@ -29,12 +27,14 @@ angular.module('otttoApp')
 
 
     $scope.addRule = ->
-      $scope.rules.push {
-        name: 'New Rule'
-        operator: '&&'
-        conditions: []
-        actions: []
-      }
+      # $scope.rules.push {
+      #   name: 'New Rule'
+      #   operator: '&&'
+      #   conditions: []
+      #   actions: []
+      # }
+
+      $scope.rules.push new Rules
 
 
     $scope.addCondition = ->
@@ -61,7 +61,21 @@ angular.module('otttoApp')
       $scope.active.actions.splice $scope.active.actions.indexOf(action), 1
 
 
+    $scope.save = ->
+      $scope.active.$save().then fetch
+
+
+    $scope.cancel = ->
+      delete $scope.active
+
+
+    $scope.delete = ->
+      $scope.active.$destroy().then fetch
+      delete $scope.active
+
+
     fetch = ->
+      Rules.fetchAll().then (rules) -> $scope.rules = rules
       Modules.fetchAll().then (modules) -> $scope.modules = modules
       ModuleTypes.fetchAll().then (modules) -> $scope.types = modules
 

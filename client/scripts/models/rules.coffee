@@ -4,3 +4,9 @@ angular.module('otttoApp')
     ActiveRecord.extend
 
       $urlRoot: '/rules'
+
+      $defaults:
+        name: 'New Rule'
+        operator: '&&'
+        conditions: []
+        actions: []

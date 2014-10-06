@@ -13,7 +13,6 @@ angular.module('otttoApp')
 
     $scope.blank = ->
       $scope.active = new Modules
-      window.active = $scope.active
 
 
     $scope.save = ->
