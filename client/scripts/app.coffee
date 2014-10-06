@@ -15,7 +15,7 @@ angular
     'ActiveRecord'
   ])
 
-  
+
   .config ($routeProvider, $locationProvider) ->
     $routeProvider
       .when '/',
@@ -32,7 +32,6 @@ angular
         controller: 'ModuleGroupsController'
       .when '/rules',
         templateUrl: 'views/rules.html'
-        controller: 'RulesCtrl'
+        controller: 'RulesController'
       .otherwise
         redirectTo: '/'
-        

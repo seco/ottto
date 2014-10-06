@@ -1,48 +1,106 @@
 <h1>Rules</h1>
 
 <div class="row">
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label>If</label>
+  <div class="col-md-4">
+    <div class="list-group">
+      <div class="list-group-item active">
+        <h4 class="list-group-item-heading">{{rule.name}}</h4>
+        <p class="list-group-item-text">
+          {{rule.conditions.length}}
+          <span ng-pluralize
+            count="rule.conditions.length"
+            when="{'one': 'Condition', 'other': 'Conditions'}"></span>,
 
-      <div class="row">
-        <div class="col-sm-6">
-          <select class="form-control"
-            ng-options="module.id as module.name for module in modules"
-            ng-model="im">
-          </select>
-
-          <p>{{modules}}</p>
-        </div>
-
-        <div class="col-sm-6">
-          <select class="form-control"
-            ng-options="action.id as action.name for action in actions"
-            ng-model="ia">
-          </select>
-        </div>
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <label>Then</label>
-
-      <div class="row">
-        <div class="col-sm-6">
-          <select class="form-control"
-            ng-options="module.id as module.name for module in modules"
-            ng-model="tm"></select>
-        </div>
-
-        <div class="col-sm-6">
-          <select class="form-control"
-            ng-options="action.id as action.name for action in actions"
-            ng-model="ta">
-          </select>
-        </div>
+          {{rule.actions.length}}
+          <span ng-pluralize
+            count="rule.actions.length"
+            when="{'one': 'Action', 'other': 'Actions'}"></span>
+        </p>
       </div>
     </div>
   </div>
+
+  <div class="col-md-8">
+    <div class="form-group">
+      <input class="form-control input-lg"
+        ng-model="rule.name">
+    </div>
+
+    <div class="form form-inline">
+
+      <p class="lead">
+        Match
+        <select class="form-control" required
+          ng-model="rule.operator">
+          <option value="&&">all</option>
+          <option value="||">any</option>
+        </select>
+        of the following condition(s):
+      </p>
+
+      <div class="list-group">
+        <div class="list-group-item"
+          ng-repeat="condition in rule.conditions">
+
+          <a class="close"
+            ng-click="removeCondition(condition)">
+            &times;
+          </a>
+
+          <h4 class="list-group-item-heading">Condition #{{$index + 1}}</h4>
+
+          <p class="list-group-item-text">
+            If
+
+            <select class="form-control"
+              ng-options="module.id as module.name for module in modules"
+              ng-model="condition.module"
+              ng-change="updateValues(condition)"></select>
+
+            <select class="form-control"
+              ng-options="value.name as value.label for value in values"
+              ng-model="condition.value"
+              ng-change="updateOptions(condition)"
+              ng-show="condition.module"></select>
+
+            <span ng-switch="value.type">
+              <span ng-switch-when="boolean">
+                is
+                <select class="form-control"
+                  ng-options="option.value as option.label for option in value.options"
+                  ng-model="abc"></select>
+              </span>
+
+              <span ng-switch-when="float">
+                <select class="form-control"
+                  ng-model="condition.operator">
+                  <option value="==">is</option>
+                  <option value="!=">is not</option>
+                  <option value=">">is greater than</option>
+                  <option value="<">is less than</option>
+                  <option value="> x <">is between</option>
+                  <option value="< x >">is outside of</option>
+                </select>
+
+                <input type="number" class="form-control"
+                  ng-min="value.min"
+                  ng-max="value.max"
+                  ng-model="condition.argument">
+              </span>
+
+              <span ng-switch-when="string">String</span>
+              <span ng-switch-when="radios">Radios</span>
+              <span ng-switch-when="checkboxes">Checkboxes</span>
+
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <a class="btn btn-default btn-sm"
+        ng-click="addCondition()">
+        Add
+      </a>
+    </div>
+  </div>
 </div>
-
-

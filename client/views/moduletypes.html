@@ -98,13 +98,15 @@
                   <div ng-switch-when="boolean">
                     <div class="form-group">
                       <div class="col-xs-6">
-                        <input type="text" name="min" class="form-control" placeholder="Truthy"
-                          ng-model="value.truthy">
+                        <input type="text" name="label" class="form-control" placeholder="Falsey"
+                          ng-model="value.options.0.label"
+                          ng-init="value.options.1.value=false">
                       </div>
 
                       <div class="col-xs-6">
-                        <input type="text" name="max" class="form-control" placeholder="Falsey"
-                          ng-model="value.falsey">
+                        <input type="text" name="label" class="form-control" placeholder="Truthy"
+                          ng-model="value.options.1.label"
+                          ng-init="value.options.1.value=true">
                       </div>
                     </div>
 

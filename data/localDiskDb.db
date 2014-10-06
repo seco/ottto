@@ -27,12 +27,12 @@
         "values": [
           {
             "type": "float",
-            "name": "intensity",
+            "name": "level",
             "min": "0",
             "max": "100",
             "step": "1",
             "default": "0",
-            "label": "Intensity"
+            "label": "Level"
           },
           {
             "name": "power",
@@ -40,28 +40,53 @@
             "truthy": "On",
             "falsey": "Off",
             "default": "false",
-            "label": "Power"
+            "label": "Power",
+            "options": {
+              "0": {
+                "label": "Off"
+              },
+              "1": {
+                "label": "On",
+                "value": true
+              }
+            }
           }
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2014-10-06T00:54:15.575Z"
+        "updatedAt": "2014-10-06T03:32:28.219Z"
       },
       {
         "name": "Motion Sensor",
         "values": [
           {
+            "0": {
+              "label": "Active"
+            },
+            "1": {
+              "label": "Inactive"
+            },
             "name": "motion",
             "type": "boolean",
             "truthy": "Active",
             "falsey": "Inactive",
             "default": "false",
-            "label": "Motion"
+            "label": "Motion",
+            "options": [
+              {
+                "value": true,
+                "label": "Inactive"
+              },
+              {
+                "value": true,
+                "label": "Active"
+              }
+            ]
           }
         ],
         "id": 2,
         "createdAt": "2014-09-10T08:54:57.482Z",
-        "updatedAt": "2014-10-06T00:53:59.338Z"
+        "updatedAt": "2014-10-06T02:25:28.807Z"
       },
       {
         "name": "RGB Bulb",
@@ -85,12 +110,21 @@
             "type": "boolean",
             "truthy": "On",
             "falsey": "Off",
-            "label": "Power"
+            "label": "Power",
+            "options": {
+              "0": {
+                "label": "Off"
+              },
+              "1": {
+                "label": "On",
+                "value": true
+              }
+            }
           }
         ],
         "id": 5,
         "createdAt": "2014-09-16T08:48:33.557Z",
-        "updatedAt": "2014-10-06T00:54:29.268Z"
+        "updatedAt": "2014-10-06T02:25:45.066Z"
       },
       {
         "name": "Door Lock",
@@ -100,12 +134,21 @@
             "type": "boolean",
             "truthy": "Locked",
             "falsey": "Unlocked",
-            "label": "Status"
+            "label": "Status",
+            "options": {
+              "0": {
+                "label": "Unlocked"
+              },
+              "1": {
+                "label": "Locked",
+                "value": true
+              }
+            }
           }
         ],
         "id": 6,
         "createdAt": "2014-09-16T08:57:18.945Z",
-        "updatedAt": "2014-10-06T00:54:38.270Z"
+        "updatedAt": "2014-10-06T02:25:52.915Z"
       },
       {
         "name": "Contact Sensor",
@@ -116,12 +159,21 @@
             "truthy": "Closed",
             "falsey": "Open",
             "default": true,
-            "label": "Status"
+            "label": "Status",
+            "options": {
+              "0": {
+                "label": "Open"
+              },
+              "1": {
+                "label": "Closed",
+                "value": true
+              }
+            }
           }
         ],
         "id": 7,
         "createdAt": "2014-09-16T08:58:35.329Z",
-        "updatedAt": "2014-10-06T00:54:44.317Z"
+        "updatedAt": "2014-10-06T02:25:58.851Z"
       },
       {
         "name": "Climate Sensor",
@@ -157,12 +209,21 @@
             "type": "boolean",
             "truthy": "On",
             "falsey": "Off",
-            "label": "Power"
+            "label": "Power",
+            "options": {
+              "0": {
+                "label": "Off"
+              },
+              "1": {
+                "label": "On",
+                "value": true
+              }
+            }
           }
         ],
         "id": 9,
         "createdAt": "2014-09-16T09:02:22.470Z",
-        "updatedAt": "2014-10-06T00:55:00.194Z"
+        "updatedAt": "2014-10-06T02:26:04.527Z"
       },
       {
         "name": "Outlet Switch",
@@ -172,12 +233,21 @@
             "type": "boolean",
             "truthy": "On",
             "falsey": "Off",
-            "label": "Power"
+            "label": "Power",
+            "options": {
+              "0": {
+                "label": "Off"
+              },
+              "1": {
+                "label": "On",
+                "value": true
+              }
+            }
           }
         ],
         "id": 10,
         "createdAt": "2014-09-16T09:02:56.872Z",
-        "updatedAt": "2014-10-06T00:55:04.201Z"
+        "updatedAt": "2014-10-06T02:26:08.966Z"
       }
     ],
     "modules": [
