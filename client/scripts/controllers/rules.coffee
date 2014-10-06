@@ -20,8 +20,6 @@ angular.module('otttoApp')
 
     $scope.rules.push $scope.active
 
-    window.active = $scope.active
-
     $scope.init = ->
       do fetch
 

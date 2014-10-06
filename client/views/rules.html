@@ -75,9 +75,10 @@
             <span ng-switch="condition.$value.type">
               <span ng-switch-when="boolean">
                 is
+
                 <select class="form-control"
                   ng-options="option.value as option.label for option in condition.$value.options"
-                  ng-model="abc"></select>
+                  ng-model="condition.argument"></select>
               </span>
 
               <span ng-switch-when="float">
