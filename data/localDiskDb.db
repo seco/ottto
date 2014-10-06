@@ -302,7 +302,25 @@
     ],
     "ruleactions": [],
     "ruleconditions": [],
-    "rules": []
+    "rules": [
+      {
+        "name": "First Rule",
+        "operator": "&&",
+        "conditions": [
+          {
+            "module": 9,
+            "value": "motion",
+            "argument": true
+          }
+        ],
+        "actions": [
+          {}
+        ],
+        "createdAt": "2014-10-06T06:30:54.514Z",
+        "updatedAt": "2014-10-06T06:30:54.514Z",
+        "id": 1
+      }
+    ]
   },
   "schema": {
     "events": {
@@ -429,11 +447,12 @@
       "name": {
         "type": "string"
       },
+      "operator": {
+        "type": "string",
+        "defaultsTo": "&&"
+      },
       "conditions": {
         "type": "array"
-      },
-      "event": {
-        "type": "string"
       },
       "actions": {
         "type": "array"
@@ -465,6 +484,8 @@
     },
     "ruleactions": {},
     "ruleconditions": {},
-    "rules": {}
+    "rules": {
+      "id": 1
+    }
   }
 }

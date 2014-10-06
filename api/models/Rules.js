@@ -18,15 +18,16 @@ module.exports = {
       required: true
     },
 
+    // Used to decide whether all or any conditions need to be met
+    operator: {
+      type: 'string',
+      required: true,
+      defaultsTo: '&&'
+    },
+
     // Array of IDs associated to the required conditions
     conditions: {
       type: 'array',
-      required: true
-    },
-
-    // The action emitted by the input object to cause the rule to trigger
-    event: {
-      type: 'string',
       required: true
     },
 
