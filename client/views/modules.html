@@ -13,7 +13,7 @@
         </h3>
 
         <dl>
-          <dt ng-repeat-start="value in module.type.values">{{value.name}}</dt>
+          <dt ng-repeat-start="value in module.type.values">{{value.label}}</dt>
           <dd ng-repeat-end>{{module.values[value.name]}}</dd>
         </dl>
       </a>
@@ -28,7 +28,7 @@
 
       <div class="form-group" ng-repeat="value in active.type.values">
 
-        <label for="{{value.name}}">{{value.name}}</label>
+        <label for="{{value.name}}">{{value.label}}</label>
 
         <div ng-switch="value.type">
 
