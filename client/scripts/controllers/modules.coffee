@@ -6,7 +6,7 @@ angular.module('otttoApp')
     $scope.init = ->
       do fetch
 
-    
+
     $scope.activate = (active) ->
       $scope.active = active
 
@@ -33,6 +33,6 @@ angular.module('otttoApp')
       Modules.fetchAll().then (modules) -> $scope.modules = modules
       ModuleTypes.fetchAll().then (types) -> $scope.types = types
       ModuleGroups.fetchAll().then (groups) -> $scope.groups = groups
-    
+
 
     do $scope.init

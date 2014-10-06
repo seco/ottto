@@ -27,145 +27,157 @@
         "values": [
           {
             "type": "float",
-            "name": "Intensity",
+            "name": "intensity",
             "min": "0",
             "max": "100",
             "step": "1",
-            "default": "0"
+            "default": "0",
+            "label": "Intensity"
           },
           {
-            "name": "Power",
+            "name": "power",
             "type": "boolean",
             "truthy": "On",
             "falsey": "Off",
-            "default": "false"
+            "default": "false",
+            "label": "Power"
           }
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2014-09-16T09:23:43.332Z"
+        "updatedAt": "2014-10-06T00:54:15.575Z"
       },
       {
         "name": "Motion Sensor",
         "values": [
           {
-            "name": "Motion",
+            "name": "motion",
             "type": "boolean",
             "truthy": "Active",
             "falsey": "Inactive",
-            "default": "false"
+            "default": "false",
+            "label": "Motion"
           }
         ],
         "id": 2,
         "createdAt": "2014-09-10T08:54:57.482Z",
-        "updatedAt": "2014-10-05T22:30:51.924Z"
+        "updatedAt": "2014-10-06T00:53:59.338Z"
       },
       {
         "name": "RGB Bulb",
         "values": [
           {
-            "name": "Intensity",
+            "name": "intensity",
             "type": "float",
             "min": "0",
             "max": "100",
             "step": "1",
-            "default": 0
+            "default": 0,
+            "label": "Intensity"
           },
           {
-            "name": "Color",
-            "type": "string"
+            "name": "color",
+            "type": "string",
+            "label": "Color"
           },
           {
-            "name": "Power",
+            "name": "power",
             "type": "boolean",
             "truthy": "On",
-            "falsey": "Off"
+            "falsey": "Off",
+            "label": "Power"
           }
         ],
         "id": 5,
         "createdAt": "2014-09-16T08:48:33.557Z",
-        "updatedAt": "2014-09-16T08:56:21.780Z"
+        "updatedAt": "2014-10-06T00:54:29.268Z"
       },
       {
         "name": "Door Lock",
         "values": [
           {
-            "name": "Status",
+            "name": "status",
             "type": "boolean",
             "truthy": "Locked",
-            "falsey": "Unlocked"
+            "falsey": "Unlocked",
+            "label": "Status"
           }
         ],
         "id": 6,
         "createdAt": "2014-09-16T08:57:18.945Z",
-        "updatedAt": "2014-09-16T08:57:18.945Z"
+        "updatedAt": "2014-10-06T00:54:38.270Z"
       },
       {
         "name": "Contact Sensor",
         "values": [
           {
-            "name": "Status",
+            "name": "status",
             "type": "boolean",
             "truthy": "Closed",
             "falsey": "Open",
-            "default": true
+            "default": true,
+            "label": "Status"
           }
         ],
         "id": 7,
         "createdAt": "2014-09-16T08:58:35.329Z",
-        "updatedAt": "2014-09-16T08:58:35.329Z"
+        "updatedAt": "2014-10-06T00:54:44.317Z"
       },
       {
         "name": "Climate Sensor",
         "values": [
           {
-            "name": "Temperature",
+            "name": "temperature",
             "type": "float",
             "min": "-120",
             "max": "120",
             "step": "1",
-            "default": 0
+            "default": 0,
+            "label": "Temperature"
           },
           {
-            "name": "Humidity",
+            "name": "humidity",
             "type": "float",
             "min": "0",
             "max": "100",
             "step": "1",
-            "default": 0
+            "default": 0,
+            "label": "Humidity"
           }
         ],
         "id": 8,
         "createdAt": "2014-09-16T09:00:55.505Z",
-        "updatedAt": "2014-09-16T09:00:55.505Z"
+        "updatedAt": "2014-10-06T00:54:54.955Z"
       },
       {
         "name": "Video Camera",
         "values": [
           {
-            "name": "Power",
+            "name": "power",
             "type": "boolean",
             "truthy": "On",
-            "falsey": "Off"
+            "falsey": "Off",
+            "label": "Power"
           }
         ],
         "id": 9,
         "createdAt": "2014-09-16T09:02:22.470Z",
-        "updatedAt": "2014-09-16T09:02:22.470Z"
+        "updatedAt": "2014-10-06T00:55:00.194Z"
       },
       {
         "name": "Outlet Switch",
         "values": [
           {
-            "name": "Power",
+            "name": "power",
             "type": "boolean",
             "truthy": "On",
-            "falsey": "Off"
+            "falsey": "Off",
+            "label": "Power"
           }
         ],
         "id": 10,
         "createdAt": "2014-09-16T09:02:56.872Z",
-        "updatedAt": "2014-09-16T09:02:56.872Z"
+        "updatedAt": "2014-10-06T00:55:04.201Z"
       }
     ],
     "modules": [
