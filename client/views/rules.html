@@ -3,7 +3,8 @@
 <div class="row">
   <div class="col-md-4">
     <div class="list-group">
-      <div class="list-group-item active">
+      <div class="list-group-item"
+        ng-repeat="rule in rules">
         <h4 class="list-group-item-heading">{{rule.name}}</h4>
         <p class="list-group-item-text">
           {{rule.conditions.length}}
@@ -18,29 +19,37 @@
         </p>
       </div>
     </div>
+
+    <a class="btn btn-primary"
+      ng-click="addRule()">
+      New
+    </a>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-8"
+    ng-show="active">
+
     <div class="form-group">
       <input class="form-control input-lg"
-        ng-model="rule.name">
+        ng-model="active.name">
     </div>
 
     <div class="form form-inline">
-
+      <h3>Conditions</h3>
       <p class="lead">
         Match
         <select class="form-control" required
-          ng-model="rule.operator">
+          ng-model="active.operator">
           <option value="&&">all</option>
           <option value="||">any</option>
         </select>
         of the following condition(s):
       </p>
 
-      <div class="list-group">
+      <div class="list-group"
+        ng-show="active.conditions.length > 0">
         <div class="list-group-item"
-          ng-repeat="condition in rule.conditions">
+          ng-repeat="condition in active.conditions">
 
           <a class="close"
             ng-click="removeCondition(condition)">
@@ -58,16 +67,16 @@
               ng-change="updateValues(condition)"></select>
 
             <select class="form-control"
-              ng-options="value.name as value.label for value in values"
+              ng-options="value.name as value.label for value in condition.$values"
               ng-model="condition.value"
-              ng-change="updateOptions(condition)"
+              ng-change="updateValue(condition)"
               ng-show="condition.module"></select>
 
-            <span ng-switch="value.type">
+            <span ng-switch="condition.$value.type">
               <span ng-switch-when="boolean">
                 is
                 <select class="form-control"
-                  ng-options="option.value as option.label for option in value.options"
+                  ng-options="option.value as option.label for option in condition.$value.options"
                   ng-model="abc"></select>
               </span>
 
@@ -99,7 +108,43 @@
 
       <a class="btn btn-default btn-sm"
         ng-click="addCondition()">
-        Add
+        Add Condition
+      </a>
+
+      <hr>
+
+      <h3>Actions</h3>
+      <div class="list-group"
+        ng-show="active.actions.length > 0">
+
+        <div class="list-group-item"
+          ng-repeat="action in active.actions">
+
+          <a class="close"
+            ng-click="removeAction(action)">
+            &times;
+          </a>
+
+          <h4 class="list-group-item-heading">Action # {{$index + 1}}</h4>
+
+          <p class="list-group-item-text">
+
+            Then...
+
+          </p>
+        </div>
+      </div>
+
+      <a class="btn btn-default btn-sm"
+        ng-click="addAction()">
+        Add Action
+      </a>
+
+      <hr>
+
+      <a class="btn btn-primary"
+        ng-click="active.$save()">
+        Save
       </a>
     </div>
   </div>

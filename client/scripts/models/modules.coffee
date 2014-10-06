@@ -1,5 +1,5 @@
 angular.module('otttoApp')
-  .factory 'Modules', (ActiveRecord, ModuleTypes) ->
+  .factory 'Modules', (ActiveRecord) ->
 
     ActiveRecord.extend
 

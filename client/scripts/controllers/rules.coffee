@@ -10,31 +10,53 @@
 angular.module('otttoApp')
   .controller 'RulesController', ($scope, Modules, ModuleTypes) ->
 
+    $scope.rules = []
 
-    $scope.rule =
+    $scope.active =
       name: 'Custom Rule'
       operator: '&&'
-      conditions: [{}]
+      conditions: []
       actions: []
+
+    $scope.rules.push $scope.active
+
+    window.active = $scope.active
 
     $scope.init = ->
       do fetch
 
 
+    $scope.addRule = ->
+      $scope.rules.push {
+        name: 'New Rule'
+        operator: '&&'
+        conditions: []
+        actions: []
+      }
+
+
     $scope.addCondition = ->
-      $scope.rule.conditions.push {}
+      $scope.active.conditions.push {}
 
 
     $scope.removeCondition = (condition) ->
-      $scope.rule.conditions.splice $scope.rule.conditions.indexOf(condition), 1
+      $scope.active.conditions.splice $scope.active.conditions.indexOf(condition), 1
 
 
     $scope.updateValues = (condition) ->
-      $scope.values = module.type.values for module in $scope.modules when module.id is condition.module
+      condition.$values = module.type.values for module in $scope.modules when module.id is condition.module
 
 
-    $scope.updateOptions = (condition) ->
-      $scope.value = value for value in $scope.values when value.name is condition.value
+    $scope.updateValue = (condition) ->
+      condition.$value = value for value in condition.$values when value.name is condition.value
+
+
+    $scope.addAction = ->
+      $scope.active.actions.push {}
+
+
+    $scope.removeAction = (action) ->
+      $scope.active.actions.splice $scope.active.actions.indexOf(action), 1
 
 
     fetch = ->
