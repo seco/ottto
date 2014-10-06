@@ -12,7 +12,7 @@
         "name": "Porch",
         "id": 3,
         "createdAt": "2014-09-13T07:26:56.401Z",
-        "updatedAt": "2014-09-16T09:23:43.333Z"
+        "updatedAt": "2014-10-06T06:07:40.328Z"
       },
       {
         "name": "Kitchen",
@@ -32,7 +32,8 @@
             "max": "100",
             "step": "1",
             "default": "0",
-            "label": "Level"
+            "label": "Level",
+            "metric": "%"
           },
           {
             "name": "power",
@@ -54,7 +55,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2014-10-06T03:32:28.219Z"
+        "updatedAt": "2014-10-06T06:08:31.640Z"
       },
       {
         "name": "Motion Sensor",
@@ -98,7 +99,8 @@
             "max": "100",
             "step": "1",
             "default": 0,
-            "label": "Intensity"
+            "label": "Intensity",
+            "metric": "%"
           },
           {
             "name": "color",
@@ -124,7 +126,7 @@
         ],
         "id": 5,
         "createdAt": "2014-09-16T08:48:33.557Z",
-        "updatedAt": "2014-10-06T02:25:45.066Z"
+        "updatedAt": "2014-10-06T06:06:36.672Z"
       },
       {
         "name": "Door Lock",
@@ -185,7 +187,8 @@
             "max": "120",
             "step": "1",
             "default": 0,
-            "label": "Temperature"
+            "label": "Temperature",
+            "metric": "°"
           },
           {
             "name": "humidity",
@@ -199,7 +202,7 @@
         ],
         "id": 8,
         "createdAt": "2014-09-16T09:00:55.505Z",
-        "updatedAt": "2014-10-06T00:54:54.955Z"
+        "updatedAt": "2014-10-06T06:07:09.971Z"
       },
       {
         "name": "Video Camera",
@@ -258,11 +261,12 @@
         "values": {
           "Intensity": "70",
           "power": true,
-          "Power": true
+          "Power": true,
+          "level": "66"
         },
         "id": 8,
         "createdAt": "2014-09-13T07:48:45.278Z",
-        "updatedAt": "2014-09-16T09:23:43.344Z"
+        "updatedAt": "2014-10-06T06:07:40.342Z"
       },
       {
         "name": "Hallway Motion",
