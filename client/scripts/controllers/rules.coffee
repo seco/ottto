@@ -10,14 +10,6 @@
 angular.module('otttoApp')
   .controller 'RulesController', ($scope, Rules, Modules, ModuleTypes) ->
 
-    # $scope.active =
-    #   name: 'Custom Rule'
-    #   operator: '&&'
-    #   conditions: []
-    #   actions: []
-
-    # $scope.rules.push $scope.active
-
     $scope.init = ->
       do fetch
 
@@ -27,13 +19,6 @@ angular.module('otttoApp')
 
 
     $scope.addRule = ->
-      # $scope.rules.push {
-      #   name: 'New Rule'
-      #   operator: '&&'
-      #   conditions: []
-      #   actions: []
-      # }
-
       $scope.rules.push new Rules
 
 
@@ -43,14 +28,6 @@ angular.module('otttoApp')
 
     $scope.removeCondition = (condition) ->
       $scope.active.conditions.splice $scope.active.conditions.indexOf(condition), 1
-
-
-    $scope.updateValues = (condition) ->
-      condition.$values = module.type.values for module in $scope.modules when module.id is condition.module
-
-
-    $scope.updateValue = (condition) ->
-      condition.$value = value for value in condition.$values when value.name is condition.value
 
 
     $scope.addAction = ->

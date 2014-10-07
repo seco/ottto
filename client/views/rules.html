@@ -49,8 +49,10 @@
 
       <div class="list-group"
         ng-show="active.conditions.length > 0">
+
         <div class="list-group-item"
-          ng-repeat="condition in active.conditions">
+          ng-repeat="condition in active.conditions"
+          ng-controller="RuleConditionsController">
 
           <a class="close"
             ng-click="removeCondition(condition)">
@@ -64,21 +66,19 @@
 
             <select class="form-control"
               ng-options="module.id as module.name for module in modules"
-              ng-model="condition.module"
-              ng-change="updateValues(condition)"></select>
+              ng-model="condition.module"></select>
 
             <select class="form-control"
-              ng-options="value.name as value.label for value in condition.$values"
+              ng-options="value.name as value.label for value in values"
               ng-model="condition.value"
-              ng-change="updateValue(condition)"
               ng-show="condition.module"></select>
 
-            <span ng-switch="condition.$value.type">
+            <span ng-switch="value.type">
               <span ng-switch-when="boolean">
                 is
 
                 <select class="form-control"
-                  ng-options="option.value as option.label for option in condition.$value.options"
+                  ng-options="option.value as option.label for option in value.options"
                   ng-model="condition.argument"></select>
               </span>
 

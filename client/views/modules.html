@@ -14,7 +14,9 @@
 
         <dl>
           <dt ng-repeat-start="value in module.type.values">{{value.label}}</dt>
-          <dd ng-repeat-end>{{module.values[value.name]}}</dd>
+          <dd ng-repeat-end>
+            {{module.values[value.name] || 0}}{{value.metric}}
+          </dd>
         </dl>
       </a>
     </div>
@@ -61,7 +63,7 @@
                 <input type="checkbox" name="{{value.name}}"
                   ng-model="active.values[value.name]"
                   ng-change="active.$save()">
-                On
+                {{value.options.1.label}}
               </label>
             </div>
           </div>
