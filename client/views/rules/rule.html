@@ -1,0 +1,65 @@
+<div class="form-group">
+  <input class="form-control input-lg"
+    ng-model="active.name">
+</div>
+
+<div class="form form-inline">
+  <h3>Conditions</h3>
+  <p class="lead">
+    Match
+    <select class="form-control" required
+      ng-model="active.operator">
+      <option value="&&">all</option>
+      <option value="||">any</option>
+    </select>
+    of the following condition(s):
+  </p>
+
+  <div class="list-group"
+    ng-show="active.conditions.length > 0">
+
+    <div class="list-group-item"
+      ng-repeat="condition in active.conditions"
+      ng-controller="RuleConditionsController"
+      ng-include="'views/rules/condition.html'"></div>
+  </div>
+
+  <a class="btn btn-default btn-sm"
+    ng-click="addCondition()">
+    Add Condition
+  </a>
+
+  <hr>
+
+  <h3>Actions</h3>
+  <div class="list-group"
+    ng-show="active.actions.length > 0">
+
+    <div class="list-group-item"
+      ng-repeat="action in active.actions"
+      ng-include="'views/rules/action.html'">
+    </div>
+  </div>
+
+  <a class="btn btn-default btn-sm"
+    ng-click="addAction()">
+    Add Action
+  </a>
+
+  <hr>
+
+  <a class="btn btn-primary"
+    ng-click="save()">
+    Save
+  </a>
+
+  <a class="btn btn-default"
+    ng-click="cancel()">
+    Cancel
+  </a>
+
+  <a class="btn btn-danger"
+    ng-click="delete()">
+    Delete
+  </a>
+</div>
