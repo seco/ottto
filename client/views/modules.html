@@ -5,7 +5,8 @@
     <div class="list-group">
       <a class="list-group-item"
         ng-click="activate(module)"
-        ng-repeat="module in modules">
+        ng-repeat="module in modules"
+        ng-class="{'active':isActive(module)">
 
         <h3 class="list-group-item-heading">
           {{module.name}}
@@ -21,7 +22,7 @@
       </a>
     </div>
 
-    <a class="btn btn-primary" ng-click="blank()">New</a>
+    <a class="btn btn-primary" ng-click="new()">New</a>
   </div>
 
   <div class="col-md-8"

@@ -30,7 +30,7 @@ angular.module('otttoApp')
 
 
     $scope.save = ->
-      $scope.rule.$save()
+      do $scope.rule.$save
 
 
     $scope.cancel = ->
@@ -38,7 +38,7 @@ angular.module('otttoApp')
 
 
     $scope.delete = ->
-      $scope.rule.$destroy().then fetch
+      do $scope.rule.$destroy
       delete $scope.rule
 
 

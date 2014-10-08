@@ -14,8 +14,12 @@ angular.module('otttoApp')
       do fetch
 
 
-    $scope.activate = (rule) ->
-      $scope.rule = rule
+    $scope.activate = (active) ->
+      $scope.rule = active
+
+
+    $scope.new = ->
+      $scope.rule = new Rules
 
 
     fetch = ->
