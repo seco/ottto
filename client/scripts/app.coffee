@@ -12,7 +12,8 @@ angular
   .module('otttoApp', [
     'ngResource'
     'ngRoute'
-    'ActiveRecord'
+    'ActiveRecord',
+    'ui.knob'
   ])
 
 

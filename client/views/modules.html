@@ -38,21 +38,27 @@
           <div ng-switch-when="float">
             <div class="row">
               <div class="col-xs-4">
-                <div class="input-group">
+                <knob knob-data="active.values[value.name]"
+                  knob-min="{{value.min}}"
+                  knob-max="{{value.max}}"
+                  knob-options="{width:200,angleOffset:-125,angleArc:250}"
+                  ng-model="active.values[value.name]"></knob>
+
+                <!-- <div class="input-group">
                   <input type="text" name="{{value.name}}" class="form-control"
                     ng-model="active.values[value.name]">
 
                   <span class="input-group-addon">{{value.metric}}</span>
-                </div>
+                </div> -->
               </div>
 
-              <div class="col-xs-8">
+              <!-- <div class="col-xs-8">
                 <input type="range"
                   min="{{value.min}}"
                   max="{{value.max}}"
                   step="{{value.step}}"
                   ng-model="active.values[value.name]">
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -61,6 +67,7 @@
             <div class="checkbox">
               <label>
                 <input type="checkbox" name="{{value.name}}"
+                  bs-switch
                   ng-model="active.values[value.name]"
                   ng-change="active.$save()">
                 {{value.options.1.label}}

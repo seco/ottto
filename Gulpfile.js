@@ -45,12 +45,19 @@ gulp.task('build-scripts-vendor', function() {
   return gulp.src([
       'bower_components/lodash/dist/lodash.js',
       'bower_components/modernizr/modernizr.js',
-      'bower_components/jquery/dist/jquery.js',
+      'bower_components/jquery/jquery.js',
+      'bower_components/jquery-knob/js/jquery.knob.js',
+      'bower_components/bootstrap-switch/dist/js/bootstrap-switch.js',
+
       'bower_components/socket.io-client/socket.io.js',
+
       'bower_components/angular/angular.js',
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-activerecord/src/angular-activerecord.js',
       'bower_components/angular-route/angular-route.js',
+      'bower_components/angular-knob/src/angular-knob.js',
+      'bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js',
+
       'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js'
     ])
     .pipe(concat('vendor.js'))
