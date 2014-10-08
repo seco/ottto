@@ -1,6 +1,6 @@
 <div class="form-group">
   <input class="form-control input-lg"
-    ng-model="active.name">
+    ng-model="rule.name">
 </div>
 
 <div class="form form-inline">
@@ -8,7 +8,7 @@
   <p class="lead">
     Match
     <select class="form-control" required
-      ng-model="active.operator">
+      ng-model="rule.operator">
       <option value="&&">all</option>
       <option value="||">any</option>
     </select>
@@ -16,10 +16,10 @@
   </p>
 
   <div class="list-group"
-    ng-show="active.conditions.length > 0">
+    ng-show="rule.conditions.length > 0">
 
     <div class="list-group-item"
-      ng-repeat="condition in active.conditions"
+      ng-repeat="condition in rule.conditions"
       ng-controller="RuleConditionController"
       ng-include="'views/rules/condition.html'"></div>
   </div>
@@ -33,10 +33,10 @@
 
   <h3>Actions</h3>
   <div class="list-group"
-    ng-show="active.actions.length > 0">
+    ng-show="rule.actions.length > 0">
 
     <div class="list-group-item"
-      ng-repeat="action in active.actions"
+      ng-repeat="action in rule.actions"
       ng-include="'views/rules/action.html'">
     </div>
   </div>

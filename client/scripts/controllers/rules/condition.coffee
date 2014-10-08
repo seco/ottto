@@ -23,10 +23,12 @@ angular.module('otttoApp')
 
 
     onModule = (mod) ->
+      return unless mod
       $scope.values = module.type.values for module in $scope.modules when module.id is mod
 
 
     onValue = (val) ->
+      return unless val
       $scope.value = value for value in $scope.values when value.name is val
 
 
