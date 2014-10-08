@@ -30,7 +30,7 @@ angular.module('otttoApp')
 
 
     $scope.save = ->
-      $scope.rule.$save().then fetch
+      $scope.rule.$save()
 
 
     $scope.cancel = ->
