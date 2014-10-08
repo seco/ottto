@@ -32,7 +32,15 @@ gulp.task('default', [ 'build', 'watch' ]);
 
 gulp.task('build', [ 'build-styles', 'build-scripts', 'build-assets' ]);
 
-gulp.task('build-styles', function() {
+gulp.task('build-styles', [ 'build-styles-vendor', 'build-styles-application' ]);
+
+gulp.task('build-styles-vendor', function() {
+  return gulp.src([ 'bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css' ])
+    .pipe(rename({ prefix: '_', extname: '.scss' }))
+    .pipe(gulp.dest('./client/styles/vendors/'))
+});
+
+gulp.task('build-styles-application', [ 'build-styles-vendor' ], function() {
   return gulp.src([ './client/styles/main.scss' ])
     .pipe(sass())
     .pipe(rename('screen.css'))
@@ -43,22 +51,22 @@ gulp.task('build-scripts', [ 'build-scripts-vendor', 'build-scripts-application'
 
 gulp.task('build-scripts-vendor', function() {
   return gulp.src([
-      'bower_components/lodash/dist/lodash.js',
-      'bower_components/modernizr/modernizr.js',
-      'bower_components/jquery/jquery.js',
-      'bower_components/jquery-knob/js/jquery.knob.js',
-      'bower_components/bootstrap-switch/dist/js/bootstrap-switch.js',
+      './bower_components/lodash/dist/lodash.js',
+      './bower_components/modernizr/modernizr.js',
+      './bower_components/jquery/jquery.js',
+      './bower_components/jquery-knob/js/jquery.knob.js',
 
-      'bower_components/socket.io-client/socket.io.js',
+      './bower_components/socket.io-client/socket.io.js',
 
-      'bower_components/angular/angular.js',
-      'bower_components/angular-resource/angular-resource.js',
-      'bower_components/angular-activerecord/src/angular-activerecord.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-knob/src/angular-knob.js',
-      'bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js',
+      './bower_components/angular/angular.js',
+      './bower_components/angular-resource/angular-resource.js',
+      './bower_components/angular-activerecord/src/angular-activerecord.js',
+      './bower_components/angular-route/angular-route.js',
+      './bower_components/angular-knob/src/angular-knob.js',
+      './bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js',
 
-      'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js'
+      './bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
+      './bower_components/bootstrap-switch/dist/js/bootstrap-switch.js'
     ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('.tmp/public/scripts/'));
