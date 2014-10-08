@@ -11,7 +11,7 @@ angular.module('otttoApp')
   .controller 'RuleController', ($scope, Modules, ModuleTypes) ->
 
     $scope.init = ->
-      do fetch
+      # do fetch
 
 
     $scope.addCondition = ->
@@ -43,9 +43,9 @@ angular.module('otttoApp')
       delete $scope.rule
 
 
-    fetch = ->
-      Modules.fetchAll().then (modules) -> $scope.modules = modules
-      ModuleTypes.fetchAll().then (modules) -> $scope.types = modules
+    # fetch = ->
+    #   Modules.fetchAll().then (modules) -> $scope.modules = modules
+    #   ModuleTypes.fetchAll().then (modules) -> $scope.types = modules
 
 
     do $scope.init
