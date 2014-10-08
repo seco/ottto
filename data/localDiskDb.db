@@ -12,7 +12,7 @@
         "name": "Porch",
         "id": 3,
         "createdAt": "2014-09-13T07:26:56.401Z",
-        "updatedAt": "2014-10-08T22:18:11.295Z"
+        "updatedAt": "2014-10-08T22:23:06.885Z"
       },
       {
         "name": "Kitchen",
@@ -55,7 +55,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2014-10-08T22:18:11.294Z"
+        "updatedAt": "2014-10-08T22:23:06.883Z"
       },
       {
         "name": "Motion Sensor",
@@ -260,13 +260,13 @@
         "group": 3,
         "values": {
           "Intensity": "70",
-          "power": true,
+          "power": false,
           "Power": true,
           "level": "66"
         },
         "id": 8,
         "createdAt": "2014-09-13T07:48:45.278Z",
-        "updatedAt": "2014-10-08T22:18:11.305Z"
+        "updatedAt": "2014-10-08T22:23:06.898Z"
       },
       {
         "name": "Hallway Motion",
