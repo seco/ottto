@@ -1,4 +1,4 @@
-angular.module('otttoApp')
+angular.module('OtttoApp')
   .factory 'ModuleTypes', (ActiveRecord) ->
 
     ActiveRecord.extend

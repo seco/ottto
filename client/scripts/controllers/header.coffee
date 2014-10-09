@@ -1,4 +1,4 @@
 'use strict'
 
-angular.module('otttoApp')
+angular.module('OtttoApp')
   .controller 'HeaderCtrl', ($scope) ->

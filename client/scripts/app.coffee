@@ -1,7 +1,7 @@
 'use strict'
 
 angular
-  .module('otttoApp', [
+  .module('OtttoApp', [
     'ngResource'
     'ngRoute'
     'ActiveRecord',
