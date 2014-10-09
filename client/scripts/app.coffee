@@ -1,13 +1,5 @@
 'use strict'
 
-###*
- # @ngdoc overview
- # @name otttoApp
- # @description
- # # otttoApp
- #
- # Main module of the application.
-###
 angular
   .module('otttoApp', [
     'ngResource'

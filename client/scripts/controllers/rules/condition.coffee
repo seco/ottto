@@ -1,15 +1,7 @@
 'use strict'
 
-###*
- # @ngdoc function
- # @name otttoApp.controller:RulesCtrl
- # @description
- # # RulesCtrl
- # Controller of the otttoApp
-###
 angular.module('otttoApp')
   .controller 'RuleConditionController', ($scope, $q, Modules, ModuleTypes) ->
-
 
     $scope.init = ->
       $q
