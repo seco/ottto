@@ -11,6 +11,10 @@ angular.module('OtttoApp')
       $scope.module = active
 
 
+    $scope.isActive = (module) ->
+      $scope.module is module
+
+
     $scope.new = ->
       $scope.module = new Modules
 
