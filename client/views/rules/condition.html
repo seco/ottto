@@ -9,7 +9,7 @@
   If
 
   <select class="form-control"
-    ng-options="module.id as module.name for module in modules"
+    ng-options="module.id as module.name group by module.type.name for module in modules"
     ng-model="condition.module"></select>
 
   <select class="form-control"

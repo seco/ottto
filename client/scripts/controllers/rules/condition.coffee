@@ -12,7 +12,10 @@ angular.module('otttoApp')
 
 
     $scope.init = ->
-      $q.all([ Modules.fetchAll(), ModuleTypes.fetchAll() ]).then( setup )
+      $q
+        .all([ Modules.fetchAll(), ModuleTypes.fetchAll() ])
+        .then( setup )
+
 
     setup = (results) ->
       $scope.modules = results[0]
@@ -22,14 +25,14 @@ angular.module('otttoApp')
       $scope.$watch 'condition.value', onValue
 
 
-    onModule = (mod) ->
-      return unless mod
-      $scope.values = module.type.values for module in $scope.modules when module.id is mod
+    onModule = (id) ->
+      return unless id
+      $scope.values = module.type.values for module in $scope.modules when module.id is id
 
 
-    onValue = (val) ->
-      return unless val
-      $scope.value = value for value in $scope.values when value.name is val
+    onValue = (name) ->
+      return unless name
+      $scope.value = value for value in $scope.values when value.name is name
 
 
     do $scope.init
