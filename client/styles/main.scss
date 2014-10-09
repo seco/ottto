@@ -1,6 +1,9 @@
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700");
+
+@import "bootstrap";
 @import "vendors/bootstrap-switch";
 
 body {
   padding-top: 50px;
+  font-weight: 300;
 }
