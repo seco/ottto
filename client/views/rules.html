@@ -5,7 +5,8 @@
     <div class="list-group">
       <a class="list-group-item"
         ng-repeat="rule in rules"
-        ng-click="activate(rule)">
+        ng-href="/#/rules/{{rule.id}}">
+
         <h4 class="list-group-item-heading">{{rule.name}}</h4>
         <p class="list-group-item-text">
           {{rule.conditions.length}}

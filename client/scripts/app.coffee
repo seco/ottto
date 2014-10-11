@@ -15,7 +15,7 @@ angular
       .when '/',
         templateUrl: 'views/main.html'
         controller: 'MainController'
-      .when '/modules',
+      .when '/modules/:id',
         templateUrl: 'views/modules.html'
         controller: 'ModulesController'
       .when '/moduletypes',
@@ -27,5 +27,11 @@ angular
       .when '/rules',
         templateUrl: 'views/rules.html'
         controller: 'RulesController'
+      .when '/rules/:id',
+        templateUrl: 'views/rules.html'
+        controller: 'RulesController'
+
       .otherwise
         redirectTo: '/'
+
+    # $locationProvider.html5Mode yes

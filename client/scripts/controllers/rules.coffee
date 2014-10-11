@@ -1,14 +1,10 @@
 'use strict'
 
 angular.module('OtttoApp')
-  .controller 'RulesController', ($scope, Rules) ->
+  .controller 'RulesController', ($scope, $routeParams, Rules) ->
 
     $scope.init = ->
       do fetch
-
-
-    $scope.activate = (active) ->
-      $scope.rule = active
 
 
     $scope.new = ->
@@ -16,7 +12,9 @@ angular.module('OtttoApp')
 
 
     fetch = ->
-      Rules.fetchAll().then (rules) -> $scope.rules = rules
+      Rules.fetchAll().then (rules) ->
+        $scope.rules = rules
+        $scope.rule = _(rules).find id: (Number) $routeParams.id
 
 
     do $scope.init
