@@ -37,9 +37,4 @@ angular.module('OtttoApp')
       $scope.active.verbs.splice( $scope.active.verbs.indexOf(verb), 1 )
 
 
-    $scope.addOption = (value) ->
-      value.options = new Array if not Array.isArray value.options
-      value.options?.push {}
-
-
     # fetch = ->
