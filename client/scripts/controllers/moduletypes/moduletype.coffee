@@ -24,10 +24,6 @@ angular.module('OtttoApp')
       $scope.active.adjectives?.push {}
 
 
-    $scope.removeAdjective = (adjective) ->
-      $scope.active.adjectives.splice( $scope.active.adjectives.indexOf(adjective), 1 )
-
-
     $scope.addVerb = ->
       $scope.active.verbs = new Array if not Array.isArray $scope.active.verbs
       $scope.active.verbs?.push {}
