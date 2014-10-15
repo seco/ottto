@@ -36,13 +36,22 @@ angular.module('OtttoApp')
       delete $scope.active
 
 
-    $scope.addValue = (type) ->
-      type.values = new Array if not Array.isArray type.values
-      type.values?.push {}
+    $scope.addAdjective = ->
+      $scope.active.adjectives = new Array if not Array.isArray $scope.active.adjectives
+      $scope.active.adjectives?.push {}
 
 
-    $scope.removeValue = (type, value) ->
-      type.values.splice( type.values.indexOf(value), 1 )
+    $scope.removeAdjective = (adjective) ->
+      $scope.active.adjectives.splice( $scope.active.adjectives.indexOf(adjective), 1 )
+
+
+    $scope.addVerb = ->
+      $scope.active.verbs = new Array if not Array.isArray $scope.active.verbs
+      $scope.active.verbs?.push {}
+
+
+    $scope.removeVerb = (verb) ->
+      $scope.active.verbs.splice( $scope.active.verbs.indexOf(verb), 1 )
 
 
     $scope.addOption = (value) ->

@@ -32,6 +32,8 @@
           </div>
         </div>
 
+        <hr>
+
         <div class="form-group">
           <label class="control-label col-md-2">Adjectives</label>
           <div class="col-md-10">
@@ -39,7 +41,7 @@
             <div class="row" ng-repeat="adjective in active.adjectives">
               <div class="col-md-1">
                 <a class="btn btn-danger"
-                  ng-click="removeValue(active, adjective)">&times;</a>
+                  ng-click="removeAdjective(adjective)">&times;</a>
               </div>
 
               <div class="col-md-3">
@@ -168,12 +170,28 @@
           </div>
         </div>
 
+        <hr>
+
         <div class="form-group">
           <label class="control-label col-md-2">Verbs</label>
 
           <div class="col-md-10">
 
             <div class="row" ng-repeat="verb in active.verbs">
+              <div class="col-md-1">
+                <a class="btn btn-danger"
+                  ng-click="removeVerb(verb)">&times;</a>
+              </div>
+
+              <div class="col-md-3">
+                <input type="text" name="name" class="form-control" placeholder="Name"
+                  ng-model="verb.name">
+              </div>
+
+              <div class="col-md-3">
+                <input type="text" name="label" class="form-control" placeholder="Name"
+                  ng-model="verb.label">
+              </div>
             </div>
 
             <a class="btn btn-default" ng-click="addVerb(active)">Add Verb</a>
