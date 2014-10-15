@@ -33,23 +33,23 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-md-2">Values</label>
+          <label class="control-label col-md-2">Adjectives</label>
           <div class="col-md-10">
 
-            <div class="row" ng-repeat="value in active.values">
+            <div class="row" ng-repeat="adjective in active.adjectives">
               <div class="col-md-1">
                 <a class="btn btn-danger"
-                  ng-click="removeValue(active, value)">&times;</a>
+                  ng-click="removeValue(active, adjective)">&times;</a>
               </div>
 
               <div class="col-md-3">
                 <input type="text" name="name" class="form-control" placeholder="Name"
-                  ng-model="value.name">
+                  ng-model="adjective.name">
               </div>
 
               <div class="col-md-3">
                 <input type="text" name="label" class="form-control" placeholder="Name"
-                  ng-model="value.label">
+                  ng-model="adjective.label">
               </div>
 
               <div class="col-md-5">
@@ -57,11 +57,11 @@
                   <div class="col-xs-12">
                     <select name="type" class="form-control"
                       ng-options="type for type in valueTypes"
-                      ng-model="value.type"></select>
+                      ng-model="adjective.type"></select>
                   </div>
                 </div>
 
-                <div ng-switch="value.type">
+                <div ng-switch="adjective.type">
                   <!-- String -->
                   <div ng-switch-when="string">
 
@@ -72,29 +72,29 @@
                     <div class="form-group">
                       <div class="col-sm-4">
                         <input type="text" name="min" class="form-control" placeholder="Min"
-                          ng-model="value.min">
+                          ng-model="adjective.min">
                       </div>
 
                       <div class="col-sm-4">
                         <input type="text" name="max" class="form-control" placeholder="Max"
-                          ng-model="value.max">
+                          ng-model="adjective.max">
                       </div>
 
                       <div class="col-sm-4">
                         <input type="text" name="step" class="form-control" placeholder="Step"
-                          ng-model="value.step">
+                          ng-model="adjective.step">
                       </div>
                     </div>
 
                     <div class="form-group">
                       <div class="col-xs-6">
                         <input type="number" name="default" class="form-control" placeholder="Default"
-                          ng-model="value.default">
+                          ng-model="adjective.default">
                       </div>
 
                       <div class="col-xs-6">
                         <input type="text" name="metric" class="form-control" placeholder="Metric"
-                          ng-model="value.metric">
+                          ng-model="adjective.metric">
                       </div>
                     </div>
                   </div>
@@ -104,14 +104,14 @@
                     <div class="form-group">
                       <div class="col-xs-6">
                         <input type="text" name="label" class="form-control" placeholder="Falsey"
-                          ng-model="value.options.0.label"
-                          ng-init="value.options.1.value=false">
+                          ng-model="adjective.options.0.label"
+                          ng-init="adjective.options.1.value=false">
                       </div>
 
                       <div class="col-xs-6">
                         <input type="text" name="label" class="form-control" placeholder="Truthy"
-                          ng-model="value.options.1.label"
-                          ng-init="value.options.1.value=true">
+                          ng-model="adjective.options.1.label"
+                          ng-init="adjective.options.1.value=true">
                       </div>
                     </div>
 
@@ -119,7 +119,7 @@
                       <div class="col-xs-12">
                         <div class="checkbox">
                           <label>
-                            <input type="checkbox" name="default" ng-model="value.default">
+                            <input type="checkbox" name="default" ng-model="adjective.default">
                             Default
                           </label>
                         </div>
@@ -129,7 +129,7 @@
 
                   <!-- Radios -->
                   <div ng-switch-when="radios">
-                    <div class="form-group" ng-repeat="option in value.options">
+                    <div class="form-group" ng-repeat="option in adjective.options">
                       <div class="col-sm-6">
                         <input type="text" name="value" class="form-control" placeholder="Value"
                           ng-model="option.value">
@@ -141,12 +141,12 @@
                       </div>
                     </div>
 
-                    <a class="btn btn-xs btn-primary" ng-click="addOption(value)">Add Option</a>
+                    <a class="btn btn-xs btn-primary" ng-click="addOption(adjective)">Add Option</a>
                   </div>
 
                   <!-- Checkboxes -->
                   <div ng-switch-when="checkboxes">
-                    <div class="form-group" ng-repeat="option in value.options">
+                    <div class="form-group" ng-repeat="option in adjective.options">
                       <div class="col-sm-6">
                         <input type="text" name="value" class="form-control" placeholder="Value"
                           ng-model="option.value">
@@ -158,13 +158,26 @@
                       </div>
                     </div>
 
-                    <a class="btn btn-default" ng-click="addOption(value)">Add Option</a>
+                    <a class="btn btn-default" ng-click="addOption(adjective)">Add Option</a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <a class="btn btn-default" ng-click="addValue(active)">Add Value</a>
+            <a class="btn btn-default" ng-click="addAdjective(active)">Add Adjective</a>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-md-2">Verbs</label>
+
+          <div class="col-md-10">
+
+            <div class="row" ng-repeat="verb in active.verbs">
+            </div>
+
+            <a class="btn btn-default" ng-click="addVerb(active)">Add Verb</a>
+
           </div>
         </div>
       </fieldset>

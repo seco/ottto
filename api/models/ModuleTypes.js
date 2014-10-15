@@ -14,7 +14,12 @@ module.exports = {
       required: true
     },
 
-    values: {
+    adjectives: {
+      type: 'json',
+      required: true
+    },
+
+    verbs: {
       type: 'json',
       required: true
     }
