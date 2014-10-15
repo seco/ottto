@@ -15,6 +15,9 @@ angular
       .when '/',
         templateUrl: 'views/main.html'
         controller: 'MainController'
+      .when '/modules',
+        templateUrl: 'views/modules.html'
+        controller: 'ModulesController'
       .when '/modules/:id',
         templateUrl: 'views/modules.html'
         controller: 'ModulesController'
