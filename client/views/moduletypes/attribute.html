@@ -1,17 +1,17 @@
 <div class="row">
   <div class="col-md-1">
     <a class="btn btn-danger"
-      ng-click="removeAdjective()">&times;</a>
+      ng-click="remove()">&times;</a>
   </div>
 
   <div class="col-md-3">
     <input type="text" name="name" class="form-control" placeholder="Name"
-      ng-model="adjective.name">
+      ng-model="attribute.name">
   </div>
 
   <div class="col-md-3">
     <input type="text" name="label" class="form-control" placeholder="Name"
-      ng-model="adjective.label">
+      ng-model="attribute.label">
   </div>
 
   <div class="col-md-5">
@@ -19,11 +19,11 @@
       <div class="col-xs-12">
         <select name="type" class="form-control"
           ng-options="type for type in valueTypes"
-          ng-model="adjective.type"></select>
+          ng-model="attribute.type"></select>
       </div>
     </div>
 
-    <div ng-switch="adjective.type">
+    <div ng-switch="attribute.type">
       <!-- String -->
       <div ng-switch-when="string">
 
@@ -34,29 +34,29 @@
         <div class="form-group">
           <div class="col-sm-4">
             <input type="text" name="min" class="form-control" placeholder="Min"
-              ng-model="adjective.min">
+              ng-model="attribute.min">
           </div>
 
           <div class="col-sm-4">
             <input type="text" name="max" class="form-control" placeholder="Max"
-              ng-model="adjective.max">
+              ng-model="attribute.max">
           </div>
 
           <div class="col-sm-4">
             <input type="text" name="step" class="form-control" placeholder="Step"
-              ng-model="adjective.step">
+              ng-model="attribute.step">
           </div>
         </div>
 
         <div class="form-group">
           <div class="col-xs-6">
             <input type="number" name="default" class="form-control" placeholder="Default"
-              ng-model="adjective.default">
+              ng-model="attribute.default">
           </div>
 
           <div class="col-xs-6">
             <input type="text" name="metric" class="form-control" placeholder="Metric"
-              ng-model="adjective.metric">
+              ng-model="attribute.metric">
           </div>
         </div>
       </div>
@@ -66,14 +66,14 @@
         <div class="form-group">
           <div class="col-xs-6">
             <input type="text" name="label" class="form-control" placeholder="Falsey"
-              ng-model="adjective.options.0.label"
-              ng-init="adjective.options.1.value=false">
+              ng-model="attribute.options.0.label"
+              ng-init="attribute.options.1.value=false">
           </div>
 
           <div class="col-xs-6">
             <input type="text" name="label" class="form-control" placeholder="Truthy"
-              ng-model="adjective.options.1.label"
-              ng-init="adjective.options.1.value=true">
+              ng-model="attribute.options.1.label"
+              ng-init="attribute.options.1.value=true">
           </div>
         </div>
 
@@ -81,7 +81,7 @@
           <div class="col-xs-12">
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="default" ng-model="adjective.default">
+                <input type="checkbox" name="default" ng-model="attribute.default">
                 Default
               </label>
             </div>
@@ -91,7 +91,7 @@
 
       <!-- Radios -->
       <div ng-switch-when="radios">
-        <div class="form-group" ng-repeat="option in adjective.options">
+        <div class="form-group" ng-repeat="option in attribute.options">
           <div class="col-sm-2">
             <a class="btn btn-danger"
               ng-click="removeOption(option)">&times;</a>
@@ -113,7 +113,7 @@
 
       <!-- Checkboxes -->
       <div ng-switch-when="checkboxes">
-        <div class="form-group" ng-repeat="option in adjective.options">
+        <div class="form-group" ng-repeat="option in attribute.options">
           <div class="col-sm-6">
             <input type="text" name="value" class="form-control" placeholder="Value"
               ng-model="option.value">

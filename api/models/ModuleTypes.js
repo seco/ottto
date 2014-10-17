@@ -14,12 +14,12 @@ module.exports = {
       required: true
     },
 
-    adjectives: {
+    attributes: {
       type: 'json',
       required: true
     },
 
-    verbs: {
+    methods: {
       type: 'json',
       required: true
     }

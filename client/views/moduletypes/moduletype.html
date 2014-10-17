@@ -12,42 +12,42 @@
     <hr>
 
     <div class="form-group">
-      <label class="control-label col-md-2">Adjectives</label>
+      <label class="control-label col-md-2">Attributes</label>
       <div class="col-md-10">
 
-        <div ng-repeat="adjective in active.adjectives"
-          ng-controller="ModuleTypeAdjectiveController"
-          ng-include="'views/moduletypes/adjective.html'"></div>
+        <div ng-repeat="attribute in active.attributes"
+          ng-controller="ModuleTypeAttributeController"
+          ng-include="'views/moduletypes/attribute.html'"></div>
 
-        <a class="btn btn-default" ng-click="addAdjective(active)">Add Adjective</a>
+        <a class="btn btn-default" ng-click="addAttribute()">Add Attribute</a>
       </div>
     </div>
 
     <hr>
 
     <div class="form-group">
-      <label class="control-label col-md-2">Verbs</label>
+      <label class="control-label col-md-2">Methods</label>
 
       <div class="col-md-10">
 
-        <div class="row" ng-repeat="verb in active.verbs">
+        <div class="row" ng-repeat="method in active.methods">
           <div class="col-md-1">
             <a class="btn btn-danger"
-              ng-click="removeVerb(verb)">&times;</a>
+              ng-click="removeMethod(method)">&times;</a>
           </div>
 
           <div class="col-md-3">
             <input type="text" name="name" class="form-control" placeholder="Name"
-              ng-model="verb.name">
+              ng-model="method.name">
           </div>
 
           <div class="col-md-3">
             <input type="text" name="label" class="form-control" placeholder="Name"
-              ng-model="verb.label">
+              ng-model="method.label">
           </div>
         </div>
 
-        <a class="btn btn-default" ng-click="addVerb(active)">Add Verb</a>
+        <a class="btn btn-default" ng-click="addMethod()">Add Method</a>
 
       </div>
     </div>

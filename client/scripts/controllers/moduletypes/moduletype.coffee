@@ -7,7 +7,7 @@ angular.module('OtttoApp')
       # do fetch
 
     $scope.save = ->
-      $scope.active.$save().then fetch
+      $scope.active.$save()
 
 
     $scope.cancel = ->
@@ -15,22 +15,18 @@ angular.module('OtttoApp')
 
 
     $scope.delete = ->
-      $scope.active.$destroy().then fetch
+      $scope.active.$destroy()
       delete $scope.active
 
 
-    $scope.addAdjective = ->
-      $scope.active.adjectives = new Array if not Array.isArray $scope.active.adjectives
-      $scope.active.adjectives?.push {}
+    $scope.addAttribute = ->
+      $scope.active.attributes = new Array if not Array.isArray $scope.active.attributes
+      $scope.active.attributes?.push {}
 
 
-    $scope.addVerb = ->
-      $scope.active.verbs = new Array if not Array.isArray $scope.active.verbs
-      $scope.active.verbs?.push {}
-
-
-    $scope.removeVerb = (verb) ->
-      $scope.active.verbs.splice( $scope.active.verbs.indexOf(verb), 1 )
+    $scope.addMethod = ->
+      $scope.active.methods = new Array if not Array.isArray $scope.active.methods
+      $scope.active.methods?.push {}
 
 
     # fetch = ->
