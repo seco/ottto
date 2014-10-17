@@ -30,22 +30,9 @@
 
       <div class="col-md-10">
 
-        <div class="row" ng-repeat="method in active.methods">
-          <div class="col-md-1">
-            <a class="btn btn-danger"
-              ng-click="removeMethod(method)">&times;</a>
-          </div>
-
-          <div class="col-md-3">
-            <input type="text" name="name" class="form-control" placeholder="Name"
-              ng-model="method.name">
-          </div>
-
-          <div class="col-md-3">
-            <input type="text" name="label" class="form-control" placeholder="Name"
-              ng-model="method.label">
-          </div>
-        </div>
+        <div ng-repeat="method in active.methods"
+          ng-controller="ModuleTypeMethodController"
+          ng-include="'views/moduletypes/method.html'"></div>
 
         <a class="btn btn-default" ng-click="addMethod()">Add Method</a>
 
