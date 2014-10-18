@@ -10,7 +10,7 @@ module.exports = {
   update: function(req, res) {
     data = req.body[0] || req.body;
 
-    if ( data && data.attributes ) delete data.attributes;
+    if ( data && data.values ) delete data.values;
 
     Modules
       .update({ id: req.param('id') }, req.body)
