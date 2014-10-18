@@ -14,7 +14,7 @@
         "name": "Porch",
         "id": 3,
         "createdAt": "2014-09-13T07:26:56.401Z",
-        "updatedAt": "2014-10-08T22:23:06.885Z"
+        "updatedAt": "2014-10-18T10:05:53.158Z"
       },
       {
         "name": "Kitchen",
@@ -35,7 +35,10 @@
             "step": "1",
             "default": "0",
             "label": "Level",
-            "metric": "%"
+            "metric": "%",
+            "options": [
+              {}
+            ]
           },
           {
             "name": "power",
@@ -44,20 +47,61 @@
             "falsey": "Off",
             "default": "false",
             "label": "Power",
-            "options": {
-              "0": {
+            "options": [
+              {
                 "label": "Off"
               },
-              "1": {
-                "label": "On",
-                "value": true
+              {
+                "value": true,
+                "label": "On"
               }
-            }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "fade",
+            "label": "Fade",
+            "arguments": [
+              {
+                "name": "level",
+                "type": "float"
+              },
+              {
+                "name": "duration",
+                "type": "float"
+              }
+            ]
+          },
+          {
+            "name": "strobe",
+            "label": "Strobe",
+            "arguments": [
+              {
+                "name": "duration",
+                "type": "float"
+              },
+              {
+                "name": "speed",
+                "type": "radios"
+              }
+            ]
+          },
+          {
+            "name": "setPower",
+            "label": "Set Power",
+            "arguments": [
+              {
+                "type": "boolean",
+                "name": "power"
+              },
+              {}
+            ]
           }
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2014-10-17T06:57:04.351Z"
+        "updatedAt": "2014-10-18T10:05:53.157Z"
       },
       {
         "name": "Motion Sensor",
@@ -102,12 +146,18 @@
             "step": "1",
             "default": 0,
             "label": "Intensity",
-            "metric": "%"
+            "metric": "%",
+            "options": [
+              {}
+            ]
           },
           {
             "name": "color",
             "type": "string",
-            "label": "Color"
+            "label": "Color",
+            "options": [
+              {}
+            ]
           },
           {
             "name": "power",
@@ -115,44 +165,88 @@
             "truthy": "On",
             "falsey": "Off",
             "label": "Power",
-            "options": {
-              "0": {
+            "options": [
+              {
                 "label": "Off"
               },
-              "1": {
-                "label": "On",
-                "value": true
+              {
+                "value": true,
+                "label": "On"
               }
-            }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "setPower",
+            "label": "Set Power",
+            "arguments": [
+              {
+                "name": "power",
+                "type": "boolean"
+              }
+            ]
+          },
+          {
+            "name": "setColor",
+            "label": "Set Color",
+            "arguments": [
+              {
+                "name": "color",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "setIntensity",
+            "label": "Set Intensity",
+            "arguments": [
+              {
+                "name": "intensity",
+                "type": "float"
+              }
+            ]
           }
         ],
         "id": 5,
         "createdAt": "2014-09-16T08:48:33.557Z",
-        "updatedAt": "2014-10-17T06:57:13.509Z"
+        "updatedAt": "2014-10-18T08:31:54.525Z"
       },
       {
         "name": "Door Lock",
         "attributes": [
           {
-            "name": "status",
+            "name": "locked",
             "type": "boolean",
             "truthy": "Locked",
             "falsey": "Unlocked",
-            "label": "Status",
-            "options": {
-              "0": {
+            "label": "Locked",
+            "options": [
+              {
                 "label": "Unlocked"
               },
-              "1": {
-                "label": "Locked",
-                "value": true
+              {
+                "value": true,
+                "label": "Locked"
               }
-            }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "arguments": [
+              {
+                "name": "locked",
+                "type": "boolean"
+              }
+            ],
+            "name": "setLocked",
+            "label": "Set Locked"
           }
         ],
         "id": 6,
         "createdAt": "2014-09-16T08:57:18.945Z",
-        "updatedAt": "2014-10-17T06:57:16.826Z"
+        "updatedAt": "2014-10-18T08:30:57.308Z"
       },
       {
         "name": "Contact Sensor",
@@ -164,20 +258,20 @@
             "falsey": "Open",
             "default": true,
             "label": "Status",
-            "options": {
-              "0": {
+            "options": [
+              {
                 "label": "Open"
               },
-              "1": {
-                "label": "Closed",
-                "value": true
+              {
+                "value": true,
+                "label": "Closed"
               }
-            }
+            ]
           }
         ],
         "id": 7,
         "createdAt": "2014-09-16T08:58:35.329Z",
-        "updatedAt": "2014-10-17T06:57:20.643Z"
+        "updatedAt": "2014-10-17T07:51:57.243Z"
       },
       {
         "name": "Climate Sensor",
@@ -190,7 +284,10 @@
             "step": "1",
             "default": 0,
             "label": "Temperature",
-            "metric": "°"
+            "metric": "°",
+            "options": [
+              {}
+            ]
           },
           {
             "name": "humidity",
@@ -199,12 +296,16 @@
             "max": "100",
             "step": "1",
             "default": 0,
-            "label": "Humidity"
+            "label": "Humidity",
+            "options": [
+              {}
+            ],
+            "metric": "%"
           }
         ],
         "id": 8,
         "createdAt": "2014-09-16T09:00:55.505Z",
-        "updatedAt": "2014-10-17T06:57:25.990Z"
+        "updatedAt": "2014-10-17T07:52:09.198Z"
       },
       {
         "name": "Security Camera",
@@ -215,20 +316,56 @@
             "truthy": "On",
             "falsey": "Off",
             "label": "Power",
-            "options": {
-              "0": {
+            "options": [
+              {
                 "label": "Off"
               },
-              "1": {
-                "label": "On",
-                "value": true
+              {
+                "value": true,
+                "label": "On"
               }
-            }
+            ]
+          },
+          {
+            "options": [
+              {
+                "label": "Standby"
+              },
+              {
+                "value": true,
+                "label": "Recording"
+              }
+            ],
+            "name": "recording",
+            "label": "Recording",
+            "type": "boolean"
+          }
+        ],
+        "methods": [
+          {
+            "name": "setRecord",
+            "label": "Set Record",
+            "arguments": [
+              {
+                "name": "on",
+                "type": "boolean"
+              }
+            ]
+          },
+          {
+            "name": "setPower",
+            "label": "Set Power",
+            "arguments": [
+              {
+                "name": "power",
+                "type": "boolean"
+              }
+            ]
           }
         ],
         "id": 9,
         "createdAt": "2014-09-16T09:02:22.470Z",
-        "updatedAt": "2014-10-17T06:57:41.020Z"
+        "updatedAt": "2014-10-18T08:32:20.362Z"
       },
       {
         "name": "Outlet Switch",
@@ -239,20 +376,32 @@
             "truthy": "On",
             "falsey": "Off",
             "label": "Power",
-            "options": {
-              "0": {
+            "options": [
+              {
                 "label": "Off"
               },
-              "1": {
-                "label": "On",
-                "value": true
+              {
+                "value": true,
+                "label": "On"
               }
-            }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "name": "setPower",
+            "label": "Set Power",
+            "arguments": [
+              {
+                "name": "power",
+                "type": "boolean"
+              }
+            ]
           }
         ],
         "id": 10,
         "createdAt": "2014-09-16T09:02:56.872Z",
-        "updatedAt": "2014-10-17T06:57:33.202Z"
+        "updatedAt": "2014-10-18T08:32:30.493Z"
       }
     ],
     "modules": [
@@ -264,11 +413,11 @@
           "Intensity": "70",
           "power": false,
           "Power": true,
-          "level": "66"
+          "level": "49"
         },
         "id": 8,
         "createdAt": "2014-09-13T07:48:45.278Z",
-        "updatedAt": "2014-10-08T22:23:06.898Z"
+        "updatedAt": "2014-10-18T10:05:53.170Z"
       },
       {
         "name": "Hallway Motion",
