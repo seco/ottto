@@ -9,7 +9,23 @@
       ng-model="method.label">
   </div>
 
-  <div class="col-md-5"></div>
+  <div class="col-md-5">
+    <div class="form-group" ng-repeat="argument in method.arguments">
+      <div class="col-md-6">
+        <input type="text" name="argument.name" class="form-control" placeholder="Name"
+          ng-model="argument.name">
+      </div>
+
+      <div class="col-md-6">
+        <select name="argument.type" class="form-control"
+          ng-options="type for type in dataTypes"
+          ng-model="argument.type"></select>
+      </div>
+    </div>
+
+    <a class="btn btn-default btn-sm"
+      ng-click="addArgument()">Add Argument</a>
+  </div>
 
   <div class="col-md-1">
     <a class="close"
