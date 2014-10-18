@@ -4,7 +4,6 @@ angular.module('OtttoApp')
   .controller 'ModuleTypeAttributeController', ($scope) ->
 
     $scope.init = ->
-      # do fetch
 
 
     $scope.remove = ->
@@ -20,4 +19,4 @@ angular.module('OtttoApp')
       $scope.attribute.options.splice( $scope.attribute.options.indexOf(option), 1 )
 
 
-    # fetch = ->
+    do $scope.init

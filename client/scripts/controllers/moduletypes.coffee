@@ -3,15 +3,6 @@
 angular.module('OtttoApp')
   .controller 'ModuleTypesController', ($scope, ModuleTypes) ->
 
-    $scope.valueTypes = [
-      'boolean'
-      'float'
-      'string'
-      'radios'
-      'checkboxes'
-    ]
-
-
     $scope.init = ->
       do fetch
 
