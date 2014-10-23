@@ -12,10 +12,11 @@
         <div class="row">
           <div class="col-xs-4">
             <knob ng-model="module.values[value.name]"
-              knob-data="module.values[value.name]"
-              knob-min="{{value.min}}"
-              knob-max="{{value.max}}"
-              knob-options="{width:200,angleOffset:-125,angleArc:250,fgColor:'#428bca'}"></knob>
+              knob-min="value.min"
+              knob-max="value.max"
+              knob-step="1"
+              knob-offset="-125"
+              knob-arc="250"></knob>
 
             <div class="input-group">
               <input type="text" name="{{value.name}}" class="form-control"

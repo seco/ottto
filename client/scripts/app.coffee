@@ -5,7 +5,6 @@ angular
     'ngResource'
     'ngRoute'
     'ActiveRecord',
-    'ui.knob',
     'frapontillo.bootstrap-switch'
   ])
 
