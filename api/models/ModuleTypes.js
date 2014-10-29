@@ -20,8 +20,7 @@ module.exports = {
     },
 
     methods: {
-      type: 'json',
-      required: true
+      type: 'json'
     }
 
   }
