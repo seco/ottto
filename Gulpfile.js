@@ -1,10 +1,12 @@
 var gulp = require('gulp'),
+    iff = require('gulp-if'),
     clean = require('gulp-clean'),
     watch = require('gulp-watch'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
-    coffee = require('gulp-coffee');
+    coffee = require('gulp-coffee'),
+    jade = require('gulp-jade');
 
 var production = false;
 
@@ -78,13 +80,17 @@ gulp.task('build-scripts-application', function() {
     .pipe(gulp.dest('.tmp/public/scripts/'));
 });
 
-gulp.task('build-assets', function() {
-  return gulp.src([
-      './client/**/*',
-      '!./client/{scripts,styles}',
-      '!./client/{scripts,styles}/**/*'
-    ])
-    .pipe(gulp.dest('.tmp/public/'));
+gulp.task('build-assets', ['build-assets-templates', 'build-assets-images']);
+
+gulp.task('build-assets-templates', function() {
+  return gulp.src([ './client/views/**/* '])
+    .pipe(iff(/[.]jade$/, jade()))
+    .pipe(gulp.dest('.tmp/public/views/'))
+})
+
+gulp.task('build-assets-images', function() {
+  return gulp.src([ './client/images/**/* '])
+    .pipe(gulp.dest('.tmp/public/images/'));
 });
 
 gulp.task('watch', [ 'watch-styles', 'watch-scripts', 'watch-assets' ]);
@@ -97,9 +103,12 @@ gulp.task('watch-scripts', function() {
   return gulp.watch([ './client/scripts/**/*.coffee' ], [ 'build-scripts' ]);
 });
 
-gulp.task('watch-assets', function() {
-  return gulp.watch([ './client/**/*',
-      '!./client/{scripts,styles}',
-      '!./client/{scripts,styles}/**/*'
-    ], [ 'build-assets' ]);
+gulp.task('watch-assets', ['watch-assets-templates', 'watch-assets-images']);
+
+gulp.task('watch-assets-templates', function() {
+  return gulp.watch([ './client/views/**/*' ], [ 'build-assets-templates' ]);
+});
+
+gulp.task('watch-assets-images', function() {
+  return gulp.watch([ './client/images/**/*' ], [ 'build-assets-images' ]);
 });
