@@ -3,4 +3,4 @@ angular.module('OtttoApp')
 
     ActiveRecord.extend
 
-      $urlRoot: '/modulegroups'
+      $urlRoot: '/api/modulegroups'

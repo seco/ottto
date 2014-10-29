@@ -3,7 +3,7 @@ angular.module('OtttoApp')
 
     ActiveRecord.extend
 
-      $urlRoot: '/rules'
+      $urlRoot: '/api/rules'
 
       $defaults:
         name: 'New Rule'
