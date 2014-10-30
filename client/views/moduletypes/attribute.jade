@@ -1,0 +1,127 @@
+.form-group
+  .col-md-3
+    input.form-control(
+      type='text', name='name', placeholder='Name',
+      ng-model='attribute.name'
+    )
+
+  .col-md-3
+    input.form-control(
+      type='text', name='label', placeholder='Label',
+      ng-model='attribute.label'
+    )
+
+  .col-md-5
+    .form-group
+      .col-xs-12
+        select.form-control(
+          name='type',
+          ng-options='type for type in dataTypes',
+          ng-model='attribute.type'
+        )
+
+    div(ng-switch='attribute.type')
+
+      //- String
+      div(ng-switch-when='string')
+
+      //- Float
+      div(ng-switch-when='float')
+        .form-group
+          .col-sm-4
+            input.form-control(
+              type='text', name='min', placeholder='Min',
+              ng-model='attribute.min'
+            )
+
+          .col-sm-4
+            input.form-control(
+              type='text', name='max', placeholder='Max',
+              ng-model='attribute.max'
+            )
+
+          .col-sm-4
+            input.form-control(
+              type='text', name='step', placeholder='Step',
+              ng-model='attribute.step'
+            )
+
+        .form-group
+          .col-xs-6
+            input.form-control(
+              type='number', name='default', placeholder='Default',
+              ng-model='attribute.default'
+            )
+
+          .col-xs-6
+            input.form-control(
+              type='text', name='metric', placeholder='Metric',
+              ng-model='attribute.metric'
+            )
+
+      //- Boolean
+      div(ng-switch-when='boolean')
+        .form-group
+          .col-xs-6
+            input.form-control(
+              type='text', name='label', placeholder='Falsey',
+              ng-model='attribute.options.0.label',
+              ng-init='attribute.options.1.value=false'
+            )
+
+          .col-xs-6
+            input.form-control(
+              type='text', name='label', placeholder='Truthy',
+              ng-model='attribute.options.1.label',
+              ng-init='attribute.options.1.value=true'
+            )
+
+        .form-group
+          .col-xs-12
+            .checkbox
+              label
+                input(
+                  type='checkbox', name='default',
+                  ng-model='attribute.default'
+                )
+                | Default
+
+      //- Radios
+      div(ng-switch-when='radios')
+        .form-group(ng-repeat='option in attribute.options')
+          .col-sm-2
+            a.btn.btn-danger(ng-click='removeOption(option)') ×
+
+          .col-sm-5
+            input.form-control(
+              type='text', name='value', placeholder='Value',
+              ng-model='option.value'
+            )
+
+          .col-sm-5
+            input.form-control(
+              type='text', name='label', placeholder='Label',
+              ng-model='option.label'
+            )
+
+        a.btn.btn-xs.btn-default(ng-click='addOption()') Add Option
+
+      //- Checkboxes
+      div(ng-switch-when='checkboxes')
+        .form-group(ng-repeat='option in attribute.options')
+          .col-sm-6
+            input.form-control(
+              type='text', name='value', placeholder='Value',
+              ng-model='option.value'
+            )
+
+          .col-sm-6
+            input.form-control(
+              type='text', name='label', placeholder='Label',
+              ng-model='option.label'
+            )
+
+        a.btn.btn-xs.btn-default(ng-click='addOption()') Add Option
+
+  .col-md-1
+    a.close(ng-click='remove()') ×

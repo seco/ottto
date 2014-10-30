@@ -1,0 +1,32 @@
+.form-group
+  .col-md-3
+    input.form-control(
+      type='text', name='name', placeholder='Name',
+      ng-model='method.name'
+    )
+
+  .col-md-3
+    input.form-control(
+      type='text', name='label', placeholder='Label',
+      ng-model='method.label'
+    )
+
+  .col-md-5
+    .form-group(ng-repeat='argument in method.arguments')
+      .col-md-6
+        input.form-control(
+          type='text', name='argument.name', placeholder='Name',
+          ng-model='argument.name'
+        )
+
+      .col-md-6
+        select.form-control(
+          name='argument.type',
+          ng-options='type for type in dataTypes',
+          ng-model='argument.type'
+        )
+
+    a.btn.btn-default.btn-sm(ng-click='addArgument()') Add Argument
+
+  .col-md-1
+    a.close(ng-click='remove()') ×
