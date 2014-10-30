@@ -1,0 +1,37 @@
+.form-group
+  input.form-control.input-lg(ng-model='rule.name')
+
+  .form.form-inline
+    h3 Conditions
+    p.lead
+      | Match
+      select.form-control(required='required', ng-model='rule.operator')
+        option(value='&&') all
+        option(value='||') any
+      | of the following condition(s):
+
+    .list-group(ng-show='rule.conditions.length > 0')
+      .list-group-item(
+        ng-repeat='condition in rule.conditions',
+        ng-controller='RuleConditionController',
+        ng-include='"views/rules/condition.html"'
+      )
+
+    a.btn.btn-default.btn-sm(ng-click='addCondition()') Add Condition
+
+    hr
+
+    h3 Actions
+    .list-group(ng-show='rule.actions.length > 0')
+      .list-group-item(
+        ng-repeat='action in rule.actions',
+        ng-include='"views/rules/action.html"'
+      )
+
+    a.btn.btn-default.btn-sm(ng-click='addAction()') Add Action
+
+    hr
+
+    a.btn.btn-primary(ng-click='save()') Save
+    a.btn.btn-default(ng-click='cancel()') Cancel
+    a.btn.btn-danger(ng-click='delete()') Delete

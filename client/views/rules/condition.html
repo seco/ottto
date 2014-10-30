@@ -1,63 +1,48 @@
-<a class="close"
-  ng-click="removeCondition(condition)">
-  &times;
-</a>
+a.close(ng-click='removeCondition(condition)') ×
 
-<h4 class="list-group-item-heading">Condition #{{$index + 1}}</h4>
+h4.list-group-item-heading Condition #{{$index + 1}}
 
-<p class="list-group-item-text">
-  If
+p.list-group-item-text
+  | If
+  select.form-control(
+    ng-options='module.id as module.name group by module.type.name for module in modules',
+    ng-model='condition.module'
+  )
 
-  <select class="form-control"
-    ng-options="module.id as module.name group by module.type.name for module in modules"
-    ng-model="condition.module"></select>
+  select.form-control(
+    ng-options='value.name as value.label for value in values',
+    ng-model='condition.value',
+    ng-show='condition.module'
+  )
 
-  <select class="form-control"
-    ng-options="value.name as value.label for value in values"
-    ng-model="condition.value"
-    ng-show="condition.module"></select>
+  span(ng-switch='value.type')
 
-  <span ng-switch="value.type">
-    <span ng-switch-when="boolean">
-      is
+    span(ng-switch-when='boolean')
+      | is
+      select.form-control(
+        ng-options='option.value as option.label for option in value.options',
+        ng-model='condition.argument'
+      )
 
-      <select class="form-control"
-        ng-options="option.value as option.label for option in value.options"
-        ng-model="condition.argument"></select>
-    </span>
+    span(ng-switch-when='float')
+      select.form-control(ng-model='condition.operator')
+        option(value='==') is
+        option(value='!=') is not
+        option(value='>') is greater than
+        option(value='<') is less than
+        option(value='> x <') is between
 
-    <span ng-switch-when="float">
-      <select class="form-control"
-        ng-model="condition.operator">
-        <option value="==">is</option>
-        <option value="!=">is not</option>
-        <option value=">">is greater than</option>
-        <option value="<">is less than</option>
-        <option value="> x <">is between</option>
-      </select>
+      span(ng-show="condition.operator == '> x <'")
+        input.form-control(
+          type='number',
+          ng-min='value.min',
+          ng-max='value.max',
+          ng-model='condition.argument.0'
+        )
+        | {{condition.$value.metric}}
 
-      <span ng-show="condition.operator">
-        <input type="number" class="form-control"
-          ng-min="value.min"
-          ng-max="value.max"
-          ng-model="condition.argument.0">
+    span(ng-switch-when='string') String
 
-        <span ng-show="condition.operator == '> x <'">
-          and
+    span(ng-switch-when='radios') Radios
 
-          <input type="number" class="form-control"
-            ng-min="condition.$value.min"
-            ng-max="condition.$value.max"
-            ng-model="condition.argument.1">
-        </span>
-
-        {{condition.$value.metric}}
-      </span>
-    </span>
-
-    <span ng-switch-when="string">String</span>
-    <span ng-switch-when="radios">Radios</span>
-    <span ng-switch-when="checkboxes">Checkboxes</span>
-
-  </span>
-</p>
+    span(ng-switch-when='checkboxes') Checkboxes
