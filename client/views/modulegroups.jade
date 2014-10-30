@@ -1,15 +1,15 @@
 h1 Groups
 
 .row
-  .col-md-4(ng-repeat="group in groups")
+  .col-md-4(ng-repeat='group in groups')
     .form-group
-      label(for="name")
-      input.form-control(type="text", name="name", ng-model="group.name")
+      label(for='name')
+      input.form-control(type='text', name='name', ng-model='group.name')
 
     .form-group
-      a.btn.btn-primary(ng-click="save(group)") Save
-      a.btn.btn-danger(ng-click="delete(group)") Delete
+      a.btn.btn-primary(ng-click='save(group)') Save
+      a.btn.btn-danger(ng-click='delete(group)') Delete
 
 hr
 
-a.btn.btn-primary(ng-click="new()") New
+a.btn.btn-primary(ng-click='new()') New

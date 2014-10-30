@@ -1,58 +1,58 @@
 .well
   h2 {{module.name}}
 
-  .form-group(ng-repeat="value in module.type.attributes")
-    label(for="{{value.name}}") {{value.label}}
-    div(ng-switch="value.type")
+  .form-group(ng-repeat='value in module.type.attributes')
+    label(for='{{value.name}}') {{value.label}}
+    div(ng-switch='value.type')
 
       //- Float
-      div(ng-switch-when="float")
+      div(ng-switch-when='float')
         .row
           .col-xs-4
             knob(
-              ng-model="module.values[value.name]"
-              knob-min="value.min"
-              knob-max="value.max"
-              knob-step="value.step"
-              knob-offset="-125"
-              knob-arc="250"
+              ng-model='module.values[value.name]'
+              knob-min='value.min'
+              knob-max='value.max'
+              knob-step='value.step'
+              knob-offset='-125'
+              knob-arc='250'
             )
 
             .input-group
               input.form-control(
-                type="text", name="{{value.name}}",
-                ng-model="module.values[value.name]"
+                type='text', name='{{value.name}}',
+                ng-model='module.values[value.name]'
               )
 
               span.input-group-addon {{value.metric}}
 
-      div(ng-switch-when="boolean")
+      div(ng-switch-when='boolean')
         bs-switch(
-          type="checkbox"
-          ng-model="module.values[value.name]"
-          switch-active="true"
-          switch-off-text="{{value.options.0.label}}"
-          switch-on-text="{{value.options.1.label}}"
-          switch-on-color="primary"
-          switch-size="large"
+          type='checkbox'
+          ng-model='module.values[value.name]'
+          switch-active='true'
+          switch-off-text='{{value.options.0.label}}'
+          switch-on-text='{{value.options.1.label}}'
+          switch-on-color='primary'
+          switch-size='large'
         )
 
-      div(ng-switch-when="radios")
-        label.radio-inline(ng-repeat="option in value.options")
+      div(ng-switch-when='radios')
+        label.radio-inline(ng-repeat='option in value.options')
           input(
-            type="radio", name="{{value.name}}",
-            ng-model="module.values[value.name]"
+            type='radio', name='{{value.name}}',
+            ng-model='module.values[value.name]'
           )
           span {{option.label}}
 
-form.form-horizontal(name="moduleForm")
+form.form-horizontal(name='moduleForm')
   fieldset
     .form-group
       label.control-label.col-md-2 Name
       .col-md-10
         input.form-control(
-          type="text"
-          ng-model="module.name"
+          type='text'
+          ng-model='module.name'
           ng-required
         )
 
@@ -60,21 +60,21 @@ form.form-horizontal(name="moduleForm")
       label.control-label.col-md-2 Type
       .col-md-10
         select.form-control(
-          ng-model="module.type.id"
-          ng-options="type.id as type.name for type in types"
+          ng-model='module.type.id'
+          ng-options='type.id as type.name for type in types'
         )
 
     .form-group
       label.control-label.col-md-2 Group
       .col-md-10
         select.form-control(
-          ng-model="module.group.id"
-          ng-options="group.id as group.name for group in groups"
+          ng-model='module.group.id'
+          ng-options='group.id as group.name for group in groups'
         )
 
   fieldset
     .form-group
       .col-md-offset-2.col-md-10
-        a.btn.btn-primary(ng-click="save()") Save
-        a.btn.btn-default(ng-click="cancel()") Cancel
-        a.btn.btn-danger(ng-click="delete()") Delete
+        a.btn.btn-primary(ng-click='save()') Save
+        a.btn.btn-default(ng-click='cancel()') Cancel
+        a.btn.btn-danger(ng-click='delete()') Delete
