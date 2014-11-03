@@ -14,17 +14,17 @@ angular.module('OtttoApp')
       $scope.types = results[1]
 
       $scope.$watch 'condition.module', onModule
-      $scope.$watch 'condition.value', onValue
+      $scope.$watch 'condition.attribute', onAttribute
 
 
     onModule = (id) ->
       return unless id
-      $scope.values = module.type.values for module in $scope.modules when module.id is id
+      $scope.attributes = module.type.attributes for module in $scope.modules when module.id is id
 
 
-    onValue = (name) ->
+    onAttribute = (name) ->
       return unless name
-      $scope.value = value for value in $scope.values when value.name is name
+      $scope.attribute = attribute for attribute in $scope.attributes when attribute.name is name
 
 
     do $scope.init

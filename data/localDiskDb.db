@@ -476,9 +476,13 @@
         "operator": "&&",
         "conditions": [
           {
-            "module": 9,
+            "module": 16,
             "value": "motion",
-            "argument": true
+            "attribute": "level",
+            "operator": ">",
+            "argument": {
+              "0": 5
+            }
           }
         ],
         "actions": [
@@ -488,7 +492,7 @@
         ],
         "id": 1,
         "createdAt": "2014-10-06T06:30:54.514Z",
-        "updatedAt": "2014-10-08T08:41:50.986Z"
+        "updatedAt": "2014-11-03T04:08:24.184Z"
       }
     ]
   },
