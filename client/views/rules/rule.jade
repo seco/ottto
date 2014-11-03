@@ -1,9 +1,9 @@
 .form-group
   input.form-control.input-lg(ng-model='rule.name')
 
-  .form.form-inline
+  .form
     h3 Conditions
-    p.lead
+    p.lead.form-inline
       | Match
       select.form-control(required='required', ng-model='rule.operator')
         option(value='&&') all
@@ -25,6 +25,7 @@
     .list-group(ng-show='rule.actions.length > 0')
       .list-group-item(
         ng-repeat='action in rule.actions',
+        ng-controller='RuleActionController',
         ng-include='"views/rules/action.html"'
       )
 

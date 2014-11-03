@@ -3,8 +3,8 @@ form.form-horizontal(name='moduleForm')
     .form-group
       label.control-label.col-md-2 Name
       .col-md-10
-        input.form-control(type='text',
-          ng-model='active.name',
+        input.form-control(type='text'
+          ng-model='active.name'
           ng-required='ng-required'
         )
 
@@ -13,12 +13,13 @@ form.form-horizontal(name='moduleForm')
     .form-group
       label.control-label.col-md-2 Attributes
       .col-md-10
-        div(
-          ng-repeat='attribute in active.attributes',
-          ng-controller='ModuleTypeAttributeController',
-          ng-include='"views/moduletypes/attribute.html"'
-        )
-        a.btn.btn-default(ng-click='addAttribute()') Add Attribute
+        .list-group
+          .list-group-item(
+            ng-repeat='attribute in active.attributes'
+            ng-controller='ModuleTypeAttributeController'
+            ng-include='"views/moduletypes/attribute.html"'
+          )
+        a.btn.btn-default.btn-xs(ng-click='addAttribute()') Add Attribute
 
     hr
 
@@ -26,12 +27,12 @@ form.form-horizontal(name='moduleForm')
       label.control-label.col-md-2 Methods
       .col-md-10
         div(
-          ng-repeat='method in active.methods',
-          ng-controller='ModuleTypeMethodController',
+          ng-repeat='method in active.methods'
+          ng-controller='ModuleTypeMethodController'
           ng-include='"views/moduletypes/method.html"'
         )
 
-        a.btn.btn-default(ng-click='addMethod()') Add Method
+        a.btn.btn-primary.btn-xs(ng-click='addMethod()') Add Method
 
   hr
 

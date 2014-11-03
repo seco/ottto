@@ -65,11 +65,20 @@
             "arguments": [
               {
                 "name": "level",
-                "type": "float"
+                "type": "float",
+                "label": "To",
+                "metric": "%",
+                "min": "0",
+                "max": "100",
+                "step": "1"
               },
               {
                 "name": "duration",
-                "type": "float"
+                "type": "float",
+                "label": "Over",
+                "metric": "Seconds",
+                "min": "0",
+                "step": "1"
               }
             ]
           },
@@ -79,21 +88,39 @@
             "arguments": [
               {
                 "name": "duration",
-                "type": "float"
+                "type": "float",
+                "label": "For",
+                "metric": "Seconds",
+                "min": "0",
+                "step": "1"
               },
               {
                 "name": "speed",
-                "type": "radios"
+                "type": "radios",
+                "label": "At",
+                "metric": "Seconds",
+                "options": []
               }
             ]
           },
           {
-            "name": "setPower",
-            "label": "Set Power",
+            "name": "toggle",
+            "label": "Toggle",
             "arguments": [
               {
                 "type": "boolean",
-                "name": "power"
+                "name": "power",
+                "label": "Power",
+                "options": {
+                  "0": {
+                    "label": "Off"
+                  },
+                  "1": {
+                    "value": true,
+                    "label": "On"
+                  }
+                },
+                "default": false
               },
               {}
             ]
@@ -101,7 +128,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2014-10-18T10:05:53.157Z"
+        "updatedAt": "2014-11-03T08:40:10.227Z"
       },
       {
         "name": "Motion Sensor",
@@ -476,21 +503,25 @@
         "operator": "&&",
         "conditions": [
           {
-            "module": 16,
+            "module": 9,
             "value": "motion",
-            "attribute": "level",
-            "operator": ">",
-            "argument": {
-              "0": 5
-            }
+            "attribute": "motion",
+            "operator": ">"
           }
         ],
         "actions": [
-          {}
+          {
+            "module": 16,
+            "method": "fade",
+            "arguments": {
+              "0": 50,
+              "1": 3
+            }
+          }
         ],
         "id": 1,
         "createdAt": "2014-10-06T06:30:54.514Z",
-        "updatedAt": "2014-11-03T04:19:59.554Z"
+        "updatedAt": "2014-11-03T08:56:03.987Z"
       }
     ]
   },

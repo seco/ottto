@@ -2,7 +2,7 @@ a.close(ng-click='removeCondition(condition)') ×
 
 h4.list-group-item-heading Condition {{$index + 1}}
 
-p.list-group-item-text
+p.list-group-item-text.form-inline
   span(ng-show='$index == 0') If
   span(ng-show='$index != 0')
     span(ng-show='rule.operator == "&&"') And
