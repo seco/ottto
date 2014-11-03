@@ -1,77 +1,79 @@
-a.close(ng-click='removeCondition(condition)') ×
+.panel.panel-warning
+  .panel-heading
+    a.close(ng-click='removeCondition(condition)') ×
+    h4.panel-title Condition {{$index + 1}}
 
-h4.list-group-item-heading Condition {{$index + 1}}
-
-p.list-group-item-text.form-inline
-  span(ng-show='$index == 0') If
-  span(ng-show='$index != 0')
-    span(ng-show='rule.operator == "&&"') And
-    span(ng-show='rule.operator == "||"') Or
-  select.form-control(
-    ng-options='module.id as module.name group by module.type.name for module in modules',
-    ng-model='condition.module'
-  )
-
-  select.form-control(
-    ng-options='attribute.name as attribute.label for attribute in attributes',
-    ng-model='condition.attribute',
-    ng-show='condition.module'
-  )
-
-  span(ng-switch='attribute.type')
-
-    //-
-    //- Boolean
-    //-
-    span(ng-switch-when='boolean')
-      | is
+  .panel-body
+    p.list-group-item-text.form-inline
+      span(ng-show='$index == 0') If
+      span(ng-show='$index != 0')
+        span(ng-show='rule.operator == "&&"') And
+        span(ng-show='rule.operator == "||"') Or
       select.form-control(
-        ng-options='option.attribute as option.label for option in attribute.options',
-        ng-model='condition.argument'
+        ng-options='module.id as module.name group by module.type.name for module in modules',
+        ng-model='condition.module'
       )
 
-    //-
-    //- Float
-    //-
-    span(ng-switch-when='float')
-      //- Operator
-      select.form-control(ng-model='condition.operator')
-        option(value='==') is
-        option(value='!=') is not
-        option(value='>') is greater than
-        option(value='<') is less than
-        option(value='> x <') is between
+      select.form-control(
+        ng-options='attribute.name as attribute.label for attribute in attributes',
+        ng-model='condition.attribute',
+        ng-show='condition.module'
+      )
 
-      span(ng-show='condition.operator')
-        input.form-control(
-          type="number"
-          ng-min="attribute.min"
-          ng-max="attribute.max"
-          ng-model="condition.argument.0"
-        )
+      span(ng-switch='attribute.type')
 
-        span(ng-show='condition.operator == "> x <"')
-          | and
-          input.form-control(
-            type='number',
-            ng-min='attribute.min',
-            ng-max='attribute.max',
-            ng-model='condition.argument.1'
+        //-
+        //- Boolean
+        //-
+        span(ng-switch-when='boolean')
+          | is
+          select.form-control(
+            ng-options='option.attribute as option.label for option in attribute.options',
+            ng-model='condition.argument'
           )
 
-        | {{attribute.metric}}
+        //-
+        //- Float
+        //-
+        span(ng-switch-when='float')
+          //- Operator
+          select.form-control(ng-model='condition.operator')
+            option(value='==') is
+            option(value='!=') is not
+            option(value='>') is greater than
+            option(value='<') is less than
+            option(value='> x <') is between
 
-    //-
-    //- String
-    //-
-    span(ng-switch-when='string') String
+          span(ng-show='condition.operator')
+            input.form-control(
+              type="number"
+              ng-min="attribute.min"
+              ng-max="attribute.max"
+              ng-model="condition.argument.0"
+            )
 
-    //-
-    //- Radios
-    //-
-    span(ng-switch-when='radios') Radios
+            span(ng-show='condition.operator == "> x <"')
+              | and
+              input.form-control(
+                type='number',
+                ng-min='attribute.min',
+                ng-max='attribute.max',
+                ng-model='condition.argument.1'
+              )
 
-    //-
-    //- Checkboxes
-    //-
-    span(ng-switch-when='checkboxes') Checkboxes
+            | {{attribute.metric}}
+
+        //-
+        //- String
+        //-
+        span(ng-switch-when='string') String
+
+        //-
+        //- Radios
+        //-
+        span(ng-switch-when='radios') Radios
+
+        //-
+        //- Checkboxes
+        //-
+        span(ng-switch-when='checkboxes') Checkboxes

@@ -10,24 +10,22 @@
         option(value='||') any
       | of the following condition(s):
 
-    .list-group(ng-show='rule.conditions.length > 0')
-      .list-group-item(
-        ng-repeat='condition in rule.conditions',
-        ng-controller='RuleConditionController',
-        ng-include='"views/rules/condition.html"'
-      )
+    div(
+      ng-repeat='condition in rule.conditions'
+      ng-controller='RuleConditionController'
+      ng-include='"views/rules/condition.html"'
+    )
 
     a.btn.btn-default.btn-sm(ng-click='addCondition()') Add Condition
 
     hr
 
     h3 Actions
-    .list-group(ng-show='rule.actions.length > 0')
-      .list-group-item(
-        ng-repeat='action in rule.actions',
-        ng-controller='RuleActionController',
-        ng-include='"views/rules/action.html"'
-      )
+    div(
+      ng-repeat='action in rule.actions'
+      ng-controller='RuleActionController'
+      ng-include='"views/rules/action.html"'
+    )
 
     a.btn.btn-default.btn-sm(ng-click='addAction()') Add Action
 

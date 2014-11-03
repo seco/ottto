@@ -1,33 +1,34 @@
-a.close(ng-click='removeAction(action)') ×
+.panel.panel-warning
+  .panel-heading
+    a.close(ng-click='removeAction(action)') ×
+    h4.panel-title Action {{$index + 1}}
 
-h4.list-group-item-heading Action {{$index + 1}}
+  .panel-body
+    .form-group
+      .form-inline
+        | Then
+        select.form-control(
+          ng-options='module.id as module.name group by module.type.name for module in modules',
+          ng-model='action.module'
+        )
 
-p.list-group-item-text
-  .form-group
-    .form-inline
-      | Then
-      select.form-control(
-        ng-options='module.id as module.name group by module.type.name for module in modules',
-        ng-model='action.module'
-      )
+        select.form-control(
+          ng-options='method.name as method.label for method in methods',
+          ng-model='action.method',
+          ng-show='action.module'
+        )
 
-      select.form-control(
-        ng-options='method.name as method.label for method in methods',
-        ng-model='action.method',
-        ng-show='action.module'
-      )
+        span(ng-repeat='argument in method.arguments')
+          | {{argument.label}}
 
-      span(ng-repeat='argument in method.arguments')
-        | {{argument.label}}
+          span(ng-switch='argument.type')
 
-        span(ng-switch='argument.type')
-
-          //-
-          //- Float
-          //-
-          span(ng-switch-when='float')
-            input.form-control(
-              name='{{argument.name}}', type="number"
-              ng-model='action.arguments[$index]'
-            )
-            | {{argument.metric}}
+            //-
+            //- Float
+            //-
+            span(ng-switch-when='float')
+              input.form-control(
+                name='{{argument.name}}', type="number"
+                ng-model='action.arguments[$index]'
+              )
+              | {{argument.metric}}

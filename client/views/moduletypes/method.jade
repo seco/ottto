@@ -1,4 +1,4 @@
-.panel.panel-primary
+.panel.panel-warning
   .panel-heading
     a.close(ng-click='remove()') ×
     h3.panel-title {{method.label}}
@@ -19,11 +19,10 @@
 
     hr
 
-    .list-group
-      .list-group-item(
-        ng-repeat='attribute in method.arguments'
-        ng-controller='ModuleTypeAttributeController',
-        ng-include='"views/moduletypes/attribute.html"'
-      )
+    div(
+      ng-repeat='attribute in method.arguments'
+      ng-controller='ModuleTypeAttributeController',
+      ng-include='"views/moduletypes/attribute.html"'
+    )
 
     a.btn.btn-default.btn-xs(ng-click='addArgument()') Add Argument
