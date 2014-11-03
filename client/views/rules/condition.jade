@@ -45,8 +45,8 @@ p.list-group-item-text
       span(ng-show='condition.operator')
         input.form-control(
           type="number"
-          ng-min="value.min"
-          ng-max="value.max"
+          ng-min="attribute.min"
+          ng-max="attribute.max"
           ng-model="condition.argument.0"
         )
 
@@ -58,7 +58,8 @@ p.list-group-item-text
             ng-max='attribute.max',
             ng-model='condition.argument.1'
           )
-          | {{condition.value.metric}}
+
+        | {{attribute.metric}}
 
     //-
     //- String
