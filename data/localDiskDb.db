@@ -8,19 +8,19 @@
         "name": "Hallway",
         "id": 2,
         "createdAt": "2014-09-13T07:26:52.743Z",
-        "updatedAt": "2014-10-06T16:17:59.369Z"
+        "updatedAt": "2014-11-05T08:41:20.249Z"
       },
       {
         "name": "Porch",
         "id": 3,
         "createdAt": "2014-09-13T07:26:56.401Z",
-        "updatedAt": "2014-10-18T10:05:53.158Z"
+        "updatedAt": "2014-11-03T19:02:08.158Z"
       },
       {
         "name": "Kitchen",
         "id": 4,
         "createdAt": "2014-09-13T07:27:05.294Z",
-        "updatedAt": "2014-09-16T01:33:04.641Z"
+        "updatedAt": "2014-11-03T19:02:42.627Z"
       }
     ],
     "moduletypes": [
@@ -128,27 +128,20 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2014-11-03T08:40:10.227Z"
+        "updatedAt": "2014-11-05T09:17:15.024Z"
       },
       {
         "name": "Motion Sensor",
         "attributes": [
           {
-            "0": {
-              "label": "Active"
-            },
-            "1": {
-              "label": "Inactive"
-            },
             "name": "motion",
             "type": "boolean",
-            "truthy": "Active",
-            "falsey": "Inactive",
+            "truthy": "On",
+            "falsey": "Off",
             "default": "false",
             "label": "Motion",
             "options": [
               {
-                "value": true,
                 "label": "Inactive"
               },
               {
@@ -158,122 +151,10 @@
             ]
           }
         ],
+        "methods": [],
         "id": 2,
-        "createdAt": "2014-09-10T08:54:57.482Z",
-        "updatedAt": "2014-10-17T06:57:10.793Z"
-      },
-      {
-        "name": "RGB Bulb",
-        "attributes": [
-          {
-            "name": "intensity",
-            "type": "float",
-            "min": "0",
-            "max": "100",
-            "step": "1",
-            "default": 0,
-            "label": "Intensity",
-            "metric": "%",
-            "options": [
-              {}
-            ]
-          },
-          {
-            "name": "color",
-            "type": "string",
-            "label": "Color",
-            "options": [
-              {}
-            ]
-          },
-          {
-            "name": "power",
-            "type": "boolean",
-            "truthy": "On",
-            "falsey": "Off",
-            "label": "Power",
-            "options": [
-              {
-                "label": "Off"
-              },
-              {
-                "value": true,
-                "label": "On"
-              }
-            ]
-          }
-        ],
-        "methods": [
-          {
-            "name": "setPower",
-            "label": "Set Power",
-            "arguments": [
-              {
-                "name": "power",
-                "type": "boolean"
-              }
-            ]
-          },
-          {
-            "name": "setColor",
-            "label": "Set Color",
-            "arguments": [
-              {
-                "name": "color",
-                "type": "string"
-              }
-            ]
-          },
-          {
-            "name": "setIntensity",
-            "label": "Set Intensity",
-            "arguments": [
-              {
-                "name": "intensity",
-                "type": "float"
-              }
-            ]
-          }
-        ],
-        "id": 5,
-        "createdAt": "2014-09-16T08:48:33.557Z",
-        "updatedAt": "2014-10-18T08:31:54.525Z"
-      },
-      {
-        "name": "Door Lock",
-        "attributes": [
-          {
-            "name": "locked",
-            "type": "boolean",
-            "truthy": "Locked",
-            "falsey": "Unlocked",
-            "label": "Locked",
-            "options": [
-              {
-                "label": "Unlocked"
-              },
-              {
-                "value": true,
-                "label": "Locked"
-              }
-            ]
-          }
-        ],
-        "methods": [
-          {
-            "arguments": [
-              {
-                "name": "locked",
-                "type": "boolean"
-              }
-            ],
-            "name": "setLocked",
-            "label": "Set Locked"
-          }
-        ],
-        "id": 6,
-        "createdAt": "2014-09-16T08:57:18.945Z",
-        "updatedAt": "2014-10-18T08:30:57.308Z"
+        "createdAt": "2014-09-10T08:54:41.493Z",
+        "updatedAt": "2014-11-05T09:05:18.843Z"
       },
       {
         "name": "Contact Sensor",
@@ -451,20 +332,6 @@
     ],
     "modules": [
       {
-        "name": "Porch Light",
-        "type": 1,
-        "group": 3,
-        "values": {
-          "Intensity": "70",
-          "power": false,
-          "Power": true,
-          "level": "49"
-        },
-        "id": 8,
-        "createdAt": "2014-09-13T07:48:45.278Z",
-        "updatedAt": "2014-10-18T10:05:53.170Z"
-      },
-      {
         "name": "Hallway Motion",
         "type": 2,
         "group": 2,
@@ -475,7 +342,7 @@
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2014-10-06T16:17:59.381Z"
+        "updatedAt": "2014-11-05T08:41:20.262Z"
       },
       {
         "name": "Kitchen Light",
@@ -486,7 +353,7 @@
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2014-09-16T01:33:04.658Z"
+        "updatedAt": "2014-11-03T19:02:42.640Z"
       },
       {
         "name": "Hallway Light",
@@ -494,7 +361,17 @@
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2014-10-05T07:40:20.834Z"
+        "updatedAt": "2014-11-03T19:03:51.062Z"
+      },
+      {
+        "name": "Bathroom Light",
+        "type": 1,
+        "id": 17,
+        "createdAt": "2014-11-05T08:53:06.419Z",
+        "updatedAt": "2014-11-05T09:17:15.036Z",
+        "values": {
+          "power": true
+        }
       }
     ],
     "rules": [
@@ -686,7 +563,7 @@
       "id": 11
     },
     "modules": {
-      "id": 16
+      "id": 17
     },
     "ruleactions": {},
     "ruleconditions": {},
