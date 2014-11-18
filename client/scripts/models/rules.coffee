@@ -1,5 +1,5 @@
 angular.module('OtttoApp')
-  .factory 'Rules', (ActiveRecord) ->
+  .factory 'Rules', (ActiveRecord, RuleConditions) ->
 
     ActiveRecord.extend
 
@@ -10,3 +10,7 @@ angular.module('OtttoApp')
         operator: '&&'
         conditions: []
         actions: []
+
+      $readFilters:
+        conditions: (conditions) ->
+          new RuleConditions condition for condition in conditions

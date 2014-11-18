@@ -11,7 +11,7 @@
         span(ng-show='rule.operator == "||"') Or
       select.form-control(
         ng-options='module.id as module.name group by module.type.name for module in modules',
-        ng-model='condition.module'
+        ng-model='condition.module.id'
       )
 
       select.form-control(
@@ -28,8 +28,8 @@
         span(ng-switch-when='boolean')
           | is
           select.form-control(
-            ng-options='option.attribute as option.label for option in attribute.options',
-            ng-model='condition.argument'
+            ng-options='option.value as option.label for option in attribute.options',
+            ng-model='condition.arguments[0]'
           )
 
         //-
@@ -49,7 +49,7 @@
               type="number"
               ng-min="attribute.min"
               ng-max="attribute.max"
-              ng-model="condition.argument.0"
+              ng-model="condition.arguments[0]"
             )
 
             span(ng-show='condition.operator == "> x <"')
@@ -58,7 +58,7 @@
                 type='number',
                 ng-min='attribute.min',
                 ng-max='attribute.max',
-                ng-model='condition.argument.1'
+                ng-model='condition.arguments[1]'
               )
 
             | {{attribute.metric}}

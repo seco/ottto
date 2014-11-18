@@ -5,9 +5,6 @@
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
-var _ = require('underscore'),
-    uuid = require('node-uuid');
-
 module.exports = {
 
   attributes: {
@@ -27,8 +24,8 @@ module.exports = {
 
     // Array of IDs associated to the required conditions
     conditions: {
-      type: 'array',
-      required: true
+      collection: 'RuleConditions',
+      via: 'rule'
     },
 
     // Array of IDs associated to the actions to be triggered

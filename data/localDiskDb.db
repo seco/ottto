@@ -1,14 +1,12 @@
 {
   "data": {
-    "ruleactions": [],
-    "ruleconditions": [],
     "events": [],
     "modulegroups": [
       {
         "name": "Hallway",
         "id": 2,
         "createdAt": "2014-09-13T07:26:52.743Z",
-        "updatedAt": "2014-11-05T08:41:20.249Z"
+        "updatedAt": "2014-11-18T05:13:36.238Z"
       },
       {
         "name": "Porch",
@@ -20,12 +18,12 @@
         "name": "Kitchen",
         "id": 4,
         "createdAt": "2014-09-13T07:27:05.294Z",
-        "updatedAt": "2014-11-03T19:02:42.627Z"
+        "updatedAt": "2014-11-18T05:13:15.817Z"
       }
     ],
     "moduletypes": [
       {
-        "name": "Light Bulb",
+        "name": "Light Bulbs",
         "attributes": [
           {
             "type": "float",
@@ -128,33 +126,33 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2014-11-05T09:17:15.024Z"
+        "updatedAt": "2014-11-18T05:13:06.289Z"
       },
       {
         "name": "Motion Sensor",
         "attributes": [
           {
-            "name": "motion",
-            "type": "boolean",
-            "truthy": "On",
-            "falsey": "Off",
-            "default": "false",
+            "motion": "boolean",
+            "default": false,
             "label": "Motion",
             "options": [
               {
+                "value": false,
                 "label": "Inactive"
               },
               {
                 "value": true,
                 "label": "Active"
               }
-            ]
+            ],
+            "name": "motion",
+            "type": "boolean"
           }
         ],
         "methods": [],
         "id": 2,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2014-11-05T09:05:18.843Z"
+        "updatedAt": "2014-11-18T05:18:22.334Z"
       },
       {
         "name": "Contact Sensor",
@@ -168,10 +166,11 @@
             "label": "Status",
             "options": [
               {
+                "value": "false",
                 "label": "Open"
               },
               {
-                "value": true,
+                "value": "true",
                 "label": "Closed"
               }
             ]
@@ -226,10 +225,11 @@
             "label": "Power",
             "options": [
               {
+                "value": "false",
                 "label": "Off"
               },
               {
-                "value": true,
+                "value": "true",
                 "label": "On"
               }
             ]
@@ -237,10 +237,11 @@
           {
             "options": [
               {
+                "value": "false",
                 "label": "Standby"
               },
               {
-                "value": true,
+                "value": "true",
                 "label": "Recording"
               }
             ],
@@ -286,10 +287,11 @@
             "label": "Power",
             "options": [
               {
+                "value": "false",
                 "label": "Off"
               },
               {
-                "value": true,
+                "value": "true",
                 "label": "On"
               }
             ]
@@ -336,24 +338,22 @@
         "type": 2,
         "group": 2,
         "values": {
-          "Motion": true,
-          "Sensitivity": "med",
           "motion": false
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2014-11-05T08:41:20.262Z"
+        "updatedAt": "2014-11-18T05:13:36.230Z"
       },
       {
         "name": "Kitchen Light",
         "type": 1,
         "group": 4,
         "values": {
-          "Intensity": "25"
+          "level": "25"
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2014-11-03T19:02:42.640Z"
+        "updatedAt": "2014-11-18T05:13:15.807Z"
       },
       {
         "name": "Hallway Light",
@@ -361,31 +361,37 @@
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2014-11-03T19:03:51.062Z"
+        "updatedAt": "2014-11-18T05:13:21.022Z"
       },
       {
         "name": "Bathroom Light",
         "type": 1,
+        "values": {
+          "power": true,
+          "level": 75
+        },
         "id": 17,
         "createdAt": "2014-11-05T08:53:06.419Z",
-        "updatedAt": "2014-11-05T09:17:15.036Z",
-        "values": {
-          "power": true
-        }
+        "updatedAt": "2014-11-18T05:13:24.697Z"
+      }
+    ],
+    "ruleconditions": [
+      {
+        "rule": 1,
+        "module": 9,
+        "attribute": "motion",
+        "arguments": [
+          false
+        ],
+        "id": 16,
+        "createdAt": "2014-11-18T07:14:01.343Z",
+        "updatedAt": "2014-11-18T07:14:01.343Z"
       }
     ],
     "rules": [
       {
-        "name": "First Rule",
+        "name": "Automatic Hallway Lighting",
         "operator": "&&",
-        "conditions": [
-          {
-            "module": 9,
-            "value": "motion",
-            "attribute": "motion",
-            "operator": ">"
-          }
-        ],
         "actions": [
           {
             "module": 16,
@@ -398,39 +404,11 @@
         ],
         "id": 1,
         "createdAt": "2014-10-06T06:30:54.514Z",
-        "updatedAt": "2014-11-03T08:56:03.987Z"
+        "updatedAt": "2014-11-18T05:02:11.524Z"
       }
     ]
   },
   "schema": {
-    "ruleactions": {
-      "id": {
-        "type": "integer",
-        "autoIncrement": true,
-        "primaryKey": true,
-        "unique": true
-      },
-      "createdAt": {
-        "type": "datetime"
-      },
-      "updatedAt": {
-        "type": "datetime"
-      }
-    },
-    "ruleconditions": {
-      "id": {
-        "type": "integer",
-        "autoIncrement": true,
-        "primaryKey": true,
-        "unique": true
-      },
-      "createdAt": {
-        "type": "datetime"
-      },
-      "updatedAt": {
-        "type": "datetime"
-      }
-    },
     "events": {
       "module": {
         "type": "integer",
@@ -526,6 +504,48 @@
         "type": "datetime"
       }
     },
+    "ruleconditions": {
+      "rule": {
+        "type": "integer",
+        "model": "rules",
+        "foreignKey": true,
+        "alias": "rule"
+      },
+      "module": {
+        "type": "integer",
+        "model": "modules",
+        "foreignKey": true,
+        "alias": "module"
+      },
+      "attribute": {
+        "type": "string"
+      },
+      "operator": {
+        "type": "string",
+        "enum": [
+          "==",
+          "!=",
+          ">",
+          "<",
+          "> x <"
+        ]
+      },
+      "arguments": {
+        "type": "array"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
     "rules": {
       "name": {
         "type": "string"
@@ -533,9 +553,6 @@
       "operator": {
         "type": "string",
         "defaultsTo": "&&"
-      },
-      "conditions": {
-        "type": "array"
       },
       "actions": {
         "type": "array"
@@ -555,7 +572,6 @@
     }
   },
   "counters": {
-    "events": {},
     "modulegroups": {
       "id": 4
     },
@@ -563,12 +579,15 @@
       "id": 11
     },
     "modules": {
-      "id": 17
+      "id": 19
     },
     "ruleactions": {},
-    "ruleconditions": {},
+    "ruleconditions": {
+      "id": 16
+    },
     "rules": {
       "id": 1
-    }
+    },
+    "events": {}
   }
 }
