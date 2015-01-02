@@ -30,8 +30,7 @@ module.exports = {
 
     // Array of IDs associated to the actions to be triggered
     actions: {
-      type: 'array',
-      required: true
+      type: 'array'
     }
 
   }

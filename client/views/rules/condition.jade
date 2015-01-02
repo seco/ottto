@@ -1,6 +1,6 @@
-.panel.panel-warning
+.panel.panel-default
   .panel-heading
-    a.close(ng-click='removeCondition(condition)') ×
+    a.close(ng-click='remove()') ×
     h4.panel-title Condition {{$index + 1}}
 
   .panel-body
@@ -11,7 +11,7 @@
         span(ng-show='rule.operator == "||"') Or
       select.form-control(
         ng-options='module.id as module.name group by module.type.name for module in modules',
-        ng-model='condition.module.id'
+        ng-model='condition.module'
       )
 
       select.form-control(

@@ -10,23 +10,20 @@ angular.module('OtttoApp')
       $scope.rule.conditions.push new RuleConditions rule: $scope.rule.id
 
 
-    $scope.removeCondition = (condition) ->
-      condition.$destroy().then ->
-        $scope.rule.conditions.splice $scope.rule.conditions.indexOf(condition), 1
-
-
     $scope.addAction = ->
       $scope.rule.actions.push {}
 
 
     $scope.removeAction = (action) ->
-      $scope.rule.actions.splice $scope.rule.actions.indexOf(action), 1
+      $scope.rule.actions.remove action
 
 
     $scope.save = ->
       $q
         .all( condition.$save() for condition in $scope.rule.conditions )
-        # .then( $scope.rule.$save() )
+        .then ->
+          $scope.rule.$save().then ->
+            $scope.rules.push $scope.rule
 
 
     $scope.cancel = ->
@@ -35,6 +32,7 @@ angular.module('OtttoApp')
 
     $scope.delete = ->
       do $scope.rule.$destroy
+      $scope.rules.remove $scope.rule
       delete $scope.rule
 
 
