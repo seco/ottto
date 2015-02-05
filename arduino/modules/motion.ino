@@ -20,7 +20,7 @@ void setup(void) {
 
   radio.begin();
   radio.enableDynamicPayloads();
-  radio.setRetries(10,100);
+  radio.setRetries(10,1000);
   radio.openWritingPipe(pipes[0]);
   radio.openReadingPipe(1,pipes[1]);
   radio.startListening();
