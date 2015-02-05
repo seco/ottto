@@ -19,12 +19,22 @@ void setup(void) {
   pinMode(motion_pin, INPUT);
 
   radio.begin();
+
   radio.enableDynamicPayloads();
-  radio.setRetries(10,1000);
+  radio.enableAckPayload();
+  radio.setCRCLength(RF24_CRC_16);
+  radio.setDataRate(RF24_2MBPS);
+  radio.setPALevel(RF24_PA_MAX);
+  radio.setChannel(76);
+  radio.setRetries(15,4000);
+
   radio.openWritingPipe(pipes[0]);
   radio.openReadingPipe(1,pipes[1]);
-  radio.startListening();
+
   radio.printDetails();
+  radio.startListening();
+
+  delay(1000);
 
 }
 
@@ -45,7 +55,7 @@ void loop(void) {
 
   receive();
 
-  delay(100);
+  delay(1000);
 }
 
 void send(String message) {
@@ -60,16 +70,18 @@ void send(String message) {
   radio.stopListening();
 
   int length = message.length();
+  char buffer[length];
 
-  for (int i = 0; i < length; i++) {
-    int character[1];
-    character[0] = message.charAt(i);
-    radio.write( character, 1 );
-    printf("%s", character);
-  }
+  message.toCharArray(buffer, length);
 
-  int stop[1] = { 2 };
-  radio.write( stop, 1 );
+  radio.write(buffer, length);
+
+  // for (int i = 0; i < length; i++) {
+  //   int character[1];
+  //   character[0] = message.charAt(i);
+  //   radio.write( character, 1 );
+  //   printf("%s", character);
+  // }
 
   radio.startListening();
 

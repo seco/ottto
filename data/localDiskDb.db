@@ -407,46 +407,32 @@
         "arguments": [
           true
         ],
+        "id": 17,
         "createdAt": "2015-01-03T07:07:19.698Z",
-        "updatedAt": "2015-01-03T07:07:19.782Z",
-        "id": 17
+        "updatedAt": "2015-01-03T07:07:19.782Z"
       }
     ],
     "rules": [
       {
         "name": "New Rule",
         "operator": "&&",
-        "conditions": [],
         "actions": [],
+        "id": 12,
         "createdAt": "2015-01-03T07:05:05.837Z",
-        "updatedAt": "2015-01-03T07:05:05.840Z",
-        "id": 12
+        "updatedAt": "2015-01-03T07:05:05.840Z"
       },
       {
         "name": "Different Rule",
         "operator": "&&",
-        "conditions": [
-          {
-            "rule": 13,
-            "module": 9,
-            "attribute": "motion",
-            "arguments": [
-              true
-            ],
-            "createdAt": "2015-01-03T07:07:19.698Z",
-            "updatedAt": "2015-01-03T07:07:19.698Z",
-            "id": 17
-          }
-        ],
         "actions": [
           {
             "module": 16,
             "method": "toggle"
           }
         ],
+        "id": 13,
         "createdAt": "2015-01-03T07:05:36.194Z",
-        "updatedAt": "2015-01-03T07:07:19.772Z",
-        "id": 13
+        "updatedAt": "2015-01-03T07:07:19.772Z"
       }
     ]
   },
