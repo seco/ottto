@@ -30,8 +30,11 @@ angular
         templateUrl: 'views/rules.html'
         controller: 'RulesController'
       .when '/rules/:id',
-        templateUrl: 'views/rules.html'
-        controller: 'RulesController'
+        templateUrl: 'views/rules/rule.html'
+        controller: 'RuleController'
+      .when '/rules/new',
+        templateUrl: 'views/rules/rule.html'
+        controller: 'RuleController'
 
       .otherwise
         redirectTo: '/'

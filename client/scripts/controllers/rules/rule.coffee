@@ -1,9 +1,10 @@
 'use strict'
 
 angular.module('OtttoApp')
-  .controller 'RuleController', ($scope, $q, Modules, ModuleTypes, RuleConditions) ->
+  .controller 'RuleController', ($scope, $window, $routeParams, $q, Rules, RuleConditions, Modules, ModuleTypes) ->
 
-    # $scope.init = ->
+    $scope.init = ->
+      do fetch
 
 
     $scope.addCondition = ->
@@ -23,17 +24,24 @@ angular.module('OtttoApp')
         .all( condition.$save() for condition in $scope.rule.conditions )
         .then ->
           $scope.rule.$save().then ->
-            $scope.rules.push $scope.rule
+            $window.location.href = '/#/rules'
 
 
     $scope.cancel = ->
-      delete $scope.rule
+      $window.location.href = '/#/rules'
 
 
     $scope.delete = ->
       do $scope.rule.$destroy
-      $scope.rules.remove $scope.rule
-      delete $scope.rule
+      $window.location.href = '/#/rules'
 
 
-    # do $scope.init
+    fetch = ->
+      if $routeParams.id isnt 'new'
+        Rules.fetchOne($routeParams.id).then (rule) ->
+          $scope.rule = rule
+      else
+        $scope.rule = new Rules
+
+
+    do $scope.init
