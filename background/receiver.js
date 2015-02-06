@@ -19,6 +19,8 @@ nrf.channel(0x4c)
 
 nrf.begin(function () {
 
+  console.log('Running...');
+
   var rx = nrf.openPipe('rx', pipes[0]),
       tx = nrf.openPipe('tx', pipes[1]),
       buffer = new Buffer(0),

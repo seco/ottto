@@ -11,7 +11,10 @@ function ParsingStream(buffer) {
 util.inherits(ParsingStream, Writable);
 
 ParsingStream.prototype._write = function(chunk, enc, next) {
-  console.log('message:', chunk.toString().split('').reverse().join(''));
+  var message = chunk.toString().trim().split('').reverse().join(''),
+      parsed = JSON.parse(message);
+
+  console.log(parsed);
 
   if(typeof next == 'function') next();
 };
