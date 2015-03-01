@@ -11,6 +11,16 @@ angular.module('OtttoApp')
         conditions: []
         actions: []
 
-      $readFilters:
-        conditions: (conditions) ->
-          new RuleConditions condition for condition in conditions
+      # $readFilters:
+      #   conditions: (conditions) ->
+      #     new RuleConditions condition for condition in conditions
+
+      # $writeFilters:
+      #   conditions: (conditions) ->
+      #     for condition in conditions
+      #       if typeof condition.rule is 'object'
+      #         condition.rule = condition.rule.id
+      #     conditions
+
+      #   module: (module) ->
+      #     module.id or module

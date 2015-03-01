@@ -10,8 +10,7 @@ module.exports = {
   attributes: {
 
     rule: {
-      model: 'Rules',
-      required: true
+      model: 'Rules'
     },
 
     module: {

@@ -5,6 +5,8 @@
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
+var q = require('q');
+
 module.exports = {
 
   attributes: {
@@ -22,15 +24,31 @@ module.exports = {
       defaultsTo: '&&'
     },
 
-    // Array of IDs associated to the required conditions
+    // Associated to the required conditions
     conditions: {
       collection: 'RuleConditions',
-      via: 'rule'
+      via: 'rule',
+      required: true
     },
 
     // Array of IDs associated to the actions to be triggered
     actions: {
-      type: 'array'
+      type: 'array',
+      required: true
+    }
+
+  },
+
+  beforeCreate: function(values, next) {
+
+    conditions = _(values.conditions).filter(function(condition) {
+      if (!condition.id) return RuleConditions.create(condition);
+    });
+
+    if (conditions) {
+      q.all(conditions).then(function() { next(); });
+    } else {
+      next();
     }
 
   }

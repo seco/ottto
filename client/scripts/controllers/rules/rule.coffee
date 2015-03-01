@@ -20,11 +20,13 @@ angular.module('OtttoApp')
 
 
     $scope.save = ->
-      $q
-        .all( condition.$save() for condition in $scope.rule.conditions )
-        .then ->
-          $scope.rule.$save().then ->
-            $window.location.href = '/#/rules'
+      $scope.rule.$save().then ->
+        $window.location.href = '/#/rules'
+      # $q
+      #   .all( condition.$save() for condition in $scope.rule.conditions )
+      #   .then ->
+      #     $scope.rule.$save().then ->
+      #       $window.location.href = '/#/rules'
 
 
     $scope.cancel = ->
@@ -41,7 +43,7 @@ angular.module('OtttoApp')
         Rules.fetchOne($routeParams.id).then (rule) ->
           $scope.rule = rule
       else
-        $scope.rule = new Rules
+        $scope.rule = new Rules {}
 
 
     do $scope.init

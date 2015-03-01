@@ -22,6 +22,14 @@
           | {{argument.label}}
 
           span(ng-switch='argument.type')
+            //-
+            //- Boolean
+            //-
+            span(ng-switch-when='boolean')
+              select.form-control(
+                ng-model='action.arguments[$index]',
+                ng-options='option.value as option.label for (key,option) in argument.options'
+              )
 
             //-
             //- Float

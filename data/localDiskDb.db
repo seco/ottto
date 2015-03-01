@@ -1,5 +1,7 @@
 {
   "data": {
+    "ruleconditions_rule__rules_conditions": [],
+    "ruleconditions_conditions_ruleconditions__rules_conditions": [],
     "events": [],
     "modulegroups": [
       {
@@ -26,34 +28,29 @@
         "name": "Light Bulbs",
         "attributes": [
           {
-            "type": "float",
-            "name": "level",
-            "min": "0",
-            "max": "100",
-            "step": "1",
-            "default": "0",
-            "label": "Level",
-            "metric": "%",
-            "options": [
-              {}
-            ]
-          },
-          {
             "name": "power",
-            "type": "boolean",
-            "truthy": "On",
-            "falsey": "Off",
-            "default": "false",
             "label": "Power",
-            "options": [
-              {
+            "type": "boolean",
+            "options": {
+              "0": {
+                "value": false,
                 "label": "Off"
               },
-              {
+              "1": {
                 "value": true,
                 "label": "On"
               }
-            ]
+            }
+          },
+          {
+            "name": "level",
+            "label": "Level",
+            "type": "float",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "default": 100,
+            "metric": "%"
           }
         ],
         "methods": [
@@ -124,6 +121,7 @@
                 "label": "Power",
                 "options": {
                   "0": {
+                    "value": false,
                     "label": "Off"
                   },
                   "1": {
@@ -139,7 +137,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-01-01T21:58:11.844Z"
+        "updatedAt": "2015-02-24T04:44:07.196Z"
       },
       {
         "name": "Motion Sensor",
@@ -355,7 +353,7 @@
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2014-11-18T05:13:36.230Z"
+        "updatedAt": "2015-02-24T08:29:54.611Z"
       },
       {
         "name": "Kitchen Light",
@@ -390,7 +388,6 @@
     ],
     "ruleconditions": [
       {
-        "rule": 1,
         "module": 9,
         "attribute": "motion",
         "arguments": [
@@ -401,7 +398,6 @@
         "updatedAt": "2015-01-01T21:38:23.804Z"
       },
       {
-        "rule": 13,
         "module": 9,
         "attribute": "motion",
         "arguments": [
@@ -409,34 +405,115 @@
         ],
         "id": 17,
         "createdAt": "2015-01-03T07:07:19.698Z",
-        "updatedAt": "2015-01-03T07:07:19.782Z"
+        "updatedAt": "2015-02-24T08:10:08.772Z"
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "arguments": [
+          true
+        ],
+        "id": 18,
+        "createdAt": "2015-02-24T08:20:49.909Z",
+        "updatedAt": "2015-02-24T08:29:54.576Z"
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "arguments": [
+          true
+        ],
+        "id": 19,
+        "createdAt": "2015-02-24T08:34:50.884Z",
+        "updatedAt": "2015-02-24T08:34:50.884Z"
+      },
+      {
+        "rule": 14,
+        "module": 9,
+        "attribute": "motion",
+        "arguments": [
+          true
+        ],
+        "id": 20,
+        "createdAt": "2015-02-26T07:28:57.292Z",
+        "updatedAt": "2015-02-26T07:28:57.292Z"
+      },
+      {
+        "rule": 15,
+        "module": 9,
+        "attribute": "motion",
+        "arguments": [
+          true
+        ],
+        "id": 21,
+        "createdAt": "2015-02-26T07:34:59.695Z",
+        "updatedAt": "2015-02-26T07:35:10.914Z"
       }
     ],
     "rules": [
       {
         "name": "New Rule",
         "operator": "&&",
-        "actions": [],
-        "id": 12,
-        "createdAt": "2015-01-03T07:05:05.837Z",
-        "updatedAt": "2015-01-03T07:05:05.840Z"
-      },
-      {
-        "name": "Different Rule",
-        "operator": "&&",
         "actions": [
           {
             "module": 16,
-            "method": "toggle"
+            "method": "toggle",
+            "arguments": {
+              "0": true
+            }
           }
         ],
-        "id": 13,
-        "createdAt": "2015-01-03T07:05:36.194Z",
-        "updatedAt": "2015-01-03T07:07:19.772Z"
+        "id": 15,
+        "createdAt": "2015-02-26T07:34:59.626Z",
+        "updatedAt": "2015-02-26T07:35:10.894Z"
       }
     ]
   },
   "schema": {
+    "ruleconditions_rule__rules_conditions": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "rules_conditions": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "rules",
+        "on": "id",
+        "via": "ruleconditions_rule"
+      },
+      "ruleconditions_rule": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "ruleconditions",
+        "on": "id",
+        "via": "rules_conditions"
+      }
+    },
+    "ruleconditions_conditions_ruleconditions__rules_conditions": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "rules_conditions": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "rules",
+        "on": "id",
+        "via": "ruleconditions_conditions_ruleconditions"
+      },
+      "ruleconditions_conditions_ruleconditions": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "ruleconditions",
+        "on": "id",
+        "via": "rules_conditions"
+      }
+    },
     "events": {
       "module": {
         "type": "integer",
@@ -611,11 +688,13 @@
     },
     "ruleactions": {},
     "ruleconditions": {
-      "id": 17
+      "id": 21
     },
     "rules": {
-      "id": 13
+      "id": 15
     },
-    "events": {}
+    "events": {},
+    "ruleconditions_rule__rules_conditions": {},
+    "ruleconditions_conditions_ruleconditions__rules_conditions": {}
   }
 }

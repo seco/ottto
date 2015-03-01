@@ -10,3 +10,7 @@ angular.module('OtttoApp')
         module: 0
         attribute: ''
         arguments: []
+
+      # $writeFilters:
+      #   rule: (rule) ->
+      #     rule.id or rule

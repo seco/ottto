@@ -14,18 +14,24 @@ angular
       .when '/',
         templateUrl: 'views/main.html'
         controller: 'MainController'
+
+      # Modules
       .when '/modules',
         templateUrl: 'views/modules.html'
         controller: 'ModulesController'
       .when '/modules/:id',
         templateUrl: 'views/modules.html'
         controller: 'ModulesController'
+
+      # Module Types
       .when '/moduletypes',
         templateUrl: 'views/moduletypes.html'
         controller: 'ModuleTypesController'
       .when '/modulegroups',
         templateUrl: 'views/modulegroups.html'
         controller: 'ModuleGroupsController'
+
+      # Rules
       .when '/rules',
         templateUrl: 'views/rules.html'
         controller: 'RulesController'
