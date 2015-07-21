@@ -8,10 +8,16 @@
 RF24 radio(7,8);
 const uint64_t pipes[2] = { 0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL };
 const int motion_pin = 3;
+
 bool state = 0;
 bool newState = 0;
+
+const int max_payload_size = 128;
+char payload[max_payload_size+1];
+
 StaticJsonBuffer<200> jsonBuffer;
 JsonObject& root = jsonBuffer.createObject();
+
 
 void setup(void) {
 
@@ -38,7 +44,17 @@ void setup(void) {
 
 }
 
-void loop(void) {
+void loop() {
+  checkMotion();
+  receive();
+  delay(100);
+}
+
+
+// Check old state against new state
+// Set old state to new state
+// Update server with new state
+void checkMotion() {
 
   newState = digitalRead(motion_pin);
 
@@ -50,16 +66,10 @@ void loop(void) {
     state = newState;
     root["motion"] = state;
 
-    char buffer[256];
-    root.printTo(buffer, sizeof(buffer));
-
-    send(buffer);
+    send();
 
   }
-
-  receive();
-
-  delay(100);
+  
 }
 
 
@@ -68,16 +78,20 @@ void loop(void) {
 // Transmit each character
 // Send stop command
 // Switch back to read mode
-void send(String message) {
-  
-  int length = message.length();
-  char buffer[length+1];
+void send() {
   
   radio.stopListening();
 
-  message.toCharArray(buffer, length+1);
-  radio.write(buffer, length);
-  Serial.println(buffer);
+  // TODO: Clean this shit up...
+  char holder[256];
+  root.printTo(holder, sizeof(holder));
+  String str = holder;
+  int length = str.length() + 1;
+  char message[length];
+  str.toCharArray(message, length);
+  
+  radio.write(message, length);
+  Serial.println(message);
   
   radio.startListening();
 
@@ -85,7 +99,6 @@ void send(String message) {
 
 // Create buffer
 // Loop through transmissions
-// Wait for timeout or stop command
 void receive(void) {
 
   // while (radio.available()) {
