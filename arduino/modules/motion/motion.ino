@@ -6,7 +6,8 @@
 
 
 RF24 radio(7,8);
-const uint64_t pipes[2] = { 0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL };
+const uint64_t hub = 0xF0F0F0F0A1LL;
+const uint64_t me = 0xF0F0F0F0F2LL;
 const int motion_pin = 3;
 
 bool state = 0;
@@ -36,8 +37,8 @@ void setup(void) {
   radio.setChannel(76);
   radio.setRetries(10, 1000);
 
-  radio.openReadingPipe(1, pipes[1]);
-  radio.openWritingPipe(pipes[0]);
+  radio.openReadingPipe(1, me);
+  radio.openWritingPipe(hub);
 
   radio.printDetails();
   radio.startListening();
