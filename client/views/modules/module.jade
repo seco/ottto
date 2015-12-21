@@ -9,33 +9,22 @@
       div(ng-switch-when='float')
         .row
           .col-xs-4
-            knob(
+            input(
+              type='range', name='{{value.name}}'
               ng-model='module.values[value.name]'
-              knob-min='value.min'
-              knob-max='value.max'
-              knob-step='value.step'
-              knob-offset='-125'
-              knob-arc='250'
+              min='value.min', max='value.max'
             )
 
-            .input-group
-              input.form-control(
-                type='text', name='{{value.name}}',
-                ng-model='module.values[value.name]'
-              )
-
-              span.input-group-addon {{value.metric}}
+            {{module.values[value.name]}}{{value.metric}}
 
       div(ng-switch-when='boolean')
-        bs-switch(
-          type='checkbox'
-          ng-model='module.values[value.name]'
-          switch-active='true'
-          switch-off-text='{{value.options[0].label}}'
-          switch-on-text='{{value.options[1].label}}'
-          switch-on-color='primary'
-          switch-size='large'
-        )
+        .checkbox
+          label(for='{{value.name}}')
+            input(
+              type='checkbox', name='{{value.name}}'
+              ng-model='module.values[value.name]'
+            )
+            {{value.options[1].label}}
 
       div(ng-switch-when='radios')
         label.radio-inline(ng-repeat='option in value.options')
