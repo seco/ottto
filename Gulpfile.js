@@ -79,7 +79,7 @@ gulp.task('build-scripts-vendor', function() {
       './bower_components/angular-route/angular-route.js',
       './bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js',
 
-      './bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
+      './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
       './bower_components/bootstrap-switch/dist/js/bootstrap-switch.js'
     ])
     .pipe(concat('vendor.js'))

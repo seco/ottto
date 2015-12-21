@@ -5,7 +5,7 @@
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
-var _ = require('underscore');
+var _ = require('lodash');
 
 module.exports = {
 
@@ -31,21 +31,33 @@ module.exports = {
 
   // TODO Figure out why this runs multiple times per PUT
   beforeUpdate: function(data, next) {
-    if(!data.id) return;
+    if (!data.id) return next();
 
-    Modules.findOne(data.id).exec(function(err, module) {
+    Modules
+      .findOne(data.id)
+      .then(function(module) {
 
-      // Loop through values
-      _(data.values).each(function(value, key) {
-        // Find any that have changed
-        if(value !== module.values[key]) {
-          // Notifiy the system
-          EventBus.emit('module:change', key, value, module.values[key], module);
-        }
-      }); // Context
+        // Loop through values
+        _(data.values).each(function(value, key) {
+          if (value == module.values[key]) return;
 
-      next();
-    });
+          // Create Event Model
+          Events
+            .create({
+              module: data.id,
+              attribute: key,
+              value: value,
+              previous: module.values[key]
+            })
+            .exec(function() {
+              console.log(arguments);
+            });
+
+        });
+
+        next();
+      });
+
   }
 
 };

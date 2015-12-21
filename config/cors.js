@@ -22,7 +22,7 @@
  *  }
  *
  *  For more information on this configuration file, see:
- *  http://sailsjs.org/#/documentation/reference/sails.config/sails.config.cors.html
+ *  http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.cors.html
  *
  */
 
@@ -47,7 +47,7 @@ module.exports.cors = {
   *                                                                          *
   ***************************************************************************/
 
-  // origin: '*',
+  origin: '*',
 
   /***************************************************************************
   *                                                                          *

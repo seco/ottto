@@ -6,8 +6,8 @@
 
 
 RF24 radio(7,8);
-const uint64_t hub = 0xF0F0F0F0A1LL;
-const uint64_t me = 0xF0F0F0F0F1LL;
+const uint64_t hub = 0xF0F0F0F0AALL;
+const uint64_t me = 0xF0F0F0F0CCLL;
 const int light_pin = 3;
 
 int state = 0;
