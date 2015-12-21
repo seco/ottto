@@ -1,11 +1,7 @@
 {
-  "name": "Ottto",
-  "description": "a Sails application",
-  "main": "app.js",
-  "authors": [
-    "justin"
-  ],
-  "license": "MIT",
+  "name": "Ottto - Client",
+  "description": "A home automation platform.",
+  "version": "0.0.0",
   "dependencies": {
     "angular": "~1.4.8",
     "angular-route": "~1.4.8",

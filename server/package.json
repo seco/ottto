@@ -1,0 +1,20 @@
+{
+  "name": "ottto-server",
+  "description": "A home automation platform.",
+  "version": "0.0.0",
+  "dependencies": {
+    "cron": "^1.1.0",
+    "ejs": "~0.8.4",
+    "lodash": "^3.10.1",
+    "nrf": "^0.8.3",
+    "rc": "~0.5.0",
+    "sails": "~0.11.3",
+    "sails-disk": "~0.10.0"
+  },
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
+  }
+}

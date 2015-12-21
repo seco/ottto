@@ -153,7 +153,6 @@
         "updatedAt": "2015-06-16T03:36:36.067Z"
       }
     ],
-
     "modulegroups": [
       {
         "name": "Hallway",
@@ -557,7 +556,6 @@
         "id": 17,
         "createdAt": "2015-01-03T07:07:19.698Z",
         "updatedAt": "2015-01-03T07:07:19.782Z"
-
       }
     ],
     "rules": [

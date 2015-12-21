@@ -5,8 +5,6 @@
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
-var q = require('q');
-
 module.exports = {
 
   attributes: {
@@ -46,7 +44,7 @@ module.exports = {
     });
 
     if (conditions) {
-      q.all(conditions).then(function() { next(); });
+      Promise.all(conditions).then(function() { next(); });
     } else {
       next();
     }

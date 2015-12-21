@@ -1,39 +1,18 @@
 {
   "name": "ottto",
-  "private": true,
+  "description": "A home automation platform.",
   "version": "0.0.0",
-  "description": "a Sails application",
-  "keywords": [],
-  "main": "app.js",
+  "homepage": "https://github.com/jstnjns/ottto#readme",
+  "license": "MIT",
+  "author": "Justin Jones <justin@jstnjns.com> (http://jstnjns.com/)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/justin/ottto.git"
+    "url": "git+https://github.com/jstnjns/ottto.git"
   },
-  "author": "justin",
-  "license": "",
-  "dependencies": {
-    "cron": "^1.1.0",
-    "ejs": "~0.8.4",
-    "lodash": "^3.10.1",
-    "nrf": "^0.8.3",
-    "rc": "~0.5.0",
-    "sails": "~0.11.3",
-    "sails-disk": "~0.10.0"
-  },
-  "scripts": {
-    "debug": "node debug app.js",
-    "start": "node app.js"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-clean": "^0.3.1",
-    "gulp-coffee": "^2.3.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-if": "^2.0.0",
-    "gulp-jade": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.1.1",
-    "gulp-watch": "^4.3.5",
-    "jade": "^1.11.0"
-  }
+  "keywords": [
+    "automation",
+    "raspberrypi",
+    "arduino",
+    "nrf24l01"
+  ]
 }
