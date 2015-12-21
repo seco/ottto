@@ -153,6 +153,7 @@
         "updatedAt": "2015-06-16T03:36:36.067Z"
       }
     ],
+
     "modulegroups": [
       {
         "name": "Hallway",
@@ -178,34 +179,29 @@
         "name": "Light Bulbs",
         "attributes": [
           {
-            "type": "float",
-            "name": "level",
-            "min": "0",
-            "max": "100",
-            "step": "1",
-            "default": "0",
-            "label": "Level",
-            "metric": "%",
-            "options": [
-              {}
-            ]
-          },
-          {
             "name": "power",
-            "type": "boolean",
-            "truthy": "On",
-            "falsey": "Off",
-            "default": "false",
             "label": "Power",
-            "options": [
-              {
+            "type": "boolean",
+            "options": {
+              "0": {
+                "value": false,
                 "label": "Off"
               },
-              {
+              "1": {
                 "value": true,
                 "label": "On"
               }
-            ]
+            }
+          },
+          {
+            "name": "level",
+            "label": "Level",
+            "type": "float",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "default": 100,
+            "metric": "%"
           }
         ],
         "methods": [
@@ -276,6 +272,7 @@
                 "label": "Power",
                 "options": {
                   "0": {
+                    "value": false,
                     "label": "Off"
                   },
                   "1": {
@@ -291,7 +288,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-01-01T21:58:11.844Z"
+        "updatedAt": "2015-02-24T04:44:07.196Z"
       },
       {
         "name": "Motion Sensor",
@@ -542,7 +539,6 @@
     ],
     "ruleconditions": [
       {
-        "rule": 1,
         "module": 9,
         "attribute": "motion",
         "arguments": [
@@ -553,7 +549,6 @@
         "updatedAt": "2015-01-01T21:38:23.804Z"
       },
       {
-        "rule": 13,
         "module": 9,
         "attribute": "motion",
         "arguments": [
@@ -562,6 +557,7 @@
         "id": 17,
         "createdAt": "2015-01-03T07:07:19.698Z",
         "updatedAt": "2015-01-03T07:07:19.782Z"
+
       }
     ],
     "rules": [
@@ -579,7 +575,10 @@
         "actions": [
           {
             "module": 16,
-            "method": "toggle"
+            "method": "toggle",
+            "arguments": {
+              "0": true
+            }
           }
         ],
         "id": 13,
@@ -589,6 +588,50 @@
     ]
   },
   "schema": {
+    "ruleconditions_rule__rules_conditions": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "rules_conditions": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "rules",
+        "on": "id",
+        "via": "ruleconditions_rule"
+      },
+      "ruleconditions_rule": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "ruleconditions",
+        "on": "id",
+        "via": "rules_conditions"
+      }
+    },
+    "ruleconditions_conditions_ruleconditions__rules_conditions": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "rules_conditions": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "rules",
+        "on": "id",
+        "via": "ruleconditions_conditions_ruleconditions"
+      },
+      "ruleconditions_conditions_ruleconditions": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "ruleconditions",
+        "on": "id",
+        "via": "rules_conditions"
+      }
+    },
     "events": {
       "module": {
         "type": "integer",
@@ -769,10 +812,10 @@
     },
     "ruleactions": {},
     "ruleconditions": {
-      "id": 17
+      "id": 21
     },
     "rules": {
-      "id": 13
+      "id": 15
     },
     "events": {
       "id": 17
