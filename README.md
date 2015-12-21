@@ -4,7 +4,7 @@ The primary goal of Ottto is to lessen the required knowledge and/or cost of con
 
 ## Server
 
-A SailsJS app that feeds a RESTful API of modules, rules, groups, and users. Serves a root level public directory.
+A SailsJS app that feeds a RESTful API of modules, rules, groups, and users. Serves a root level public directory. It is designed to run on a Raspberry Pi (but in theory can be installed on any computer with accessible GPIO) connected to an NRF24L01 radio.
 
 ## Client
 
