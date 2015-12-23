@@ -152,6 +152,51 @@
         "id": 17,
         "createdAt": "2015-06-16T03:36:36.067Z",
         "updatedAt": "2015-06-16T03:36:36.067Z"
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "52",
+        "previous": "89",
+        "createdAt": "2015-12-23T13:22:07.482Z",
+        "updatedAt": "2015-12-23T13:22:07.482Z",
+        "id": 18
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "72",
+        "previous": "52",
+        "createdAt": "2015-12-23T13:22:30.681Z",
+        "updatedAt": "2015-12-23T13:22:30.681Z",
+        "id": 19
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-23T13:22:35.381Z",
+        "updatedAt": "2015-12-23T13:22:35.381Z",
+        "id": 20
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "85",
+        "previous": "72",
+        "createdAt": "2015-12-23T13:22:39.349Z",
+        "updatedAt": "2015-12-23T13:22:39.349Z",
+        "id": 21
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-23T13:22:39.350Z",
+        "updatedAt": "2015-12-23T13:22:39.351Z",
+        "id": 22
       }
     ],
     "modulegroups": [
@@ -171,7 +216,7 @@
         "name": "Kitchen",
         "id": 4,
         "createdAt": "2014-09-13T07:27:05.294Z",
-        "updatedAt": "2015-12-23T11:42:54.059Z"
+        "updatedAt": "2015-12-23T13:22:39.364Z"
       }
     ],
     "moduletypes": [
@@ -288,7 +333,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-12-23T11:42:54.056Z"
+        "updatedAt": "2015-12-23T13:22:39.362Z"
       },
       {
         "name": "Motion Sensor",
@@ -511,12 +556,12 @@
         "type": 1,
         "group": 4,
         "values": {
-          "level": "60",
+          "level": "85",
           "power": false
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2015-12-23T11:43:04.086Z"
+        "updatedAt": "2015-12-23T13:22:39.381Z"
       },
       {
         "name": "Hallway Light",
@@ -843,7 +888,7 @@
       "id": 15
     },
     "events": {
-      "id": 17
+      "id": 22
     },
     "modulegroups_modules__modules_group": {}
   }
