@@ -42,22 +42,26 @@ gulp.task('build', [
 ]);
 
 gulp.task('build-styles', [
-  'build-styles-vendor',
+  // 'build-styles-vendor',
   'build-styles-application'
 ]);
 
-gulp.task('build-styles-vendor', function() {
-  return gulp.src([ './bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css' ])
-    .pipe(rename({ prefix: '_', extname: '.scss' }))
-    .pipe(gulp.dest('./styles/vendors/'));
-});
+// gulp.task('build-styles-vendor', function() {
+//   return gulp.src([ './bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css' ])
+//     .pipe(rename({ prefix: '_', extname: '.scss' }))
+//     .pipe(gulp.dest('./styles/vendors/'));
+// });
 
-gulp.task('build-styles-application', [ 'build-styles-vendor' ], function() {
-  return gulp.src([ './styles/main.scss' ])
-    .pipe(sass())
-    .pipe(rename('screen.css'))
-    .pipe(gulp.dest('../.tmp/public/styles/'));
-});
+gulp.task('build-styles-application', [
+  // 'build-styles-vendor'
+  ],
+  function() {
+    return gulp.src([ './styles/main.scss' ])
+      .pipe(sass())
+      .pipe(rename('screen.css'))
+      .pipe(gulp.dest('../.tmp/public/styles/'));
+  }
+);
 
 gulp.task('build-scripts', [
   'build-scripts-vendor',
@@ -69,18 +73,16 @@ gulp.task('build-scripts-vendor', function() {
       './bower_components/lodash/dist/lodash.js',
       './bower_components/modernizr/modernizr.js',
       './bower_components/jquery/jquery.js',
-      './bower_components/jquery-knob/js/jquery.knob.js',
 
-      './bower_components/socket.io-client/socket.io.js',
+      // './bower_components/socket.io-client/socket.io.js',
+      './bower_components/sails.io.js/dist/sails.io.js',
 
       './bower_components/angular/angular.js',
       './bower_components/angular-resource/angular-resource.js',
       './bower_components/angular-activerecord/src/angular-activerecord.js',
       './bower_components/angular-route/angular-route.js',
-      './bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js',
 
-      './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-      './bower_components/bootstrap-switch/dist/js/bootstrap-switch.js'
+      './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'
     ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('../.tmp/public/scripts/'));
