@@ -26,7 +26,7 @@ void setup() {
   pinMode(light_pin, OUTPUT);
 
   radio.begin();
-  
+
   radio.enableDynamicPayloads();
   radio.setCRCLength(RF24_CRC_16);
   radio.setDataRate(RF24_2MBPS);
@@ -49,20 +49,20 @@ void loop() {
 
 
 void receive() {
-  
+
   if (radio.available()) {
 
     uint8_t len;
     bool done = false;
-  
+
     while (!done) {
       len = radio.getDynamicPayloadSize();
       done = radio.read(payload, len);
     }
-    
+
     parse(payload);
   }
-  
+
 }
 
 
@@ -80,15 +80,15 @@ void parse(char* payload) {
     } else {
       execute(0);
     }
-    
+
   }
-  
+
 }
 
 void execute(int level) {
 
   int value = level / 100 * 255;
-  
+
   analogWrite(light_pin, value);
 
 }
