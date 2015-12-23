@@ -10,7 +10,7 @@
         .row
           .col-xs-4
             input(
-              type='range', name='{{value.name}}'
+              type='range', name='{{value.name}}', id='{{value.name}}'
               ng-model='module.values[value.name]'
               min='value.min', max='value.max'
             )
@@ -21,7 +21,7 @@
         .checkbox
           label(for='{{value.name}}')
             input(
-              type='checkbox', name='{{value.name}}'
+              type='checkbox', name='{{value.name}}', id='{{value.name}}'
               ng-model='module.values[value.name]'
             )
             {{value.options[1].label}}
