@@ -14,8 +14,7 @@
               ng-model='module.values[value.name]'
               min='value.min', max='value.max'
             )
-
-            {{module.values[value.name]}}{{value.metric}}
+            span {{module.values[value.name]}}{{value.metric}}
 
       div(ng-switch-when='boolean')
         .checkbox
@@ -24,7 +23,7 @@
               type='checkbox', name='{{value.name}}', id='{{value.name}}'
               ng-model='module.values[value.name]'
             )
-            {{value.options[1].label}}
+            span {{value.options[1].label}}
 
       div(ng-switch-when='radios')
         label.radio-inline(ng-repeat='option in value.options')

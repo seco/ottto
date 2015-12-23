@@ -8,7 +8,7 @@
     "lodash": "^3.10.1",
     "nrf": "^0.8.3",
     "rc": "~0.5.0",
-    "sails": "~0.12.0-rc4",
+    "sails": "^0.11.3",
     "sails-disk": "~0.10.0"
   },
   "devDependencies": {
