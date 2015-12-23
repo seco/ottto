@@ -1,5 +1,6 @@
 {
   "data": {
+    "modulegroups_modules__modules_group": [],
     "events": [
       {
         "module": 9,
@@ -170,7 +171,7 @@
         "name": "Kitchen",
         "id": 4,
         "createdAt": "2014-09-13T07:27:05.294Z",
-        "updatedAt": "2015-12-23T04:01:22.455Z"
+        "updatedAt": "2015-12-23T11:42:54.059Z"
       }
     ],
     "moduletypes": [
@@ -287,7 +288,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-12-23T04:01:22.449Z"
+        "updatedAt": "2015-12-23T11:42:54.056Z"
       },
       {
         "name": "Motion Sensor",
@@ -510,12 +511,12 @@
         "type": 1,
         "group": 4,
         "values": {
-          "level": "100",
-          "power": true
+          "level": "60",
+          "power": false
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2015-12-23T04:01:22.500Z"
+        "updatedAt": "2015-12-23T11:43:04.086Z"
       },
       {
         "name": "Hallway Light",
@@ -569,7 +570,7 @@
         "actions": [],
         "id": 12,
         "createdAt": "2015-01-03T07:05:05.837Z",
-        "updatedAt": "2015-01-03T07:05:05.840Z"
+        "updatedAt": "2015-12-23T11:04:48.430Z"
       },
       {
         "name": "Different Rule",
@@ -632,6 +633,28 @@
         "references": "ruleconditions",
         "on": "id",
         "via": "rules_conditions"
+      }
+    },
+    "modulegroups_modules__modules_group": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "modulegroups_modules": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "modulegroups",
+        "on": "id",
+        "via": "modules_group"
+      },
+      "modules_group": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "modules",
+        "on": "id",
+        "via": "modulegroups_modules"
       }
     },
     "events": {
@@ -821,6 +844,7 @@
     },
     "events": {
       "id": 17
-    }
+    },
+    "modulegroups_modules__modules_group": {}
   }
 }

@@ -33,30 +33,36 @@ module.exports = {
   beforeUpdate: function(data, next) {
     if (!data.id) return next();
 
-    Modules
-      .findOne(data.id)
-      .then(function(module) {
+    console.trace();
 
-        // Loop through values
-        _(data.values).each(function(value, key) {
-          if (value == module.values[key]) return;
+    setTimeout(function() {
+      next();
+    }, 5000);
 
-          // Create Event Model
-          Events
-            .create({
-              module: data.id,
-              attribute: key,
-              value: value,
-              previous: module.values[key]
-            })
-            .exec(function() {
-              console.log(arguments);
-            });
+    // Modules
+    //   .findOne(data.id)
+    //   .exec(function(err, module) {
 
-        });
+    //     // Loop through values
+    //     _(data.values).each(function(value, key) {
+    //       if (value == module.values[key]) return;
 
-        next();
-      });
+    //       // Create Event Model
+    //       Events
+    //         .create({
+    //           module: data.id,
+    //           attribute: key,
+    //           value: value,
+    //           previous: module.values[key]
+    //         })
+    //         .exec(function() {
+    //           console.log(arguments);
+    //         });
+
+    //     });
+
+    //     next();
+    //   });
 
   }
 
