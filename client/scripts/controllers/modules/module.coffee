@@ -1,6 +1,7 @@
 'use strict'
 
-angular.module('OtttoApp')
+angular
+  .module 'OtttoApp'
   .controller 'ModuleController', ($scope, ModuleTypes, ModuleGroups) ->
 
     $scope.init = ->

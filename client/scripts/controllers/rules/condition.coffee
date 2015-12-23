@@ -1,6 +1,7 @@
 'use strict'
 
-angular.module('OtttoApp')
+angular
+  .module 'OtttoApp'
   .controller 'RuleConditionController', ($scope, $q, Modules, ModuleTypes) ->
 
     $scope.init = ->
