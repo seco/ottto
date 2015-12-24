@@ -4,6 +4,7 @@ angular
   .module('OtttoApp', [
     'ngResource'
     'ngRoute'
+    'ngSails'
     'ActiveRecord'
   ])
 
@@ -45,17 +46,3 @@ angular
         redirectTo: '/'
 
     # $locationProvider.html5Mode yes
-
-  .run () ->
-    # Attach a listener which fires when a connection is established:
-    io.socket.on 'connect', ()->
-
-      console.log 'Socket is now connected and globally accessible as `socket`.'
-
-      # Attach a listener which fires every time the server publishes a message:
-      io.socket.on 'message', (message) ->
-
-        console.log 'New message received from Sails ::\n', message
-
-
-

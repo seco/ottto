@@ -4,6 +4,8 @@ angular
   .module 'OtttoApp'
   .controller 'ModulesController', ($scope, Modules) ->
 
+    modules = new Modules
+
     $scope.init = ->
       do fetch
 
@@ -17,11 +19,12 @@ angular
 
 
     $scope.new = ->
-      $scope.module = new Modules
+      # $scope.module = Modules
 
 
     fetch = ->
-      Modules.fetchAll().then (modules) -> $scope.modules = modules
+      modules.$get().then (modules) ->
+        $scope.modules = modules
 
 
     do $scope.init

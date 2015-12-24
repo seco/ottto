@@ -1,7 +1,16 @@
 angular
   .module 'OtttoApp'
-  .factory 'Modules', (ActiveRecord) ->
+  .factory 'Module', (Model) ->
 
-    ActiveRecord.extend
+    class Module extends Model
 
-      $urlRoot: '/api/modules'
+      $resource: 'modules'
+
+
+angular
+  .module 'OtttoApp'
+  .factory 'Modules', (Collection, Module) ->
+
+    class Modules extends Collection
+
+      $model: Module

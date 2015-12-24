@@ -74,13 +74,14 @@ gulp.task('build-scripts-vendor', function() {
       './bower_components/modernizr/modernizr.js',
       './bower_components/jquery/jquery.js',
 
-      // './bower_components/socket.io-client/socket.io.js',
-      './bower_components/sails.io.js/dist/sails.io.js',
-
       './bower_components/angular/angular.js',
       './bower_components/angular-resource/angular-resource.js',
       './bower_components/angular-activerecord/src/angular-activerecord.js',
       './bower_components/angular-route/angular-route.js',
+
+      // './bower_components/socket.io-client/socket.io.js',
+      './bower_components/sails.io.js/dist/sails.io.js',
+      './bower_components/angular-sails/dist/angular-sails.js',
 
       './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'
     ])
