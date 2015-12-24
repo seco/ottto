@@ -528,7 +528,7 @@
         "name": "Hallway",
         "id": 2,
         "createdAt": "2014-09-13T07:26:52.743Z",
-        "updatedAt": "2015-12-24T07:56:00.194Z"
+        "updatedAt": "2015-12-24T08:48:41.270Z"
       },
       {
         "name": "Porch",
@@ -540,7 +540,7 @@
         "name": "Kitchen",
         "id": 4,
         "createdAt": "2014-09-13T07:27:05.294Z",
-        "updatedAt": "2015-12-24T07:57:37.241Z"
+        "updatedAt": "2015-12-24T11:03:46.444Z"
       }
     ],
     "moduletypes": [
@@ -659,7 +659,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-12-24T07:57:37.236Z"
+        "updatedAt": "2015-12-24T11:03:46.427Z"
       },
       {
         "name": "Motion Sensor",
@@ -686,7 +686,7 @@
         "methods": [],
         "id": 2,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-12-24T07:56:00.192Z"
+        "updatedAt": "2015-12-24T08:48:41.265Z"
       },
       {
         "name": "Contact Sensor",
@@ -876,29 +876,30 @@
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2015-12-24T07:56:00.213Z"
+        "updatedAt": "2015-12-24T08:48:41.295Z"
       },
       {
-        "name": "Kitchen Light",
+        "name": "Kitchen Lights",
         "type": 1,
         "group": 4,
         "values": {
-          "level": "82",
+          "level": "80",
           "power": false
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2015-12-24T07:57:37.260Z"
+        "updatedAt": "2015-12-24T11:13:47.190Z"
       },
       {
-        "name": "Hallway Light",
+        "name": "Hallway Lights",
         "type": 1,
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2015-12-21T21:00:15.683Z",
+        "updatedAt": "2015-12-24T11:13:02.716Z",
         "values": {
-          "level": "0"
+          "level": "52",
+          "power": false
         }
       },
       {

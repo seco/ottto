@@ -7,7 +7,7 @@ angular
     $scope.init = ->
       do fetch
 
-      $scope.$watch 'module.values', $scope.save, true
+      $scope.$watch 'module', $scope.save, true
 
 
     $scope.save = ->
