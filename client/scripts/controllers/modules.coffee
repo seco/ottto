@@ -1,8 +1,6 @@
-'use strict'
-
 angular
   .module 'OtttoApp'
-  .controller 'ModulesController', ($scope, Modules) ->
+  .controller 'ModulesController', ($scope, Module, Modules) ->
 
     modules = new Modules
 
@@ -19,7 +17,11 @@ angular
 
 
     $scope.new = ->
-      # $scope.module = Modules
+      $scope.module = new Module
+
+
+    $scope.cancel = ->
+      $scope.module = undefined
 
 
     fetch = ->

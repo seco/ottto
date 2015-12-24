@@ -7,18 +7,15 @@ angular
     $scope.init = ->
       do fetch
 
+      $scope.$watch 'module.values', $scope.save, true
+
 
     $scope.save = ->
-      $scope.module.$save().then fetch
-
-
-    $scope.cancel = ->
-      delete $scope.module
+      $scope.module.$save()
 
 
     $scope.delete = ->
-      $scope.module.$destroy().then fetch
-      delete $scope.module
+      $scope.module.$destroy()
 
 
     fetch = ->

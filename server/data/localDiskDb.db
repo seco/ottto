@@ -233,6 +233,294 @@
         "createdAt": "2015-12-24T07:01:30.493Z",
         "updatedAt": "2015-12-24T07:01:30.493Z",
         "id": 26
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T07:02:48.541Z",
+        "updatedAt": "2015-12-24T07:02:48.541Z",
+        "id": 27
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:05:48.201Z",
+        "updatedAt": "2015-12-24T07:05:48.201Z",
+        "id": 28
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T07:09:14.235Z",
+        "updatedAt": "2015-12-24T07:09:14.235Z",
+        "id": 29
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:09:51.584Z",
+        "updatedAt": "2015-12-24T07:09:51.584Z",
+        "id": 30
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T07:10:06.464Z",
+        "updatedAt": "2015-12-24T07:10:06.464Z",
+        "id": 31
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:11:46.586Z",
+        "updatedAt": "2015-12-24T07:11:46.586Z",
+        "id": 32
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T07:14:04.499Z",
+        "updatedAt": "2015-12-24T07:14:04.499Z",
+        "id": 33
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:28:10.282Z",
+        "updatedAt": "2015-12-24T07:28:10.282Z",
+        "id": 34
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T07:29:02.044Z",
+        "updatedAt": "2015-12-24T07:29:02.044Z",
+        "id": 35
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:54:03.217Z",
+        "updatedAt": "2015-12-24T07:54:03.217Z",
+        "id": 36
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "55",
+        "previous": "85",
+        "createdAt": "2015-12-24T07:56:27.779Z",
+        "updatedAt": "2015-12-24T07:56:27.779Z",
+        "id": 37
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "96",
+        "previous": "55",
+        "createdAt": "2015-12-24T07:56:28.715Z",
+        "updatedAt": "2015-12-24T07:56:28.715Z",
+        "id": 38
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "98",
+        "previous": "55",
+        "createdAt": "2015-12-24T07:56:28.720Z",
+        "updatedAt": "2015-12-24T07:56:28.720Z",
+        "id": 39
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "99",
+        "previous": "55",
+        "createdAt": "2015-12-24T07:56:28.744Z",
+        "updatedAt": "2015-12-24T07:56:28.744Z",
+        "id": 40
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "96",
+        "previous": "99",
+        "createdAt": "2015-12-24T07:56:28.854Z",
+        "updatedAt": "2015-12-24T07:56:28.854Z",
+        "id": 41
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "98",
+        "previous": "99",
+        "createdAt": "2015-12-24T07:56:28.872Z",
+        "updatedAt": "2015-12-24T07:56:28.872Z",
+        "id": 42
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "99",
+        "previous": "96",
+        "createdAt": "2015-12-24T07:56:28.924Z",
+        "updatedAt": "2015-12-24T07:56:28.924Z",
+        "id": 43
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "98",
+        "previous": "99",
+        "createdAt": "2015-12-24T07:56:28.989Z",
+        "updatedAt": "2015-12-24T07:56:28.989Z",
+        "id": 44
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "98",
+        "previous": "99",
+        "createdAt": "2015-12-24T07:56:29.055Z",
+        "updatedAt": "2015-12-24T07:56:29.055Z",
+        "id": 45
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "98",
+        "previous": "99",
+        "createdAt": "2015-12-24T07:56:29.114Z",
+        "updatedAt": "2015-12-24T07:56:29.114Z",
+        "id": 46
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "82",
+        "previous": "99",
+        "createdAt": "2015-12-24T07:56:30.024Z",
+        "updatedAt": "2015-12-24T07:56:30.024Z",
+        "id": 47
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:56:31.130Z",
+        "updatedAt": "2015-12-24T07:56:31.130Z",
+        "id": 48
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T07:56:31.888Z",
+        "updatedAt": "2015-12-24T07:56:31.888Z",
+        "id": 49
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:56:32.626Z",
+        "updatedAt": "2015-12-24T07:56:32.626Z",
+        "id": 50
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T07:56:33.577Z",
+        "updatedAt": "2015-12-24T07:56:33.577Z",
+        "id": 51
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:56:46.656Z",
+        "updatedAt": "2015-12-24T07:56:46.656Z",
+        "id": 52
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T07:56:47.535Z",
+        "updatedAt": "2015-12-24T07:56:47.535Z",
+        "id": 53
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:56:48.647Z",
+        "updatedAt": "2015-12-24T07:56:48.647Z",
+        "id": 54
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T07:56:59.603Z",
+        "updatedAt": "2015-12-24T07:56:59.603Z",
+        "id": 55
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:57:00.575Z",
+        "updatedAt": "2015-12-24T07:57:00.575Z",
+        "id": 56
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T07:57:01.296Z",
+        "updatedAt": "2015-12-24T07:57:01.296Z",
+        "id": 57
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T07:57:02.828Z",
+        "updatedAt": "2015-12-24T07:57:02.828Z",
+        "id": 58
       }
     ],
     "modulegroups": [
@@ -240,7 +528,7 @@
         "name": "Hallway",
         "id": 2,
         "createdAt": "2014-09-13T07:26:52.743Z",
-        "updatedAt": "2015-12-21T21:00:15.660Z"
+        "updatedAt": "2015-12-24T07:56:00.194Z"
       },
       {
         "name": "Porch",
@@ -252,7 +540,7 @@
         "name": "Kitchen",
         "id": 4,
         "createdAt": "2014-09-13T07:27:05.294Z",
-        "updatedAt": "2015-12-24T07:01:30.502Z"
+        "updatedAt": "2015-12-24T07:57:37.241Z"
       }
     ],
     "moduletypes": [
@@ -371,7 +659,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-12-24T07:01:30.500Z"
+        "updatedAt": "2015-12-24T07:57:37.236Z"
       },
       {
         "name": "Motion Sensor",
@@ -391,13 +679,14 @@
               }
             ],
             "name": "motion",
-            "type": "boolean"
+            "type": "boolean",
+            "$$hashKey": "object:16"
           }
         ],
         "methods": [],
         "id": 2,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-06-16T03:36:36.074Z"
+        "updatedAt": "2015-12-24T07:56:00.192Z"
       },
       {
         "name": "Contact Sensor",
@@ -579,27 +868,27 @@
     ],
     "modules": [
       {
-        "name": "Hallway Motion",
+        "name": "Hallway Motions",
         "type": 2,
         "group": 2,
         "values": {
-          "motion": true
+          "motion": false
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2015-06-16T03:36:36.105Z"
+        "updatedAt": "2015-12-24T07:56:00.213Z"
       },
       {
         "name": "Kitchen Light",
         "type": 1,
         "group": 4,
         "values": {
-          "level": "85",
+          "level": "82",
           "power": false
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2015-12-24T07:01:30.512Z"
+        "updatedAt": "2015-12-24T07:57:37.260Z"
       },
       {
         "name": "Hallway Light",
@@ -926,7 +1215,7 @@
       "id": 15
     },
     "events": {
-      "id": 26
+      "id": 58
     },
     "modulegroups_modules__modules_group": {}
   }

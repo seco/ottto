@@ -5,15 +5,35 @@ angular
     class Collection
 
       $model: Model
+      $items: []
+
+
+      constructor: (items) ->
+        @$_apply items
+
+        $sails.on @$resource, @$_respond
+
 
       $get: ->
-        $sails.on @$resource, ->
-          console.log 'hi', arguments
-
         $sails
           .get @$model::$path()
-          .then (response) => @$apply response.data
+          .then (response) => @$_apply response.data
 
 
-      $apply: (data) ->
-        @items = data.map (item) => new @$model item
+      $add: (item) ->
+        model = if item instanceof @$model then item else new @$model item
+        @$items.push model
+
+
+      $remove: (id) ->
+        @$items = @$items.filter (item) -> item.id isnt id
+
+
+      $_apply: (data) ->
+        if data then @$items = data.map (item) => new @$model item
+
+
+      $_respond: (message) ->
+        switch message.verb
+          when 'created' then @$add message.data
+          when 'destroyed' then @$remove message.id
