@@ -70,7 +70,7 @@ gulp.task('build-scripts', [
 
 gulp.task('build-scripts-vendor', function() {
   return gulp.src([
-      './bower_components/lodash/dist/lodash.js',
+      './bower_components/lodash/lodash.js',
       './bower_components/modernizr/modernizr.js',
       './bower_components/jquery/jquery.js',
 
