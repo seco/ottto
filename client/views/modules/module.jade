@@ -12,6 +12,7 @@
             input(
               type='range', name='{{value.name}}', id='{{value.name}}'
               ng-model='module.values[value.name]'
+              ng-model-options='{debounce:200}'
               min='value.min', max='value.max'
             )
             span {{module.values[value.name]}}{{value.metric}}
@@ -60,9 +61,9 @@ form.form-horizontal(name='moduleForm')
           ng-options='group.id as group.name for group in groups'
         )
 
-  fieldset
-    .form-group
-      .col-md-offset-2.col-md-10
-        a.btn.btn-primary(ng-click='save()') Save
-        a.btn.btn-default(ng-click='cancel()') Cancel
-        a.btn.btn-danger(ng-click='delete()') Delete
+  //- fieldset
+  //-   .form-group
+  //-     .col-md-offset-2.col-md-10
+  //-       a.btn.btn-primary(ng-click='save()') Save
+  //-       a.btn.btn-default(ng-click='cancel()') Cancel
+  //-       a.btn.btn-danger(ng-click='delete()') Delete

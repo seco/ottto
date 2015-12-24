@@ -70,6 +70,7 @@ angular
 
 
       $_respond: (message) =>
+        # TODO only take action if receiving a message we did not create
         return unless message.id is @id
 
         switch message.verb

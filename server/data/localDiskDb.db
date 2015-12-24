@@ -521,6 +521,1833 @@
         "createdAt": "2015-12-24T07:57:02.828Z",
         "updatedAt": "2015-12-24T07:57:02.828Z",
         "id": 58
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "27",
+        "previous": "80",
+        "createdAt": "2015-12-24T11:18:37.947Z",
+        "updatedAt": "2015-12-24T11:18:37.947Z",
+        "id": 59
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "83",
+        "previous": "27",
+        "createdAt": "2015-12-24T11:18:39.853Z",
+        "updatedAt": "2015-12-24T11:18:39.853Z",
+        "id": 60
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "43",
+        "previous": "83",
+        "createdAt": "2015-12-24T11:18:45.635Z",
+        "updatedAt": "2015-12-24T11:18:45.635Z",
+        "id": 61
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "13",
+        "previous": "43",
+        "createdAt": "2015-12-24T11:18:47.330Z",
+        "updatedAt": "2015-12-24T11:18:47.330Z",
+        "id": 62
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "70",
+        "previous": "13",
+        "createdAt": "2015-12-24T11:18:48.801Z",
+        "updatedAt": "2015-12-24T11:18:48.801Z",
+        "id": 63
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "45",
+        "previous": "70",
+        "createdAt": "2015-12-24T11:18:50.163Z",
+        "updatedAt": "2015-12-24T11:18:50.163Z",
+        "id": 64
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "29",
+        "previous": "45",
+        "createdAt": "2015-12-24T11:18:51.030Z",
+        "updatedAt": "2015-12-24T11:18:51.030Z",
+        "id": 65
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "61",
+        "previous": "29",
+        "createdAt": "2015-12-24T11:18:52.013Z",
+        "updatedAt": "2015-12-24T11:18:52.013Z",
+        "id": 66
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "79",
+        "previous": "61",
+        "createdAt": "2015-12-24T11:18:52.750Z",
+        "updatedAt": "2015-12-24T11:18:52.750Z",
+        "id": 67
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "32",
+        "previous": "79",
+        "createdAt": "2015-12-24T11:19:03.019Z",
+        "updatedAt": "2015-12-24T11:19:03.019Z",
+        "id": 68
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "44",
+        "previous": "32",
+        "createdAt": "2015-12-24T11:19:03.731Z",
+        "updatedAt": "2015-12-24T11:19:03.731Z",
+        "id": 69
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "57",
+        "previous": "44",
+        "createdAt": "2015-12-24T11:19:04.308Z",
+        "updatedAt": "2015-12-24T11:19:04.308Z",
+        "id": 70
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "77",
+        "previous": "57",
+        "createdAt": "2015-12-24T11:19:04.939Z",
+        "updatedAt": "2015-12-24T11:19:04.939Z",
+        "id": 71
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "52",
+        "previous": "77",
+        "createdAt": "2015-12-24T11:19:06.566Z",
+        "updatedAt": "2015-12-24T11:19:06.566Z",
+        "id": 72
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "43",
+        "previous": "52",
+        "createdAt": "2015-12-24T11:19:07.722Z",
+        "updatedAt": "2015-12-24T11:19:07.722Z",
+        "id": 73
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "39",
+        "previous": "43",
+        "createdAt": "2015-12-24T11:19:08.162Z",
+        "updatedAt": "2015-12-24T11:19:08.162Z",
+        "id": 74
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "24",
+        "previous": "39",
+        "createdAt": "2015-12-24T11:19:09.802Z",
+        "updatedAt": "2015-12-24T11:19:09.802Z",
+        "id": 75
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "18",
+        "previous": "24",
+        "createdAt": "2015-12-24T11:19:10.296Z",
+        "updatedAt": "2015-12-24T11:19:10.296Z",
+        "id": 76
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "48",
+        "previous": "18",
+        "createdAt": "2015-12-24T11:19:11.079Z",
+        "updatedAt": "2015-12-24T11:19:11.079Z",
+        "id": 77
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "79",
+        "previous": "48",
+        "createdAt": "2015-12-24T11:19:11.812Z",
+        "updatedAt": "2015-12-24T11:19:11.812Z",
+        "id": 78
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "94",
+        "previous": "79",
+        "createdAt": "2015-12-24T11:19:12.512Z",
+        "updatedAt": "2015-12-24T11:19:12.512Z",
+        "id": 79
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "33",
+        "previous": "94",
+        "createdAt": "2015-12-24T11:19:13.261Z",
+        "updatedAt": "2015-12-24T11:19:13.261Z",
+        "id": 80
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T11:19:13.729Z",
+        "updatedAt": "2015-12-24T11:19:13.729Z",
+        "id": 81
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T11:19:14.187Z",
+        "updatedAt": "2015-12-24T11:19:14.187Z",
+        "id": 82
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "61",
+        "previous": "33",
+        "createdAt": "2015-12-24T11:19:53.303Z",
+        "updatedAt": "2015-12-24T11:19:53.303Z",
+        "id": 83
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "72",
+        "previous": "61",
+        "createdAt": "2015-12-24T11:19:54.040Z",
+        "updatedAt": "2015-12-24T11:19:54.040Z",
+        "id": 84
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "78",
+        "previous": "72",
+        "createdAt": "2015-12-24T11:19:55.002Z",
+        "updatedAt": "2015-12-24T11:19:55.002Z",
+        "id": 85
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "83",
+        "previous": "78",
+        "createdAt": "2015-12-24T11:19:55.975Z",
+        "updatedAt": "2015-12-24T11:19:55.975Z",
+        "id": 86
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "34",
+        "previous": "83",
+        "createdAt": "2015-12-24T11:19:57.523Z",
+        "updatedAt": "2015-12-24T11:19:57.523Z",
+        "id": 87
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "25",
+        "previous": "34",
+        "createdAt": "2015-12-24T11:19:58.401Z",
+        "updatedAt": "2015-12-24T11:19:58.401Z",
+        "id": 88
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "19",
+        "previous": "25",
+        "createdAt": "2015-12-24T11:19:59.017Z",
+        "updatedAt": "2015-12-24T11:19:59.017Z",
+        "id": 89
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "16",
+        "previous": "19",
+        "createdAt": "2015-12-24T11:19:59.629Z",
+        "updatedAt": "2015-12-24T11:19:59.629Z",
+        "id": 90
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "39",
+        "previous": "16",
+        "createdAt": "2015-12-24T11:20:00.226Z",
+        "updatedAt": "2015-12-24T11:20:00.226Z",
+        "id": 91
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "62",
+        "previous": "39",
+        "createdAt": "2015-12-24T11:20:01.195Z",
+        "updatedAt": "2015-12-24T11:20:01.195Z",
+        "id": 92
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "79",
+        "previous": "62",
+        "createdAt": "2015-12-24T11:20:02.266Z",
+        "updatedAt": "2015-12-24T11:20:02.266Z",
+        "id": 93
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "80",
+        "previous": "79",
+        "createdAt": "2015-12-24T11:20:02.528Z",
+        "updatedAt": "2015-12-24T11:20:02.528Z",
+        "id": 94
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "85",
+        "previous": "80",
+        "createdAt": "2015-12-24T11:20:03.184Z",
+        "updatedAt": "2015-12-24T11:20:03.184Z",
+        "id": 95
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "87",
+        "previous": "85",
+        "createdAt": "2015-12-24T11:20:03.935Z",
+        "updatedAt": "2015-12-24T11:20:03.935Z",
+        "id": 96
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "89",
+        "previous": "87",
+        "createdAt": "2015-12-24T11:20:04.323Z",
+        "updatedAt": "2015-12-24T11:20:04.323Z",
+        "id": 97
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "90",
+        "previous": "89",
+        "createdAt": "2015-12-24T11:20:04.610Z",
+        "updatedAt": "2015-12-24T11:20:04.610Z",
+        "id": 98
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "61",
+        "previous": "90",
+        "createdAt": "2015-12-24T11:20:05.685Z",
+        "updatedAt": "2015-12-24T11:20:05.685Z",
+        "id": 99
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "13",
+        "previous": "61",
+        "createdAt": "2015-12-24T11:20:07.476Z",
+        "updatedAt": "2015-12-24T11:20:07.476Z",
+        "id": 100
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "86",
+        "previous": "13",
+        "createdAt": "2015-12-24T11:20:08.793Z",
+        "updatedAt": "2015-12-24T11:20:08.793Z",
+        "id": 101
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "47",
+        "previous": "86",
+        "createdAt": "2015-12-24T11:23:17.111Z",
+        "updatedAt": "2015-12-24T11:23:17.111Z",
+        "id": 102
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "31",
+        "previous": "47",
+        "createdAt": "2015-12-24T11:23:18.118Z",
+        "updatedAt": "2015-12-24T11:23:18.118Z",
+        "id": 103
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "48",
+        "previous": "31",
+        "createdAt": "2015-12-24T11:23:18.957Z",
+        "updatedAt": "2015-12-24T11:23:18.957Z",
+        "id": 104
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "73",
+        "previous": "48",
+        "createdAt": "2015-12-24T11:23:19.608Z",
+        "updatedAt": "2015-12-24T11:23:19.608Z",
+        "id": 105
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "38",
+        "previous": "73",
+        "createdAt": "2015-12-24T11:23:20.392Z",
+        "updatedAt": "2015-12-24T11:23:20.392Z",
+        "id": 106
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "19",
+        "previous": "38",
+        "createdAt": "2015-12-24T11:23:21.140Z",
+        "updatedAt": "2015-12-24T11:23:21.140Z",
+        "id": 107
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "39",
+        "previous": "19",
+        "createdAt": "2015-12-24T11:23:22.756Z",
+        "updatedAt": "2015-12-24T11:23:22.756Z",
+        "id": 108
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "40",
+        "previous": "39",
+        "createdAt": "2015-12-24T11:23:33.818Z",
+        "updatedAt": "2015-12-24T11:23:33.818Z",
+        "id": 109
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "41",
+        "previous": "40",
+        "createdAt": "2015-12-24T11:23:33.832Z",
+        "updatedAt": "2015-12-24T11:23:33.832Z",
+        "id": 110
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "43",
+        "previous": "41",
+        "createdAt": "2015-12-24T11:23:33.855Z",
+        "updatedAt": "2015-12-24T11:23:33.855Z",
+        "id": 111
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "44",
+        "previous": "43",
+        "createdAt": "2015-12-24T11:23:33.875Z",
+        "updatedAt": "2015-12-24T11:23:33.875Z",
+        "id": 112
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "45",
+        "previous": "44",
+        "createdAt": "2015-12-24T11:23:33.900Z",
+        "updatedAt": "2015-12-24T11:23:33.900Z",
+        "id": 113
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "46",
+        "previous": "44",
+        "createdAt": "2015-12-24T11:23:33.914Z",
+        "updatedAt": "2015-12-24T11:23:33.914Z",
+        "id": 114
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "47",
+        "previous": "46",
+        "createdAt": "2015-12-24T11:23:33.940Z",
+        "updatedAt": "2015-12-24T11:23:33.940Z",
+        "id": 115
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "48",
+        "previous": "47",
+        "createdAt": "2015-12-24T11:23:33.985Z",
+        "updatedAt": "2015-12-24T11:23:33.985Z",
+        "id": 116
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "49",
+        "previous": "48",
+        "createdAt": "2015-12-24T11:23:34.008Z",
+        "updatedAt": "2015-12-24T11:23:34.008Z",
+        "id": 117
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "51",
+        "previous": "49",
+        "createdAt": "2015-12-24T11:23:34.042Z",
+        "updatedAt": "2015-12-24T11:23:34.042Z",
+        "id": 118
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "52",
+        "previous": "51",
+        "createdAt": "2015-12-24T11:23:34.068Z",
+        "updatedAt": "2015-12-24T11:23:34.068Z",
+        "id": 119
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "54",
+        "previous": "52",
+        "createdAt": "2015-12-24T11:23:34.107Z",
+        "updatedAt": "2015-12-24T11:23:34.107Z",
+        "id": 120
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "55",
+        "previous": "54",
+        "createdAt": "2015-12-24T11:23:34.166Z",
+        "updatedAt": "2015-12-24T11:23:34.166Z",
+        "id": 121
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "56",
+        "previous": "55",
+        "createdAt": "2015-12-24T11:23:34.242Z",
+        "updatedAt": "2015-12-24T11:23:34.242Z",
+        "id": 122
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "57",
+        "previous": "56",
+        "createdAt": "2015-12-24T11:23:34.302Z",
+        "updatedAt": "2015-12-24T11:23:34.302Z",
+        "id": 123
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "58",
+        "previous": "57",
+        "createdAt": "2015-12-24T11:23:34.367Z",
+        "updatedAt": "2015-12-24T11:23:34.367Z",
+        "id": 124
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "59",
+        "previous": "57",
+        "createdAt": "2015-12-24T11:23:34.410Z",
+        "updatedAt": "2015-12-24T11:23:34.410Z",
+        "id": 125
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "60",
+        "previous": "59",
+        "createdAt": "2015-12-24T11:23:34.451Z",
+        "updatedAt": "2015-12-24T11:23:34.451Z",
+        "id": 126
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "61",
+        "previous": "59",
+        "createdAt": "2015-12-24T11:23:34.477Z",
+        "updatedAt": "2015-12-24T11:23:34.477Z",
+        "id": 127
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "62",
+        "previous": "60",
+        "createdAt": "2015-12-24T11:23:34.497Z",
+        "updatedAt": "2015-12-24T11:23:34.497Z",
+        "id": 128
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "63",
+        "previous": "62",
+        "createdAt": "2015-12-24T11:23:34.568Z",
+        "updatedAt": "2015-12-24T11:23:34.568Z",
+        "id": 129
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "64",
+        "previous": "62",
+        "createdAt": "2015-12-24T11:23:34.590Z",
+        "updatedAt": "2015-12-24T11:23:34.590Z",
+        "id": 130
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "65",
+        "previous": "64",
+        "createdAt": "2015-12-24T11:23:34.701Z",
+        "updatedAt": "2015-12-24T11:23:34.701Z",
+        "id": 131
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "66",
+        "previous": "64",
+        "createdAt": "2015-12-24T11:23:34.722Z",
+        "updatedAt": "2015-12-24T11:23:34.722Z",
+        "id": 132
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "67",
+        "previous": "66",
+        "createdAt": "2015-12-24T11:23:34.802Z",
+        "updatedAt": "2015-12-24T11:23:34.802Z",
+        "id": 133
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "68",
+        "previous": "67",
+        "createdAt": "2015-12-24T11:23:34.844Z",
+        "updatedAt": "2015-12-24T11:23:34.844Z",
+        "id": 134
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "69",
+        "previous": "68",
+        "createdAt": "2015-12-24T11:23:34.971Z",
+        "updatedAt": "2015-12-24T11:23:34.971Z",
+        "id": 135
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "70",
+        "previous": "69",
+        "createdAt": "2015-12-24T11:23:35.021Z",
+        "updatedAt": "2015-12-24T11:23:35.021Z",
+        "id": 136
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "71",
+        "previous": "69",
+        "createdAt": "2015-12-24T11:23:35.043Z",
+        "updatedAt": "2015-12-24T11:23:35.043Z",
+        "id": 137
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "72",
+        "previous": "71",
+        "createdAt": "2015-12-24T11:23:35.130Z",
+        "updatedAt": "2015-12-24T11:23:35.130Z",
+        "id": 138
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "71",
+        "previous": "72",
+        "createdAt": "2015-12-24T11:23:35.195Z",
+        "updatedAt": "2015-12-24T11:23:35.195Z",
+        "id": 139
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "69",
+        "previous": "71",
+        "createdAt": "2015-12-24T11:23:35.238Z",
+        "updatedAt": "2015-12-24T11:23:35.238Z",
+        "id": 140
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "68",
+        "previous": "69",
+        "createdAt": "2015-12-24T11:23:35.268Z",
+        "updatedAt": "2015-12-24T11:23:35.268Z",
+        "id": 141
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "67",
+        "previous": "68",
+        "createdAt": "2015-12-24T11:23:35.303Z",
+        "updatedAt": "2015-12-24T11:23:35.303Z",
+        "id": 142
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "64",
+        "previous": "67",
+        "createdAt": "2015-12-24T11:23:35.373Z",
+        "updatedAt": "2015-12-24T11:23:35.373Z",
+        "id": 143
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "63",
+        "previous": "64",
+        "createdAt": "2015-12-24T11:23:35.397Z",
+        "updatedAt": "2015-12-24T11:23:35.397Z",
+        "id": 144
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "61",
+        "previous": "64",
+        "createdAt": "2015-12-24T11:23:35.416Z",
+        "updatedAt": "2015-12-24T11:23:35.416Z",
+        "id": 145
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "57",
+        "previous": "61",
+        "createdAt": "2015-12-24T11:23:35.443Z",
+        "updatedAt": "2015-12-24T11:23:35.443Z",
+        "id": 146
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "56",
+        "previous": "61",
+        "createdAt": "2015-12-24T11:23:35.460Z",
+        "updatedAt": "2015-12-24T11:23:35.460Z",
+        "id": 147
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "55",
+        "previous": "57",
+        "createdAt": "2015-12-24T11:23:35.478Z",
+        "updatedAt": "2015-12-24T11:23:35.478Z",
+        "id": 148
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "54",
+        "previous": "55",
+        "createdAt": "2015-12-24T11:23:35.510Z",
+        "updatedAt": "2015-12-24T11:23:35.510Z",
+        "id": 149
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "52",
+        "previous": "55",
+        "createdAt": "2015-12-24T11:23:35.532Z",
+        "updatedAt": "2015-12-24T11:23:35.532Z",
+        "id": 150
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "51",
+        "previous": "52",
+        "createdAt": "2015-12-24T11:23:35.608Z",
+        "updatedAt": "2015-12-24T11:23:35.608Z",
+        "id": 151
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "50",
+        "previous": "51",
+        "createdAt": "2015-12-24T11:23:35.641Z",
+        "updatedAt": "2015-12-24T11:23:35.641Z",
+        "id": 152
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "48",
+        "previous": "50",
+        "createdAt": "2015-12-24T11:23:35.675Z",
+        "updatedAt": "2015-12-24T11:23:35.675Z",
+        "id": 153
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "47",
+        "previous": "50",
+        "createdAt": "2015-12-24T11:23:35.691Z",
+        "updatedAt": "2015-12-24T11:23:35.691Z",
+        "id": 154
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "45",
+        "previous": "47",
+        "createdAt": "2015-12-24T11:23:35.719Z",
+        "updatedAt": "2015-12-24T11:23:35.719Z",
+        "id": 155
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "44",
+        "previous": "45",
+        "createdAt": "2015-12-24T11:23:35.767Z",
+        "updatedAt": "2015-12-24T11:23:35.767Z",
+        "id": 156
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "43",
+        "previous": "44",
+        "createdAt": "2015-12-24T11:23:35.808Z",
+        "updatedAt": "2015-12-24T11:23:35.808Z",
+        "id": 157
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "41",
+        "previous": "44",
+        "createdAt": "2015-12-24T11:23:35.825Z",
+        "updatedAt": "2015-12-24T11:23:35.825Z",
+        "id": 158
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "38",
+        "previous": "41",
+        "createdAt": "2015-12-24T11:23:35.860Z",
+        "updatedAt": "2015-12-24T11:23:35.860Z",
+        "id": 159
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "37",
+        "previous": "38",
+        "createdAt": "2015-12-24T11:23:35.901Z",
+        "updatedAt": "2015-12-24T11:23:35.901Z",
+        "id": 160
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "35",
+        "previous": "37",
+        "createdAt": "2015-12-24T11:23:35.946Z",
+        "updatedAt": "2015-12-24T11:23:35.946Z",
+        "id": 161
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "33",
+        "previous": "37",
+        "createdAt": "2015-12-24T11:23:35.969Z",
+        "updatedAt": "2015-12-24T11:23:35.969Z",
+        "id": 162
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "32",
+        "previous": "33",
+        "createdAt": "2015-12-24T11:23:36.014Z",
+        "updatedAt": "2015-12-24T11:23:36.014Z",
+        "id": 163
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "31",
+        "previous": "33",
+        "createdAt": "2015-12-24T11:23:36.038Z",
+        "updatedAt": "2015-12-24T11:23:36.038Z",
+        "id": 164
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "30",
+        "previous": "31",
+        "createdAt": "2015-12-24T11:23:36.084Z",
+        "updatedAt": "2015-12-24T11:23:36.084Z",
+        "id": 165
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "28",
+        "previous": "30",
+        "createdAt": "2015-12-24T11:23:36.154Z",
+        "updatedAt": "2015-12-24T11:23:36.154Z",
+        "id": 166
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "27",
+        "previous": "30",
+        "createdAt": "2015-12-24T11:23:36.183Z",
+        "updatedAt": "2015-12-24T11:23:36.183Z",
+        "id": 167
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "26",
+        "previous": "27",
+        "createdAt": "2015-12-24T11:23:36.225Z",
+        "updatedAt": "2015-12-24T11:23:36.225Z",
+        "id": 168
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "25",
+        "previous": "26",
+        "createdAt": "2015-12-24T11:23:36.272Z",
+        "updatedAt": "2015-12-24T11:23:36.272Z",
+        "id": 169
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "23",
+        "previous": "25",
+        "createdAt": "2015-12-24T11:23:36.319Z",
+        "updatedAt": "2015-12-24T11:23:36.319Z",
+        "id": 170
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "22",
+        "previous": "23",
+        "createdAt": "2015-12-24T11:23:36.361Z",
+        "updatedAt": "2015-12-24T11:23:36.361Z",
+        "id": 171
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "20",
+        "previous": "22",
+        "createdAt": "2015-12-24T11:23:36.409Z",
+        "updatedAt": "2015-12-24T11:23:36.409Z",
+        "id": 172
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "19",
+        "previous": "20",
+        "createdAt": "2015-12-24T11:23:36.499Z",
+        "updatedAt": "2015-12-24T11:23:36.500Z",
+        "id": 173
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "18",
+        "previous": "19",
+        "createdAt": "2015-12-24T11:23:36.757Z",
+        "updatedAt": "2015-12-24T11:23:36.757Z",
+        "id": 174
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "19",
+        "previous": "18",
+        "createdAt": "2015-12-24T11:23:37.834Z",
+        "updatedAt": "2015-12-24T11:23:37.834Z",
+        "id": 175
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "22",
+        "previous": "19",
+        "createdAt": "2015-12-24T11:23:37.849Z",
+        "updatedAt": "2015-12-24T11:23:37.849Z",
+        "id": 176
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "26",
+        "previous": "22",
+        "createdAt": "2015-12-24T11:23:37.868Z",
+        "updatedAt": "2015-12-24T11:23:37.868Z",
+        "id": 177
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "31",
+        "previous": "26",
+        "createdAt": "2015-12-24T11:23:37.893Z",
+        "updatedAt": "2015-12-24T11:23:37.893Z",
+        "id": 178
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "36",
+        "previous": "31",
+        "createdAt": "2015-12-24T11:23:37.925Z",
+        "updatedAt": "2015-12-24T11:23:37.925Z",
+        "id": 179
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "41",
+        "previous": "31",
+        "createdAt": "2015-12-24T11:23:37.941Z",
+        "updatedAt": "2015-12-24T11:23:37.941Z",
+        "id": 180
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "46",
+        "previous": "36",
+        "createdAt": "2015-12-24T11:23:37.954Z",
+        "updatedAt": "2015-12-24T11:23:37.955Z",
+        "id": 181
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "52",
+        "previous": "46",
+        "createdAt": "2015-12-24T11:23:37.977Z",
+        "updatedAt": "2015-12-24T11:23:37.977Z",
+        "id": 182
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "61",
+        "previous": "52",
+        "createdAt": "2015-12-24T11:23:38.016Z",
+        "updatedAt": "2015-12-24T11:23:38.016Z",
+        "id": 183
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "64",
+        "previous": "61",
+        "createdAt": "2015-12-24T11:23:38.039Z",
+        "updatedAt": "2015-12-24T11:23:38.039Z",
+        "id": 184
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "68",
+        "previous": "64",
+        "createdAt": "2015-12-24T11:23:38.078Z",
+        "updatedAt": "2015-12-24T11:23:38.078Z",
+        "id": 185
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "71",
+        "previous": "64",
+        "createdAt": "2015-12-24T11:23:38.096Z",
+        "updatedAt": "2015-12-24T11:23:38.096Z",
+        "id": 186
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "74",
+        "previous": "71",
+        "createdAt": "2015-12-24T11:23:38.136Z",
+        "updatedAt": "2015-12-24T11:23:38.136Z",
+        "id": 187
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "76",
+        "previous": "74",
+        "createdAt": "2015-12-24T11:23:38.173Z",
+        "updatedAt": "2015-12-24T11:23:38.173Z",
+        "id": 188
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "78",
+        "previous": "76",
+        "createdAt": "2015-12-24T11:23:38.216Z",
+        "updatedAt": "2015-12-24T11:23:38.216Z",
+        "id": 189
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "80",
+        "previous": "78",
+        "createdAt": "2015-12-24T11:23:38.254Z",
+        "updatedAt": "2015-12-24T11:23:38.254Z",
+        "id": 190
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "81",
+        "previous": "80",
+        "createdAt": "2015-12-24T11:23:38.298Z",
+        "updatedAt": "2015-12-24T11:23:38.298Z",
+        "id": 191
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "82",
+        "previous": "80",
+        "createdAt": "2015-12-24T11:23:38.321Z",
+        "updatedAt": "2015-12-24T11:23:38.321Z",
+        "id": 192
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "83",
+        "previous": "82",
+        "createdAt": "2015-12-24T11:23:38.430Z",
+        "updatedAt": "2015-12-24T11:23:38.430Z",
+        "id": 193
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "84",
+        "previous": "83",
+        "createdAt": "2015-12-24T11:23:38.515Z",
+        "updatedAt": "2015-12-24T11:23:38.515Z",
+        "id": 194
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "83",
+        "previous": "84",
+        "createdAt": "2015-12-24T11:24:00.325Z",
+        "updatedAt": "2015-12-24T11:24:00.325Z",
+        "id": 195
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "82",
+        "previous": "83",
+        "createdAt": "2015-12-24T11:24:00.344Z",
+        "updatedAt": "2015-12-24T11:24:00.344Z",
+        "id": 196
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "80",
+        "previous": "82",
+        "createdAt": "2015-12-24T11:24:00.361Z",
+        "updatedAt": "2015-12-24T11:24:00.361Z",
+        "id": 197
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "79",
+        "previous": "80",
+        "createdAt": "2015-12-24T11:24:00.392Z",
+        "updatedAt": "2015-12-24T11:24:00.392Z",
+        "id": 198
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "76",
+        "previous": "79",
+        "createdAt": "2015-12-24T11:24:00.419Z",
+        "updatedAt": "2015-12-24T11:24:00.419Z",
+        "id": 199
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "75",
+        "previous": "79",
+        "createdAt": "2015-12-24T11:24:00.445Z",
+        "updatedAt": "2015-12-24T11:24:00.445Z",
+        "id": 200
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "74",
+        "previous": "75",
+        "createdAt": "2015-12-24T11:24:00.480Z",
+        "updatedAt": "2015-12-24T11:24:00.480Z",
+        "id": 201
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "73",
+        "previous": "74",
+        "createdAt": "2015-12-24T11:24:00.527Z",
+        "updatedAt": "2015-12-24T11:24:00.527Z",
+        "id": 202
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "71",
+        "previous": "74",
+        "createdAt": "2015-12-24T11:24:00.544Z",
+        "updatedAt": "2015-12-24T11:24:00.544Z",
+        "id": 203
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "70",
+        "previous": "73",
+        "createdAt": "2015-12-24T11:24:00.563Z",
+        "updatedAt": "2015-12-24T11:24:00.563Z",
+        "id": 204
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "69",
+        "previous": "70",
+        "createdAt": "2015-12-24T11:24:00.600Z",
+        "updatedAt": "2015-12-24T11:24:00.600Z",
+        "id": 205
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "68",
+        "previous": "69",
+        "createdAt": "2015-12-24T11:24:00.651Z",
+        "updatedAt": "2015-12-24T11:24:00.651Z",
+        "id": 206
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "66",
+        "previous": "68",
+        "createdAt": "2015-12-24T11:24:00.747Z",
+        "updatedAt": "2015-12-24T11:24:00.747Z",
+        "id": 207
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "64",
+        "previous": "66",
+        "createdAt": "2015-12-24T11:24:00.819Z",
+        "updatedAt": "2015-12-24T11:24:00.819Z",
+        "id": 208
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "62",
+        "previous": "64",
+        "createdAt": "2015-12-24T11:24:00.921Z",
+        "updatedAt": "2015-12-24T11:24:00.921Z",
+        "id": 209
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "61",
+        "previous": "62",
+        "createdAt": "2015-12-24T11:24:01.018Z",
+        "updatedAt": "2015-12-24T11:24:01.018Z",
+        "id": 210
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "59",
+        "previous": "61",
+        "createdAt": "2015-12-24T11:24:01.079Z",
+        "updatedAt": "2015-12-24T11:24:01.079Z",
+        "id": 211
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "58",
+        "previous": "61",
+        "createdAt": "2015-12-24T11:24:01.111Z",
+        "updatedAt": "2015-12-24T11:24:01.111Z",
+        "id": 212
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "57",
+        "previous": "58",
+        "createdAt": "2015-12-24T11:24:01.155Z",
+        "updatedAt": "2015-12-24T11:24:01.155Z",
+        "id": 213
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "56",
+        "previous": "58",
+        "createdAt": "2015-12-24T11:24:01.187Z",
+        "updatedAt": "2015-12-24T11:24:01.187Z",
+        "id": 214
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "54",
+        "previous": "57",
+        "createdAt": "2015-12-24T11:24:01.212Z",
+        "updatedAt": "2015-12-24T11:24:01.212Z",
+        "id": 215
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "53",
+        "previous": "54",
+        "createdAt": "2015-12-24T11:24:01.261Z",
+        "updatedAt": "2015-12-24T11:24:01.261Z",
+        "id": 216
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "52",
+        "previous": "54",
+        "createdAt": "2015-12-24T11:24:01.301Z",
+        "updatedAt": "2015-12-24T11:24:01.301Z",
+        "id": 217
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "51",
+        "previous": "53",
+        "createdAt": "2015-12-24T11:24:01.321Z",
+        "updatedAt": "2015-12-24T11:24:01.321Z",
+        "id": 218
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "50",
+        "previous": "51",
+        "createdAt": "2015-12-24T11:24:01.376Z",
+        "updatedAt": "2015-12-24T11:24:01.376Z",
+        "id": 219
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "49",
+        "previous": "51",
+        "createdAt": "2015-12-24T11:24:01.398Z",
+        "updatedAt": "2015-12-24T11:24:01.398Z",
+        "id": 220
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "48",
+        "previous": "50",
+        "createdAt": "2015-12-24T11:24:01.428Z",
+        "updatedAt": "2015-12-24T11:24:01.428Z",
+        "id": 221
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "47",
+        "previous": "48",
+        "createdAt": "2015-12-24T11:24:01.479Z",
+        "updatedAt": "2015-12-24T11:24:01.479Z",
+        "id": 222
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "48",
+        "previous": "47",
+        "createdAt": "2015-12-24T11:24:54.546Z",
+        "updatedAt": "2015-12-24T11:24:54.546Z",
+        "id": 223
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "49",
+        "previous": "48",
+        "createdAt": "2015-12-24T11:24:54.575Z",
+        "updatedAt": "2015-12-24T11:24:54.575Z",
+        "id": 224
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "50",
+        "previous": "49",
+        "createdAt": "2015-12-24T11:24:54.602Z",
+        "updatedAt": "2015-12-24T11:24:54.602Z",
+        "id": 225
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "51",
+        "previous": "50",
+        "createdAt": "2015-12-24T11:24:54.653Z",
+        "updatedAt": "2015-12-24T11:24:54.653Z",
+        "id": 226
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "52",
+        "previous": "50",
+        "createdAt": "2015-12-24T11:24:54.675Z",
+        "updatedAt": "2015-12-24T11:24:54.675Z",
+        "id": 227
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "53",
+        "previous": "52",
+        "createdAt": "2015-12-24T11:24:54.705Z",
+        "updatedAt": "2015-12-24T11:24:54.706Z",
+        "id": 228
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "57",
+        "previous": "53",
+        "createdAt": "2015-12-24T11:24:54.783Z",
+        "updatedAt": "2015-12-24T11:24:54.783Z",
+        "id": 229
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "59",
+        "previous": "53",
+        "createdAt": "2015-12-24T11:24:54.803Z",
+        "updatedAt": "2015-12-24T11:24:54.803Z",
+        "id": 230
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "61",
+        "previous": "59",
+        "createdAt": "2015-12-24T11:24:54.857Z",
+        "updatedAt": "2015-12-24T11:24:54.857Z",
+        "id": 231
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "62",
+        "previous": "61",
+        "createdAt": "2015-12-24T11:24:54.923Z",
+        "updatedAt": "2015-12-24T11:24:54.923Z",
+        "id": 232
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "64",
+        "previous": "61",
+        "createdAt": "2015-12-24T11:24:54.964Z",
+        "updatedAt": "2015-12-24T11:24:54.964Z",
+        "id": 233
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "66",
+        "previous": "64",
+        "createdAt": "2015-12-24T11:24:55.030Z",
+        "updatedAt": "2015-12-24T11:24:55.030Z",
+        "id": 234
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "67",
+        "previous": "66",
+        "createdAt": "2015-12-24T11:24:55.263Z",
+        "updatedAt": "2015-12-24T11:24:55.263Z",
+        "id": 235
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "68",
+        "previous": "66",
+        "createdAt": "2015-12-24T11:24:55.331Z",
+        "updatedAt": "2015-12-24T11:24:55.331Z",
+        "id": 236
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "69",
+        "previous": "66",
+        "createdAt": "2015-12-24T11:24:55.343Z",
+        "updatedAt": "2015-12-24T11:24:55.343Z",
+        "id": 237
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "70",
+        "previous": "67",
+        "createdAt": "2015-12-24T11:24:55.384Z",
+        "updatedAt": "2015-12-24T11:24:55.384Z",
+        "id": 238
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "71",
+        "previous": "70",
+        "createdAt": "2015-12-24T11:24:55.443Z",
+        "updatedAt": "2015-12-24T11:24:55.443Z",
+        "id": 239
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "73",
+        "previous": "71",
+        "createdAt": "2015-12-24T11:24:55.523Z",
+        "updatedAt": "2015-12-24T11:24:55.523Z",
+        "id": 240
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "74",
+        "previous": "73",
+        "createdAt": "2015-12-24T11:24:55.580Z",
+        "updatedAt": "2015-12-24T11:24:55.580Z",
+        "id": 241
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "75",
+        "previous": "74",
+        "createdAt": "2015-12-24T11:24:55.650Z",
+        "updatedAt": "2015-12-24T11:24:55.650Z",
+        "id": 242
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "76",
+        "previous": "75",
+        "createdAt": "2015-12-24T11:24:55.766Z",
+        "updatedAt": "2015-12-24T11:24:55.766Z",
+        "id": 243
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T11:30:02.167Z",
+        "updatedAt": "2015-12-24T11:30:02.167Z",
+        "id": 244
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T11:30:02.918Z",
+        "updatedAt": "2015-12-24T11:30:02.918Z",
+        "id": 245
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T11:30:04.471Z",
+        "updatedAt": "2015-12-24T11:30:04.471Z",
+        "id": 246
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T11:30:07.786Z",
+        "updatedAt": "2015-12-24T11:30:07.786Z",
+        "id": 247
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "34",
+        "previous": "76",
+        "createdAt": "2015-12-24T11:30:08.752Z",
+        "updatedAt": "2015-12-24T11:30:08.752Z",
+        "id": 248
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "17",
+        "previous": "34",
+        "createdAt": "2015-12-24T11:30:09.555Z",
+        "updatedAt": "2015-12-24T11:30:09.555Z",
+        "id": 249
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "66",
+        "previous": "17",
+        "createdAt": "2015-12-24T11:30:10.270Z",
+        "updatedAt": "2015-12-24T11:30:10.270Z",
+        "id": 250
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "87",
+        "previous": "66",
+        "createdAt": "2015-12-24T11:30:11.169Z",
+        "updatedAt": "2015-12-24T11:30:11.169Z",
+        "id": 251
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "48",
+        "previous": "87",
+        "createdAt": "2015-12-24T11:31:03.886Z",
+        "updatedAt": "2015-12-24T11:31:03.886Z",
+        "id": 252
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T11:31:03.891Z",
+        "updatedAt": "2015-12-24T11:31:03.891Z",
+        "id": 253
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T11:31:04.384Z",
+        "updatedAt": "2015-12-24T11:31:04.384Z",
+        "id": 254
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T11:31:04.778Z",
+        "updatedAt": "2015-12-24T11:31:04.778Z",
+        "id": 255
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T11:31:04.948Z",
+        "updatedAt": "2015-12-24T11:31:04.948Z",
+        "id": 256
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T11:31:05.106Z",
+        "updatedAt": "2015-12-24T11:31:05.106Z",
+        "id": 257
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T11:31:05.265Z",
+        "updatedAt": "2015-12-24T11:31:05.265Z",
+        "id": 258
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T11:31:05.730Z",
+        "updatedAt": "2015-12-24T11:31:05.730Z",
+        "id": 259
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-24T11:31:06.085Z",
+        "updatedAt": "2015-12-24T11:31:06.085Z",
+        "id": 260
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-24T11:31:06.790Z",
+        "updatedAt": "2015-12-24T11:31:06.790Z",
+        "id": 261
       }
     ],
     "modulegroups": [
@@ -876,19 +2703,19 @@
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2015-12-24T08:48:41.295Z"
+        "updatedAt": "2015-12-24T11:30:02.961Z"
       },
       {
         "name": "Kitchen Lights",
         "type": 1,
         "group": 4,
         "values": {
-          "level": "80",
-          "power": false
+          "level": "48",
+          "power": true
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2015-12-24T11:13:47.190Z"
+        "updatedAt": "2015-12-24T11:31:06.801Z"
       },
       {
         "name": "Hallway Lights",
@@ -896,7 +2723,7 @@
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2015-12-24T11:13:02.716Z",
+        "updatedAt": "2015-12-24T11:23:56.208Z",
         "values": {
           "level": "52",
           "power": false
@@ -1216,7 +3043,7 @@
       "id": 15
     },
     "events": {
-      "id": 58
+      "id": 261
     },
     "modulegroups_modules__modules_group": {}
   }
