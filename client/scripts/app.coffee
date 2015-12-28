@@ -1,46 +1,51 @@
 angular
   .module('OtttoApp', [
+    'ui.router'
     'ngResource'
-    'ngRoute'
     'ngSails'
     'ActiveRecord'
   ])
 
 
-  .config ($routeProvider, $locationProvider) ->
-    $routeProvider
-      .when '/',
+  .config ($stateProvider, $urlRouterProvider) ->
+    $stateProvider
+      .state 'default',
+        url: '/'
         templateUrl: 'views/main.html'
         controller: 'MainController'
 
       # Modules
-      .when '/modules',
+      .state 'modules',
+        url: '/modules'
         templateUrl: 'views/modules.html'
         controller: 'ModulesController'
-      .when '/modules/:id',
+      .state 'module',
+        url: '/modules/:id'
         templateUrl: 'views/modules.html'
         controller: 'ModulesController'
 
       # Module Types
-      .when '/moduletypes',
+      .state 'types',
+        url: '/moduletypes'
         templateUrl: 'views/moduletypes.html'
         controller: 'ModuleTypesController'
-      .when '/modulegroups',
+      .state 'groups',
+        url: '/modulegroups'
         templateUrl: 'views/modulegroups.html'
         controller: 'ModuleGroupsController'
 
       # Rules
-      .when '/rules',
+      .state 'rules',
+        url: '/rules'
         templateUrl: 'views/rules.html'
         controller: 'RulesController'
-      .when '/rules/:id',
+      .state 'rule',
+        url: '/rules/:id'
         templateUrl: 'views/rules/rule.html'
         controller: 'RuleController'
-      .when '/rules/new',
+      .state 'newrule',
+        url: '/rules/new'
         templateUrl: 'views/rules/rule.html'
         controller: 'RuleController'
 
-      .otherwise
-        redirectTo: '/'
-
-    # $locationProvider.html5Mode yes
+      $urlRouterProvider.otherwise '/'
