@@ -11,6 +11,6 @@ h1 Modules
         span.badge {{m.$attributes.group.name}}
         h3.list-group-item-heading {{m.$attributes.name}}
 
-    a.btn.btn-primary(ng-click='new()') New
+    a.btn.btn-primary(ui-sref='modules.new') New
 
   .col-md-8(ui-view='detail')

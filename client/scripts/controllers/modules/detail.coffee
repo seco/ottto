@@ -1,20 +1,21 @@
 angular
   .module 'OtttoApp'
   .controller 'ModuleController', [
-    '$scope', '$stateParams', 'ModuleTypes', 'ModuleGroups'
-    ($scope, $stateParams, ModuleTypes, ModuleGroups) ->
+    '$scope', '$stateParams', 'types', 'groups'
+    ($scope, $stateParams, types, groups) ->
 
       $scope.init = ->
-        do fetch
+        switch $stateParams.id
+          when 'new' then do setupNew
+          else do setupModule
 
-        $scope.module = _.filter($scope.modules, (module) ->
-          module.$attributes.id is Number $stateParams.id
-        )[0]
-
-        $scope.$watch 'module.$attributes', $scope.save, true
+        $scope.types = types
+        $scope.groups = groups
 
 
-      $scope.save = ->
+      $scope.save = (newModule, oldModule) ->
+        return unless newModule
+
         if $scope.module.$dirty() then $scope.module.$save()
 
 
@@ -22,9 +23,15 @@ angular
         $scope.module.$destroy()
 
 
-      fetch = ->
-        ModuleTypes.fetchAll().then (types) -> $scope.types = types
-        ModuleGroups.fetchAll().then (groups) -> $scope.groups = groups
+      setupNew = ->
+
+
+      setupModule = ->
+        $scope.module = _.filter($scope.modules, (module) ->
+          module.$attributes.id is Number $stateParams.id
+        )[0]
+
+        $scope.$watch 'module.$attributes', $scope.save, true
 
 
       do $scope.init

@@ -23,10 +23,23 @@ angular
           modules: [
             'Modules'
             (Modules) -> Modules.$get()
-
+          ]
+          types: [
+            'ModuleTypes'
+            (ModuleTypes) -> ModuleTypes.fetchAll()
+          ]
+          groups: [
+            'ModuleGroups'
+            (ModuleGroups) -> ModuleGroups.fetchAll()
           ]
       .state 'modules.detail',
         url: '^/:id'
+        views:
+          detail:
+            templateUrl: 'views/modules/detail.html'
+            controller: 'ModuleController'
+      .state 'modules.new',
+        url: '^/new'
         views:
           detail:
             templateUrl: 'views/modules/detail.html'
