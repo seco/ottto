@@ -18,12 +18,7 @@ angular
       constructor: (attributes) ->
         @$_reset attributes
 
-        console.log $sails
-
         $sails.on @$resource, @$_respond
-
-
-      # @getter 'attributes', -> @$attributes
 
 
       $get: =>
