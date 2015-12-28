@@ -77,10 +77,8 @@ angular
       #     key.substring(0,1) isnt '$'
 
 
-      $_respond: (message) ->
-        # return unless message.id is @$attributes.id
-
-        debugger
+      $_respond: (message) =>
+        return unless message.id is @$attributes.id
 
         switch message.verb
           when 'updated' then @$_reset message.data

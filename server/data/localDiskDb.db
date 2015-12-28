@@ -7440,7 +7440,7 @@
         "updatedAt": "2015-12-28T11:21:33.831Z"
       },
       {
-        "name": "Kitchen Lightssss",
+        "name": "Kitchen Lights",
         "type": 1,
         "group": 4,
         "values": {
@@ -7449,15 +7449,15 @@
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2015-12-28T12:44:46.582Z"
+        "updatedAt": "2015-12-28T13:07:42.111Z"
       },
       {
-        "name": "Hallway Lights",
+        "name": "Hallway Lightsss",
         "type": 1,
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2015-12-28T10:08:11.490Z",
+        "updatedAt": "2015-12-28T13:16:04.209Z",
         "values": {
           "level": "52",
           "power": false
