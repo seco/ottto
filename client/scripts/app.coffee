@@ -38,12 +38,25 @@ angular
           detail:
             templateUrl: 'views/modules/detail.html'
             controller: 'ModuleController'
+            resolve:
+              module: [
+                'modules', '$stateParams'
+                (modules, $stateParams) ->
+                  _.filter(modules, (module) ->
+                    module.$attributes.id is Number $stateParams.id
+                  )[0]
+              ]
       .state 'modules.new',
         url: '^/modules/new'
         views:
           detail:
             templateUrl: 'views/modules/detail.html'
             controller: 'ModuleController'
+            resolve:
+              module: [
+                'Module'
+                (Module) -> new Module
+              ]
 
       # Module Types
       .state 'types',
