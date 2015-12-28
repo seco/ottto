@@ -15,11 +15,17 @@ angular
       $scope.save = (newModule, oldModule) ->
         return unless newModule
 
-        if $scope.module.$dirty() then $scope.module.$save()
+        console.log 'save', arguments, $scope.module.$dirty()
+
+        # if $scope.module.$new() then $scope.module.$create()
+        # if $scope.module.$dirty() then $scope.module.$save()
 
 
       $scope.delete = ->
-        $scope.module.$destroy()
+        window.confirm(
+          "Are you sure you want to delete #{$scope.module.$attributes.name}?"
+          $scope.module.$destroy
+        )
 
 
       do $scope.init

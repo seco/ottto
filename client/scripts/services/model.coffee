@@ -21,6 +21,15 @@ angular
         $sails.on @$resource, @$_respond
 
 
+      $create: =>
+        return if @$attributes.id
+
+        $sails
+          .post @$unique()
+          .then (response) =>
+            @$_reset response.data
+
+
       $get: =>
         return unless @$attributes.id
 
@@ -47,8 +56,11 @@ angular
         $sails.delete @$unique()
 
 
-      $pristine: -> !_.isEqual @$_pristine, @$attributes
+      $pristine: -> _.isEqual @$_pristine, @$attributes
       $dirty: -> !_.isEqual @$_pristine, @$attributes
+
+      $new: -> !@$attributes.id?
+      $old: -> @$attributes.id?
 
 
       $_set: (attributes) =>

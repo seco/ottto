@@ -1,3 +1,30 @@
+form(name='moduleForm')
+  .row
+    .col-sm-4
+      .form-group
+        label Name
+        input.form-control(
+          type='text'
+          ng-model='module.$attributes.name'
+          ng-required
+        )
+
+    .col-sm-4
+      .form-group
+        label Type
+        select.form-control(
+          ng-model='module.$attributes.type.id'
+          ng-options='type.id as type.name for type in types'
+        )
+
+    .col-sm-4
+      .form-group
+        label Group
+        select.form-control(
+          ng-model='module.$attributes.group.id'
+          ng-options='group.id as group.name for group in groups'
+        )
+
 .well
   h2 {{module.$attributes.name}}
 
@@ -33,36 +60,14 @@
           )
           span {{option.label}}
 
-form.form-horizontal(name='moduleForm')
-  fieldset
-    .form-group
-      label.control-label.col-md-2 Name
-      .col-md-10
-        input.form-control(
-          type='text'
-          ng-model='module.$attributes.name'
-          ng-required
-        )
 
-    .form-group
-      label.control-label.col-md-2 Type
-      .col-md-10
-        select.form-control(
-          ng-model='module.$attributes.type.id'
-          ng-options='type.id as type.name for type in types'
-        )
-
-    .form-group
-      label.control-label.col-md-2 Group
-      .col-md-10
-        select.form-control(
-          ng-model='module.$attributes.group.id'
-          ng-options='group.id as group.name for group in groups'
-        )
-
-  //- fieldset
-  //-   .form-group
-  //-     .col-md-offset-2.col-md-10
-  //-       a.btn.btn-primary(ng-click='save()') Save
-  //-       a.btn.btn-default(ng-click='cancel()') Cancel
-  //-       a.btn.btn-danger(ng-click='delete()') Delete
+.form-group
+  a.btn.btn-primary(
+    ng-click='save()'
+    ng-show='module.$new()'
+  ) Save
+  a.btn.btn-default(ui-sref='modules') Cancel
+  a.btn.btn-danger(
+    ng-click='delete()'
+    ng-show='module.$old()'
+  ) Delete
