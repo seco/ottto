@@ -7442,6 +7442,132 @@
         "createdAt": "2015-12-28T21:20:29.752Z",
         "updatedAt": "2015-12-28T21:20:29.752Z",
         "id": 827
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "value": "27",
+        "previous": "0",
+        "createdAt": "2015-12-28T22:01:33.491Z",
+        "updatedAt": "2015-12-28T22:01:33.491Z",
+        "id": 828
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "value": "56",
+        "previous": "27",
+        "createdAt": "2015-12-28T22:01:34.065Z",
+        "updatedAt": "2015-12-28T22:01:34.065Z",
+        "id": 829
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "value": "41",
+        "previous": "56",
+        "createdAt": "2015-12-28T22:01:34.506Z",
+        "updatedAt": "2015-12-28T22:01:34.506Z",
+        "id": 830
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "value": "38",
+        "previous": "41",
+        "createdAt": "2015-12-28T22:01:34.594Z",
+        "updatedAt": "2015-12-28T22:01:34.594Z",
+        "id": 831
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "value": "34",
+        "previous": "41",
+        "createdAt": "2015-12-28T22:01:34.634Z",
+        "updatedAt": "2015-12-28T22:01:34.634Z",
+        "id": 832
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "value": "24",
+        "previous": "38",
+        "createdAt": "2015-12-28T22:01:34.684Z",
+        "updatedAt": "2015-12-28T22:01:34.684Z",
+        "id": 833
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "value": "12",
+        "previous": "34",
+        "createdAt": "2015-12-28T22:01:34.713Z",
+        "updatedAt": "2015-12-28T22:01:34.713Z",
+        "id": 834
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "value": "3",
+        "previous": "24",
+        "createdAt": "2015-12-28T22:01:34.739Z",
+        "updatedAt": "2015-12-28T22:01:34.739Z",
+        "id": 835
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "value": "0",
+        "previous": "12",
+        "createdAt": "2015-12-28T22:01:34.767Z",
+        "updatedAt": "2015-12-28T22:01:34.767Z",
+        "id": 836
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "value": "0",
+        "previous": "3",
+        "createdAt": "2015-12-28T22:01:34.794Z",
+        "updatedAt": "2015-12-28T22:01:34.794Z",
+        "id": 837
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "10",
+        "previous": "76",
+        "createdAt": "2015-12-28T22:02:04.248Z",
+        "updatedAt": "2015-12-28T22:02:04.248Z",
+        "id": 838
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "82",
+        "previous": "10",
+        "createdAt": "2015-12-28T22:02:05.400Z",
+        "updatedAt": "2015-12-28T22:02:05.400Z",
+        "id": 839
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "68",
+        "previous": "82",
+        "createdAt": "2015-12-28T22:02:06.507Z",
+        "updatedAt": "2015-12-28T22:02:06.507Z",
+        "id": 840
+      },
+      {
+        "module": 15,
+        "attribute": "level",
+        "value": "48",
+        "previous": "68",
+        "createdAt": "2015-12-28T22:02:07.229Z",
+        "updatedAt": "2015-12-28T22:02:07.229Z",
+        "id": 841
       }
     ],
     "modulegroups": [
@@ -7895,20 +8021,20 @@
         "type": 1,
         "group": 4,
         "values": {
-          "level": "76",
+          "level": "48",
           "power": false
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2015-12-28T20:48:21.551Z"
+        "updatedAt": "2015-12-28T22:02:07.247Z"
       },
       {
-        "name": "Hallway Lightsss",
+        "name": "Hallway Lights",
         "type": 1,
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2015-12-28T21:20:29.798Z",
+        "updatedAt": "2015-12-28T22:01:34.879Z",
         "values": {
           "level": "0",
           "power": false
@@ -8228,7 +8354,7 @@
       "id": 15
     },
     "events": {
-      "id": 827
+      "id": 841
     },
     "modulegroups_modules__modules_group": {}
   }

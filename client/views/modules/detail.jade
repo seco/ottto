@@ -4,7 +4,7 @@ form(name='moduleForm')
       .form-group
         label Name
         input.form-control(
-          type='text'
+          type='text', placeholder='e.g. Kitchen Light'
           ng-model='module.$attributes.name'
           ng-required
         )
@@ -39,6 +39,7 @@ form(name='moduleForm')
             input(
               type='range', name='{{value.name}}', id='{{value.name}}'
               ng-model='module.$attributes.values[value.name]'
+              ng-model-options='{debounce:200}'
               min='value.min', max='value.max'
             )
             span {{module.$attributes.values[value.name]}}{{value.metric}}
