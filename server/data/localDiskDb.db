@@ -7082,6 +7082,42 @@
         "createdAt": "2015-12-28T12:42:45.138Z",
         "updatedAt": "2015-12-28T12:42:45.138Z",
         "id": 787
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-28T20:48:19.952Z",
+        "updatedAt": "2015-12-28T20:48:19.952Z",
+        "id": 788
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-28T20:48:20.653Z",
+        "updatedAt": "2015-12-28T20:48:20.653Z",
+        "id": 789
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2015-12-28T20:48:21.163Z",
+        "updatedAt": "2015-12-28T20:48:21.163Z",
+        "id": 790
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2015-12-28T20:48:21.539Z",
+        "updatedAt": "2015-12-28T20:48:21.539Z",
+        "id": 791
       }
     ],
     "modulegroups": [
@@ -7437,7 +7473,7 @@
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2015-12-28T11:21:33.831Z"
+        "updatedAt": "2015-12-28T20:48:26.443Z"
       },
       {
         "name": "Kitchen Lights",
@@ -7449,7 +7485,7 @@
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2015-12-28T13:07:42.111Z"
+        "updatedAt": "2015-12-28T20:48:21.551Z"
       },
       {
         "name": "Hallway Lightsss",
@@ -7777,7 +7813,7 @@
       "id": 15
     },
     "events": {
-      "id": 787
+      "id": 791
     },
     "modulegroups_modules__modules_group": {}
   }

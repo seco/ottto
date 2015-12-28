@@ -14,3 +14,5 @@ angular
     class Modules extends Collection
 
       $model: Module
+
+    new Modules

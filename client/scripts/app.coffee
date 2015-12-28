@@ -17,12 +17,20 @@ angular
       # Modules
       .state 'modules',
         url: '/modules'
-        templateUrl: 'views/modules.html'
+        templateUrl: 'views/modules/index.html'
         controller: 'ModulesController'
-      .state 'module',
-        url: '/modules/:id'
-        templateUrl: 'views/modules.html'
-        controller: 'ModulesController'
+        resolve:
+          modules: [
+            'Modules'
+            (Modules) -> Modules.$get()
+
+          ]
+      .state 'modules.detail',
+        url: '^/:id'
+        views:
+          detail:
+            templateUrl: 'views/modules/detail.html'
+            controller: 'ModuleController'
 
       # Module Types
       .state 'types',
