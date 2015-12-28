@@ -6,6 +6,7 @@ h1 Modules
       a.list-group-item(
         ng-repeat='m in modules'
         ui-sref='modules.detail({ id: m.$attributes.id })'
+        ui-sref-active='active'
       )
         span.badge {{m.$attributes.group.name}}
         h3.list-group-item-heading {{m.$attributes.name}}

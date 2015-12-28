@@ -7256,34 +7256,124 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-12-24T11:03:46.427Z"
+        "updatedAt": "2015-12-28T20:49:45.497Z"
       },
       {
-        "name": "Motion Sensor",
+        "name": "Light Bulbs",
         "attributes": [
           {
-            "motion": "boolean",
-            "default": false,
-            "label": "Motion",
-            "options": [
-              {
-                "value": false,
-                "label": "Inactive"
-              },
-              {
-                "value": true,
-                "label": "Active"
-              }
-            ],
-            "name": "motion",
+            "name": "power",
+            "label": "Power",
             "type": "boolean",
+            "options": {
+              "0": {
+                "value": false,
+                "label": "Off"
+              },
+              "1": {
+                "value": true,
+                "label": "On"
+              }
+            },
             "$$hashKey": "object:16"
+          },
+          {
+            "name": "level",
+            "label": "Level",
+            "type": "float",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "default": 100,
+            "metric": "%",
+            "$$hashKey": "object:17"
           }
         ],
-        "methods": [],
+        "methods": [
+          {
+            "name": "fade",
+            "label": "Fade",
+            "arguments": [
+              {
+                "name": "level",
+                "type": "float",
+                "label": "To",
+                "metric": "%",
+                "min": "0",
+                "max": "100",
+                "step": "1"
+              },
+              {
+                "name": "duration",
+                "type": "float",
+                "label": "Over",
+                "metric": "Seconds",
+                "min": "0",
+                "step": "1"
+              }
+            ]
+          },
+          {
+            "name": "strobe",
+            "label": "Strobe",
+            "arguments": [
+              {
+                "name": "duration",
+                "type": "float",
+                "label": "For",
+                "metric": "Seconds",
+                "min": "0",
+                "step": "1"
+              },
+              {
+                "name": "speed",
+                "type": "radios",
+                "label": "At",
+                "metric": "Seconds",
+                "options": [
+                  {
+                    "value": "low",
+                    "label": "Low Speed"
+                  },
+                  {
+                    "value": "regular",
+                    "label": "Regular Speed"
+                  },
+                  {
+                    "value": "high",
+                    "label": "High Speed"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "toggle",
+            "label": "Toggle",
+            "arguments": [
+              {
+                "type": "boolean",
+                "name": "power",
+                "label": "Power",
+                "options": {
+                  "0": {
+                    "value": false,
+                    "label": "Off"
+                  },
+                  "1": {
+                    "value": true,
+                    "label": "On"
+                  }
+                },
+                "default": false
+              },
+              {}
+            ]
+          }
+        ],
         "id": 2,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-12-24T08:48:41.265Z"
+        "updatedAt": "2015-12-28T20:49:42.818Z"
       },
       {
         "name": "Contact Sensor",
@@ -7508,7 +7598,7 @@
         },
         "id": 17,
         "createdAt": "2014-11-05T08:53:06.419Z",
-        "updatedAt": "2014-11-18T05:13:24.697Z"
+        "updatedAt": "2015-12-28T20:49:45.532Z"
       }
     ],
     "ruleconditions": [
