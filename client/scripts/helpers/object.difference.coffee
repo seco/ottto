@@ -1,4 +1,6 @@
 window.ObjectDifference = (a, b) ->
+  if !a then return b
+
   ak = Object.keys a
   bk = Object.keys b
 

@@ -1,7 +1,7 @@
 .well
-  h2 {{module.name}}
+  h2 {{module.$attributes.name}}
 
-  .form-group(ng-repeat='value in module.type.attributes')
+  .form-group(ng-repeat='value in module.$attributes.type.attributes')
     label(for='{{value.name}}') {{value.label}}
     div(ng-switch='value.type')
 
@@ -11,18 +11,17 @@
           .col-xs-4
             input(
               type='range', name='{{value.name}}', id='{{value.name}}'
-              ng-model='module.values[value.name]'
-              ng-model-options='{debounce:200}'
+              ng-model='module.$attributes.values[value.name]'
               min='value.min', max='value.max'
             )
-            span {{module.values[value.name]}}{{value.metric}}
+            span {{module.$attributes.values[value.name]}}{{value.metric}}
 
       div(ng-switch-when='boolean')
         .checkbox
           label(for='{{value.name}}')
             input(
               type='checkbox', name='{{value.name}}', id='{{value.name}}'
-              ng-model='module.values[value.name]'
+              ng-model='module.$attributes.values[value.name]'
             )
             span {{value.options[1].label}}
 
@@ -30,7 +29,7 @@
         label.radio-inline(ng-repeat='option in value.options')
           input(
             type='radio', name='{{value.name}}',
-            ng-model='module.values[value.name]'
+            ng-model='module.$attributes.values[value.name]'
           )
           span {{option.label}}
 
@@ -41,7 +40,7 @@ form.form-horizontal(name='moduleForm')
       .col-md-10
         input.form-control(
           type='text'
-          ng-model='module.name'
+          ng-model='module.$attributes.name'
           ng-required
         )
 
@@ -49,7 +48,7 @@ form.form-horizontal(name='moduleForm')
       label.control-label.col-md-2 Type
       .col-md-10
         select.form-control(
-          ng-model='module.type.id'
+          ng-model='module.$attributes.type.id'
           ng-options='type.id as type.name for type in types'
         )
 
@@ -57,7 +56,7 @@ form.form-horizontal(name='moduleForm')
       label.control-label.col-md-2 Group
       .col-md-10
         select.form-control(
-          ng-model='module.group.id'
+          ng-model='module.$attributes.group.id'
           ng-options='group.id as group.name for group in groups'
         )
 

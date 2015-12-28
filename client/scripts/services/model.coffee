@@ -9,61 +9,79 @@ angular
       $resource: 'items'
 
       $path: => "#{@$url}#{@$prefix}#{@$resource}"
-      $unique: => "#{@$path()}/#{@id}"
+      $unique: => "#{@$path()}/#{@$attributes.id}"
+
+      $attributes: {}
+      $_pristine: {}
 
 
       constructor: (attributes) ->
-        @$_setup attributes
+        @$_reset attributes
+
+        console.log $sails
 
         $sails.on @$resource, @$_respond
 
 
+      # @getter 'attributes', -> @$attributes
+
+
       $get: =>
-        return unless @id
+        return unless @$attributes.id
 
         $sails
           .get @$unique()
           .then (response) =>
-            @$_setup response.data
+            @$_reset response.data
             return @
 
 
       $save: =>
+        return unless @$attributes.id
+
         $sails
-          .put @$unique(), @$_changed()
+          .put @$unique(), @$_difference()
           .then (response) =>
-            @$_setup response.data
+            @$_reset response.data
             return @
 
 
-      $destroy: => $sails.delete @$unique()
+      $destroy: =>
+        return unless @$attributes.id
+
+        $sails.delete @$unique()
+
+
+      $pristine: -> !_.isEqual @$_pristine, @$attributes
+      $dirty: -> !_.isEqual @$_pristine, @$attributes
 
 
       $_set: (attributes) =>
-        diff = ObjectDifference @$_attributes(), @$_filter attributes
+        attributes = _.assign {}, @$attributes, attributes
 
-        _.assign @, diff unless _.isEmpty diff
-
-
-      $_setup: (attributes) =>
-        @$_set attributes
-        @$_pristine = _.cloneDeep @$_attributes()
+        @$attributes = _.cloneDeep attributes
 
 
-      $_attributes: => @$_filter @
+      $_reset: (attributes) =>
+        attributes = _.assign {}, @$attributes, attributes
+
+        @$_pristine = _.cloneDeep attributes
+        @$attributes = _.cloneDeep attributes
 
 
-      $_changed: => ObjectDifference @$_pristine, @$_attributes()
+      $_difference: => ObjectDifference @$_pristine, @$attributes
 
 
-      $_filter: (attributes) ->
-        ObjectFilter attributes, (key, value) ->
-          key.substring(0,1) isnt '$'
+      # $_filter: (attributes) ->
+      #   ObjectFilter attributes, (key, value) ->
+      #     key.substring(0,1) isnt '$'
 
 
-      $_respond: (message) =>
-        return unless message.id is @id
+      $_respond: (message) ->
+        # return unless message.id is @$attributes.id
+
+        debugger
 
         switch message.verb
-          when 'updated' then @$_setup message.data
+          when 'updated' then @$_reset message.data
           when 'destroyed' then console.log 'delete'

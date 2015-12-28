@@ -7,11 +7,11 @@ angular
     $scope.init = ->
       do fetch
 
-      $scope.$watch 'module', $scope.save, true
+      $scope.$watch 'module.$attributes', $scope.save, true
 
 
     $scope.save = ->
-      $scope.module.$save()
+      if $scope.module.$dirty() then $scope.module.$save()
 
 
     $scope.delete = ->

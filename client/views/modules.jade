@@ -4,12 +4,12 @@ h1 Modules
   .col-md-4
     .list-group
       a.list-group-item(
-        ng-click='activate(module)',
         ng-repeat='module in modules',
+        ng-click='activate(module)',
         ng-class='{"active":isActive(module)}'
       )
-        span.badge {{module.group.name}}
-        h3.list-group-item-heading {{module.name}}
+        span.badge {{module.$attributes.group.name}}
+        h3.list-group-item-heading {{module.$attributes.name}}
 
     a.btn.btn-primary(ng-click='new()') New
 
