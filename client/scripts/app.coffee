@@ -33,13 +33,13 @@ angular
             (ModuleGroups) -> ModuleGroups.fetchAll()
           ]
       .state 'modules.detail',
-        url: '^/:id'
+        url: '^/modules/:id'
         views:
           detail:
             templateUrl: 'views/modules/detail.html'
             controller: 'ModuleController'
       .state 'modules.new',
-        url: '^/new'
+        url: '^/modules/new'
         views:
           detail:
             templateUrl: 'views/modules/detail.html'
