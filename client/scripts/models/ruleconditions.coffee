@@ -1,17 +1,21 @@
 angular
   .module 'OtttoApp'
-  .factory 'RuleConditions', (ActiveRecord) ->
+  .factory 'RuleConditions', [
+    'ActiveRecord',
+    (ActiveRecord) ->
 
-    ActiveRecord.extend
+      ActiveRecord.extend
 
-      $urlRoot: '/api/ruleconditions'
+        $urlRoot: '/api/ruleconditions'
 
-      $defaults:
-        rule: 0
-        module: 0
-        attribute: ''
-        arguments: []
+        $defaults:
+          rule: 0
+          module: 0
+          attribute: ''
+          arguments: []
 
-      # $writeFilters:
-      #   rule: (rule) ->
-      #     rule.id or rule
+        # $writeFilters:
+        #   rule: (rule) ->
+        #     rule.id or rule
+
+  ]

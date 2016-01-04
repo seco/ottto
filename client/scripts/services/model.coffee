@@ -1,92 +1,96 @@
 angular
   .module 'OtttoApp'
-  .service 'Model', ($sails) ->
+  .service 'Model', [
+    '$sails'
+    ($sails) ->
 
-    class Model
+      class Model
 
-      $url: '/'
-      $prefix: 'api/'
-      $resource: 'items'
+        $url: '/'
+        $prefix: 'api/'
+        $resource: 'items'
 
-      $path: => "#{@$url}#{@$prefix}#{@$resource}"
-      $unique: => "#{@$path()}/#{@$attributes.id}"
+        $path: => "#{@$url}#{@$prefix}#{@$resource}"
+        $unique: => "#{@$path()}/#{@$attributes.id}"
 
-      $attributes: {}
-      $_pristine: {}
-
-
-      constructor: (attributes) ->
-        @$_reset attributes
-
-        $sails.on @$resource, @$_respond
+        $attributes: {}
+        $_pristine: {}
 
 
-      $create: =>
-        return if @$attributes.id
+        constructor: (attributes) ->
+          @$_reset attributes
 
-        $sails
-          .post @$unique()
-          .then (response) =>
-            @$_reset response.data
+          $sails.on @$resource, @$_respond
 
 
-      $get: =>
-        return unless @$attributes.id
+        $create: =>
+          return if @$attributes.id
 
-        $sails
-          .get @$unique()
-          .then (response) =>
-            @$_reset response.data
-            return @
-
-
-      $save: =>
-        return unless @$attributes.id
-
-        $sails
-          .put @$unique(), @$_difference()
-          .then (response) =>
-            @$_reset response.data
-            return @
+          $sails
+            .post @$unique()
+            .then (response) =>
+              @$_reset response.data
 
 
-      $destroy: =>
-        return unless @$attributes.id
+        $get: =>
+          return unless @$attributes.id
 
-        $sails.delete @$unique()
-
-
-      $pristine: -> _.isEqual @$_pristine, @$attributes
-      $dirty: -> !_.isEqual @$_pristine, @$attributes
-
-      $new: -> !@$attributes.id?
-      $old: -> @$attributes.id?
+          $sails
+            .get @$unique()
+            .then (response) =>
+              @$_reset response.data
+              return @
 
 
-      $_set: (attributes) =>
-        attributes = _.assign {}, @$attributes, attributes
+        $save: =>
+          return unless @$attributes.id
 
-        @$attributes = _.cloneDeep attributes
-
-
-      $_reset: (attributes) =>
-        attributes = _.assign {}, @$attributes, attributes
-
-        @$_pristine = _.cloneDeep attributes
-        @$attributes = _.cloneDeep attributes
+          $sails
+            .put @$unique(), @$_difference()
+            .then (response) =>
+              @$_reset response.data
+              return @
 
 
-      $_difference: => ObjectDifference @$_pristine, @$attributes
+        $destroy: =>
+          return unless @$attributes.id
+
+          $sails.delete @$unique()
 
 
-      # $_filter: (attributes) ->
-      #   ObjectFilter attributes, (key, value) ->
-      #     key.substring(0,1) isnt '$'
+        $pristine: -> _.isEqual @$_pristine, @$attributes
+        $dirty: -> !_.isEqual @$_pristine, @$attributes
+
+        $new: -> !@$attributes.id?
+        $old: -> @$attributes.id?
 
 
-      $_respond: (message) =>
-        return unless message.id is @$attributes.id
+        $_set: (attributes) =>
+          attributes = _.assign {}, @$attributes, attributes
 
-        switch message.verb
-          when 'updated' then @$_reset message.data
-          when 'destroyed' then console.log 'delete'
+          @$attributes = _.cloneDeep attributes
+
+
+        $_reset: (attributes) =>
+          attributes = _.assign {}, @$attributes, attributes
+
+          @$_pristine = _.cloneDeep attributes
+          @$attributes = _.cloneDeep attributes
+
+
+        $_difference: => ObjectDifference @$_pristine, @$attributes
+
+
+        # $_filter: (attributes) ->
+        #   ObjectFilter attributes, (key, value) ->
+        #     key.substring(0,1) isnt '$'
+
+
+        $_respond: (message) =>
+          return unless message.id is @$attributes.id
+
+          switch message.verb
+            when 'updated' then @$_reset message.data
+            when 'destroyed' then console.log 'delete'
+
+  ]

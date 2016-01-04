@@ -1,39 +1,43 @@
 angular
   .module 'OtttoApp'
-  .service 'Collection', (Model, $sails) ->
+  .service 'Collection', [
+    'Model', '$sails'
+    (Model, $sails) ->
 
-    class Collection
+      class Collection
 
-      $model: Model
-      $items: []
-
-
-      constructor: (items) ->
-        @$_apply items
-
-        $sails.on @$resource, @$_respond
+        $model: Model
+        $items: []
 
 
-      $get: ->
-        $sails
-          .get @$model::$path()
-          .then (response) => @$_apply response.data
+        constructor: (items) ->
+          @$_apply items
+
+          $sails.on @$resource, @$_respond
 
 
-      $add: (item) ->
-        model = if item instanceof @$model then item else new @$model item
-        @$items.push model
+        $get: ->
+          $sails
+            .get @$model::$path()
+            .then (response) => @$_apply response.data
 
 
-      $remove: (id) ->
-        @$items = @$items.filter (item) -> item.id isnt id
+        $add: (item) ->
+          model = if item instanceof @$model then item else new @$model item
+          @$items.push model
 
 
-      $_apply: (data) ->
-        if data then @$items = data.map (item) => new @$model item
+        $remove: (id) ->
+          @$items = @$items.filter (item) -> item.id isnt id
 
 
-      $_respond: (message) ->
-        switch message.verb
-          when 'created' then @$add message.data
-          when 'destroyed' then @$remove message.id
+        $_apply: (data) ->
+          if data then @$items = data.map (item) => new @$model item
+
+
+        $_respond: (message) ->
+          switch message.verb
+            when 'created' then @$add message.data
+            when 'destroyed' then @$remove message.id
+
+  ]

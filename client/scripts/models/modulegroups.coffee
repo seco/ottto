@@ -1,7 +1,11 @@
 angular
   .module 'OtttoApp'
-  .factory 'ModuleGroups', (ActiveRecord) ->
+  .factory 'ModuleGroups', [
+    'ActiveRecord'
+    (ActiveRecord) ->
 
-    ActiveRecord.extend
+      ActiveRecord.extend
 
-      $urlRoot: '/api/modulegroups'
+        $urlRoot: '/api/modulegroups'
+
+  ]

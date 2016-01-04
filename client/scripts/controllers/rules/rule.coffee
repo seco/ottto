@@ -1,20 +1,8 @@
-'use strict'
-
 angular
   .module 'OtttoApp'
   .controller 'RuleController', [
-    '$scope'
-    'rule'
-    'modules'
-    'types'
-    'RuleConditions'
-    (
-      $scope
-      rule
-      modules
-      types
-      RuleConditions
-    ) ->
+    '$scope', 'rule', 'modules', 'types', 'RuleConditions'
+    ($scope, rule, modules, types, RuleConditions) ->
 
       $scope.init = ->
         $scope.rule = rule

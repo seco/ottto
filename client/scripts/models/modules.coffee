@@ -1,18 +1,25 @@
 angular
   .module 'OtttoApp'
-  .factory 'Module', (Model) ->
+  .factory 'Module', [
+    'Model'
+    (Model) ->
 
-    class Module extends Model
+      class Module extends Model
 
-      $resource: 'modules'
+        $resource: 'modules'
 
+  ]
 
 angular
   .module 'OtttoApp'
-  .factory 'Modules', (Collection, Module) ->
+  .factory 'Modules', [
+    'Collection', 'Module'
+    (Collection, Module) ->
 
-    class Modules extends Collection
+      class Modules extends Collection
 
-      $model: Module
+        $model: Module
 
-    new Modules
+      new Modules
+
+  ]

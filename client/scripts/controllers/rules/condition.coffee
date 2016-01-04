@@ -1,12 +1,8 @@
-'use strict'
-
 angular
   .module 'OtttoApp'
   .controller 'RuleConditionController', [
     '$scope'
-    (
-      $scope
-    ) ->
+    ($scope) ->
 
       $scope.init = ->
         $scope.$watch 'condition.module', onModule

@@ -1,27 +1,28 @@
-'use strict'
-
 angular
   .module 'OtttoApp'
-  .controller 'ModuleGroupsController', ($scope, ModuleGroups) ->
+  .controller 'ModuleGroupsController', [
+    '$scope', 'ModuleGroups'
+    ($scope, ModuleGroups) ->
 
-    $scope.init = ->
-      do fetch
-
-
-    $scope.new = ->
-      $scope.groups.push new ModuleGroups
+      $scope.init = ->
+        do fetch
 
 
-    $scope.save = ->
-      $scope.active.$save().then fetch
+      $scope.new = ->
+        $scope.groups.push new ModuleGroups
 
 
-    $scope.delete = ->
-      $scope.active.$destroy().then fetch
+      $scope.save = ->
+        $scope.active.$save().then fetch
 
 
-    fetch = ->
-      ModuleGroups.fetchAll().then (groups) -> $scope.groups = groups
+      $scope.delete = ->
+        $scope.active.$destroy().then fetch
 
 
-    do $scope.init
+      fetch = ->
+        ModuleGroups.fetchAll().then (groups) -> $scope.groups = groups
+
+
+      do $scope.init
+  ]

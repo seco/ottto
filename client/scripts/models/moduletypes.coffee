@@ -1,18 +1,25 @@
 angular
   .module 'OtttoApp'
-  .factory 'ModuleType', (Model) ->
+  .factory 'ModuleType', [
+    'Model',
+    (Model) ->
 
-    class ModuleType extends Model
+      class ModuleType extends Model
 
-      $resource: 'moduletypes'
+        $resource: 'moduletypes'
 
+  ]
 
 angular
   .module 'OtttoApp'
-  .factory 'ModuleTypes', (Collection, ModuleType) ->
+  .factory 'ModuleTypes', [
+    'Collection', 'ModuleType'
+    (Collection, ModuleType) ->
 
-    class ModuleTypes extends Collection
+      class ModuleTypes extends Collection
 
-      $model: ModuleType
+        $model: ModuleType
 
-    new ModuleTypes
+      new ModuleTypes
+
+  ]

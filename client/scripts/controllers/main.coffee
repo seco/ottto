@@ -1,5 +1,6 @@
-'use strict'
-
 angular
   .module 'OtttoApp'
-  .controller 'MainController', ($scope) ->
+  .controller 'MainController', [
+    '$scope'
+    ($scope) ->
+  ]
