@@ -7620,7 +7620,7 @@
     ],
     "moduletypes": [
       {
-        "name": "Light Bulb",
+        "name": "Light Bulbs",
         "attributes": [
           {
             "name": "power",
@@ -7657,14 +7657,16 @@
                     "label": "On"
                   }
                 },
-                "default": true
+                "default": true,
+                "$$hashKey": "object:32"
               }
-            ]
+            ],
+            "$$hashKey": "object:26"
           }
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2016-01-04T06:09:28.617Z"
+        "updatedAt": "2016-01-04T07:20:12.163Z"
       },
       {
         "name": "Motion Sensor",
@@ -7707,15 +7709,16 @@
                 "label": "Open"
               },
               {
-                "value": "true",
+                "value": true,
                 "label": "Closed"
               }
-            ]
+            ],
+            "$$hashKey": "object:45"
           }
         ],
         "id": 7,
         "createdAt": "2014-09-16T08:58:35.329Z",
-        "updatedAt": "2014-10-17T07:51:57.243Z"
+        "updatedAt": "2016-01-04T07:21:44.196Z"
       },
       {
         "name": "Climate Sensor",
@@ -7766,10 +7769,11 @@
                 "label": "Off"
               },
               {
-                "value": "true",
+                "value": true,
                 "label": "On"
               }
-            ]
+            ],
+            "$$hashKey": "object:31"
           },
           {
             "options": [
@@ -7778,13 +7782,14 @@
                 "label": "Standby"
               },
               {
-                "value": "true",
+                "value": true,
                 "label": "Recording"
               }
             ],
             "name": "recording",
             "label": "Recording",
-            "type": "boolean"
+            "type": "boolean",
+            "$$hashKey": "object:32"
           }
         ],
         "methods": [
@@ -7794,9 +7799,16 @@
             "arguments": [
               {
                 "name": "on",
-                "type": "boolean"
+                "type": "boolean",
+                "$$hashKey": "object:59",
+                "options": {
+                  "1": {
+                    "value": true
+                  }
+                }
               }
-            ]
+            ],
+            "$$hashKey": "object:37"
           },
           {
             "name": "setPower",
@@ -7804,14 +7816,21 @@
             "arguments": [
               {
                 "name": "power",
-                "type": "boolean"
+                "type": "boolean",
+                "$$hashKey": "object:62",
+                "options": {
+                  "1": {
+                    "value": true
+                  }
+                }
               }
-            ]
+            ],
+            "$$hashKey": "object:38"
           }
         ],
         "id": 9,
         "createdAt": "2014-09-16T09:02:22.470Z",
-        "updatedAt": "2014-10-18T08:32:20.362Z"
+        "updatedAt": "2016-01-04T07:21:52.948Z"
       },
       {
         "name": "Outlet Switch",

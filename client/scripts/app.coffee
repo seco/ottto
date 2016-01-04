@@ -26,7 +26,7 @@ angular
           ]
           types: [
             'ModuleTypes'
-            (ModuleTypes) -> ModuleTypes.fetchAll()
+            (ModuleTypes) -> ModuleTypes.$get()
           ]
           groups: [
             'ModuleGroups'
@@ -59,10 +59,30 @@ angular
               ]
 
       # Module Types
-      .state 'types',
+      .state 'moduletypes',
         url: '/moduletypes'
-        templateUrl: 'views/moduletypes.html'
+        templateUrl: 'views/moduletypes/index.html'
         controller: 'ModuleTypesController'
+        resolve:
+          types: [
+            'ModuleTypes'
+            (ModuleTypes) -> ModuleTypes.$get()
+          ]
+      .state 'moduletypes.detail',
+        url: '^/moduletypes/:id'
+        views:
+          detail:
+            templateUrl: 'views/moduletypes/detail.html'
+            controller: 'ModuleTypeController'
+            resolve:
+              type: [
+                'types', '$stateParams'
+                (types, $stateParams) ->
+                  _.filter(types, (type) ->
+                    type.$attributes.id is Number $stateParams.id
+                  )[0]
+              ]
+
       .state 'groups',
         url: '/modulegroups'
         templateUrl: 'views/modulegroups.html'
@@ -99,7 +119,7 @@ angular
               ]
               types: [
                 'ModuleTypes'
-                (ModuleTypes) -> ModuleTypes.fetchAll()
+                (ModuleTypes) -> ModuleTypes.$get()
               ]
       .state 'rules.new',
         url: '^/rules/new'

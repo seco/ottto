@@ -5,16 +5,12 @@ h1 Types
     .list-group(ng-show='types.length > 0')
       a.list-group-item(
         ng-repeat='type in types',
-        ng-click='activate(type)'
+        ui-sref='moduletypes.detail({ id: type.$attributes.id })'
       )
-        h3.list-group-item-heading {{type.name}}
+        h3.list-group-item-heading {{type.$attributes.name}}
 
     .well(ng-show='types.length < 1') No types...
 
     a.btn.btn-primary(ng-click='new()') New
 
-  .col-md-8(
-    ng-controller='ModuleTypeController',
-    ng-include='"views/moduletypes/moduletype.html"',
-    ng-if='active'
-  )
+  .col-md-8(ui-view='detail')

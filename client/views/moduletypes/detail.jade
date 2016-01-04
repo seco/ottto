@@ -4,7 +4,7 @@ form.form-horizontal(name='moduleForm')
       label.control-label.col-md-2 Name
       .col-md-10
         input.form-control(type='text'
-          ng-model='active.name'
+          ng-model='type.$attributes.name'
           ng-required='ng-required'
         )
 
@@ -14,7 +14,7 @@ form.form-horizontal(name='moduleForm')
       label.control-label.col-md-2 Attributes
       .col-md-10
         div(
-          ng-repeat='attribute in active.attributes'
+          ng-repeat='attribute in type.$attributes.attributes'
           ng-controller='ModuleTypeAttributeController'
           ng-include='"views/moduletypes/attribute.html"'
         )
@@ -26,7 +26,7 @@ form.form-horizontal(name='moduleForm')
       label.control-label.col-md-2 Methods
       .col-md-10
         div(
-          ng-repeat='method in active.methods'
+          ng-repeat='method in type.$attributes.methods'
           ng-controller='ModuleTypeMethodController'
           ng-include='"views/moduletypes/method.html"'
         )
@@ -38,6 +38,4 @@ form.form-horizontal(name='moduleForm')
   fieldset.buttons
     .form-group
       .col-md-offset-2.col-md-10
-        a.btn.btn-primary(ng-click='save()') Save
-        a.btn.btn-default(ng-click='cancel()') Cancel
         a.btn.btn-danger(ng-click='delete()') Delete

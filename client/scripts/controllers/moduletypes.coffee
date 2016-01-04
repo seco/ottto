@@ -2,22 +2,21 @@
 
 angular
   .module 'OtttoApp'
-  .controller 'ModuleTypesController', ($scope, ModuleTypes) ->
+  .controller 'ModuleTypesController', [
+    '$scope', 'types', 'ModuleType'
+    ($scope, types, ModuleType) ->
 
-    $scope.init = ->
-      do fetch
-
-
-    $scope.activate = (active) ->
-      $scope.active = active
+      $scope.init = ->
+        $scope.types = types
 
 
-    $scope.new = ->
-      $scope.active = new ModuleTypes
+      $scope.activate = (active) ->
+        $scope.active = active
 
 
-    fetch = ->
-      ModuleTypes.fetchAll().then (types) -> $scope.types = types
+      $scope.new = ->
+        $scope.active = new ModuleType
 
 
-    do $scope.init
+      do $scope.init
+  ]
