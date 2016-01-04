@@ -4,26 +4,11 @@ angular
   .module 'OtttoApp'
   .controller 'RuleActionController', [
     '$scope'
-    '$q'
-    'Modules'
-    'ModuleTypes'
     (
       $scope
-      $q
-      Modules
-      ModuleTypes
     ) ->
 
       $scope.init = ->
-        $q
-          .all([ Modules.$get(), ModuleTypes.fetchAll() ])
-          .then( setup )
-
-
-      setup = (results) ->
-        $scope.modules = results[0]
-        $scope.types = results[1]
-
         $scope.$watch 'action.module', onModule
         $scope.$watch 'action.method', onMethod
 

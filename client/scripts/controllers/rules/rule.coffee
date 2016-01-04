@@ -4,26 +4,22 @@ angular
   .module 'OtttoApp'
   .controller 'RuleController', [
     '$scope'
-    '$window'
-    '$stateParams'
-    '$q'
-    'Rules'
+    'rule'
+    'modules'
+    'types'
     'RuleConditions'
-    'Modules'
-    'ModuleTypes'
     (
       $scope
-      $window
-      $stateParams
-      $q
-      Rules
+      rule
+      modules
+      types
       RuleConditions
-      Modules
-      ModuleTypes
     ) ->
 
       $scope.init = ->
-        do fetch
+        $scope.rule = rule
+        $scope.modules = modules
+        $scope.types = types
 
 
       $scope.addCondition = ->
@@ -39,30 +35,11 @@ angular
 
 
       $scope.save = ->
-        $scope.rule.$save().then ->
-          $window.location.href = '/#/rules'
-        # $q
-        #   .all( condition.$save() for condition in $scope.rule.conditions )
-        #   .then ->
-        #     $scope.rule.$save().then ->
-        #       $window.location.href = '/#/rules'
-
-
-      $scope.cancel = ->
-        $window.location.href = '/#/rules'
+        $scope.rule.$save()
 
 
       $scope.delete = ->
         do $scope.rule.$destroy
-        $window.location.href = '/#/rules'
-
-
-      fetch = ->
-        if $stateParams.id isnt 'new'
-          Rules.fetchOne($stateParams.id).then (rule) ->
-            $scope.rule = rule
-        else
-          $scope.rule = new Rules
 
 
       do $scope.init

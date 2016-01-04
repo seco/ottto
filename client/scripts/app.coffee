@@ -73,12 +73,34 @@ angular
         url: '/rules'
         templateUrl: 'views/rules.html'
         controller: 'RulesController'
+        resolve:
+          rules: [
+            'Rules'
+            (Rules) -> Rules.fetchAll()
+          ]
       .state 'rules.detail',
         url: '^/rules/:id'
         views:
           detail:
             templateUrl: 'views/rules/rule.html'
             controller: 'RuleController'
+            resolve:
+              rule: [
+                'rules', '$stateParams'
+                (rules, $stateParams) ->
+                  console.log rules
+                  _.filter(rules, (rule) ->
+                    rule.id is Number $stateParams.id
+                  )[0]
+              ]
+              modules: [
+                'Modules'
+                (Modules) -> Modules.$get()
+              ]
+              types: [
+                'ModuleTypes'
+                (ModuleTypes) -> ModuleTypes.fetchAll()
+              ]
       .state 'rules.new',
         url: '^/rules/new'
         views:
