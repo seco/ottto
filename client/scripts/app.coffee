@@ -85,8 +85,14 @@ angular
 
       .state 'groups',
         url: '/modulegroups'
-        templateUrl: 'views/modulegroups.html'
+        templateUrl: 'views/modulegroups/index.html'
         controller: 'ModuleGroupsController'
+        resolve:
+          groups: [
+            'ModuleGroups'
+            (ModuleGroups) -> ModuleGroups.fetchAll()
+          ]
+
 
       # Rules
       .state 'rules',

@@ -7609,7 +7609,7 @@
         "name": "Porch",
         "id": 3,
         "createdAt": "2014-09-13T07:26:56.401Z",
-        "updatedAt": "2014-11-03T19:02:08.158Z"
+        "updatedAt": "2016-01-04T07:34:07.596Z"
       },
       {
         "name": "Kitchen",
@@ -8255,7 +8255,7 @@
   },
   "counters": {
     "modulegroups": {
-      "id": 4
+      "id": 5
     },
     "moduletypes": {
       "id": 11

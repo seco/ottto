@@ -1,0 +1,18 @@
+h1 Groups
+
+.row
+  .col-md-4(ng-repeat='group in groups')
+    .form-group
+      label(for='name')
+      input.form-control(
+        type='text', name='name'
+        ng-model='group.name'
+      )
+
+    .form-group
+      a.btn.btn-primary(ng-click='group.$save()') Save
+      a.btn.btn-danger(ng-click='group.$destroy()') Delete
+
+hr
+
+a.btn.btn-primary(ng-click='new()') New
