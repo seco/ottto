@@ -73,13 +73,17 @@ angular
         url: '/rules'
         templateUrl: 'views/rules.html'
         controller: 'RulesController'
-      .state 'rule',
-        url: '/rules/:id'
-        templateUrl: 'views/rules/rule.html'
-        controller: 'RuleController'
-      .state 'newrule',
-        url: '/rules/new'
-        templateUrl: 'views/rules/rule.html'
-        controller: 'RuleController'
+      .state 'rules.detail',
+        url: '^/rules/:id'
+        views:
+          detail:
+            templateUrl: 'views/rules/rule.html'
+            controller: 'RuleController'
+      .state 'rules.new',
+        url: '^/rules/new'
+        views:
+          detail:
+            templateUrl: 'views/rules/rule.html'
+            controller: 'RuleController'
 
       $urlRouterProvider.otherwise '/'

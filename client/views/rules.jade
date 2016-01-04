@@ -5,7 +5,7 @@ h1 Rules
     .list-group
       a.list-group-item(
         ng-repeat='rule in rules',
-        ng-href='/#/rules/{{rule.id}}'
+        ui-sref='rules.detail({ id: rule.id })'
       )
         h4.list-group-item-heading {{rule.name}}
         p.list-group-item-text
@@ -23,10 +23,6 @@ h1 Rules
             when='{"one": "Action", "other": "Actions"}'
           )
 
-    a.btn.btn-primary(ng-href='/#/rules/new') New
+    a.btn.btn-primary(ui-sref='rules.new') New
 
-  .col-md-8(
-    ng-controller='RuleController',
-    ng-include='"views/rules/rule.html"',
-    ng-if='rule'
-  )
+  .col-md-8(ui-view='detail')

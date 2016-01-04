@@ -1,5 +1,5 @@
 /**
-* Events.js
+* ModuleEvents.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -33,12 +33,12 @@ module.exports = {
 
   afterCreate: function(event, next) {
 
-    RulesService
-      .match({
-        module: event.module,
-        attribute: event.attribute,
-        value: event.value
-      });
+    // RulesService
+    //   .match({
+    //     module: event.module,
+    //     attribute: event.attribute,
+    //     value: event.value
+    //   });
 
     next();
 

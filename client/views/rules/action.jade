@@ -8,7 +8,7 @@
       .form-inline
         | Then
         select.form-control(
-          ng-options='module.id as module.name group by module.type.name for module in modules',
+          ng-options='module.$attributes.id as module.$attributes.name group by module.$attributes.type.name for module in modules',
           ng-model='action.module'
         )
 

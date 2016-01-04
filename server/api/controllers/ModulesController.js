@@ -19,8 +19,8 @@ module.exports = {
         _.each(req.body.values, function(value, key) {
           if (value == module.values[key]) return;
 
-          // Create Event Model
-          Events
+          // Create Module Event
+          ModuleEvents
             .create({
               module: module.id,
               attribute: key,

@@ -6,7 +6,7 @@ angular
 
     $scope.init = ->
       $q
-        .all([ Modules.fetchAll(), ModuleTypes.fetchAll() ])
+        .all([ Modules.$get(), ModuleTypes.fetchAll() ])
         .then( setup )
 
 
@@ -20,12 +20,16 @@ angular
 
     onModule = (id) ->
       return unless id
-      $scope.attributes = module.type.attributes for module in $scope.modules when module.id is id
+
+      for module in $scope.modules when module.$attributes.id is id
+        $scope.attributes = module.$attributes.type.attributes
 
 
     onAttribute = (name) ->
       return unless name
-      $scope.attribute = attribute for attribute in $scope.attributes when attribute.name is name
+
+      for attribute in $scope.attributes when attribute.name is name
+        $scope.attribute = attribute
 
 
     $scope.remove = ->

@@ -7568,8 +7568,36 @@
         "createdAt": "2015-12-28T22:02:07.229Z",
         "updatedAt": "2015-12-28T22:02:07.229Z",
         "id": 841
+      },
+      {
+        "module": 9,
+        "attribute": "level",
+        "value": "63",
+        "previous": "83",
+        "createdAt": "2015-12-28T22:32:28.127Z",
+        "updatedAt": "2015-12-28T22:32:28.127Z",
+        "id": 842
+      },
+      {
+        "module": 9,
+        "attribute": "level",
+        "value": "82",
+        "previous": "63",
+        "createdAt": "2015-12-28T22:32:42.414Z",
+        "updatedAt": "2015-12-28T22:32:42.414Z",
+        "id": 843
+      },
+      {
+        "module": 9,
+        "attribute": "level",
+        "value": "30",
+        "previous": "82",
+        "createdAt": "2015-12-28T22:33:00.821Z",
+        "updatedAt": "2015-12-28T22:33:00.821Z",
+        "id": 844
       }
     ],
+    "moduleevents": [],
     "modulegroups": [
       {
         "name": "Hallway",
@@ -7592,7 +7620,7 @@
     ],
     "moduletypes": [
       {
-        "name": "Light Bulbs",
+        "name": "Light Bulb",
         "attributes": [
           {
             "name": "power",
@@ -7608,89 +7636,20 @@
                 "label": "On"
               }
             },
-            "$$hashKey": "object:16"
-          },
-          {
-            "name": "level",
-            "label": "Level",
-            "type": "float",
-            "min": "0",
-            "max": "100",
-            "step": "1",
-            "default": 100,
-            "metric": "%",
-            "$$hashKey": "object:17"
+            "$$hashKey": "object:44"
           }
         ],
         "methods": [
           {
-            "name": "fade",
-            "label": "Fade",
+            "name": "turn",
+            "label": "Turn",
             "arguments": [
               {
-                "name": "level",
-                "type": "float",
-                "label": "To",
-                "metric": "%",
-                "min": "0",
-                "max": "100",
-                "step": "1"
-              },
-              {
-                "name": "duration",
-                "type": "float",
-                "label": "Over",
-                "metric": "Seconds",
-                "min": "0",
-                "step": "1"
-              }
-            ]
-          },
-          {
-            "name": "strobe",
-            "label": "Strobe",
-            "arguments": [
-              {
-                "name": "duration",
-                "type": "float",
-                "label": "For",
-                "metric": "Seconds",
-                "min": "0",
-                "step": "1"
-              },
-              {
-                "name": "speed",
-                "type": "radios",
-                "label": "At",
-                "metric": "Seconds",
-                "options": [
-                  {
-                    "value": "low",
-                    "label": "Low Speed"
-                  },
-                  {
-                    "value": "regular",
-                    "label": "Regular Speed"
-                  },
-                  {
-                    "value": "high",
-                    "label": "High Speed"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "toggle",
-            "label": "Toggle",
-            "arguments": [
-              {
-                "type": "boolean",
                 "name": "power",
                 "label": "Power",
+                "type": "boolean",
                 "options": {
                   "0": {
-                    "value": false,
                     "label": "Off"
                   },
                   "1": {
@@ -7698,132 +7657,39 @@
                     "label": "On"
                   }
                 },
-                "default": false
-              },
-              {}
+                "default": true
+              }
             ]
           }
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-12-28T20:49:45.497Z"
+        "updatedAt": "2016-01-04T06:09:28.617Z"
       },
       {
-        "name": "Light Bulbs",
+        "name": "Motion Sensor",
         "attributes": [
           {
-            "name": "power",
-            "label": "Power",
+            "name": "motion",
+            "label": "Motion",
             "type": "boolean",
             "options": {
               "0": {
                 "value": false,
-                "label": "Off"
+                "label": "Inactive"
               },
               "1": {
                 "value": true,
-                "label": "On"
+                "label": "Active"
               }
             },
-            "$$hashKey": "object:16"
-          },
-          {
-            "name": "level",
-            "label": "Level",
-            "type": "float",
-            "min": "0",
-            "max": "100",
-            "step": "1",
-            "default": 100,
-            "metric": "%",
-            "$$hashKey": "object:17"
+            "$$hashKey": "object:69"
           }
         ],
-        "methods": [
-          {
-            "name": "fade",
-            "label": "Fade",
-            "arguments": [
-              {
-                "name": "level",
-                "type": "float",
-                "label": "To",
-                "metric": "%",
-                "min": "0",
-                "max": "100",
-                "step": "1"
-              },
-              {
-                "name": "duration",
-                "type": "float",
-                "label": "Over",
-                "metric": "Seconds",
-                "min": "0",
-                "step": "1"
-              }
-            ]
-          },
-          {
-            "name": "strobe",
-            "label": "Strobe",
-            "arguments": [
-              {
-                "name": "duration",
-                "type": "float",
-                "label": "For",
-                "metric": "Seconds",
-                "min": "0",
-                "step": "1"
-              },
-              {
-                "name": "speed",
-                "type": "radios",
-                "label": "At",
-                "metric": "Seconds",
-                "options": [
-                  {
-                    "value": "low",
-                    "label": "Low Speed"
-                  },
-                  {
-                    "value": "regular",
-                    "label": "Regular Speed"
-                  },
-                  {
-                    "value": "high",
-                    "label": "High Speed"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "toggle",
-            "label": "Toggle",
-            "arguments": [
-              {
-                "type": "boolean",
-                "name": "power",
-                "label": "Power",
-                "options": {
-                  "0": {
-                    "value": false,
-                    "label": "Off"
-                  },
-                  "1": {
-                    "value": true,
-                    "label": "On"
-                  }
-                },
-                "default": false
-              },
-              {}
-            ]
-          }
-        ],
+        "methods": [],
         "id": 2,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2015-12-28T20:49:42.818Z"
+        "updatedAt": "2016-01-04T06:09:36.427Z"
       },
       {
         "name": "Contact Sensor",
@@ -8005,16 +7871,16 @@
     ],
     "modules": [
       {
-        "name": "Hallway Motions",
+        "name": "Hallway Motion",
         "type": 2,
         "group": 2,
         "values": {
           "motion": false,
-          "level": "83"
+          "level": "30"
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2015-12-28T21:20:23.845Z"
+        "updatedAt": "2016-01-04T06:11:33.552Z"
       },
       {
         "name": "Kitchen Lights",
@@ -8026,7 +7892,7 @@
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2015-12-28T22:02:07.247Z"
+        "updatedAt": "2016-01-04T06:12:04.579Z"
       },
       {
         "name": "Hallway Lights",
@@ -8034,7 +7900,7 @@
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2015-12-28T22:01:34.879Z",
+        "updatedAt": "2016-01-04T06:12:06.850Z",
         "values": {
           "level": "0",
           "power": false
@@ -8049,7 +7915,7 @@
         },
         "id": 17,
         "createdAt": "2014-11-05T08:53:06.419Z",
-        "updatedAt": "2015-12-28T20:49:45.532Z"
+        "updatedAt": "2016-01-04T06:12:08.883Z"
       }
     ],
     "ruleconditions": [
@@ -8072,32 +7938,35 @@
         "id": 17,
         "createdAt": "2015-01-03T07:07:19.698Z",
         "updatedAt": "2015-01-03T07:07:19.782Z"
+      },
+      {
+        "rule": 12,
+        "module": 9,
+        "attribute": "motion",
+        "arguments": [
+          true
+        ],
+        "createdAt": "2016-01-04T05:37:17.819Z",
+        "updatedAt": "2016-01-04T06:14:56.533Z",
+        "id": 22
       }
     ],
     "rules": [
       {
-        "name": "New Rule",
-        "operator": "&&",
-        "actions": [],
-        "id": 12,
-        "createdAt": "2015-01-03T07:05:05.837Z",
-        "updatedAt": "2015-12-23T11:04:48.430Z"
-      },
-      {
-        "name": "Different Rule",
+        "name": "Hall Lights",
         "operator": "&&",
         "actions": [
           {
             "module": 16,
-            "method": "toggle",
+            "method": "turn",
             "arguments": {
               "0": true
             }
           }
         ],
-        "id": 13,
-        "createdAt": "2015-01-03T07:05:36.194Z",
-        "updatedAt": "2015-01-03T07:07:19.772Z"
+        "id": 12,
+        "createdAt": "2015-01-03T07:05:05.837Z",
+        "updatedAt": "2016-01-04T06:14:56.512Z"
       }
     ]
   },
@@ -8169,6 +8038,35 @@
       }
     },
     "events": {
+      "module": {
+        "type": "integer",
+        "model": "modules",
+        "foreignKey": true,
+        "alias": "module"
+      },
+      "attribute": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "previous": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "moduleevents": {
       "module": {
         "type": "integer",
         "model": "modules",
@@ -8348,14 +8246,15 @@
     },
     "ruleactions": {},
     "ruleconditions": {
-      "id": 21
+      "id": 22
     },
     "rules": {
       "id": 15
     },
     "events": {
-      "id": 841
+      "id": 844
     },
-    "modulegroups_modules__modules_group": {}
+    "modulegroups_modules__modules_group": {},
+    "moduleevents": {}
   }
 }

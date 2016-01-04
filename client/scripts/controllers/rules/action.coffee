@@ -2,30 +2,45 @@
 
 angular
   .module 'OtttoApp'
-  .controller 'RuleActionController', ($scope, $q, Modules, ModuleTypes) ->
-
-    $scope.init = ->
+  .controller 'RuleActionController', [
+    '$scope'
+    '$q'
+    'Modules'
+    'ModuleTypes'
+    (
+      $scope
       $q
-        .all([ Modules.fetchAll(), ModuleTypes.fetchAll() ])
-        .then( setup )
+      Modules
+      ModuleTypes
+    ) ->
+
+      $scope.init = ->
+        $q
+          .all([ Modules.$get(), ModuleTypes.fetchAll() ])
+          .then( setup )
 
 
-    setup = (results) ->
-      $scope.modules = results[0]
-      $scope.types = results[1]
+      setup = (results) ->
+        $scope.modules = results[0]
+        $scope.types = results[1]
 
-      $scope.$watch 'action.module', onModule
-      $scope.$watch 'action.method', onMethod
-
-
-    onModule = (id) ->
-      return unless id
-      $scope.methods = module.type.methods for module in $scope.modules when module.id is id
+        $scope.$watch 'action.module', onModule
+        $scope.$watch 'action.method', onMethod
 
 
-    onMethod = (name) ->
-      return unless name
-      $scope.method = method for method in $scope.methods when method.name is name
+      onModule = (id) ->
+        return unless id
+
+        for module in $scope.modules when module.$attributes.id is id
+          $scope.methods = module.$attributes.type.methods
 
 
-    do $scope.init
+      onMethod = (name) ->
+        return unless name
+
+        for method in $scope.methods when method.name is name
+          $scope.method = method
+
+
+      do $scope.init
+  ]
