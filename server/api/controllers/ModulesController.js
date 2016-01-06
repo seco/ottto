@@ -11,6 +11,8 @@ module.exports = {
 
   update: function(req, res) {
 
+    console.log(req.body.values)
+
     Modules
       .findOne(req.param('id'))
       .exec(function(err, module) {
@@ -27,7 +29,9 @@ module.exports = {
               value: value,
               previous: module.values[key]
             })
-            .exec(function(err, event) { });
+            .exec(function(err, event) {
+              console.log(event);
+            });
 
         });
 

@@ -14,7 +14,7 @@ form(name='moduleForm')
         label Type
         select.form-control(
           ng-model='module.$attributes.type.id'
-          ng-options='type.id as type.name for type in types'
+          ng-options='type.$attributes.id as type.$attributes.name for type in types'
         )
 
     .col-sm-4

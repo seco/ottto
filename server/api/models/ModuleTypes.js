@@ -15,8 +15,7 @@ module.exports = {
     },
 
     attributes: {
-      type: 'json',
-      required: true
+      type: 'json'
     },
 
     methods: {

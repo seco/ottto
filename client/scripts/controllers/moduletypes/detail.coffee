@@ -12,9 +12,10 @@ angular
         'checkboxes'
       ]
 
-
       init = ->
         $scope.type = type
+
+        console.log type
 
         $scope.$watch 'type.$attributes', $scope.save, true
 
@@ -22,9 +23,11 @@ angular
       $scope.save = (newType, oldType) ->
         return unless newType
 
-        # if $scope.type.$new() then $scope.type.$create()
         if $scope.type.$old() and $scope.type.$dirty()
           $scope.type.$save()
+
+        if $scope.type.$new() and $scope.type.$dirty()
+          $scope.type.$create()
 
 
       $scope.delete = ->
@@ -36,14 +39,14 @@ angular
 
       $scope.addAttribute = ->
         if not Array.isArray $scope.type.attributes
-          $scope.type.attributes = new Array
-        $scope.type.attributes?.push {}
+          $scope.type.$attributes.attributes = new Array
+        $scope.type.$attributes.attributes?.push {}
 
 
       $scope.addMethod = ->
         if not Array.isArray $scope.type.methods
-          $scope.type.methods = new Array
-        $scope.type.methods?.push {}
+          $scope.type.$attributes.methods = new Array
+        $scope.type.$attributes.methods?.push {}
 
 
       do init

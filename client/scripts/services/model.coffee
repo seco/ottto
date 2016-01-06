@@ -27,7 +27,7 @@ angular
           return if @$attributes.id
 
           $sails
-            .post @$unique()
+            .post @$path(), @$_difference()
             .then (response) =>
               @$_reset response.data
 

@@ -9,18 +9,27 @@ angular
         $scope.$watch 'condition.attribute', onAttribute
 
 
-      onModule = (id) ->
-        return unless id
+      onModule = (newModule, oldModule) ->
+        console.log newModule, oldModule
+        unless newModule is oldModule
+          console.log 'newModule is oldModule'
+          $scope.attribute = undefined
+        # return unless newModule
 
-        for module in $scope.modules when module.$attributes.id is id
+        for module in $scope.modules when module.$attributes.id is newModule
           $scope.attributes = module.$attributes.type.attributes
 
 
-      onAttribute = (name) ->
-        return unless name
 
-        for attribute in $scope.attributes when attribute.name is name
+      onAttribute = (newAttribute, oldAttribute) ->
+        unless newAttribute is oldAttribute
+          $scope.condition.arguments = []
+        # return unless newAttribute
+
+        for attribute in $scope.attributes when attribute.name is newAttribute
           $scope.attribute = attribute
+
+
 
 
       $scope.remove = ->

@@ -32,6 +32,17 @@ angular
             'ModuleGroups'
             (ModuleGroups) -> ModuleGroups.fetchAll()
           ]
+      .state 'modules.new',
+        url: '^/modules/new'
+        views:
+          detail:
+            templateUrl: 'views/modules/detail.html'
+            controller: 'ModuleController'
+            resolve:
+              module: [
+                'Module'
+                (Module) -> new Module
+              ]
       .state 'modules.detail',
         url: '^/modules/:id'
         views:
@@ -46,17 +57,6 @@ angular
                     module.$attributes.id is Number $stateParams.id
                   )[0]
               ]
-      .state 'modules.new',
-        url: '^/modules/new'
-        views:
-          detail:
-            templateUrl: 'views/modules/detail.html'
-            controller: 'ModuleController'
-            resolve:
-              module: [
-                'Module'
-                (Module) -> new Module
-              ]
 
       # Module Types
       .state 'moduletypes',
@@ -68,6 +68,17 @@ angular
             'ModuleTypes'
             (ModuleTypes) -> ModuleTypes.$get()
           ]
+      .state 'moduletypes.new',
+        url: '^/moduletypes/new'
+        views:
+          detail:
+            templateUrl: 'views/moduletypes/detail.html'
+            controller: 'ModuleTypeController'
+            resolve:
+              type: [
+                'ModuleType'
+                (ModuleType) -> new ModuleType
+              ]
       .state 'moduletypes.detail',
         url: '^/moduletypes/:id'
         views:

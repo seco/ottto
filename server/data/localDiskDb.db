@@ -7597,13 +7597,41 @@
         "id": 844
       }
     ],
-    "moduleevents": [],
+    "moduleevents": [
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-01-04T07:55:47.871Z",
+        "updatedAt": "2016-01-04T07:55:47.871Z",
+        "id": 1
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2016-01-04T07:55:49.348Z",
+        "updatedAt": "2016-01-04T07:55:49.348Z",
+        "id": 2
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-01-04T07:56:09.726Z",
+        "updatedAt": "2016-01-04T07:56:09.726Z",
+        "id": 3
+      }
+    ],
     "modulegroups": [
       {
         "name": "Hallway",
         "id": 2,
         "createdAt": "2014-09-13T07:26:52.743Z",
-        "updatedAt": "2015-12-24T08:48:41.270Z"
+        "updatedAt": "2016-01-06T12:30:05.347Z"
       },
       {
         "name": "Porch",
@@ -7666,7 +7694,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2016-01-04T07:20:12.163Z"
+        "updatedAt": "2016-01-06T04:25:31.348Z"
       },
       {
         "name": "Motion Sensor",
@@ -7847,10 +7875,11 @@
                 "label": "Off"
               },
               {
-                "value": "true",
+                "value": true,
                 "label": "On"
               }
-            ]
+            ],
+            "$$hashKey": "object:29"
           }
         ],
         "methods": [
@@ -7860,14 +7889,21 @@
             "arguments": [
               {
                 "name": "power",
-                "type": "boolean"
+                "type": "boolean",
+                "$$hashKey": "object:43",
+                "options": {
+                  "1": {
+                    "value": true
+                  }
+                }
               }
-            ]
+            ],
+            "$$hashKey": "object:32"
           }
         ],
         "id": 10,
         "createdAt": "2014-09-16T09:02:56.872Z",
-        "updatedAt": "2014-10-18T08:32:30.493Z"
+        "updatedAt": "2016-01-06T05:15:19.727Z"
       },
       {
         "name": "Soil Sensor",
@@ -7886,6 +7922,25 @@
         "id": 11,
         "createdAt": "2014-10-29T05:36:36.347Z",
         "updatedAt": "2014-10-29T05:36:36.347Z"
+      },
+      {
+        "name": "Light Sensor",
+        "createdAt": "2016-01-06T05:14:01.905Z",
+        "updatedAt": "2016-01-06T06:24:24.022Z",
+        "id": 12,
+        "attributes": [
+          {
+            "$$hashKey": "object:26",
+            "name": "level",
+            "label": "Level",
+            "type": "float",
+            "min": "0",
+            "max": "100",
+            "step": "1",
+            "default": 0,
+            "metric": "%"
+          }
+        ]
       }
     ],
     "modules": [
@@ -7894,12 +7949,12 @@
         "type": 2,
         "group": 2,
         "values": {
-          "motion": false,
+          "motion": true,
           "level": "30"
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2016-01-04T06:11:33.552Z"
+        "updatedAt": "2016-01-04T07:56:09.755Z"
       },
       {
         "name": "Kitchen Lights",
@@ -7935,6 +7990,14 @@
         "id": 17,
         "createdAt": "2014-11-05T08:53:06.419Z",
         "updatedAt": "2016-01-04T06:12:08.883Z"
+      },
+      {
+        "name": "Hall Light Sensor",
+        "createdAt": "2016-01-06T06:23:06.209Z",
+        "updatedAt": "2016-01-06T12:30:05.460Z",
+        "id": 20,
+        "type": 12,
+        "group": 2
       }
     ],
     "ruleconditions": [
@@ -7966,8 +8029,20 @@
           true
         ],
         "createdAt": "2016-01-04T05:37:17.819Z",
-        "updatedAt": "2016-01-04T06:14:56.533Z",
+        "updatedAt": "2016-01-06T12:41:37.335Z",
         "id": 22
+      },
+      {
+        "rule": 12,
+        "module": 20,
+        "attribute": "level",
+        "arguments": [
+          75
+        ],
+        "createdAt": "2016-01-06T03:39:59.210Z",
+        "updatedAt": "2016-01-06T12:41:37.346Z",
+        "id": 23,
+        "operator": "<"
       }
     ],
     "rules": [
@@ -7985,7 +8060,7 @@
         ],
         "id": 12,
         "createdAt": "2015-01-03T07:05:05.837Z",
-        "updatedAt": "2016-01-04T06:14:56.512Z"
+        "updatedAt": "2016-01-06T12:41:37.323Z"
       }
     ]
   },
@@ -8258,14 +8333,14 @@
       "id": 5
     },
     "moduletypes": {
-      "id": 11
+      "id": 12
     },
     "modules": {
-      "id": 19
+      "id": 20
     },
     "ruleactions": {},
     "ruleconditions": {
-      "id": 22
+      "id": 23
     },
     "rules": {
       "id": 15
@@ -8274,6 +8349,8 @@
       "id": 844
     },
     "modulegroups_modules__modules_group": {},
-    "moduleevents": {}
+    "moduleevents": {
+      "id": 3
+    }
   }
 }

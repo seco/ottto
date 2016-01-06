@@ -29,19 +29,6 @@ module.exports = {
       type: 'string'
     }
 
-  },
-
-  afterCreate: function(event, next) {
-
-    // RulesService
-    //   .match({
-    //     module: event.module,
-    //     attribute: event.attribute,
-    //     value: event.value
-    //   });
-
-    next();
-
   }
 
 };
