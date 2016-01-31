@@ -89,6 +89,8 @@ angular
         $_respond: (message) =>
           return unless message.id is @$attributes.id
 
+          console.log message
+
           switch message.verb
             when 'updated' then @$_reset message.data
             when 'destroyed' then console.log 'delete'

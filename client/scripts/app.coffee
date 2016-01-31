@@ -115,6 +115,25 @@ angular
             'Rules'
             (Rules) -> Rules.fetchAll()
           ]
+      .state 'rules.new',
+        url: '^/rules/new'
+        views:
+          detail:
+            templateUrl: 'views/rules/rule.html'
+            controller: 'RuleController'
+            resolve:
+              rule: [
+                'Rules'
+                (Rules) -> new Rules
+              ]
+              modules: [
+                'Modules'
+                (Modules) -> Modules.$get()
+              ]
+              types: [
+                'ModuleTypes'
+                (ModuleTypes) -> ModuleTypes.$get()
+              ]
       .state 'rules.detail',
         url: '^/rules/:id'
         views:
@@ -125,7 +144,6 @@ angular
               rule: [
                 'rules', '$stateParams'
                 (rules, $stateParams) ->
-                  console.log rules
                   _.filter(rules, (rule) ->
                     rule.id is Number $stateParams.id
                   )[0]
@@ -138,11 +156,5 @@ angular
                 'ModuleTypes'
                 (ModuleTypes) -> ModuleTypes.$get()
               ]
-      .state 'rules.new',
-        url: '^/rules/new'
-        views:
-          detail:
-            templateUrl: 'views/rules/rule.html'
-            controller: 'RuleController'
 
       $urlRouterProvider.otherwise '/'

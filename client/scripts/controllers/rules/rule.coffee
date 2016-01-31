@@ -23,7 +23,7 @@ angular
 
 
       $scope.save = ->
-        $scope.rule.$save()
+        do $scope.rule.$save
 
 
       $scope.delete = ->

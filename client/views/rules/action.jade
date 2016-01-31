@@ -6,37 +6,102 @@
   .panel-body
     .form-group
       .form-inline
-        | Then
+        | Set
         select.form-control(
           ng-options='module.$attributes.id as module.$attributes.name group by module.$attributes.type.name for module in modules',
           ng-model='action.module'
         )
 
         select.form-control(
-          ng-options='method.name as method.label for method in methods',
-          ng-model='action.method',
+          ng-options='attribute.name as attribute.label for attribute in attributes',
+          ng-model='action.attribute',
           ng-show='action.module'
         )
 
-        span(ng-repeat='argument in method.arguments')
-          | {{argument.label}}
+        span(ng-show='action.attribute')
+          | to
+          span(ng-switch='attribute.type')
 
-          span(ng-switch='argument.type')
             //-
             //- Boolean
             //-
             span(ng-switch-when='boolean')
               select.form-control(
-                ng-model='action.arguments[$index]',
-                ng-options='option.value as option.label for (key,option) in argument.options'
+                ng-options='option.value as option.label for option in attribute.options',
+                ng-model='action.arguments[0]'
               )
 
             //-
             //- Float
             //-
             span(ng-switch-when='float')
-              input.form-control(
-                name='{{argument.name}}', type="number"
-                ng-model='action.arguments[$index]'
-              )
-              | {{argument.metric}}
+              span(ng-show='action.operator')
+                input.form-control(
+                  type="number"
+                  ng-min="attribute.min"
+                  ng-max="attribute.max"
+                  ng-model="action.arguments[0]"
+                )
+
+                span(ng-show='action.operator == "> x <"')
+                  | and
+                  input.form-control(
+                    type='number',
+                    ng-min='attribute.min',
+                    ng-max='attribute.max',
+                    ng-model='action.arguments[1]'
+                  )
+
+                | {{attribute.metric}}
+
+            //-
+            //- String
+            //-
+            span(ng-switch-when='string') String
+
+            //-
+            //- Radios
+            //-
+            span(ng-switch-when='radios') Radios
+
+            //-
+            //- Checkboxes
+            //-
+            span(ng-switch-when='checkboxes') Checkboxes
+
+
+
+        //- | Then
+        //- select.form-control(
+        //-   ng-options='module.$attributes.id as module.$attributes.name group by module.$attributes.type.name for module in modules',
+        //-   ng-model='action.module'
+        //- )
+
+        //- select.form-control(
+        //-   ng-options='method.name as method.label for method in methods',
+        //-   ng-model='action.method',
+        //-   ng-show='action.module'
+        //- )
+
+        //- span(ng-repeat='argument in method.arguments')
+        //-   | {{argument.label}}
+
+        //-   span(ng-switch='argument.type')
+        //-     //-
+        //-     //- Boolean
+        //-     //-
+        //-     span(ng-switch-when='boolean')
+        //-       select.form-control(
+        //-         ng-model='action.arguments[$index]',
+        //-         ng-options='option.value as option.label for (key,option) in argument.options'
+        //-       )
+
+        //-     //-
+        //-     //- Float
+        //-     //-
+        //-     span(ng-switch-when='float')
+        //-       input.form-control(
+        //-         name='{{argument.name}}', type="number"
+        //-         ng-model='action.arguments[$index]'
+        //-       )
+        //-       | {{argument.metric}}

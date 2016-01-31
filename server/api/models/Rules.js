@@ -25,30 +25,30 @@ module.exports = {
     // Associated to the required conditions
     conditions: {
       collection: 'RuleConditions',
-      via: 'rule',
-      required: true
+      via: 'rule'
+      // required: true
     },
 
     // Array of IDs associated to the actions to be triggered
     actions: {
-      type: 'array',
-      required: true
+      type: 'array'
+      // required: true
     }
 
   },
 
-  beforeCreate: function(values, next) {
+  // beforeCreate: function(values, next) {
 
-    conditions = _(values.conditions).filter(function(condition) {
-      if (!condition.id) return RuleConditions.create(condition);
-    });
+  //   conditions = _(values.conditions).filter(function(condition) {
+  //     if (!condition.id) return RuleConditions.create(condition);
+  //   });
 
-    if (conditions) {
-      Promise.all(conditions).then(function() { next(); });
-    } else {
-      next();
-    }
+  //   if (conditions) {
+  //     Promise.all(conditions).then(function() { next(); });
+  //   } else {
+  //     next();
+  //   }
 
-  }
+  // }
 
 };

@@ -3,6 +3,7 @@
   "description": "A home automation platform.",
   "version": "0.0.0",
   "dependencies": {
+    "bluebird": "^3.1.5",
     "cron": "^1.1.0",
     "ejs": "~0.8.4",
     "lodash": "^3.10.1",
@@ -17,6 +18,6 @@
   },
   "scripts": {
     "start": "nodemon app.js",
-    "debug": "nodemon app.js --debug"
+    "debug": "nodemon --debug app.js"
   }
 }

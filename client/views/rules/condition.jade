@@ -26,7 +26,9 @@
         //- Boolean
         //-
         span(ng-switch-when='boolean')
-          | is
+          select.form-control(ng-model='condition.operator')
+            option(value='==') is
+            option(value='!=') is not
           select.form-control(
             ng-options='option.value as option.label for option in attribute.options',
             ng-model='condition.arguments[0]'

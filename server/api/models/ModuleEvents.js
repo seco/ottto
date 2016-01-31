@@ -5,8 +5,6 @@
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
-var _ = require('lodash');
-
 module.exports = {
 
   attributes: {
