@@ -13843,6 +13843,330 @@
         "createdAt": "2016-02-05T09:51:56.314Z",
         "updatedAt": "2016-02-05T09:51:56.314Z",
         "id": 931
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:03.539Z",
+        "updatedAt": "2016-02-05T09:58:03.539Z",
+        "id": 932
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:03.556Z",
+        "updatedAt": "2016-02-05T09:58:03.556Z",
+        "id": 933
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2016-02-05T09:58:05.356Z",
+        "updatedAt": "2016-02-05T09:58:05.356Z",
+        "id": 934
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2016-02-05T09:58:07.139Z",
+        "updatedAt": "2016-02-05T09:58:07.139Z",
+        "id": 935
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:07.152Z",
+        "updatedAt": "2016-02-05T09:58:07.152Z",
+        "id": 936
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:07.928Z",
+        "updatedAt": "2016-02-05T09:58:07.928Z",
+        "id": 937
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:07.940Z",
+        "updatedAt": "2016-02-05T09:58:07.940Z",
+        "id": 938
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:07.997Z",
+        "updatedAt": "2016-02-05T09:58:07.997Z",
+        "id": 939
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2016-02-05T09:58:48.693Z",
+        "updatedAt": "2016-02-05T09:58:48.693Z",
+        "id": 940
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:48.718Z",
+        "updatedAt": "2016-02-05T09:58:48.718Z",
+        "id": 941
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:48.788Z",
+        "updatedAt": "2016-02-05T09:58:48.788Z",
+        "id": 942
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:51.590Z",
+        "updatedAt": "2016-02-05T09:58:51.590Z",
+        "id": 943
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:51.605Z",
+        "updatedAt": "2016-02-05T09:58:51.605Z",
+        "id": 944
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2016-02-05T09:58:54.036Z",
+        "updatedAt": "2016-02-05T09:58:54.036Z",
+        "id": 945
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:54.050Z",
+        "updatedAt": "2016-02-05T09:58:54.050Z",
+        "id": 946
+      },
+      {
+        "module": 15,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:58:54.101Z",
+        "updatedAt": "2016-02-05T09:58:54.101Z",
+        "id": 947
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:59:18.164Z",
+        "updatedAt": "2016-02-05T09:59:18.164Z",
+        "id": 948
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:59:18.179Z",
+        "updatedAt": "2016-02-05T09:59:18.179Z",
+        "id": 949
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2016-02-05T09:59:21.371Z",
+        "updatedAt": "2016-02-05T09:59:21.371Z",
+        "id": 950
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:59:21.385Z",
+        "updatedAt": "2016-02-05T09:59:21.385Z",
+        "id": 951
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2016-02-05T09:59:21.434Z",
+        "updatedAt": "2016-02-05T09:59:21.434Z",
+        "id": 952
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:59:23.783Z",
+        "updatedAt": "2016-02-05T09:59:23.783Z",
+        "id": 953
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:59:23.800Z",
+        "updatedAt": "2016-02-05T09:59:23.800Z",
+        "id": 954
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:59:23.855Z",
+        "updatedAt": "2016-02-05T09:59:23.855Z",
+        "id": 955
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2016-02-05T09:59:26.370Z",
+        "updatedAt": "2016-02-05T09:59:26.370Z",
+        "id": 956
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T09:59:26.385Z",
+        "updatedAt": "2016-02-05T09:59:26.385Z",
+        "id": 957
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "value": "false",
+        "previous": "true",
+        "createdAt": "2016-02-05T09:59:26.436Z",
+        "updatedAt": "2016-02-05T09:59:26.436Z",
+        "id": 958
+      },
+      {
+        "module": 20,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T10:00:39.466Z",
+        "updatedAt": "2016-02-05T10:00:39.466Z",
+        "id": 959
+      },
+      {
+        "module": 20,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T10:00:39.486Z",
+        "updatedAt": "2016-02-05T10:00:39.486Z",
+        "id": 960
+      },
+      {
+        "module": 20,
+        "attribute": "level",
+        "value": "85",
+        "previous": "31",
+        "createdAt": "2016-02-05T10:00:39.502Z",
+        "updatedAt": "2016-02-05T10:00:39.502Z",
+        "id": 961
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-02-05T10:00:44.871Z",
+        "updatedAt": "2016-02-05T10:00:44.871Z",
+        "id": 962
+      },
+      {
+        "module": 9,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T10:00:44.902Z",
+        "updatedAt": "2016-02-05T10:00:44.902Z",
+        "id": 963
+      },
+      {
+        "module": 20,
+        "attribute": "motion",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T10:00:49.541Z",
+        "updatedAt": "2016-02-05T10:00:49.541Z",
+        "id": 964
+      },
+      {
+        "module": 20,
+        "attribute": "power",
+        "value": "false",
+        "previous": "false",
+        "createdAt": "2016-02-05T10:00:49.557Z",
+        "updatedAt": "2016-02-05T10:00:49.557Z",
+        "id": 965
+      },
+      {
+        "module": 20,
+        "attribute": "level",
+        "value": "24",
+        "previous": "85",
+        "createdAt": "2016-02-05T10:00:49.588Z",
+        "updatedAt": "2016-02-05T10:00:49.588Z",
+        "id": 966
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "value": "true",
+        "previous": "false",
+        "createdAt": "2016-02-05T10:00:49.670Z",
+        "updatedAt": "2016-02-05T10:00:49.670Z",
+        "id": 967
       }
     ],
     "modulegroups": [],
@@ -14149,13 +14473,13 @@
         "type": 2,
         "group": 2,
         "values": {
-          "motion": false,
+          "motion": true,
           "power": false,
           "level": "31"
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2016-02-05T09:51:56.195Z",
+        "updatedAt": "2016-02-05T10:00:44.838Z",
         "power": true
       },
       {
@@ -14163,13 +14487,11 @@
         "type": 1,
         "group": 4,
         "values": {
-          "motion": false,
-          "power": false,
-          "level": "31"
+          "power": false
         },
         "id": 15,
         "createdAt": "2014-09-13T08:18:34.898Z",
-        "updatedAt": "2016-02-05T09:33:04.349Z",
+        "updatedAt": "2016-02-05T09:58:54.082Z",
         "power": true
       },
       {
@@ -14178,7 +14500,7 @@
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2016-02-05T09:51:42.344Z",
+        "updatedAt": "2016-02-05T10:00:49.635Z",
         "values": {
           "power": true
         },
@@ -14192,20 +14514,20 @@
         },
         "id": 17,
         "createdAt": "2014-11-05T08:53:06.419Z",
-        "updatedAt": "2016-02-05T09:51:56.288Z",
+        "updatedAt": "2016-02-05T09:58:07.186Z",
         "power": true
       },
       {
         "name": "Hall Light Sensor",
         "createdAt": "2016-01-06T06:23:06.209Z",
-        "updatedAt": "2016-02-05T09:33:04.349Z",
+        "updatedAt": "2016-02-05T10:00:49.506Z",
         "id": 20,
         "type": 12,
         "group": 2,
         "values": {
           "motion": false,
           "power": false,
-          "level": "31"
+          "level": "24"
         },
         "power": true
       }
@@ -14243,7 +14565,7 @@
         ],
         "rule": 16,
         "createdAt": "2016-01-16T09:04:03.923Z",
-        "updatedAt": "2016-01-31T09:57:11.717Z",
+        "updatedAt": "2016-02-05T09:59:13.788Z",
         "id": 24,
         "operator": "!="
       }
@@ -14267,20 +14589,20 @@
         "updatedAt": "2016-01-31T09:00:51.664Z"
       },
       {
-        "name": "Bathroom Light Rule",
+        "name": "Hall Lights Anti-Rule",
         "operator": "&&",
         "actions": [
           {
-            "module": 17,
+            "module": 16,
             "method": "turn",
             "attribute": "power",
             "arguments": {
-              "0": true
+              "0": false
             }
           }
         ],
         "createdAt": "2016-01-16T09:04:03.879Z",
-        "updatedAt": "2016-01-31T09:57:11.696Z",
+        "updatedAt": "2016-02-05T09:59:13.764Z",
         "id": 16
       },
       {
@@ -14579,7 +14901,7 @@
     },
     "modulegroups_modules__modules_group": {},
     "moduleevents": {
-      "id": 931
+      "id": 967
     }
   }
 }
