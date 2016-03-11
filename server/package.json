@@ -16,9 +16,5 @@
   "devDependencies": {
     "node-inspector": "^0.12.5",
     "nodemon": "^1.8.1"
-  },
-  "scripts": {
-    "start": "sudo nodemon app.js",
-    "debug": "nodemon --debug app.js"
   }
 }
