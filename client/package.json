@@ -15,6 +15,7 @@
     "jade": "^1.11.0"
   },
   "scripts": {
-    "start": "gulp"
+    "prestart": "npm install",
+    "start": "gulp build"
   }
 }
