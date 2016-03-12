@@ -6,9 +6,9 @@
     "bluebird": "^3.1.5",
     "cron": "^1.1.0",
     "ejs": "~0.8.4",
-    "forever": "^0.15.1",
     "lodash": "^3.10.1",
     "nrf": "^0.8.3",
+    "pm2": "^1.0.2",
     "rc": "~0.5.0",
     "sails": "^0.11.3",
     "sails-disk": "~0.10.0",
@@ -20,6 +20,6 @@
   },
   "scripts": {
     "prestart": "npm install",
-    "start": "forever app.js"
+    "start": "pm2 stop all && pm2 start app.js"
   }
 }
