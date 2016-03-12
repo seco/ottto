@@ -15,7 +15,7 @@
     "jade": "^1.11.0"
   },
   "scripts": {
-    "prestart": "npm install",
+    "prestart": "bower install && npm install",
     "start": "gulp build"
   }
 }
