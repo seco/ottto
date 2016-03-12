@@ -20,6 +20,7 @@
   },
   "scripts": {
     "prestart": "npm install",
-    "start": "pm2 stop all && pm2 start app.js"
+    "start": "pm2 stop all && pm2 start app.js",
+    "dev": "npm install && nodemon app.js --debug"
   }
 }

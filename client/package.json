@@ -16,6 +16,7 @@
   },
   "scripts": {
     "prestart": "bower install && npm install",
-    "start": "gulp build"
+    "start": "gulp build --production",
+    "dev": "bower install && npm install && gulp"
   }
 }
