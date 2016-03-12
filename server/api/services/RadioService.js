@@ -1,11 +1,19 @@
 var through = require('through2');
+var NRF24;
+
+if (process.platform == 'linux') {
+  NRF = require('nrf');
+}
 
 
-RadioService = function(options) {
-  if (process.platform != 'linux') return;
+Radio = function(options) {
+  if (process.platform == 'linux') {
+    this.start();
+  }
+};
 
-  var NRF24 = require('nrf');
 
+Radio.prototype.start = function() {
   var spiDev = '/dev/spidev0.0',
       cePin = 24, irqPin = 25,
       pipes = [ 0xF0F0F0F0E1, 0xF0F0F0F0D2 ];
@@ -30,7 +38,7 @@ RadioService = function(options) {
 };
 
 
-RadioService.prototype.transforms = {
+Radio.prototype.transforms = {
 
   reverse: through(function(message, encoding, next) {
     this.push(message.toString().trim().split('').reverse().join(''));
@@ -61,4 +69,4 @@ RadioService.prototype.transforms = {
 };
 
 
-module.exports = RadioService;
+module.exports = Radio;
