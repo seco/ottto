@@ -1,18 +1,21 @@
 #include <ESP8266WiFi.h>
-#include <WiFiClient.h>
 #include <ESP8266WebServer.h>
-// #include <ArduinoJson.h>
+#include <ArduinoJson.h>
 
-int led = 0;
+int powerPin = 0;
+int levelPin = 1;
 
 const char* ssid = "...";
 const char* password = "...";
 
 ESP8266WebServer server(80);
 
-void setup(void) {
-  pinMode(led, OUTPUT);
-  digitalWrite(led, LOW);
+void setup() {
+  pinMode(powerPin, OUTPUT);
+  digitalWrite(powerPin, HIGH);
+
+  pinMode(levelPin, OUTPUT);
+  digitalWrite(levelPin, 255);
 
   Serial.begin(115200);
 
@@ -23,10 +26,8 @@ void setup(void) {
     Serial.print(".");
   }
 
-  server.on("/", handleRoot);
-  server.on("/on", handleOn);
-  server.on("/off", handleOff);
-  server.onNotFound(handleRoot);
+  server.on("/", request);
+  server.onNotFound(request);
   server.begin();
 
   Serial.println("");
@@ -37,24 +38,62 @@ void setup(void) {
   Serial.println("HTTP server started");
 }
 
-void handleRoot() {
-  server.send(200, "text/html", "<a href=\"/on\">on</a> <a href=\"/off\">off</a>");
-}
-
-void handleOn() {
-  setLightPower(HIGH);
-  server.send(200, "text/html", "on <a href=\"/off\">off</a>");
-}
-
-void handleOff(){
-  setLightPower(LOW);
-  server.send(200, "text/html", "<a href=\"/on\">on</a> off");
-}
-
-void loop(void) {
+void loop() {
   server.handleClient();
 }
 
-void setLightPower(bool power) {
-  digitalWrite(led, power);
+void request() {
+  (server.method() == HTTP_GET) ? get() : post();
+}
+
+void get() {
+  respond();
+}
+
+void respond() {
+  StaticJsonBuffer<500> jsonBuffer;
+  JsonObject& json = jsonBuffer.createObject();
+
+  boolean powerValue = digitalRead(powerPin);
+  json["power"] = powerValue;
+  Serial.print("power: ");
+  Serial.println(powerValue);
+
+  int levelValue = analogRead(levelPin);
+  json["level"] = levelValue;
+  Serial.print("level: ");
+  Serial.println(levelValue);
+
+  String body;
+  json.prettyPrintTo(body);
+
+  server.send(200, "application/json; charset=utf-8", body);
+}
+
+void post() {
+  String message = "";
+  for ( uint8_t i = 0; i < server.args(); i++ ) {
+		message += " " + server.argName ( i ) + ": " + server.arg ( i ) + "\n";
+	}
+  Serial.println(message);
+
+  String powerValue = server.arg("power");
+  if (powerValue == "true" || powerValue == "1") digitalWrite(powerPin, HIGH);
+  else if (powerValue == "false" || powerValue == "0") digitalWrite(powerPin, LOW);
+
+  // String levelValue = server.arg("level");
+  // analogWrite(levelPin, levelValue.toInt());
+
+  respond();
+}
+
+void set(char parameter, bool value) {
+  switch(parameter) {
+    case 'power':
+      digitalWrite(powerPin, value);
+      break;
+    case 'level':
+      digitalWrite(levelPin, value);
+      break;
+  }
 }
