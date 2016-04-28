@@ -27,6 +27,9 @@ form(name='moduleForm')
 
 .well
   h2 {{module.$attributes.name}}
+  code {{module.$attributes.address}}
+  
+  hr
 
   .form-group(ng-repeat='value in module.$attributes.type.attributes')
     label(for='{{value.name}}') {{value.label}}

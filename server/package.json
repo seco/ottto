@@ -10,6 +10,7 @@
     "nrf": "^0.8.3",
     "pm2": "^1.0.2",
     "rc": "~0.5.0",
+    "request": "^2.72.0",
     "sails": "^0.11.3",
     "sails-disk": "~0.10.0",
     "through2": "^2.0.0"
@@ -20,7 +21,7 @@
   },
   "scripts": {
     "prestart": "npm install",
-    "start": "pm2 stop all && pm2 start app.js",
+    "start": "pm2 stop all; pm2 start app.js",
     "dev": "npm install && nodemon app.js --debug"
   }
 }

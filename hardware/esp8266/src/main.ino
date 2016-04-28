@@ -22,7 +22,7 @@ void setup() {
   }
 
   server.on("/", request);
-  server.onNotFound(request);
+  // server.onNotFound(request);
   server.begin();
 
   Serial.println("");
@@ -51,27 +51,29 @@ void respond() {
 
   bool powerValue = digitalRead(powerPin);
   json["power"] = powerValue;
-  Serial.print('power: ');
-  Serial.println(powerValue);
 
   String body;
   json.prettyPrintTo(body);
+  json.prettyPrintTo(Serial);
+  Serial.println();
 
   server.send(200, "application/json; charset=utf-8", body);
 }
 
 void post() {
+  receive()
+  respond();
+}
+
+void receive() {
   String incoming = "";
-  for ( uint8_t i = 0; i < server.args(); i++ ) {
-		incoming += server.argName ( i ) + ": " + server.arg ( i ) + "\n";
-	}
+  /////////////////////////////////////////////////
+  // Grab the body of the incoming POST request! //
+  /////////////////////////////////////////////////
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.parseObject(incoming);
+  json.prettyPrintTo(Serial);
 
   bool powerValue = json["power"];
   digitalWrite(powerPin, powerValue);
-  Serial.print('power: ');
-  Serial.println(powerValue);
-
-  respond();
 }
