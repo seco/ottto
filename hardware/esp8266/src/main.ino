@@ -3,7 +3,6 @@
 #include <ArduinoJson.h>
 
 int powerPin = 0;
-int levelPin = 1;
 
 const char* ssid = "...";
 const char* password = "...";
@@ -14,11 +13,7 @@ void setup() {
   pinMode(powerPin, OUTPUT);
   digitalWrite(powerPin, HIGH);
 
-  pinMode(levelPin, OUTPUT);
-  digitalWrite(levelPin, 255);
-
   Serial.begin(115200);
-
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
@@ -51,18 +46,13 @@ void get() {
 }
 
 void respond() {
-  StaticJsonBuffer<500> jsonBuffer;
+  StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
 
-  boolean powerValue = digitalRead(powerPin);
+  bool powerValue = digitalRead(powerPin);
   json["power"] = powerValue;
-  Serial.print("power: ");
+  Serial.print('power: ');
   Serial.println(powerValue);
-
-  int levelValue = analogRead(levelPin);
-  json["level"] = levelValue;
-  Serial.print("level: ");
-  Serial.println(levelValue);
 
   String body;
   json.prettyPrintTo(body);
@@ -71,29 +61,17 @@ void respond() {
 }
 
 void post() {
-  String message = "";
+  String incoming = "";
   for ( uint8_t i = 0; i < server.args(); i++ ) {
-		message += " " + server.argName ( i ) + ": " + server.arg ( i ) + "\n";
+		incoming += server.argName ( i ) + ": " + server.arg ( i ) + "\n";
 	}
-  Serial.println(message);
+  StaticJsonBuffer<200> jsonBuffer;
+  JsonObject& json = jsonBuffer.parseObject(incoming);
 
-  String powerValue = server.arg("power");
-  if (powerValue == "true" || powerValue == "1") digitalWrite(powerPin, HIGH);
-  else if (powerValue == "false" || powerValue == "0") digitalWrite(powerPin, LOW);
-
-  // String levelValue = server.arg("level");
-  // analogWrite(levelPin, levelValue.toInt());
+  bool powerValue = json["power"];
+  digitalWrite(powerPin, powerValue);
+  Serial.print('power: ');
+  Serial.println(powerValue);
 
   respond();
-}
-
-void set(char parameter, bool value) {
-  switch(parameter) {
-    case 'power':
-      digitalWrite(powerPin, value);
-      break;
-    case 'level':
-      digitalWrite(levelPin, value);
-      break;
-  }
 }
