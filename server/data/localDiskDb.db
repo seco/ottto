@@ -6902,11 +6902,11 @@
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2016-05-06T16:40:50.805Z",
+        "updatedAt": "2016-05-06T22:30:01.957Z",
         "values": {
-          "power": false
+          "power": true
         },
-        "address": "10.0.0.17"
+        "address": "10.1.11.49"
       },
       {
         "name": "Bathroom Light",

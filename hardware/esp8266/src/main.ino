@@ -26,11 +26,10 @@ void setup() {
   server.begin();
 
   Serial.println("");
-  Serial.print("Connected to ");
+  Serial.print("Connected to: ");
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
-  Serial.println("HTTP server started");
 }
 
 void loop() {
@@ -61,19 +60,11 @@ void respond() {
 }
 
 void post() {
-  receive()
+  receive();
   respond();
 }
 
 void receive() {
-  String incoming = "";
-  /////////////////////////////////////////////////
-  // Grab the body of the incoming POST request! //
-  /////////////////////////////////////////////////
-  StaticJsonBuffer<200> jsonBuffer;
-  JsonObject& json = jsonBuffer.parseObject(incoming);
-  json.prettyPrintTo(Serial);
-
-  bool powerValue = json["power"];
+  bool powerValue = server.arg("power") == "true";
   digitalWrite(powerPin, powerValue);
 }
