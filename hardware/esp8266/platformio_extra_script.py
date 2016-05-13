@@ -1,4 +1,6 @@
 from SCons.Script import DefaultEnvironment
+import os
+
 
 env = DefaultEnvironment()
 
@@ -7,5 +9,6 @@ env.Replace(
         "-p", "$UPLOAD_PORT",
         "write_flash", "0x000000",
     ],
-    UPLOADCMD='lib/esptool.py $LOCAL_UPLOADERFLAGS $SOURCE',
+    UPLOADER="../esptool.py",
+    UPLOADCMD="$UPLOADER $LOCAL_UPLOADERFLAGS $SOURCE",
 )
