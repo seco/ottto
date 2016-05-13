@@ -44,6 +44,7 @@ angular
 
         $save: =>
           return unless @$attributes.id
+          return if _.isEmpty @$_difference()
 
           $sails
             .put @$unique(), @$_difference()
@@ -88,8 +89,6 @@ angular
 
         $_respond: (message) =>
           return unless message.id is @$attributes.id
-
-          console.log message
 
           switch message.verb
             when 'updated' then @$_reset message.data

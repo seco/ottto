@@ -15,10 +15,12 @@ angular
       $scope.save = (newModule, oldModule) ->
         return unless newModule?
 
-        if $scope.module.$old()
-          $scope.module.$save()
-        else
-          $scope.module.$create()
+        $scope.module.$save()
+
+        # if $scope.module.$old()
+        #   $scope.module.$save()
+        # else
+        #   $scope.module.$create()
 
 
       $scope.delete = ->

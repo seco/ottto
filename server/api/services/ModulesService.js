@@ -1,9 +1,10 @@
-// var Promise = require('bluebird');
-var request = require('request');
+var curl = require('curlrequest');
 
 module.exports = {
 
   update: function(id, params) {
+    if(!id || _.isEmpty(params)) return;
+
     return this._getModule(id)
       .then(this._updateModule(params))
       .then(this._broadcastChanges(params))
@@ -44,11 +45,10 @@ module.exports = {
 
       Modules.publishUpdate(id, params);
 
-      request({
+      curl.request({
+        url: 'http://' + pre.address + '/',
         method: 'POST',
-        uri: 'http://' + pre.address + '/',
-        body: params.values,
-        json: true
+        data: params.values
       });
 
       return Promise.all([ pre, post ]);
@@ -64,8 +64,8 @@ module.exports = {
       var preValue = pre.values[attribute],
           postValue = post.values[attribute];
 
-      if (typeof preValue !== "undefined" && preValue !== null) return;
-      if (typeof postValue !== "undefined" && postValue !== null) return;
+      if (typeof preValue !== 'undefined' && preValue !== null) return;
+      if (typeof postValue !== 'undefined' && postValue !== null) return;
       if (preValue == postValues) return;
 
       return ModuleEventsService

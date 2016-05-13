@@ -30,6 +30,10 @@ void setup() {
   Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
+  Serial.print("Mac address: ");
+  Serial.println(WiFi.macAddress());
+  Serial.print("Chip: ");
+  Serial.print(ESP.getChipId());
 }
 
 void loop() {
@@ -53,9 +57,6 @@ void respond() {
 
   String body;
   json.prettyPrintTo(body);
-  json.prettyPrintTo(Serial);
-  Serial.println();
-
   server.send(200, "application/json; charset=utf-8", body);
 }
 

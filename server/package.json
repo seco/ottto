@@ -5,12 +5,14 @@
   "dependencies": {
     "bluebird": "^3.1.5",
     "cron": "^1.1.0",
+    "curlrequest": "^0.5.7",
     "ejs": "~0.8.4",
     "lodash": "^4.6.1",
     "nrf": "^0.8.3",
     "pm2": "^1.0.2",
     "rc": "~0.5.0",
     "request": "^2.72.0",
+    "request-promise": "^3.0.0",
     "sails": "^0.11.3",
     "sails-disk": "~0.10.0",
     "through2": "^2.0.0"
