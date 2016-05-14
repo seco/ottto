@@ -7,13 +7,14 @@
 
 module.exports = {
 
-
   update: function(req, res) {
 
     return ModulesService
-      .update(req.param('id'), req.body);
+      .update(req.param('id'), req.body)
+      .then(function(module) {
+        res.ok(module);
+      });
 
   }
-
 
 };

@@ -60,7 +60,7 @@ module.exports = {
     var pre = args[0],
         post = args[1];
 
-    return _.map(post.values, function(value, attribute) {
+    _.map(post.values, function(value, attribute) {
       var preValue = pre.values[attribute],
           postValue = post.values[attribute];
 
@@ -68,7 +68,7 @@ module.exports = {
       if (typeof postValue !== 'undefined' && postValue !== null) return;
       if (preValue == postValues) return;
 
-      return ModuleEventsService
+      ModuleEventsService
         .create({
           module: post.id,
           attribute: attribute,
@@ -76,5 +76,7 @@ module.exports = {
           previous: preValue
         });
     });
+
+    return post;
   }
 };
