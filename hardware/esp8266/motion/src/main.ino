@@ -1,5 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
+#include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
 
 int motionPin = 0;
@@ -59,42 +60,19 @@ void handleMotion() {
 }
 
 void request() {
-  WiFiClient client;
+  HTTPClient http;
 
+  Serial.println("------------------");
   Serial.println("Making request...");
 
-  if (!client.connect(host, port)) {
-    Serial.println("Cannot connect...");
-    return;
-  }
+  String body = "values[motion]=";
+  body += digitalRead(motionPin) ? "true" : "false";
 
-  client.print("PUT ");
-  client.print(url);
-  client.println(" HTTP/1.1");
-
-  client.print("Host: ");
-  client.println(host);
-
-  client.println("Connection: close");
-
-  client.println();
-
-  client.print("values[motion]=");
-  client.println(digitalRead(motionPin)?"true":"false");
-
-  while(client.available()){
-    String line = client.readStringUntil('\r');
-    Serial.print(line);
-  }
-
-  unsigned long timeout = millis();
-  while (client.available() == 0) {
-    if (millis() - timeout > 5000) {
-      Serial.println("Timeout...");
-      client.stop();
-      return;
-    }
-  }
+  http.begin("http://10.0.0.6:1337/api/modules/9");
+  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  http.POST(body);
+  http.writeToStream(&Serial);
+  http.end();
 }
 
 void respond() {
