@@ -6,8 +6,9 @@ module.exports = {
     if(!id || _.isEmpty(params)) return;
 
     return this._getModule(id)
-      .then(this._updateModule(params))
-      .then(this._broadcastChanges(params))
+      .then(this._coerceValuesTypes(params))
+      .then(this._updateModule)
+      .then(this._broadcastChanges)
       .then(this._createEvents);
   },
 
@@ -15,47 +16,77 @@ module.exports = {
   _getModule: function(id) {
     return Modules
       .find(id)
+      .populate('type')
       .then(function(found) {
         return _.cloneDeep(found[0]);
       });
   },
 
 
-  _updateModule: function(params) {
-    return function(pre) {
-      var id = pre.id,
+  // TODO JJ: build this out into full fledged validations (min/max/etc)
+  _coerceValuesTypes: function(params) {
+    return function(module) {
+      params.values = _.mapValues(params.values, function(value, key) {
+        var attribute = _.find(module.type.attributes, { name: key });
 
-          post = Modules
-            .update(id, params)
-            .then(function(updated) {
-              return _.cloneDeep(updated[0]);
-            });
+        switch(attribute.type) {
+          case 'float':
+            return Number(value);
 
-      return Promise.all([ pre, post ]);
-    };
-  },
+          case 'boolean':
+            if(typeof value == 'boolean') {
+              return value;
+            } else if(typeof value == 'string') {
+              return value == 'true';
+            }
+            break;
 
-
-  _broadcastChanges: function(params) {
-    return function(args) {
-      var pre = args[0],
-          post = args[1],
-
-          id = pre.id;
-
-      Modules.publishUpdate(id, params);
-
-      curl.request({
-        url: 'http://' + pre.address + '/',
-        method: 'POST',
-        data: params.values
+          default:
+            return value;
+        }
       });
 
-      return Promise.all([ pre, post ]);
+      return Promise.all([ module, params ]);
     };
   },
 
 
+  _updateModule: function(args) {
+    var pre = args[0],
+        params = args[1],
+
+        id = pre.id,
+
+        post = Modules
+          .update(id, params)
+          .then(function(updated) {
+            return _.cloneDeep(updated[0]);
+          });
+
+    return Promise.all([ pre, post, params ]);
+  },
+
+
+  _broadcastChanges: function(args) {
+    var pre = args[0],
+        post = args[1],
+        params = args[2],
+
+        id = pre.id;
+
+    Modules.publishUpdate(id, params);
+
+    curl.request({
+      url: 'http://' + pre.address + '/',
+      method: 'POST',
+      data: params.values
+    });
+
+    return Promise.all([ pre, post ]);
+  },
+
+
+  // TODO JJ: figure out why events are not being created...
   _createEvents: function(args) {
     var pre = args[0],
         post = args[1];

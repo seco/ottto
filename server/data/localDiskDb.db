@@ -306,13 +306,11 @@
         "type": 2,
         "group": 2,
         "values": {
-          "motion": true,
-          "power": false,
-          "level": "31"
+          "motion": false
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2016-02-05T10:00:44.838Z"
+        "updatedAt": "2016-05-16T17:45:45.147Z",
       },
       {
         "name": "Kitchen Lights",
@@ -350,14 +348,12 @@
       {
         "name": "Hall Light Sensor",
         "createdAt": "2016-01-06T06:23:06.209Z",
-        "updatedAt": "2016-02-05T10:00:49.506Z",
+        "updatedAt": "2016-05-16T05:25:20.242Z",
         "id": 20,
         "type": 12,
         "group": 2,
         "values": {
-          "motion": false,
-          "power": false,
-          "level": "24"
+          "level": 40
         }
       }
     ],
