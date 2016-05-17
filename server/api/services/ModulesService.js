@@ -86,7 +86,6 @@ module.exports = {
   },
 
 
-  // TODO JJ: figure out why events are not being created...
   _createEvents: function(args) {
     var pre = args[0],
         post = args[1];
@@ -95,16 +94,16 @@ module.exports = {
       var preValue = pre.values[attribute],
           postValue = post.values[attribute];
 
-      if (typeof preValue !== 'undefined' && preValue !== null) return;
-      if (typeof postValue !== 'undefined' && postValue !== null) return;
-      if (preValue == postValues) return;
+      if (typeof preValue == 'undefined' || preValue == null) return;
+      if (typeof postValue == 'undefined' || postValue == null) return;
+      if (preValue == postValue) return;
 
       ModuleEventsService
         .create({
           module: post.id,
           attribute: attribute,
-          value: postValue,
-          previous: preValue
+          previous: preValue,
+          value: postValue
         });
     });
 
