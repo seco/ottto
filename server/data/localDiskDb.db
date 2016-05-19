@@ -2710,6 +2710,717 @@
         "createdAt": "2016-05-17T07:53:40.599Z",
         "updatedAt": "2016-05-17T07:53:40.599Z",
         "id": 1268
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:53:41.371Z",
+        "updatedAt": "2016-05-17T07:53:41.371Z",
+        "id": 1269
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:54:08.613Z",
+        "updatedAt": "2016-05-17T07:54:08.613Z",
+        "id": 1270
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:54:09.845Z",
+        "updatedAt": "2016-05-17T07:54:09.845Z",
+        "id": 1271
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:54:11.985Z",
+        "updatedAt": "2016-05-17T07:54:11.985Z",
+        "id": 1272
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:54:13.234Z",
+        "updatedAt": "2016-05-17T07:54:13.234Z",
+        "id": 1273
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:54:19.201Z",
+        "updatedAt": "2016-05-17T07:54:19.201Z",
+        "id": 1274
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:54:21.415Z",
+        "updatedAt": "2016-05-17T07:54:21.415Z",
+        "id": 1275
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:54:25.980Z",
+        "updatedAt": "2016-05-17T07:54:25.980Z",
+        "id": 1276
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:54:27.256Z",
+        "updatedAt": "2016-05-17T07:54:27.256Z",
+        "id": 1277
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:54:38.715Z",
+        "updatedAt": "2016-05-17T07:54:38.715Z",
+        "id": 1278
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:54:41.405Z",
+        "updatedAt": "2016-05-17T07:54:41.405Z",
+        "id": 1279
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:54:43.521Z",
+        "updatedAt": "2016-05-17T07:54:43.521Z",
+        "id": 1280
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:54:44.350Z",
+        "updatedAt": "2016-05-17T07:54:44.350Z",
+        "id": 1281
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:54:49.052Z",
+        "updatedAt": "2016-05-17T07:54:49.052Z",
+        "id": 1282
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:54:52.537Z",
+        "updatedAt": "2016-05-17T07:54:52.537Z",
+        "id": 1283
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:54:57.091Z",
+        "updatedAt": "2016-05-17T07:54:57.091Z",
+        "id": 1284
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:55:00.049Z",
+        "updatedAt": "2016-05-17T07:55:00.049Z",
+        "id": 1285
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:55:07.291Z",
+        "updatedAt": "2016-05-17T07:55:07.291Z",
+        "id": 1286
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:55:08.930Z",
+        "updatedAt": "2016-05-17T07:55:08.930Z",
+        "id": 1287
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:55:10.376Z",
+        "updatedAt": "2016-05-17T07:55:10.376Z",
+        "id": 1288
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:55:11.234Z",
+        "updatedAt": "2016-05-17T07:55:11.234Z",
+        "id": 1289
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:55:15.180Z",
+        "updatedAt": "2016-05-17T07:55:15.180Z",
+        "id": 1290
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:55:18.234Z",
+        "updatedAt": "2016-05-17T07:55:18.234Z",
+        "id": 1291
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:55:27.245Z",
+        "updatedAt": "2016-05-17T07:55:27.245Z",
+        "id": 1292
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:55:48.971Z",
+        "updatedAt": "2016-05-17T07:55:48.971Z",
+        "id": 1293
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:55:56.635Z",
+        "updatedAt": "2016-05-17T07:55:56.635Z",
+        "id": 1294
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:56:06.876Z",
+        "updatedAt": "2016-05-17T07:56:06.876Z",
+        "id": 1295
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:56:11.895Z",
+        "updatedAt": "2016-05-17T07:56:11.895Z",
+        "id": 1296
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:56:19.587Z",
+        "updatedAt": "2016-05-17T07:56:19.587Z",
+        "id": 1297
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:56:22.753Z",
+        "updatedAt": "2016-05-17T07:56:22.753Z",
+        "id": 1298
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:56:23.412Z",
+        "updatedAt": "2016-05-17T07:56:23.412Z",
+        "id": 1299
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:56:27.664Z",
+        "updatedAt": "2016-05-17T07:56:27.664Z",
+        "id": 1300
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:56:44.131Z",
+        "updatedAt": "2016-05-17T07:56:44.131Z",
+        "id": 1301
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:56:49.664Z",
+        "updatedAt": "2016-05-17T07:56:49.664Z",
+        "id": 1302
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:56:50.536Z",
+        "updatedAt": "2016-05-17T07:56:50.536Z",
+        "id": 1303
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:56:54.903Z",
+        "updatedAt": "2016-05-17T07:56:54.903Z",
+        "id": 1304
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:56:59.862Z",
+        "updatedAt": "2016-05-17T07:56:59.862Z",
+        "id": 1305
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:57:06.828Z",
+        "updatedAt": "2016-05-17T07:57:06.828Z",
+        "id": 1306
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:58:01.773Z",
+        "updatedAt": "2016-05-17T07:58:01.773Z",
+        "id": 1307
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:58:08.659Z",
+        "updatedAt": "2016-05-17T07:58:08.659Z",
+        "id": 1308
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:59:03.741Z",
+        "updatedAt": "2016-05-17T07:59:03.741Z",
+        "id": 1309
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:59:11.061Z",
+        "updatedAt": "2016-05-17T07:59:11.061Z",
+        "id": 1310
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:59:24.615Z",
+        "updatedAt": "2016-05-17T07:59:24.615Z",
+        "id": 1311
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:59:31.182Z",
+        "updatedAt": "2016-05-17T07:59:31.182Z",
+        "id": 1312
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T07:59:34.050Z",
+        "updatedAt": "2016-05-17T07:59:34.050Z",
+        "id": 1313
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T07:59:43.047Z",
+        "updatedAt": "2016-05-17T07:59:43.047Z",
+        "id": 1314
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:00:31.995Z",
+        "updatedAt": "2016-05-17T08:00:31.995Z",
+        "id": 1315
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:00:42.553Z",
+        "updatedAt": "2016-05-17T08:00:42.553Z",
+        "id": 1316
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:00:43.466Z",
+        "updatedAt": "2016-05-17T08:00:43.466Z",
+        "id": 1317
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:01:15.001Z",
+        "updatedAt": "2016-05-17T08:01:15.001Z",
+        "id": 1318
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:01:16.082Z",
+        "updatedAt": "2016-05-17T08:01:16.082Z",
+        "id": 1319
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:01:22.478Z",
+        "updatedAt": "2016-05-17T08:01:22.478Z",
+        "id": 1320
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:01:23.729Z",
+        "updatedAt": "2016-05-17T08:01:23.729Z",
+        "id": 1321
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:01:43.773Z",
+        "updatedAt": "2016-05-17T08:01:43.773Z",
+        "id": 1322
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:01:45.932Z",
+        "updatedAt": "2016-05-17T08:01:45.932Z",
+        "id": 1323
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:01:51.252Z",
+        "updatedAt": "2016-05-17T08:01:51.252Z",
+        "id": 1324
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:01:52.111Z",
+        "updatedAt": "2016-05-17T08:01:52.111Z",
+        "id": 1325
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:01:58.424Z",
+        "updatedAt": "2016-05-17T08:01:58.424Z",
+        "id": 1326
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:02:00.797Z",
+        "updatedAt": "2016-05-17T08:02:00.797Z",
+        "id": 1327
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:02:07.299Z",
+        "updatedAt": "2016-05-17T08:02:07.299Z",
+        "id": 1328
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:02:13.163Z",
+        "updatedAt": "2016-05-17T08:02:13.163Z",
+        "id": 1329
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:02:28.116Z",
+        "updatedAt": "2016-05-17T08:02:28.116Z",
+        "id": 1330
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:02:33.844Z",
+        "updatedAt": "2016-05-17T08:02:33.844Z",
+        "id": 1331
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:02:41.953Z",
+        "updatedAt": "2016-05-17T08:02:41.953Z",
+        "id": 1332
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:02:52.382Z",
+        "updatedAt": "2016-05-17T08:02:52.382Z",
+        "id": 1333
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:02:54.025Z",
+        "updatedAt": "2016-05-17T08:02:54.025Z",
+        "id": 1334
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:04:06.215Z",
+        "updatedAt": "2016-05-17T08:04:06.215Z",
+        "id": 1335
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:04:14.206Z",
+        "updatedAt": "2016-05-17T08:04:14.206Z",
+        "id": 1336
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:04:54.550Z",
+        "updatedAt": "2016-05-17T08:04:54.550Z",
+        "id": 1337
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:04:56.022Z",
+        "updatedAt": "2016-05-17T08:04:56.022Z",
+        "id": 1338
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:05:00.594Z",
+        "updatedAt": "2016-05-17T08:05:00.594Z",
+        "id": 1339
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:05:03.564Z",
+        "updatedAt": "2016-05-17T08:05:03.564Z",
+        "id": 1340
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:05:26.814Z",
+        "updatedAt": "2016-05-17T08:05:26.814Z",
+        "id": 1341
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:05:28.645Z",
+        "updatedAt": "2016-05-17T08:05:28.645Z",
+        "id": 1342
+      },
+      {
+        "module": 9,
+        "attribute": "motion",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:06:18.847Z",
+        "updatedAt": "2016-05-17T08:06:18.847Z",
+        "id": 1343
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:54:02.408Z",
+        "updatedAt": "2016-05-17T08:54:02.408Z",
+        "id": 1344
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T08:54:06.618Z",
+        "updatedAt": "2016-05-17T08:54:06.618Z",
+        "id": 1345
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-05-17T08:54:13.382Z",
+        "updatedAt": "2016-05-17T08:54:13.382Z",
+        "id": 1346
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2016-05-17T09:14:05.851Z",
+        "updatedAt": "2016-05-17T09:14:05.851Z",
+        "id": 1347
       }
     ],
     "modulegroups": [],
@@ -3016,11 +3727,11 @@
         "type": 2,
         "group": 2,
         "values": {
-          "motion": false
+          "motion": true
         },
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2016-05-17T07:53:40.585Z"
+        "updatedAt": "2016-05-17T08:06:18.832Z"
       },
       {
         "name": "Kitchen Lights",
@@ -3039,11 +3750,11 @@
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2016-05-17T07:53:33.267Z",
+        "updatedAt": "2016-05-17T09:14:05.835Z",
         "values": {
           "power": true
         },
-        "address": "10.0.0.17"
+        "address": "10.0.0.23"
       },
       {
         "name": "Bathroom Light",
@@ -3410,7 +4121,7 @@
     },
     "modulegroups_modules__modules_group": {},
     "moduleevents": {
-      "id": 1268
+      "id": 1347
     }
   }
 }

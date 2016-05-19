@@ -21,7 +21,7 @@ void setup() {
     Serial.print(".");
   }
 
-  server.on("/", request);
+  server.on("/", respond);
   server.begin();
 
   Serial.println("");
@@ -60,11 +60,12 @@ void output() {
 }
 
 void post() {
-  intput();
+  input();
   output();
 }
 
 void input() {
   bool powerValue = server.arg("power") == "true";
+  Serial.println(server.arg("power"));
   digitalWrite(powerPin, powerValue);
 }
