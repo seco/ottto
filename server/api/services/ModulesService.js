@@ -29,6 +29,8 @@ module.exports = {
       params.values = _.mapValues(params.values, function(value, key) {
         var attribute = _.find(module.type.attributes, { name: key });
 
+        if (!attribute) return;
+
         switch(attribute.type) {
           case 'float':
             return Number(value);
