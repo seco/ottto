@@ -15,19 +15,17 @@ angular
       init = ->
         $scope.type = type
 
-        console.log type
-
         $scope.$watch 'type.$attributes', $scope.save, true
 
 
       $scope.save = (newType, oldType) ->
         return unless newType
 
-        if $scope.type.$old() and $scope.type.$dirty()
-          $scope.type.$save()
 
-        if $scope.type.$new() and $scope.type.$dirty()
+        if $scope.type.$new()
           $scope.type.$create()
+        else
+          $scope.type.$save()
 
 
       $scope.delete = ->
