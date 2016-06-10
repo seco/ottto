@@ -3,20 +3,19 @@
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
 
-const int motionPin = 16;
-bool motionState = LOW;
+const int moisturePin = 0;
 
-const char* ssid = "...";
-const char* password = "...";
+const char* ssid = "HOME-A7C2";
+const char* password = "chair5974guitar";
 
 const char* host = "localhost";
 const int port = 1337;
-const char* url = "/api/modules/9";
+const char* url = "/api/modules/22";
 
 ESP8266WebServer server(80);
 
 void setup() {
-  pinMode(motionPin, INPUT);
+  pinMode(moisturePin, INPUT);
 
   Serial.begin(115200);
   WiFi.begin(ssid, password);
@@ -42,30 +41,21 @@ void setup() {
 
 void loop() {
   // server.handleClient();
-  handleMotion();
+  handleMoisture();
 }
 
-void handleMotion() {
-  bool motionValue = digitalRead(motionPin);
-
-  bool highToLow = motionValue == HIGH && motionState == LOW;
-  bool lowToHigh = motionValue == LOW && motionState == HIGH;
-
-  if (highToLow || lowToHigh) {
-    motionState = motionValue;
-    request();
-  }
-
-  delay(100);
+void handleMoisture() {
+  request();
+  delay(1000);
 }
 
 void request() {
   HTTPClient http;
 
-  String body = "values[motion]=";
-  body += getMotion();
+  String body = "values[moisture]=";
+  body += getMoisture();
 
-  http.begin("http://10.0.0.6:1337/api/modules/9");
+  http.begin("http://10.0.0.6:1337/api/modules/22");
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   http.POST(body);
   http.writeToStream(&Serial);
@@ -84,7 +74,7 @@ void output() {
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
 
-  json["motion"] = getMotion();
+  json["moisture"] = getMoisture();
 
   String body;
   json.prettyPrintTo(body);
@@ -92,7 +82,12 @@ void output() {
   server.send(200, "application/json; charset=utf-8", body);
 }
 
-String getMotion() {
-  String motionValue = digitalRead(motionPin) ? "true" : "false";
-  return motionValue;
+
+int getMoisture() {
+  int moisture = map(analogRead(moisturePin), 300, 1024, 4, 0);
+  Serial.print("moisture: ");
+  Serial.print(analogRead(moisturePin));
+  Serial.print(" / ");
+  Serial.println(moisture);
+  return moisture;
 }

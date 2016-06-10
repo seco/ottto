@@ -3,7 +3,7 @@
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
 
-const uint8_t photoPin = 0;
+const int photoPin = 0;
 
 const char* ssid = "...";
 const char* password = "...";
