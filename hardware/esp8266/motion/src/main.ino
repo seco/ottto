@@ -3,7 +3,7 @@
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
 
-int motionPin = 0;
+int motionPin = 16;
 bool motionState = LOW;
 
 const char* ssid = "...";
@@ -62,11 +62,8 @@ void handleMotion() {
 void request() {
   HTTPClient http;
 
-  Serial.println("------------------");
-  Serial.println("Making request...");
-
   String body = "values[motion]=";
-  body += digitalRead(motionPin) ? "true" : "false";
+  body += getMotion();
 
   http.begin("http://10.0.0.6:1337/api/modules/9");
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -87,10 +84,15 @@ void output() {
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
 
-  bool motionValue = digitalRead(motionPin);
-  json["motion"] = motionValue;
+  json["motion"] = getMotion();
 
   String body;
   json.prettyPrintTo(body);
+  json.prettyPrintTo(Serial);
   server.send(200, "application/json; charset=utf-8", body);
+}
+
+String getMotion() {
+  String motionValue = digitalRead(motionPin) ? "true" : "false";
+  return motionValue;
 }
