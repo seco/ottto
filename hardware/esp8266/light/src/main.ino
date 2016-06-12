@@ -2,7 +2,7 @@
 #include <ESP8266WebServer.h>
 #include <ArduinoJson.h>
 
-int powerPin = 0;
+int powerPin = 16;
 
 const char* ssid = "...";
 const char* password = "...";
