@@ -32,7 +32,13 @@ module.exports = {
   paths: {
     tmp: '../.tmp/',
     public: '../.tmp/public/'
-  }
+  },
+
+  host:
+    require('os').networkInterfaces().en0.filter(function(interface) {
+      return interface.family == 'IPv4';
+    })[0].address,
+  port: 1337
 
   /***************************************************************************
    * Your SSL certificate and key, if you want to be able to serve HTTP      *
