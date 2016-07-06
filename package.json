@@ -14,5 +14,11 @@
     "raspberrypi",
     "arduino",
     "nrf24l01"
-  ]
+  ],
+  "devDependencies": {
+    "espruino": "0.0.17",
+    "gulp": "^3.9.1",
+    "gulp-exec": "^2.1.2",
+    "yargs": "^4.7.1"
+  }
 }
