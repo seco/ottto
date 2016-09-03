@@ -1,7 +1,7 @@
 h1 Modules
 
 .row
-  .col-md-4
+  .col-xs-4
     .list-group
       a.list-group-item(
         ng-repeat='m in modules'
@@ -9,8 +9,8 @@ h1 Modules
         ui-sref-active='active'
       )
         span.badge {{m.$attributes.group.name}}
-        h3.list-group-item-heading {{m.$attributes.name}}
+        h5.list-group-item-heading {{m.$attributes.name}}
 
     a.btn.btn-primary(ui-sref='modules.new') New
 
-  .col-md-8(ui-view='detail')
+  .col-xs-8(ui-view='detail')

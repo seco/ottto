@@ -38693,12 +38693,11 @@
         "name": "Hallway Motion",
         "type": 2,
         "group": 2,
-        "values": {
-          "motion": false
-        },
+        "values": {},
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2016-06-15T06:36:06.061Z"
+        "updatedAt": "2016-09-03T20:38:19.500Z",
+        "motion": "false"
       },
       {
         "name": "Kitchen Lights",
@@ -38759,7 +38758,7 @@
         "name": "Basil",
         "moduletype": "11",
         "createdAt": "2016-06-10T06:04:20.448Z",
-        "updatedAt": "2016-06-15T06:36:05.241Z",
+        "updatedAt": "2016-09-03T20:39:52.579Z",
         "id": 22,
         "type": 11,
         "values": {

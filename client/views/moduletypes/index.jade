@@ -1,16 +1,16 @@
 h1 Types
 
 .row
-  .col-md-4
+  .col-xs-4
     .list-group(ng-show='types.length > 0')
       a.list-group-item(
         ng-repeat='type in types',
         ui-sref='moduletypes.detail({ id: type.$attributes.id })'
       )
-        h3.list-group-item-heading {{type.$attributes.name}}
+        h5.list-group-item-heading {{type.$attributes.name}}
 
     .well(ng-show='types.length < 1') No types...
 
     a.btn.btn-primary(ui-sref='moduletypes.new') New
 
-  .col-md-8(ui-view='detail')
+  .col-xs-8(ui-view='detail')

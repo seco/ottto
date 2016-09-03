@@ -108,7 +108,7 @@ angular
       # Rules
       .state 'rules',
         url: '/rules'
-        templateUrl: 'views/rules.html'
+        templateUrl: 'views/rules/index.html'
         controller: 'RulesController'
         resolve:
           rules: [

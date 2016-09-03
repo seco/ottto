@@ -1,13 +1,13 @@
 h1 Rules
 
 .row
-  .col-md-4
+  .col-xs-4
     .list-group
       a.list-group-item(
         ng-repeat='rule in rules',
         ui-sref='rules.detail({ id: rule.id })'
       )
-        h4.list-group-item-heading {{rule.name}}
+        h5.list-group-item-heading {{rule.name}}
         p.list-group-item-text
           span {{rule.conditions.length}}
           span(ng-pluralize,
@@ -25,4 +25,4 @@ h1 Rules
 
     a.btn.btn-primary(ui-sref='rules.new') New
 
-  .col-md-8(ui-view='detail')
+  .col-xs-8(ui-view='detail')
