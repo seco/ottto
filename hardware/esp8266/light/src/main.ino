@@ -13,6 +13,7 @@ ESP8266WebServer server(80);
 
 void setup() {
   pinMode(powerPin, OUTPUT);
+  setPower(true);
 
   Serial.begin(115200);
   WiFi.begin(ssid, password);
@@ -34,8 +35,6 @@ void setup() {
   Serial.println(WiFi.macAddress());
   Serial.print("Chip: ");
   Serial.println(ESP.getChipId());
-
-  setPower(true);
 }
 
 
