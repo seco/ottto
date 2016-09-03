@@ -3,7 +3,7 @@
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
 
-const int motionPin = 16;
+const int motionPin = D2;
 bool motionState = LOW;
 
 const char* ssid = "...";
@@ -14,6 +14,7 @@ const int port = 1337;
 const char* url = "/api/modules/9";
 
 ESP8266WebServer server(80);
+
 
 void setup() {
   pinMode(motionPin, INPUT);
@@ -37,13 +38,17 @@ void setup() {
   Serial.print("Mac address: ");
   Serial.println(WiFi.macAddress());
   Serial.print("Chip: ");
-  Serial.print(ESP.getChipId());
+  Serial.println(ESP.getChipId());
 }
 
+
 void loop() {
-  // server.handleClient();
+  server.handleClient();
   handleMotion();
+
+  delay(100);
 }
+
 
 void handleMotion() {
   bool motionValue = digitalRead(motionPin);
@@ -53,34 +58,14 @@ void handleMotion() {
 
   if (highToLow || lowToHigh) {
     motionState = motionValue;
-    request();
+    send();
   }
-
-  delay(100);
 }
 
-void request() {
+
+void send() {
   HTTPClient http;
 
-  String body = "values[motion]=";
-  body += getMotion();
-
-  http.begin("http://10.0.0.6:1337/api/modules/9");
-  http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-  http.POST(body);
-  http.writeToStream(&Serial);
-  http.end();
-}
-
-void respond() {
-  get();
-}
-
-void get() {
-  output();
-}
-
-void output() {
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
 
@@ -88,9 +73,29 @@ void output() {
 
   String body;
   json.prettyPrintTo(body);
-  json.prettyPrintTo(Serial);
-  server.send(200, "application/json; charset=utf-8", body);
+
+  http.begin("http://10.0.0.6:1337/api/modules/9");
+  http.addHeader("Content-Type", "application/json");
+  http.POST(body);
+  http.end();
+  Serial.println(body); // Debugging
 }
+
+
+void respond() {
+  Serial.println("respond");
+
+  StaticJsonBuffer<200> jsonBuffer;
+  JsonObject& json = jsonBuffer.createObject();
+
+  json["motion"] = getMotion();
+
+  String body;
+  json.prettyPrintTo(body);
+  server.send(200, "application/json; charset=utf-8", body);
+  Serial.println(body); // Debugging
+}
+
 
 String getMotion() {
   String motionValue = digitalRead(motionPin) ? "true" : "false";
