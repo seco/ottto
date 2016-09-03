@@ -7,9 +7,13 @@ module.exports = {
       required: true
     },
 
-    address: {
+    ip: {
       type: 'string',
       ip: true
+    },
+
+    chip: {
+      type: 'string'
     },
 
     type: {

@@ -24,10 +24,26 @@ form(name='moduleForm')
           ng-model='module.$attributes.group.id'
           ng-options='group.id as group.name for group in groups'
         )
+  .row
+    .col-sm-4
+      .form-group
+        label Chip ID
+        input.form-control(
+          type='text', placeholder='#######'
+          ng-model='module.$attributes.chip'
+        )
+        
+    .col-sm-4
+      .form-group
+        label IP Address
+        input.form-control(
+          type='text', placeholder='###.###.###.###'
+          ng-model='module.$attributes.ip'
+          disabled
+        )
 
 .well
   h2 {{module.$attributes.name}}
-  code {{module.$attributes.address}}
   
   hr
 

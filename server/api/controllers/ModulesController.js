@@ -11,9 +11,20 @@ module.exports = {
 
     return ModulesService
       .update(req.param('id'), req.body)
-      .then(function(module) {
-        res.ok(module);
-      });
+      .then(res.ok)
+      .catch(res.badRequest);
+
+  },
+
+
+  register: function(req, res) {
+
+    console.log('registering');
+
+    return ModulesRegistrationService
+      .register(req.param('chip'), req.param('ip'))
+      .then(res.ok)
+      .catch(res.badRequest);
 
   }
 
