@@ -2,16 +2,17 @@
 #include <ESP8266WebServer.h>
 #include <ArduinoJson.h>
 
-int powerPin = 16;
+
+int powerPin = D2;
 
 const char* ssid = "...";
 const char* password = "...";
 
 ESP8266WebServer server(80);
 
+
 void setup() {
   pinMode(powerPin, OUTPUT);
-  digitalWrite(powerPin, HIGH);
 
   Serial.begin(115200);
   WiFi.begin(ssid, password);
@@ -21,7 +22,7 @@ void setup() {
     Serial.print(".");
   }
 
-  server.on("/", respond);
+  server.on("/", serve);
   server.begin();
 
   Serial.println("");
@@ -32,40 +33,53 @@ void setup() {
   Serial.print("Mac address: ");
   Serial.println(WiFi.macAddress());
   Serial.print("Chip: ");
-  Serial.print(ESP.getChipId());
+  Serial.println(ESP.getChipId());
+
+  setPower(true);
 }
+
 
 void loop() {
   server.handleClient();
+
+  delay(100);
 }
+
+
+void serve() {
+  (server.method() == HTTP_PUT)
+    ? listen()
+    : respond();
+}
+
+
+void listen() {
+  bool powerValue = server.arg("power") == "true";
+  setPower(powerValue);
+
+  respond();
+}
+
 
 void respond() {
-  (server.method() == HTTP_GET) ? get() : post();
-}
-
-void get() {
-  output();
-}
-
-void output() {
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
 
-  bool powerValue = digitalRead(powerPin);
-  json["power"] = powerValue;
+  json["power"] = getPower();
 
   String body;
   json.prettyPrintTo(body);
   server.send(200, "application/json; charset=utf-8", body);
+  Serial.println(body); // Debugging
 }
 
-void post() {
-  input();
-  output();
+
+String getPower() {
+  String powerValue = digitalRead(powerPin) ? "true" : "false";
+  return powerValue;
 }
 
-void input() {
-  bool powerValue = server.arg("power") == "true";
-  Serial.println(server.arg("power"));
+
+void setPower(bool powerValue) {
   digitalWrite(powerPin, powerValue);
 }
