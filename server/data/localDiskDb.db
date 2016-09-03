@@ -338,8 +338,8 @@
         "values": {},
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2016-09-03T21:22:06.990Z",
-        "motion": "false",
+        "updatedAt": "2016-09-03T23:03:43.008Z",
+        "motion": "true",
         "chip": "1623792",
         "ip": "10.0.0.32"
       },
@@ -402,7 +402,7 @@
         "name": "Basil",
         "moduletype": "11",
         "createdAt": "2016-06-10T06:04:20.448Z",
-        "updatedAt": "2016-09-03T21:22:36.592Z",
+        "updatedAt": "2016-09-03T23:06:16.767Z",
         "id": 22,
         "type": 11,
         "values": {

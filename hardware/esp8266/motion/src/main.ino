@@ -27,6 +27,8 @@ void setup() {
     Serial.print(".");
   }
 
+  connect();
+
   server.on("/", respond);
   server.begin();
 
@@ -39,6 +41,24 @@ void setup() {
   Serial.println(WiFi.macAddress());
   Serial.print("Chip: ");
   Serial.println(ESP.getChipId());
+}
+
+
+void connect() {
+  HTTPClient http;
+  String body;
+  StaticJsonBuffer<200> jsonBuffer;
+  JsonObject& json = jsonBuffer.createObject();
+
+  json["chip"] = ESP.getChipId();
+  json["ip"] = WiFi.localIP().toString();
+  json.prettyPrintTo(body);
+  Serial.println(body);
+
+  http.begin("http://10.0.0.6:1337/api/modules/register");
+  http.addHeader("Content-Type", "application/json");
+  http.POST(body);
+  http.end();
 }
 
 

@@ -1,14 +1,10 @@
 module.exports = {
 
   register: function(chip, ip) {
-    if(!chip || !ip) return Promise.reject('whatever');
+    if(!chip) return Promise.reject('No Chip ID!');
+    if(!ip) return Promise.reject('No IP Address!');
 
-    return Modules
-      .update({ chip: chip }, { ip: ip })
-      .then(function(updated) {
-        console.log(updated);
-      });
-
+    return Modules.update({ chip: chip }, { ip: ip });
   }
 
 };
