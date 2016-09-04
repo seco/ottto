@@ -14,7 +14,6 @@ ESP8266WebServer server(80);
 
 void setup() {
   pinMode(powerPin, OUTPUT);
-  setPower(true);
 
   Serial.begin(115200);
   WiFi.begin(ssid, password);
@@ -23,11 +22,6 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
-
-  connect();
-
-  server.on("/", serve);
-  server.begin();
 
   Serial.println("");
   Serial.print("Connected to: ");
@@ -38,20 +32,26 @@ void setup() {
   Serial.println(WiFi.macAddress());
   Serial.print("Chip: ");
   Serial.println(ESP.getChipId());
+
+  connect();
+  setPower(true);
+
+  server.on("/", serve);
+  server.begin();
 }
 
 
 void connect() {
-  HTTPClient http;
-  String body;
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
-
   json["chip"] = ESP.getChipId();
   json["ip"] = WiFi.localIP().toString();
+
+  String body;
   json.prettyPrintTo(body);
   Serial.println(body);
 
+  HTTPClient http;
   http.begin("http://10.0.0.6:1337/api/modules/register");
   http.addHeader("Content-Type", "application/json");
   http.POST(body);
@@ -61,8 +61,25 @@ void connect() {
 
 void loop() {
   server.handleClient();
+}
 
-  delay(100);
+
+void send() {
+
+  StaticJsonBuffer<200> jsonBuffer;
+  JsonObject& json = jsonBuffer.createObject();
+  JsonObject& values = json.createNestedObject("values");
+  values["power"] = getPower();
+
+  String body;
+  json.prettyPrintTo(body);
+  Serial.println(body); // Debugging
+
+  HTTPClient http;
+  http.begin("http://10.0.0.6:1337/api/modules/16");
+  http.addHeader("Content-Type", "application/json");
+  http.POST(body);
+  http.end();
 }
 
 
@@ -84,8 +101,8 @@ void listen() {
 void respond() {
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
-
-  json["power"] = getPower();
+  JsonObject& values = json.createNestedObject("values");
+  values["power"] = getPower();
 
   String body;
   json.prettyPrintTo(body);
@@ -102,4 +119,5 @@ String getPower() {
 
 void setPower(bool powerValue) {
   digitalWrite(powerPin, powerValue);
+  send();
 }
