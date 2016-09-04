@@ -10,6 +10,15 @@
         "createdAt": "2016-09-03T21:06:31.931Z",
         "updatedAt": "2016-09-03T21:06:31.931Z",
         "id": 5231
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2016-09-03T23:15:30.475Z",
+        "updatedAt": "2016-09-03T23:15:30.475Z",
+        "id": 5232
       }
     ],
     "modulegroups": [],
@@ -338,8 +347,8 @@
         "values": {},
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2016-09-03T23:03:43.008Z",
-        "motion": "true",
+        "updatedAt": "2016-09-04T06:45:55.677Z",
+        "motion": "false",
         "chip": "1623792",
         "ip": "10.0.0.32"
       },
@@ -360,12 +369,12 @@
         "group": 2,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2016-06-15T06:36:03.148Z",
-        "values": {
-          "power": true
-        },
+        "updatedAt": "2016-09-04T06:42:39.109Z",
+        "values": {},
         "address": "10.0.0.5",
-        "power": "false"
+        "power": "false",
+        "chip": "8395441",
+        "ip": "10.0.0.34"
       },
       {
         "name": "Bathroom Light",
@@ -402,7 +411,7 @@
         "name": "Basil",
         "moduletype": "11",
         "createdAt": "2016-06-10T06:04:20.448Z",
-        "updatedAt": "2016-09-03T23:06:16.767Z",
+        "updatedAt": "2016-09-04T06:45:58.971Z",
         "id": 22,
         "type": 11,
         "values": {
@@ -766,7 +775,7 @@
     },
     "modulegroups_modules__modules_group": {},
     "moduleevents": {
-      "id": 5231
+      "id": 5232
     }
   }
 }
