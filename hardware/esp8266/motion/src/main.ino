@@ -27,11 +27,6 @@ void setup() {
     Serial.print(".");
   }
 
-  connect();
-
-  server.on("/", respond);
-  server.begin();
-
   Serial.println("");
   Serial.print("Connected to: ");
   Serial.println(ssid);
@@ -41,6 +36,12 @@ void setup() {
   Serial.println(WiFi.macAddress());
   Serial.print("Chip: ");
   Serial.println(ESP.getChipId());
+
+  connect();
+  send();
+
+  server.on("/", respond);
+  server.begin();
 }
 
 
@@ -88,8 +89,9 @@ void send() {
 
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
+  JsonObject& values = json.createNestedObject("values");
 
-  json["motion"] = getMotion();
+  values["motion"] = getMotion();
 
   String body;
   json.prettyPrintTo(body);
@@ -107,8 +109,9 @@ void respond() {
 
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
+  JsonObject& values = json.createNestedObject("values");
 
-  json["motion"] = getMotion();
+  values["motion"] = getMotion();
 
   String body;
   json.prettyPrintTo(body);
