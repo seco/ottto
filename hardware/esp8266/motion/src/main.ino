@@ -46,16 +46,16 @@ void setup() {
 
 
 void connect() {
-  HTTPClient http;
-  String body;
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
-
   json["chip"] = ESP.getChipId();
   json["ip"] = WiFi.localIP().toString();
+
+  String body;
   json.prettyPrintTo(body);
   Serial.println(body);
 
+  HTTPClient http;
   http.begin("http://10.0.0.6:1337/api/modules/register");
   http.addHeader("Content-Type", "application/json");
   http.POST(body);
@@ -85,38 +85,34 @@ void handleMotion() {
 
 
 void send() {
-  HTTPClient http;
-
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
   JsonObject& values = json.createNestedObject("values");
-
   values["motion"] = getMotion();
 
   String body;
   json.prettyPrintTo(body);
+  Serial.println(body); // Debugging
 
+  HTTPClient http;
   http.begin("http://10.0.0.6:1337/api/modules/9");
   http.addHeader("Content-Type", "application/json");
   http.POST(body);
   http.end();
-  Serial.println(body); // Debugging
 }
 
 
 void respond() {
-  Serial.println("respond");
-
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
   JsonObject& values = json.createNestedObject("values");
-
   values["motion"] = getMotion();
 
   String body;
   json.prettyPrintTo(body);
-  server.send(200, "application/json; charset=utf-8", body);
   Serial.println(body); // Debugging
+
+  server.send(200, "application/json; charset=utf-8", body);
 }
 
 

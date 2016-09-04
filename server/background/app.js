@@ -1,2 +1,1 @@
-require('./receiver');
 require('./timer');
