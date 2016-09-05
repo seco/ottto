@@ -35,6 +35,7 @@ void setup() {
 
   connect();
   setPower(true);
+  send();
 
   server.on("/", serve);
   server.begin();
@@ -49,6 +50,7 @@ void connect() {
 
   String body;
   json.prettyPrintTo(body);
+  Serial.print("Connect: ");
   Serial.println(body);
 
   HTTPClient http;
@@ -65,7 +67,6 @@ void loop() {
 
 
 void send() {
-
   StaticJsonBuffer<200> jsonBuffer;
   JsonObject& json = jsonBuffer.createObject();
   JsonObject& values = json.createNestedObject("values");
@@ -73,6 +74,7 @@ void send() {
 
   String body;
   json.prettyPrintTo(body);
+  Serial.print("Send: ");
   Serial.println(body); // Debugging
 
   HTTPClient http;
@@ -93,7 +95,6 @@ void serve() {
 void listen() {
   bool powerValue = server.arg("power") == "true";
   setPower(powerValue);
-
   respond();
 }
 
@@ -106,8 +107,10 @@ void respond() {
 
   String body;
   json.prettyPrintTo(body);
-  server.send(200, "application/json; charset=utf-8", body);
+  Serial.print("Respond: ");
   Serial.println(body); // Debugging
+
+  server.send(200, "application/json; charset=utf-8", body);
 }
 
 
@@ -119,5 +122,4 @@ String getPower() {
 
 void setPower(bool powerValue) {
   digitalWrite(powerPin, powerValue);
-  send();
 }

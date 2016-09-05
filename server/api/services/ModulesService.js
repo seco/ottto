@@ -81,8 +81,10 @@ module.exports = {
     curl.request({
       url: 'http://' + pre.address + '/',
       method: 'POST',
-      data: params.values
+      data: params
     });
+
+    console.log('broadcasting', pre.address, params);
 
     return Promise.all([ pre, post ]);
   },
