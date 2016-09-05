@@ -93,7 +93,10 @@ void serve() {
 
 
 void listen() {
-  bool powerValue = server.arg("power") == "true";
+  StaticJsonBuffer<200> newBuffer;
+  JsonObject& body = newBuffer.parseObject(server.arg("plain"));
+  bool powerValue = body["values"]["power"];
+
   setPower(powerValue);
   respond();
 }
