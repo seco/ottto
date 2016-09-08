@@ -1,4 +1,4 @@
-var curl = require('curlrequest');
+var request = require('request');
 
 module.exports = {
 
@@ -78,13 +78,20 @@ module.exports = {
 
     Modules.publishUpdate(id, params);
 
-    curl.request({
-      url: 'http://' + pre.address + '/',
-      method: 'POST',
-      data: params
-    });
+    delete params.updatedAt;
 
-    console.log('broadcasting', pre.address, params);
+    // TODO: Have some sort of action confirm that the values
+    // sent were also received.  Fire some sort of messaging otherwise.
+    if (pre.ip) {
+      request({
+        url: 'http://' + pre.ip + '/',
+        method: 'PUT',
+        // TODO: Remove this hack, should be able to pass params as body
+        qs: { plain: JSON.stringify(params) }
+        // json: true,
+        // body: params
+      });
+    }
 
     return Promise.all([ pre, post ]);
   },
