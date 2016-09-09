@@ -83,14 +83,19 @@ module.exports = {
     // TODO: Have some sort of action confirm that the values
     // sent were also received.  Fire some sort of messaging otherwise.
     if (pre.ip) {
-      request({
-        url: 'http://' + pre.ip + '/',
-        method: 'PUT',
-        // TODO: Remove this hack, should be able to pass params as body
-        qs: { plain: JSON.stringify(params) }
-        // json: true,
-        // body: params
-      });
+      try {
+        request({
+          url: 'http://' + pre.ip + '/',
+          method: 'PUT',
+          // TODO: Remove this hack, should be able to pass params as body
+          qs: { plain: JSON.stringify(params) }
+          // json: true,
+          // body: params
+        });
+        console.log('sending', pre.ip, params);
+      } catch(err) {
+        console.log(err);
+      }
     }
 
     return Promise.all([ pre, post ]);
