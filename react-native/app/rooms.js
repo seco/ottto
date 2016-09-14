@@ -1,67 +1,56 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  StatusBar,
-  Navigator,
+  NavigatorIOS,
+  ListView,
   View,
   Text
 } from 'react-native';
+import Room from './room';
+import RoomEdit from './room-edit';
 
 class Rooms extends Component {
-  render() {
-    const scene = (route, navigator) => {
-      return (
-        <View style={styles.container}>
-          <Text style={styles.welcome}>{route.title}</Text>
-        </View>
-      )
-    }
-
-    return (
-      <Navigator
-        initialRoute={{ title: 'Living Room', index: 0 }}
-        navigationBar={this.navbar()}
-        renderScene={scene}>
-      </Navigator>
-    )
+  _editRoom(room) {
+    console.log('here');
   }
 
-  navbar() {
+  render() {
+    const rooms = [
+      { id: 3, name: 'Living Room' }
+    ];
+
+    const routes = [
+      {
+        title: rooms[0].name,
+        component: Room,
+        passProps: rooms[0],
+        rightButtonTitle: 'Edit Room',
+        onRightButtonPress: () =>
+          this.refs.navigator.push({
+            title: room[0].title,
+            component: RoomEdit
+          })
+      }
+    ];
+
     return (
-      <Navigator.NavigationBar style={styles.header}
-        routeMapper={{
-          LeftButton: (route, navigator, index, navState) => {
-            return;
-          },
-          RightButton: (route, navigator, index, navState) => {
-            return (
-              <Text style={styles.headerButton}>Edit</Text>
-            );
-          },
-          Title: (route, navigator, index, navState) => {
-            return (
-              <Text style={styles.title}>{route.title}</Text>
-            );
-          }
-        }}>
-      </Navigator.NavigationBar>
+      <NavigatorIOS
+        ref='navigator'
+        initialRoute={routes[0]}
+        barTintColor='#FFFFFF'
+        style={{flex: 1}}>
+      </NavigatorIOS>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FBFBFB',
-  },
   header: {
     backgroundColor: '#FFFFFF',
     shadowOffset: { width: 0, height: 0 },
-    shadowRadius: 50,
-    shadowOpacity: 0.5,
-    shadowColor: 'rgba(0, 0, 0, 0.5)',
+    shadowRadius: 20,
+    shadowOpacity: 0.05,
+    shadowColor: '#000000',
   },
   title: {
     padding: 10,
@@ -70,11 +59,6 @@ const styles = StyleSheet.create({
   headerButton: {
     padding: 10,
     fontSize: 18
-  },
-  welcome: {
-    fontSize: 36,
-    textAlign: 'center',
-    margin: 10,
   }
 });
 
