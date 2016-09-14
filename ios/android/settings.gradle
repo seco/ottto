@@ -1,0 +1,3 @@
+rootProject.name = 'Ottto'
+
+include ':app'
