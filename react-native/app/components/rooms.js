@@ -25,6 +25,7 @@ class Rooms extends Component {
         component: Room,
         passProps: rooms[0],
         rightButtonTitle: 'Edit Room',
+        wrapperStyle: {flex: 1, backgroundColor: '#FBFBFB'},
         onRightButtonPress: () =>
           this.refs.navigator.push({
             title: room[0].title,
