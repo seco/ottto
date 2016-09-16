@@ -3,41 +3,39 @@ import {
   StyleSheet,
   NavigatorIOS,
   ListView,
+  TouchableHighlight,
   View,
   Text
 } from 'react-native';
 import Room from './room';
-import RoomEdit from './room-edit';
+
 
 class Rooms extends Component {
-  _editRoom(room) {
-    console.log('here');
-  }
+  rooms = [
+    { id: 3, name: 'Living Room' },
+    { id: 5, name: 'Kitchen' },
+    { id: 7, name: 'Bedroom' },
+  ]
+
 
   render() {
-    const rooms = [
-      { id: 3, name: 'Living Room' }
-    ];
-
-    const routes = [
-      {
-        title: rooms[0].name,
-        component: Room,
-        passProps: rooms[0],
-        rightButtonTitle: 'Edit Room',
-        wrapperStyle: {flex: 1, backgroundColor: '#FBFBFB'},
-        onRightButtonPress: () =>
-          this.refs.navigator.push({
-            title: room[0].title,
-            component: RoomEdit
-          })
-      }
-    ];
+    const route = {
+      title: 'Rooms',
+      component: RoomsList,
+      passProps: { rooms: this.rooms },
+      rightButtonTitle: 'Edit Room',
+      wrapperStyle: styles.container,
+      onRightButtonPress: () =>
+        this.refs.navigator.push({
+          title: room[0].title,
+          component: RoomEdit
+        })
+    }
 
     return (
       <NavigatorIOS
         ref='navigator'
-        initialRoute={routes[0]}
+        initialRoute={route}
         barTintColor='#FFFFFF'
         style={{flex: 1}}>
       </NavigatorIOS>
@@ -45,7 +43,55 @@ class Rooms extends Component {
   }
 }
 
+
+class RoomsList extends Component {
+  render() {
+    var dataSource = new ListView.DataSource({
+      rowHasChanged: (a, b) => a !== b
+    });
+
+    return (
+      <ListView
+        renderRow={this.renderRoom.bind(this)}
+        dataSource={dataSource.cloneWithRows(this.props.rooms)}>
+      </ListView>
+    )
+  }
+
+
+  renderRoom(room) {
+    return (
+      <TouchableHighlight
+        key={room.id}
+        onPress={this.roomPress.bind(this, room)}
+        underlayColor='#eee'>
+        <Text>{room.name}</Text>
+      </TouchableHighlight>
+    )
+  }
+
+
+  roomPress(room) {
+    this.props.navigator.push({
+      title: room.name,
+      component: Room,
+      passProps: { room },
+      onRightButtonPress: () => {
+        this.refs.navigator.push({
+          title: room[0].title,
+          component: RoomEdit
+        });
+      }
+    })
+  }
+}
+
+
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FBFBFB'
+  },
   header: {
     backgroundColor: '#FFFFFF',
     shadowOffset: { width: 0, height: 0 },
@@ -62,5 +108,6 @@ const styles = StyleSheet.create({
     fontSize: 18
   }
 });
+
 
 export default Rooms;

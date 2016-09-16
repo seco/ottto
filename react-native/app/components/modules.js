@@ -5,11 +5,11 @@ import {
   View
 } from 'react-native';
 
-class Users extends Component {
+class Modules extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>{'Users'}</Text>
+        <Text style={styles.welcome}>{'Modules'}</Text>
       </View>
     )
   }
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Users;
+export default Modules;
