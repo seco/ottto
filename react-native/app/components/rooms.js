@@ -7,14 +7,15 @@ import {
   View,
   Text
 } from 'react-native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Room from './room';
 
 
 class Rooms extends Component {
   rooms = [
-    { id: 3, name: 'Living Room' },
-    { id: 5, name: 'Kitchen' },
-    { id: 7, name: 'Bedroom' },
+    { id: 3, name: 'Living Room', icon: 'television' },
+    { id: 5, name: 'Kitchen', icon: 'cutlery' },
+    { id: 7, name: 'Bedroom', icon: 'bed' },
   ]
 
 
@@ -23,13 +24,7 @@ class Rooms extends Component {
       title: 'Rooms',
       component: RoomsList,
       passProps: { rooms: this.rooms },
-      rightButtonTitle: 'Edit Room',
-      wrapperStyle: styles.container,
-      onRightButtonPress: () =>
-        this.refs.navigator.push({
-          title: room[0].title,
-          component: RoomEdit
-        })
+      wrapperStyle: styles.container
     }
 
     return (
@@ -65,7 +60,13 @@ class RoomsList extends Component {
         key={room.id}
         onPress={this.roomPress.bind(this, room)}
         underlayColor='#eee'>
-        <Text>{room.name}</Text>
+        <View>
+          <View style={styles.listTextContainer}>
+            <FontAwesome name={room.icon} style={styles.listIcon} />
+            <Text style={styles.listText}>{room.name}</Text>
+          </View>
+          <View style={styles.listSeparator}></View>
+        </View>
       </TouchableHighlight>
     )
   }
@@ -92,20 +93,25 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FBFBFB'
   },
-  header: {
-    backgroundColor: '#FFFFFF',
-    shadowOffset: { width: 0, height: 0 },
-    shadowRadius: 20,
-    shadowOpacity: 0.05,
-    shadowColor: '#000000',
+  listTextContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 15
   },
-  title: {
-    padding: 10,
-    fontSize: 18
+  listIcon: {
+    marginRight: 10,
+    width: 24,
+    height: 24,
+    lineHeight: 24,
+    backgroundColor: 'gray',
+    borderRadius: 3,
+    color: 'white',
+    textAlign: 'center'
   },
-  headerButton: {
-    padding: 10,
-    fontSize: 18
+  listSeparator: {
+    height: 1,
+    marginLeft: 15,
+    backgroundColor: '#EEEEEE'
   }
 });
 

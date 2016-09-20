@@ -39,7 +39,7 @@ class GridView extends Component {
       <ListView {...this.props}
         renderRow={this.renderGroup.bind(this)}
         dataSource={dataSource.cloneWithRows(groups)}
-        contentContainerStyle={styles.container}>
+        contentContainerStyle={styles.grid}>
       </ListView>
     )
   }
@@ -50,7 +50,9 @@ class GridView extends Component {
 
     return (
       <View style={styles.row}>
+        <View style={styles.spacer} />
         {items}
+        <View style={styles.spacer} />
       </View>
     )
   }
@@ -58,13 +60,15 @@ class GridView extends Component {
 
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 13
-  },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'space-between'
+  },
+  spacer: {
+    width: 0,
+    height: 0,
+    backgroundColor: 'red'
   }
 });
 

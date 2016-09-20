@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {
-  LayoutAnimation,
   StyleSheet,
   TabBarIOS,
+  Text,
   View,
-  Text
 } from 'react-native';
 import Scenes from './scenes';
 import Rules from './rules';
@@ -95,15 +94,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
-  // menu: {
-  //   flex: 1,
-  //   position: 'absolute',
-  //   left: 0,
-  //   top: 0,
-  //   width: 100,
-  //   height: 100,
-  //   backgroundColor: '#0F0'
-  // }
 });
 
 export default Main;
