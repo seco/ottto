@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as counterActions from '../actions/counter';
+
 
 class Settings extends Component {
+  constructor(props) {
+    super(props);
+
+    console.log('constructor', this.props);
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>{'Settings'}</Text>
+        <TouchableHighlight onPress={this.props.increment}>
+          <Text>{this.props.count}</Text>
+        </TouchableHighlight>
       </View>
     )
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -29,4 +40,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Settings;
+
+export default connect(
+  (state) => ({ count: state.counter.count }),
+  (dispatch) => ( bindActionCreators(counterActions, dispatch) )
+)(Settings);

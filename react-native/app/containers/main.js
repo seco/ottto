@@ -5,12 +5,14 @@ import {
   Text,
   View,
 } from 'react-native';
-import Scenes from './scenes';
-import Rules from './rules';
-import Rooms from './rooms';
-import RoomsMenu from './rooms-menu';
-import Modules from './modules';
-import Settings from './settings';
+
+import Scenes from '../components/scenes';
+import Rules from '../components/rules';
+import Rooms from '../components/rooms';
+import RoomsMenu from '../components/rooms-menu';
+import Modules from '../components/modules';
+import Settings from '../components/settings';
+
 
 class Main extends Component {
   state = {
@@ -78,22 +80,14 @@ class Main extends Component {
       </View>
     );
   }
-
-  // renderMenu() {
-  //   var Menu = this.state.menu;
-  //
-  //   if(Menu) {
-  //     return (
-  //       <Menu style={styles.menu} />
-  //     )
-  //   }
-  // }
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1
   },
 });
+
 
 export default Main;

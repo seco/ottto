@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
-import Main from './app/components/main';
+import App from './app';
 
-AppRegistry.registerComponent('Ottto', () => Main);
+AppRegistry.registerComponent('Ottto', () => App);

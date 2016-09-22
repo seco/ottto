@@ -95,13 +95,11 @@ class RoomModules extends Component {
 
 
   emptyLongPress() {
-    console.log('empty', );
   }
 
 
   renderOverlay() {
     if (this.state.activeItem) {
-      console.log(this.state.activeItem);
       return (
         <ModuleOverlay module={this.state.activeItem}
           onClose={this.onOverlayClose.bind(this)}/>
@@ -115,7 +113,6 @@ class RoomModules extends Component {
 
 
   openOverlay(module) {
-    console.log('open', module);
     this.setState({
       ...this.state,
       activeItem: module
