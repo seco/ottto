@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 
-import counter from './counter';
+
+import countReducer from './count';
+import roomsReducer from './rooms';
+
 
 export default combineReducers({
-  counter
+  count: countReducer,
+  rooms: roomsReducer
 });

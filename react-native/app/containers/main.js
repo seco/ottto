@@ -15,23 +15,11 @@ import Settings from '../components/settings';
 
 
 class Main extends Component {
-  state = {
-    selected: 'rooms'
-  };
+  constructor(props) {
+    super(props);
 
-  componentWillMount() {
-    this.setState({
-      tab: 'rooms',
-      menu: false
-    });
-  }
-
-
-  toggleMenu(menu) {
-    if (this.state.menu && this.state.menu == menu) {
-      this.setState({ ...this.state, menu: false });
-    } else {
-      this.setState({ ...this.state, menu });
+    this.state = {
+      tab: 'rooms'
     }
   }
 

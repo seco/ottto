@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as counterActions from '../actions/counter';
+import { actions as countActions } from '../actions/count';
 
 
 class Settings extends Component {
   constructor(props) {
     super(props);
+  }
 
-    console.log('constructor', this.props);
+
+  increment() {
+    this.props.increment(Math.round(Math.random()*10));
   }
 
 
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={this.props.increment}>
+        <TouchableHighlight onPress={this.increment.bind(this)}>
           <Text>{this.props.count}</Text>
         </TouchableHighlight>
       </View>
@@ -42,6 +49,6 @@ const styles = StyleSheet.create({
 
 
 export default connect(
-  (state) => ({ count: state.counter.count }),
-  (dispatch) => ( bindActionCreators(counterActions, dispatch) )
+  (state) => ({ count: state.count }),
+  (dispatch) => ( bindActionCreators(countActions, dispatch) )
 )(Settings);
