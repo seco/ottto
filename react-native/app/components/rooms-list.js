@@ -11,7 +11,7 @@ import { bindActionCreators } from 'redux';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-import { actions as roomActions } from '../actions/rooms';
+import * as roomActions from '../actions/rooms';
 import Room from './room';
 
 
