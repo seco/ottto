@@ -6,8 +6,12 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
+import { actions as roomActions } from '../actions/rooms';
 import Room from './room';
 
 
@@ -36,6 +40,10 @@ class RoomsList extends Component {
           <View style={styles.listTextContainer}>
             <FontAwesome name={room.icon} style={styles.listIcon} />
             <Text style={styles.listText}>{room.name}</Text>
+            <TouchableHighlight style={styles.listDelete}
+              onPress={this.deletePress.bind(this, room)}>
+              <View/>
+            </TouchableHighlight>
           </View>
           <View style={styles.listSeparator}></View>
         </View>
@@ -57,6 +65,11 @@ class RoomsList extends Component {
       }
     })
   }
+
+
+  deletePress(room) {
+    this.props.removeRoom(room);
+  }
 }
 
 
@@ -64,7 +77,7 @@ const styles = StyleSheet.create({
   listTextContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 15
+    padding: 15,
   },
   listIcon: {
     marginRight: 10,
@@ -74,14 +87,26 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     borderRadius: 3,
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+  },
+  listText: {
+    flex: 1,
+  },
+  listDelete: {
+    width: 24,
+    height: 24,
+    backgroundColor: 'red',
+    borderRadius: 12,
   },
   listSeparator: {
     height: 1,
     marginLeft: 15,
-    backgroundColor: '#EEEEEE'
+    backgroundColor: '#EEEEEE',
   }
 });
 
 
-export default RoomsList;
+export default connect(
+  (state) => ({ rooms: state.rooms }),
+  (dispatch) => ( bindActionCreators(roomActions, dispatch) )
+)(RoomsList);

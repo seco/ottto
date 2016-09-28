@@ -8,5 +8,5 @@ export const types = {
 
 export const actions = {
   increment: createAction(types.INCREMENT),
-  increment: createAction(types.INCREMENT),
+  decrement: createAction(types.DECREMENT),
 };

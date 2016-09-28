@@ -2,7 +2,7 @@ import { handleActions } from 'redux-actions';
 import { types } from '../actions/count';
 
 
-const defaultCount = 0;
+const initialCount = 0;
 
 
 const countReducer = handleActions({
@@ -12,7 +12,7 @@ const countReducer = handleActions({
   [types.DECREMENT]: (count, action) => {
     return count - (action.payload || 1)
   },
-}, defaultCount);
+}, initialCount);
 
 
 export default countReducer;

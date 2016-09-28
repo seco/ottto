@@ -21,11 +21,23 @@ class Settings extends Component {
   }
 
 
+  decrement() {
+    this.props.decrement();
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={this.increment.bind(this)}>
-          <Text>{this.props.count}</Text>
+        <TouchableHighlight
+          onPress={this.increment.bind(this)}
+          underlayColor='#FFF'>
+          <Text style={styles.welcome}>{this.props.count}</Text>
+        </TouchableHighlight>
+        <TouchableHighlight
+          onPress={this.decrement.bind(this)}
+          underlayColor='#FFF'>
+          <Text style={styles.welcome}>{this.props.count}</Text>
         </TouchableHighlight>
       </View>
     )

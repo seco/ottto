@@ -7,9 +7,11 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 import MainContainer from './containers/main';
 
+
 const logger = createLogger()
 const middleware = applyMiddleware(logger, thunk);
 const store = createStore(reducers, middleware);
+
 
 class App extends Component {
   render() {
@@ -20,5 +22,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

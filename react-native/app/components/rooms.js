@@ -1,23 +1,33 @@
 import React, { Component } from 'react';
 import {
+  AlertIOS,
   NavigatorIOS,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { actions as roomActions } from '../actions/rooms';
 import RoomsList from './rooms-list';
-import Room from './room';
 
 
 class Rooms extends Component {
+  onAddPress() {
+    AlertIOS.prompt(
+      'Room name?',
+      null,
+      (name) => this.props.addRoom({ name, icon: 'bed' })
+    );
+  }
+
+
   render() {
     const route = {
       title: 'Rooms',
       component: RoomsList,
-      passProps: { rooms: this.props.rooms },
-      wrapperStyle: styles.container
+      wrapperStyle: styles.container,
+      rightButtonTitle: 'Add',
+      onRightButtonPress: this.onAddPress.bind(this),
     }
 
     return (
