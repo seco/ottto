@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   AlertIOS,
   NavigatorIOS,
   StyleSheet,
-} from 'react-native';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+} from 'react-native'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-import * as roomActions from '../actions/rooms';
-import RoomsList from './rooms-list';
+import * as roomActions from '../actions/rooms'
+import RoomsList from './rooms-list'
 
 
 class Rooms extends Component {
@@ -17,7 +17,7 @@ class Rooms extends Component {
       'Room name?',
       null,
       (name) => this.props.addRoom({ name, icon: 'bed' })
-    );
+    )
   }
 
 
@@ -47,12 +47,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FBFBFB'
   }
-});
+})
 
 
 // export default Rooms;
 
 export default connect(
-  (state) => ({ rooms: state.rooms }),
+  (state) => ( {} ),
   (dispatch) => ( bindActionCreators(roomActions, dispatch) )
-)(Rooms);
+)(Rooms)
