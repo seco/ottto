@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import * as roomActions from '../actions/rooms'
-import RoomsList from './rooms-list'
+import RoomsList from '../components/rooms-list'
 
 
 class Rooms extends Component {

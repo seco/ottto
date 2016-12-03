@@ -6,12 +6,12 @@ import {
   View,
 } from 'react-native';
 
-import Scenes from '../components/scenes';
-import Rules from '../components/rules';
-import Rooms from '../components/rooms';
-import RoomsMenu from '../components/rooms-menu';
-import Modules from '../components/modules';
-import Settings from '../components/settings';
+import Scenes from '../containers/scenes';
+import Rules from '../containers/rules';
+import Rooms from '../containers/rooms';
+import RoomsMenu from '../containers/rooms-menu';
+import Modules from '../containers/modules';
+import Settings from '../containers/settings';
 
 
 class Main extends Component {
