@@ -12,6 +12,10 @@ import RoomsList from '../components/rooms-list'
 
 
 class Rooms extends Component {
+  componentDidMount() {
+    this.props.getRooms()
+  }
+
   onAddPress() {
     AlertIOS.prompt(
       'Room name?',
@@ -45,12 +49,11 @@ class Rooms extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 64,
     backgroundColor: '#FBFBFB'
   }
 })
 
-
-// export default Rooms;
 
 export default connect(
   (state) => ( {} ),

@@ -47,7 +47,7 @@ class RoomsList extends Component {
         underlayColor='#eee'>
         <View>
           <View style={styles.listTextContainer}>
-            <FontAwesome name={room.icon} style={styles.listIcon} />
+            
             <Text style={styles.listText}>{room.name}</Text>
             <TouchableHighlight style={styles.listDelete}
               onPress={this.deletePress.bind(this, room)}>

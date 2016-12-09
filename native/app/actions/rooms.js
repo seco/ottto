@@ -1,11 +1,11 @@
 // Action Types
 const GET = 'ROOMS/GET'
-const GET_SUCCESS = 'ROOMS/GET/SUCCESS'
-const GET_ERROR = 'ROOMS/GET/ERROR'
+const GET_SUCCESS = 'ROOMS/GET_SUCCESS'
+const GET_ERROR = 'ROOMS/GET_ERROR'
 
 const CREATE = 'ROOMS/CREATE'
-const CREATE_SUCCESS = 'ROOMS/CREATE/SUCCESS'
-const CREATE_ERROR = 'ROOMS/CREATE/ERROR'
+const CREATE_SUCCESS = 'ROOMS/CREATE_SUCCESS'
+const CREATE_ERROR = 'ROOMS/CREATE_ERROR'
 
 const ADD = 'ROOMS/ADD'
 const UPDATE = 'ROOMS/UPDATE'
@@ -17,13 +17,10 @@ export const getRooms = () => {
   return (dispatch, getState) => {
     dispatch(gettingRooms())
 
-    return fetch('http://localhost/rooms')
-      .then( (result) => {
-        dispatch(getRoomsSuccess(result.json()))
-      })
-      .catch( (error) => {
-        dispatch(getRoomsError(error))
-      })
+    return fetch('http://192.168.1.6:1337/api/modulegroups')
+      .then( response => response.json() )
+      .then( rooms => dispatch(getRoomsSuccess(rooms)) )
+      .catch( error => dispatch(getRoomsError(error)) )
   }
 }
 export const gettingRooms = () => {
@@ -40,16 +37,13 @@ export const createRoom = (room) => {
   return (dispatch, getState) => {
     dispatch(creatingRoom())
 
-    return fetch('http://localhost/rooms', {
+    return fetch('http://192.168.1.6:1337/api/modulegroups', {
         method: 'POST',
         body: JSON.stringify(room)
       })
-      .then( (result) => {
-        dispatch(createRoomSuccess(result.json()))
-      })
-      .catch( (error) => {
-        displatch(createRoomsError(error))
-      })
+      .then( response => response.json() )
+      .then( room => dispatch(createRoomSuccess(room)) )
+      .catch( error => displatch(createRoomsError(error)) )
   }
 }
 export const creatingRoom = () => {
@@ -76,8 +70,7 @@ export const removeRoom = (room) => {
 // Reducers
 const initialState = {
   rooms: [],
-  loading: false,
-  error: false
+  state: 'empty'
 }
 
 const roomsReducer = (state = initialState, action) => {
@@ -85,21 +78,19 @@ const roomsReducer = (state = initialState, action) => {
     case GET:
       return {
         ...state,
-        loading: true,
       }
 
     case GET_SUCCESS:
       return {
         ...state,
         rooms: action.rooms,
-        loading: false,
         error: false
       }
 
     case GET_ERROR:
       return {
         ...state,
-        loading: false,
+        state: 'error',
         error: action.error,
       }
 

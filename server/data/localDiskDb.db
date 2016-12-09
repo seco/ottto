@@ -1857,7 +1857,20 @@
         "id": 5436
       }
     ],
-    "modulegroups": [],
+    "modulegroups": [
+      {
+        "name": "Living Room",
+        "createdAt": "2016-12-03T22:14:48.377Z",
+        "updatedAt": "2016-12-03T22:14:48.377Z",
+        "id": 6
+      },
+      {
+        "name": "Hallway",
+        "createdAt": "2016-12-03T22:15:11.372Z",
+        "updatedAt": "2016-12-03T22:15:11.372Z",
+        "id": 7
+      }
+    ],
     "moduletypes": [
       {
         "name": "Light Bulbs",
@@ -2615,7 +2628,7 @@
   },
   "counters": {
     "modulegroups": {
-      "id": 5
+      "id": 7
     },
     "moduletypes": {
       "id": 14
