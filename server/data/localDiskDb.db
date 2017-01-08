@@ -1876,19 +1876,20 @@
         "name": "Light Bulbs",
         "attributes": [
           {
-            "name": "power",
-            "label": "Power",
-            "type": "boolean",
-            "options": {
-              "0": {
-                "value": false,
-                "label": "Off"
-              },
-              "1": {
-                "value": true,
-                "label": "On"
-              }
-            }
+            "name": "level",
+            "type": "float",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 100,
+            "label": "Level",
+            "metric": "%"
+          },
+          {
+            "name": "color",
+            "type": "string",
+            "default": "#fff",
+            "label": "Color"
           }
         ],
         "methods": [
@@ -1918,7 +1919,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2017-01-08T05:39:24.423Z"
+        "updatedAt": "2017-01-08T09:06:33.586Z"
       },
       {
         "name": "Motion Sensor",
