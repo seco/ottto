@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
+import _ from 'lodash'
+
+import React, { Component } from 'react'
 import {
   ListView,
   StyleSheet,
   Text,
   TouchableHighlight,
   View,
-} from 'react-native';
-import GridView from './grid-view';
+} from 'react-native'
+import { BlurView } from 'react-native-blur'
+import GridView from './grid-view'
 import ModuleOverlay from './module-overlay'
 
 
-class RoomModules extends Component {
+class ModulesGrid extends Component {
   constructor(props) {
     super(props);
 
@@ -21,24 +24,16 @@ class RoomModules extends Component {
 
 
   render() {
-    var items = [
-      { id: 1, name: 'People', type: { name: 'Presence Sensor' }, icon: true },
-      { id: 2, name: 'Motion', type: { name: 'Motion Sensor' }, icon: true },
-      { id: 3, name: '', icon: false },
-      { id: 4, name: 'Thermostat', type: { name: 'Temperature Controller' }, icon: true },
-      { id: 5, name: 'Entry', type: { name: 'Door Sensor' }, icon: true },
-      { id: 6, name: '', icon: false },
-      { id: 7, name: '', icon: false },
-      { id: 8, name: 'Ceiling', type: { name: 'Fan Controller' }, icon: true },
-      { id: 9, name: '', icon: false },
-      { id: 10, name: '', icon: false },
-      { id: 11, name: '', icon: false },
-      { id: 12, name: '', icon: false },
-      { id: 13, name: 'Camera', type: { name: 'Video Camera' }, icon: true },
-      { id: 14, name: 'Music', type: { name: 'Media' }, icon: true },
-      { id: 15, name: 'Media', type: { name: 'RGB Light' }, icon: true },
-      { id: 16, name: 'Overhead', type: { name: 'RGB Light' }, icon: true },
-    ];
+    const count = 16
+    const modules = this.props.modules.map((module) => {
+      return {
+        ...module,
+        icon: true
+      }
+    })
+    const blank = { name: '', icon: false }
+    const blanks = _.fill(Array(count - modules.length), blank)
+    const items = _.concat(modules, blanks)
 
     return (
       <View style={{flex: 1}}>
@@ -70,7 +65,7 @@ class RoomModules extends Component {
         <TouchableHighlight
           key={module.id}
           onPress={this.iconPress.bind(this, module)}
-          underlayColor='#5FE0DF'
+          underlayColor='#FFFFFF'
           style={styles.gridItemIcon}>
           <View></View>
         </TouchableHighlight>
@@ -95,6 +90,7 @@ class RoomModules extends Component {
 
 
   emptyLongPress() {
+    console.log('show "add module" menu')
   }
 
 
@@ -131,6 +127,12 @@ class RoomModules extends Component {
 
 const iconDimension = 60;
 const styles = StyleSheet.create({
+  blur: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    backgroundColor: 'transparent',
+  },
   gridItem: {
     margin: 5,
     alignItems: 'center',
@@ -138,7 +140,7 @@ const styles = StyleSheet.create({
   gridItemIcon: {
     width: iconDimension,
     height: iconDimension,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#007AFF',
     borderRadius: 14,
     shadowOffset: { width: 0, height: 3 },
     shadowRadius: 10,
@@ -160,7 +162,7 @@ const styles = StyleSheet.create({
     color: '#999999',
     textAlign: 'center'
   },
-});
+})
 
 
-export default RoomModules;
+export default ModulesGrid

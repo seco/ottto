@@ -1,18 +1,11 @@
 import React, { Component } from 'react'
-import {
-  ListView,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  View,
-} from 'react-native'
-import { connect } from 'react-redux'
+import { ListView, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import { Actions } from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/FontAwesome'
+
 import { bindActionCreators } from 'redux'
-
-import FontAwesome from 'react-native-vector-icons/FontAwesome'
-
+import { connect } from 'react-redux'
 import * as roomActions from '../actions/rooms'
-import Room from './room'
 
 
 class RoomsList extends Component {
@@ -47,12 +40,12 @@ class RoomsList extends Component {
         underlayColor='#eee'>
         <View>
           <View style={styles.listTextContainer}>
-            
             <Text style={styles.listText}>{room.name}</Text>
-            <TouchableHighlight style={styles.listDelete}
+            {/* <TouchableHighlight style={styles.listDelete}
               onPress={this.deletePress.bind(this, room)}>
-              <View/>
-            </TouchableHighlight>
+              <Icon style={styles.listItemDelete}
+                name="times-circle-o" size={24} />
+            </TouchableHighlight> */}
           </View>
           <View style={styles.listSeparator}></View>
         </View>
@@ -62,17 +55,7 @@ class RoomsList extends Component {
 
 
   roomPress(room) {
-    this.props.navigator.push({
-      title: room.name,
-      component: Room,
-      passProps: { room },
-      onRightButtonPress: () => {
-        this.refs.navigator.push({
-          title: room[0].title,
-          component: RoomEdit
-        })
-      }
-    })
+    Actions.room({ title: room.name, room })
   }
 
 
@@ -101,11 +84,8 @@ const styles = StyleSheet.create({
   listText: {
     flex: 1,
   },
-  listDelete: {
-    width: 24,
-    height: 24,
-    backgroundColor: 'red',
-    borderRadius: 12,
+  listItemDelete: {
+    color: '#c00',
   },
   listSeparator: {
     height: 1,
@@ -114,7 +94,6 @@ const styles = StyleSheet.create({
   },
   emptyContainer: {
     flex: 1,
-    backgroundColor: '#EEEEEE',
     alignItems: 'center',
     justifyContent: 'center',
   }

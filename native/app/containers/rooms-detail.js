@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
-import RoomModules from './room-modules';
+import { StyleSheet, View } from 'react-native';
+
+import ModulesGrid from '../components/modules-grid';
 
 
 class Room extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <RoomModules room={this.props.room} />
+        <ModulesGrid modules={this.props.room.modules} />
       </View>
     )
   }
@@ -20,7 +18,7 @@ class Room extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20
+    paddingTop: 85,
   }
 });
 

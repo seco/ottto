@@ -1861,13 +1861,13 @@
       {
         "name": "Living Room",
         "createdAt": "2016-12-03T22:14:48.377Z",
-        "updatedAt": "2016-12-03T22:14:48.377Z",
+        "updatedAt": "2016-12-12T07:57:07.047Z",
         "id": 6
       },
       {
         "name": "Hallway",
         "createdAt": "2016-12-03T22:15:11.372Z",
-        "updatedAt": "2016-12-03T22:15:11.372Z",
+        "updatedAt": "2016-12-12T07:56:54.022Z",
         "id": 7
       }
     ],
@@ -1888,8 +1888,7 @@
                 "value": true,
                 "label": "On"
               }
-            },
-            "$$hashKey": "object:44"
+            }
           }
         ],
         "methods": [
@@ -1919,7 +1918,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2016-01-06T04:25:31.348Z"
+        "updatedAt": "2017-01-08T05:39:24.423Z"
       },
       {
         "name": "Motion Sensor",
@@ -2192,13 +2191,11 @@
       {
         "name": "Hallway Motion",
         "type": 2,
-        "group": 2,
-        "values": {
-          "motion": false
-        },
+        "group": 7,
+        "values": {},
         "id": 9,
         "createdAt": "2014-09-13T07:49:26.266Z",
-        "updatedAt": "2016-09-09T05:51:11.478Z",
+        "updatedAt": "2016-12-12T07:56:38.671Z",
         "motion": "false",
         "chip": "1623792",
         "ip": "10.0.0.32"
@@ -2217,13 +2214,11 @@
       {
         "name": "Hallway Lights",
         "type": 1,
-        "group": 2,
+        "group": 7,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2016-09-09T05:51:29.133Z",
-        "values": {
-          "power": false
-        },
+        "updatedAt": "2016-12-12T07:56:49.688Z",
+        "values": {},
         "address": "10.0.0.5",
         "power": "false",
         "chip": "8395441",
@@ -2240,25 +2235,22 @@
         "updatedAt": "2016-02-05T09:58:07.186Z"
       },
       {
-        "name": "Hall Light Sensor",
+        "name": "Hall Light",
         "createdAt": "2016-01-06T06:23:06.209Z",
-        "updatedAt": "2016-06-14T05:30:25.665Z",
+        "updatedAt": "2017-01-08T05:38:42.541Z",
         "id": 20,
         "type": 12,
-        "group": 2,
-        "values": {
-          "level": 0
-        }
+        "group": 7,
+        "values": {}
       },
       {
         "name": "Living Room Temperature",
         "type": 14,
         "createdAt": "2016-05-19T16:14:32.251Z",
-        "updatedAt": "2016-05-19T17:44:43.055Z",
+        "updatedAt": "2016-12-12T07:57:00.987Z",
         "id": 21,
-        "values": {
-          "temperature": 124.81
-        }
+        "values": {},
+        "group": 6
       },
       {
         "name": "Basil",
@@ -2275,11 +2267,10 @@
         "type": 7,
         "name": "Front Door",
         "createdAt": "2016-06-14T05:26:19.614Z",
-        "updatedAt": "2016-06-15T03:10:39.322Z",
+        "updatedAt": "2016-12-12T07:57:07.075Z",
         "id": 23,
-        "values": {
-          "status": false
-        }
+        "values": {},
+        "group": 6
       }
     ],
     "ruleconditions": [

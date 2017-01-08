@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   Animated,
   Modal,
@@ -6,7 +6,11 @@ import {
   Text,
   TouchableHighlight,
   View,
-} from 'react-native';
+} from 'react-native'
+import { BlurView, VibrancyView } from 'react-native-blur'
+import LightModule from './modules/light'
+
+const AnimatedBlurView = Animated.createAnimatedComponent(VibrancyView)
 
 
 class ModuleOverlay extends Component {
@@ -14,19 +18,14 @@ class ModuleOverlay extends Component {
     super(props);
 
     this.state = {
-      backgroundOpacity: new Animated.Value(0),
       containerBottom: new Animated.Value(-50),
       containerOpacity: new Animated.Value(0),
-    };
+    }
   }
 
 
   componentDidMount() {
     Animated.parallel([
-      Animated.timing(
-        this.state.backgroundOpacity,
-        { toValue: 0.5, duration: 300 }
-      ),
       Animated.timing(
         this.state.containerBottom,
         { toValue: 0, duration: 300 }
@@ -35,7 +34,7 @@ class ModuleOverlay extends Component {
         this.state.containerOpacity,
         { toValue: 1, duration: 300 }
       )
-    ]).start();
+    ]).start()
   }
 
 
@@ -44,12 +43,11 @@ class ModuleOverlay extends Component {
       <Modal
         visible={true}
         transparent={true}>
-        <Animated.View
-          style={[
-            styles.modalBackground,
-            { opacity: this.state.backgroundOpacity }
-          ]} />
-
+        <AnimatedBlurView style={[
+            styles.blur,
+          ]}
+          blurType="dark">
+        </AnimatedBlurView>
         <Animated.View
           style={[
             styles.modalContainer,
@@ -60,14 +58,18 @@ class ModuleOverlay extends Component {
           ]}>
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
-              <Text>{this.props.module.name}</Text>
-              <Text>{this.props.module.type.name}</Text>
+              <Text style={styles.modalTitle}>{this.props.module.name}</Text>
+              <Text style={styles.modalSubtitle}>{this.props.module.type.name}</Text>
+            </View>
+
+            <View style={styles.modalBody}>
+              <LightModule module={this.props.module}/>
             </View>
           </View>
 
           <TouchableHighlight style={styles.modalClose}
             onPress={this.close.bind(this)}
-            underlayColor='#5fe0df'>
+            underlayColor='#007AFF'>
             <Text>Close</Text>
           </TouchableHighlight>
         </Animated.View>
@@ -80,19 +82,15 @@ class ModuleOverlay extends Component {
     Animated
       .parallel([
         Animated.timing(
-          this.state.backgroundOpacity,
-          { toValue: 0, duration: 300 }
-        ),
-        Animated.timing(
           this.state.containerBottom,
-          { toValue: -50, duration: 300 }
+          { toValue: -50, duration: 300 },
         ),
         Animated.timing(
           this.state.containerOpacity,
-          { toValue: 0, duration: 300 }
+          { toValue: 0, duration: 300 },
         )
       ])
-      .start(this.onClose.bind(this));
+      .start(this.onClose.bind(this))
   }
 
 
@@ -105,24 +103,35 @@ class ModuleOverlay extends Component {
 
 
 const styles = StyleSheet.create({
-  modalBackground: {
-    flex: 1,
-    backgroundColor: '#000',
-    opacity: 0.5,
+  blur: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
   },
   modalContainer: {
     flex: 1,
     justifyContent: 'flex-end',
-    position: 'absolute',
-    left: 0, right: 0, bottom: 0,
     padding: 10,
   },
   modalContent: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
+  },
+  modalHeader: {
+    alignItems: 'center',
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+  },
+  modalTitle: {
+    fontWeight: '600',
+  },
+  modalBody: {
+    padding: 10,
+    // flex: 1,
+    // backgroundColor: '#f00',
   },
   modalClose: {
     alignItems: 'center',
@@ -131,6 +140,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
   },
-});
+})
 
-export default ModuleOverlay;
+export default ModuleOverlay

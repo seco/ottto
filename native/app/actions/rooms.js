@@ -17,7 +17,7 @@ export const getRooms = () => {
   return (dispatch, getState) => {
     dispatch(gettingRooms())
 
-    return fetch('http://192.168.1.6:1337/api/modulegroups')
+    return fetch('http://192.168.1.3:1337/api/modulegroups')
       .then( response => response.json() )
       .then( rooms => dispatch(getRoomsSuccess(rooms)) )
       .catch( error => dispatch(getRoomsError(error)) )
@@ -37,7 +37,7 @@ export const createRoom = (room) => {
   return (dispatch, getState) => {
     dispatch(creatingRoom())
 
-    return fetch('http://192.168.1.6:1337/api/modulegroups', {
+    return fetch('http://192.168.1.3:1337/api/modulegroups', {
         method: 'POST',
         body: JSON.stringify(room)
       })
@@ -78,12 +78,15 @@ const roomsReducer = (state = initialState, action) => {
     case GET:
       return {
         ...state,
+        state: 'waiting',
+        error: false
       }
 
     case GET_SUCCESS:
       return {
         ...state,
         rooms: action.rooms,
+        state: 'success',
         error: false
       }
 

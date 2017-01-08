@@ -5,7 +5,7 @@ import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 import reducers from './reducers';
-import MainContainer from './containers/main';
+import Scenes from './scenes';
 
 
 const logger = createLogger()
@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <MainContainer />
+        <Scenes />
       </Provider>
     );
   }
