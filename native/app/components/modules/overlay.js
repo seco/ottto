@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { getRooms } from '../../actions/rooms'
+
 import {
   Animated,
   Modal,
@@ -7,10 +11,10 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native'
-import { BlurView, VibrancyView } from 'react-native-blur'
+import { VibrancyView } from 'react-native-blur'
 import LightModule from './light'
 
-const AnimatedBlurView = Animated.createAnimatedComponent(VibrancyView)
+const AnimatedVibrancyView = Animated.createAnimatedComponent(VibrancyView)
 
 
 class ModuleOverlay extends Component {
@@ -43,11 +47,11 @@ class ModuleOverlay extends Component {
       <Modal
         visible={true}
         transparent={true}>
-        <AnimatedBlurView style={[
+        <AnimatedVibrancyView style={[
             styles.blur,
           ]}
           blurType="dark">
-        </AnimatedBlurView>
+        </AnimatedVibrancyView>
         <Animated.View
           style={[
             styles.modalContainer,
@@ -140,4 +144,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export default ModuleOverlay
+export default connect(
+  (state) => ( {} ),
+  (dispatch) => ( bindActionCreators({ getModule }, dispatch) )
+)(ModuleOverlay)

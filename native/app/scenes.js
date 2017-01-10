@@ -6,9 +6,9 @@ import ScenesScene from './containers/scenes';
 import Rules from './containers/rules';
 
 import Rooms from './containers/rooms';
-import RoomsAdd from './containers/rooms-add';
-import RoomsDetail from './containers/rooms-detail';
-// import RoomsMenu from './containers/rooms-menu';
+import RoomsAdd from './containers/rooms/add';
+import RoomsDetail from './containers/rooms/detail';
+// import RoomsMenu from './containers/rooms/menu';
 
 import Modules from './containers/modules';
 import Settings from './containers/settings';

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { Component } from 'react'
 
-import ModulesGrid from '../components/modules/grid';
+import { StyleSheet, View } from 'react-native'
+import ModulesGrid from '../../components/modules/grid'
 
 
 class Room extends Component {
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 85,
   }
-});
+})
 
 
-export default Room;
+export default Room
