@@ -9,8 +9,8 @@ import {
   View,
 } from 'react-native'
 import { BlurView } from 'react-native-blur'
-import GridView from './grid-view'
-import ModuleOverlay from './module-overlay'
+import GridView from '../grid-view'
+import ModuleOverlay from './overlay'
 
 
 class ModulesGrid extends Component {

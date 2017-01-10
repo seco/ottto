@@ -10,15 +10,6 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 
 
 class LightModule extends Component {
-  componentWillMount() {
-    Icon.getImageSource('circle', 20, 'red')
-      .then((source) => this.setState({ circleIcon: source }));
-
-      Icon.getImageSource('circle-o', 20, 'red')
-        .then((source) => this.setState({ circleOIcon: source }));
-  }
-
-
   render() {
     return (
       <View style={styles.container}>
@@ -29,8 +20,6 @@ class LightModule extends Component {
           />
         </View>
         <Slider
-          maximumTrackImage={this.state.circleIcon}
-          minimumTrackImage={this.state.circleOIcon}
           onValueChange={this.onBrightnessChange.bind(this)}
         />
       </View>

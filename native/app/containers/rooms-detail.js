@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import ModulesGrid from '../components/modules-grid';
+import ModulesGrid from '../components/modules/grid';
 
 
 class Room extends Component {

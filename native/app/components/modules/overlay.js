@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native'
 import { BlurView, VibrancyView } from 'react-native-blur'
-import LightModule from './modules/light'
+import LightModule from './light'
 
 const AnimatedBlurView = Animated.createAnimatedComponent(VibrancyView)
 
@@ -130,8 +130,6 @@ const styles = StyleSheet.create({
   },
   modalBody: {
     padding: 10,
-    // flex: 1,
-    // backgroundColor: '#f00',
   },
   modalClose: {
     alignItems: 'center',
