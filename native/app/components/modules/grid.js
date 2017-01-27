@@ -1,6 +1,10 @@
 import _ from 'lodash'
 
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { getModule } from '../../actions/modules'
+
 import {
   ListView,
   StyleSheet,
@@ -85,7 +89,7 @@ class ModulesGrid extends Component {
 
 
   iconPress(module) {
-    this.openOverlay.bind(this)(module);
+    this.openOverlay.bind(this)(module)
   }
 
 
@@ -109,10 +113,13 @@ class ModulesGrid extends Component {
 
 
   openOverlay(module) {
-    this.setState({
-      ...this.state,
-      activeItem: module
-    })
+    this.props.getModule(module.id)
+      .then((()=> {
+        this.setState({
+          ...this.state,
+          activeItem: module
+        })
+      }).bind(this))
   }
 
 
@@ -165,4 +172,7 @@ const styles = StyleSheet.create({
 })
 
 
-export default ModulesGrid
+export default connect(
+  (state) => ({ }),
+  (dispatch) => ( bindActionCreators({ getModule }, dispatch) )
+)(ModulesGrid)

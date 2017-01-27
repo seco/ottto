@@ -34,10 +34,10 @@ module.exports = {
     public: '../.tmp/public/'
   },
 
-  host:
-    require('os').networkInterfaces().en0.filter(function(interface) {
-      return interface.family == 'IPv4';
-    })[0].address,
+  // host:
+  //   require('os').networkInterfaces().en0.filter(function(interface) {
+  //     return interface.family == 'IPv4';
+  //   })[0].address,
   port: 1337
 
   /***************************************************************************

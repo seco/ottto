@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { getRooms } from '../../actions/rooms'
 
 import {
   Animated,
@@ -13,6 +12,7 @@ import {
 } from 'react-native'
 import { VibrancyView } from 'react-native-blur'
 import LightModule from './light'
+import MotionModule from './motion'
 
 const AnimatedVibrancyView = Animated.createAnimatedComponent(VibrancyView)
 
@@ -47,11 +47,7 @@ class ModuleOverlay extends Component {
       <Modal
         visible={true}
         transparent={true}>
-        <AnimatedVibrancyView style={[
-            styles.blur,
-          ]}
-          blurType="dark">
-        </AnimatedVibrancyView>
+        <AnimatedVibrancyView style={styles.blur}/>
         <Animated.View
           style={[
             styles.modalContainer,
@@ -67,7 +63,7 @@ class ModuleOverlay extends Component {
             </View>
 
             <View style={styles.modalBody}>
-              <LightModule module={this.props.module}/>
+              {this.renderModule(this.props.module)}
             </View>
           </View>
 
@@ -79,6 +75,14 @@ class ModuleOverlay extends Component {
         </Animated.View>
       </Modal>
     )
+  }
+
+
+  renderModule(module) {
+    switch (this.props.module.type.id) {
+      case 1: return (<LightModule module={module} />)
+      case 2: return (<MotionModule module={module} />)
+    }
   }
 
 
@@ -113,6 +117,8 @@ const styles = StyleSheet.create({
     top: 0,
     right: 0,
     bottom: 0,
+    backgroundColor: '#000',
+    opacity: 0.5
   },
   modalContainer: {
     flex: 1,
@@ -144,7 +150,8 @@ const styles = StyleSheet.create({
   },
 })
 
+
 export default connect(
-  (state) => ( {} ),
-  (dispatch) => ( bindActionCreators({ getModule }, dispatch) )
+  (state) => ({ module: state.modules.active }),
+  (dispatch) => ({ })
 )(ModuleOverlay)
