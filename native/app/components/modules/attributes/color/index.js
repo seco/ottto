@@ -6,17 +6,16 @@ import {
   Image,
   Slider,
 } from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome'
-
-import Color from './attributes/color'
 
 
-class LightModule extends Component {
+class Color extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Color attribute={this.props.module.attributes} />
-        <Slider onValueChange={this.onBrightnessChange.bind(this)} />
+        <Image style={styles.colorWheel}
+          source={require('./colorwheel.png')}
+          resizeMode='contain'
+        />
       </View>
     )
   }
@@ -28,8 +27,6 @@ class LightModule extends Component {
 
 const styles = StyleSheet.create({
   container: {
-  },
-  colorWheelContainer: {
     alignItems: 'center',
     margin: 10,
   },
@@ -40,4 +37,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default LightModule
+export default Color
