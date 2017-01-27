@@ -3,41 +3,46 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
-  Slider,
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import Color from './attributes/color'
+import Number from './attributes/number'
 
 
-class LightModule extends Component {
+class Light extends Component {
   render() {
+    const color =
+      this.props.module.type.attributes.find((attribute) => {
+        return attribute.name == 'color'
+      })
+
+    const level =
+      this.props.module.type.attributes.find((attribute) => {
+        return attribute.name == 'level'
+      })
+
     return (
       <View style={styles.container}>
-        <Color attribute={this.props.module.attributes} />
-        <Slider onValueChange={this.onBrightnessChange.bind(this)} />
+        <Text style={styles.label}>Color</Text>
+        <Color
+          value={this.props.module.values.color}
+          attribute={color} />
+        <Text style={styles.label}>Level</Text>
+        <Number
+          value={this.props.module.values.level}
+          attribute={level} />
       </View>
     )
-  }
-
-  onBrightnessChange(value) {
-     this.setState({ brightness: value })
   }
 }
 
 const styles = StyleSheet.create({
   container: {
   },
-  colorWheelContainer: {
-    alignItems: 'center',
-    margin: 10,
-  },
-  colorWheel: {
-    width: 320,
-    height: 320,
-    borderRadius: 160,
+  label: {
+    color: '#CCC',
   }
 })
 
-export default LightModule
+export default Light

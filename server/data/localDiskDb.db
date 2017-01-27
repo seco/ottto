@@ -1855,6 +1855,24 @@
         "createdAt": "2016-09-09T05:51:29.144Z",
         "updatedAt": "2016-09-09T05:51:29.144Z",
         "id": 5436
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "27",
+        "value": "70",
+        "createdAt": "2017-01-27T08:14:19.685Z",
+        "updatedAt": "2017-01-27T08:14:19.685Z",
+        "id": 5437
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "70",
+        "value": "34",
+        "createdAt": "2017-01-27T08:14:25.577Z",
+        "updatedAt": "2017-01-27T08:14:25.577Z",
+        "id": 5438
       }
     ],
     "modulegroups": [
@@ -1883,13 +1901,15 @@
             "step": 1,
             "default": 100,
             "label": "Level",
-            "metric": "%"
+            "metric": "%",
+            "$$hashKey": "object:37"
           },
           {
             "name": "color",
             "type": "string",
             "default": "#fff",
-            "label": "Color"
+            "label": "Color",
+            "$$hashKey": "object:38"
           }
         ],
         "methods": [
@@ -1919,7 +1939,7 @@
         ],
         "id": 1,
         "createdAt": "2014-09-10T08:54:41.493Z",
-        "updatedAt": "2017-01-08T09:06:33.586Z"
+        "updatedAt": "2017-01-27T08:14:18.610Z"
       },
       {
         "name": "Motion Sensor",
@@ -2218,8 +2238,10 @@
         "group": 7,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2016-12-12T07:56:49.688Z",
-        "values": {},
+        "updatedAt": "2017-01-27T08:14:25.556Z",
+        "values": {
+          "level": 34
+        },
         "address": "10.0.0.5",
         "power": "false",
         "chip": "8395441",
@@ -2640,7 +2662,7 @@
     },
     "modulegroups_modules__modules_group": {},
     "moduleevents": {
-      "id": 5436
+      "id": 5438
     }
   }
 }

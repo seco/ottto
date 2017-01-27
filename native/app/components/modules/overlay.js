@@ -11,8 +11,8 @@ import {
   View,
 } from 'react-native'
 import { VibrancyView } from 'react-native-blur'
-import LightModule from './light'
-import MotionModule from './motion'
+import Light from './light'
+import Motion from './motion'
 
 const AnimatedVibrancyView = Animated.createAnimatedComponent(VibrancyView)
 
@@ -80,8 +80,8 @@ class ModuleOverlay extends Component {
 
   renderModule(module) {
     switch (this.props.module.type.id) {
-      case 1: return (<LightModule module={module} />)
-      case 2: return (<MotionModule module={module} />)
+      case 1: return (<Light module={module} />)
+      case 2: return (<Motion module={module} />)
     }
   }
 
