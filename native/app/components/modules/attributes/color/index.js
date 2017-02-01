@@ -72,15 +72,13 @@ class Color extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={[styles.colorWheelContainer, this.getWheelStyles()]}>
-          <Image style={styles.colorWheel}
-            source={require('./colorwheel.png')}
-            resizeMode='contain' />
-          <View style={styles.cursorContainer}>
-            <Animated.View style={[styles.cursor, this.getCursorStyles()]}
-              {...this.panResponder.panHandlers} />
-          </View>
+      <View style={[styles.container, this.getWheelStyles()]}>
+        <Image style={styles.colorWheel}
+          source={require('./colorwheel.png')}
+          resizeMode='contain' />
+        <View style={styles.cursorContainer}>
+          <Animated.View style={[styles.cursor, this.getCursorStyles()]}
+            {...this.panResponder.panHandlers} />
         </View>
       </View>
     )
@@ -104,9 +102,7 @@ class Color extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-  },
-  colorWheelContainer: {
+    alignSelf: 'center',
     width: WHEEL_RADIUS * 2 + 40,
     height: WHEEL_RADIUS * 2 + 40,
     borderWidth: 20,
