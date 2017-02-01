@@ -12,8 +12,6 @@ class Number extends Component {
   render() {
     const { value, attribute } = this.props
 
-    console.log(value, attribute, this.props)
-
     return (
       <Slider value={this.props.value}
         minimumValue={this.props.attribute.min}

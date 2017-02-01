@@ -27,13 +27,18 @@ class Light extends Component {
         <Text style={styles.label}>Color</Text>
         <Color
           value={this.props.module.values.color}
-          attribute={color} />
+          attribute={color}
+          onColorChange={this.onColorChange.bind(this)}/>
         <Text style={styles.label}>Level</Text>
         <Number
           value={this.props.module.values.level}
           attribute={level} />
       </View>
     )
+  }
+
+  onColorChange(color) {
+    console.log('light', color)
   }
 }
 

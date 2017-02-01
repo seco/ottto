@@ -28,7 +28,7 @@ class ModulesGrid extends Component {
 
 
   render() {
-    const count = 16
+    const count = 24
     const modules = this.props.modules.map((module) => {
       return {
         ...module,

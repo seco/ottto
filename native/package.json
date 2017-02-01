@@ -18,6 +18,11 @@
     "redux": "^3.6.0",
     "redux-actions": "^0.12.0",
     "redux-logger": "^2.6.1",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "tinycolor2": "^1.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-latest": "^6.22.0"
   }
 }
