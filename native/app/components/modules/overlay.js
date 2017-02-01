@@ -10,11 +10,8 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native'
-import { VibrancyView } from 'react-native-blur'
 import Light from './light'
 import Motion from './motion'
-
-const AnimatedVibrancyView = Animated.createAnimatedComponent(VibrancyView)
 
 
 class ModuleOverlay extends Component {
@@ -24,6 +21,7 @@ class ModuleOverlay extends Component {
     this.state = {
       containerBottom: new Animated.Value(-50),
       containerOpacity: new Animated.Value(0),
+      blurOpacity: new Animated.Value(0),
     }
   }
 
@@ -37,7 +35,11 @@ class ModuleOverlay extends Component {
       Animated.timing(
         this.state.containerOpacity,
         { toValue: 1, duration: 300 }
-      )
+      ),
+      Animated.timing(
+        this.state.blurOpacity,
+        { toValue: 0.5, duration: 300 }
+      ),
     ]).start()
   }
 
@@ -47,7 +49,8 @@ class ModuleOverlay extends Component {
       <Modal
         visible={true}
         transparent={true}>
-        <AnimatedVibrancyView style={styles.blur}/>
+        <Animated.View
+          style={[ styles.blur, { opacity: this.state.blurOpacity } ]} />
         <Animated.View
           style={[
             styles.modalContainer,
@@ -96,7 +99,11 @@ class ModuleOverlay extends Component {
         Animated.timing(
           this.state.containerOpacity,
           { toValue: 0, duration: 300 },
-        )
+        ),
+        Animated.timing(
+          this.state.blurOpacity,
+          { toValue: 0, duration: 300 },
+        ),
       ])
       .start(this.onClose.bind(this))
   }
@@ -126,14 +133,14 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   modalContent: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF',
     borderRadius: 12,
   },
   modalHeader: {
     alignItems: 'center',
     padding: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#eee',
+    borderBottomColor: '#EEE',
   },
   modalTitle: {
     fontWeight: '600',
@@ -145,7 +152,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
     padding: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFF',
     borderRadius: 12,
   },
 })
