@@ -36,7 +36,7 @@ angular
 
 
       $scope.addAttribute = ->
-        if not Array.isArray $scope.type.attributes
+        if not Array.isArray $scope.type.$attributes.attributes
           $scope.type.$attributes.attributes = new Array
         $scope.type.$attributes.attributes?.push {}
 

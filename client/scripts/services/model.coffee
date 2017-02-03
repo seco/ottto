@@ -73,7 +73,7 @@ angular
 
 
         $_reset: (attributes) =>
-          attributes = _.assign {}, @$attributes, attributes
+          attributes = _.extend {}, @$attributes, attributes
 
           @$_pristine = _.cloneDeep attributes
           @$attributes = _.cloneDeep attributes
