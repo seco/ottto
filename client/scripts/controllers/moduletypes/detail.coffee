@@ -6,10 +6,9 @@ angular
 
       $scope.dataTypes = [
         'boolean'
-        'float'
-        'string'
-        'radios'
-        'checkboxes'
+        'number'
+        'color'
+        'location'
       ]
 
       init = ->

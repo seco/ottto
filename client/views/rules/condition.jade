@@ -22,9 +22,7 @@
 
       span(ng-switch='attribute.type')
 
-        //-
         //- Boolean
-        //-
         span(ng-switch-when='boolean')
           select.form-control(ng-model='condition.operator')
             option(value='==') is
@@ -34,10 +32,8 @@
             ng-model='condition.arguments[0]'
           )
 
-        //-
-        //- Float
-        //-
-        span(ng-switch-when='float')
+        //- Number
+        span(ng-switch-when='number')
           //- Operator
           select.form-control(ng-model='condition.operator')
             option(value='==') is
@@ -65,17 +61,8 @@
 
             | {{attribute.metric}}
 
-        //-
         //- String
-        //-
         span(ng-switch-when='string') String
 
-        //-
-        //- Radios
-        //-
-        span(ng-switch-when='radios') Radios
-
-        //-
-        //- Checkboxes
-        //-
-        span(ng-switch-when='checkboxes') Checkboxes
+        //- Color
+        span(ng-switch-when='color') Color

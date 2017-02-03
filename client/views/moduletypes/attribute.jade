@@ -28,27 +28,30 @@
 
     div(ng-switch='attribute.type')
 
+      //- Color
+      div(ng-switch-when='color')
+
       //- String
       div(ng-switch-when='string')
 
-      //- Float
-      div(ng-switch-when='float')
+      //- Number
+      div(ng-switch-when='number')
         .form-group
           .col-sm-2
             input.form-control(
-              type='text', name='min', placeholder='Min',
+              type='number', name='min', placeholder='Min',
               ng-model='attribute.min'
             )
 
           .col-sm-2
             input.form-control(
-              type='text', name='max', placeholder='Max',
+              type='number', name='max', placeholder='Max',
               ng-model='attribute.max'
             )
 
           .col-sm-2
             input.form-control(
-              type='text', name='step', placeholder='Step',
+              type='number', name='step', placeholder='Step',
               ng-model='attribute.step'
             )
 

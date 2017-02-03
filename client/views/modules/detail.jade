@@ -50,8 +50,8 @@ form(name='moduleForm')
     label(for='{{value.name}}') {{value.label}}
     div(ng-switch='value.type')
 
-      //- Float
-      div(ng-switch-when='float')
+      //- Number
+      div(ng-switch-when='number')
         .row
           .col-xs-4
             input(
