@@ -101,6 +101,6 @@ const styles = StyleSheet.create({
 
 
 export default connect(
-  (state) => ( state.rooms ),
-  (dispatch) => ( bindActionCreators(roomActions, dispatch) )
+  (state) => ({}),
+  (dispatch) => bindActionCreators(roomActions, dispatch)
 )(RoomsList)

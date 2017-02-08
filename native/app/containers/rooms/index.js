@@ -16,7 +16,7 @@ class Rooms extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <RoomsList />
+        <RoomsList rooms={this.props.rooms} />
       </View>
     )
   }
@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
 
 
 export default connect(
-  (state) => ( {} ),
-  (dispatch) => ( bindActionCreators({ getRooms }, dispatch) )
+  (state) => ({ rooms: state.rooms.rooms }),
+  (dispatch) => bindActionCreators({ getRooms }, dispatch)
 )(Rooms)
