@@ -45,8 +45,9 @@ export const updateModule = (module) => {
 export const updatingModule = () => {
   return { type: MODULE_UPDATE }
 }
-export const updateModuleSuccess = (module) => {
-  return { type: MODULE_UPDATE_SUCCESS, module }
+export const updateModuleSuccess = (response) => {
+  // For some reason the response is an array, grab the first item
+  return { type: MODULE_UPDATE_SUCCESS, module: response[0] }
 }
 export const updateModuleError = (error) => {
   return { type: MODULE_UPDATE_ERROR, error }
@@ -92,7 +93,6 @@ const modulesReducer = (state = initialState, action) => {
     case MODULE_UPDATE_SUCCESS:
       return {
         ...state,
-        active: action.module,
         state: 'success',
         error: false,
       }
