@@ -1,7 +1,7 @@
 // Action Types
-const GET = 'MODULES/GET'
-const GET_SUCCESS = 'MODULES/GET_SUCCESS'
-const GET_ERROR = 'MODULES/GET_ERROR'
+const MODULE_GET = 'MODULE_GET'
+const MODULE_GET_SUCCESS = 'MODULE_GET_SUCCESS'
+const MODULE_GET_ERROR = 'MODULE_GET_ERROR'
 
 
 // Action Creators
@@ -16,13 +16,13 @@ export const getModule = (id) => {
   }
 }
 export const gettingModule = () => {
-  return { type: GET }
+  return { type: MODULE_GET }
 }
 export const getModuleSuccess = (module) => {
-  return { type: GET_SUCCESS, module }
+  return { type: MODULE_GET_SUCCESS, module }
 }
 export const getModuleError = (error) => {
-  return { type: GET_ERROR, error }
+  return { type: MODULE_GET_ERROR, error }
 }
 
 
@@ -34,19 +34,26 @@ const initialState = {
 
 const modulesReducer = (state = initialState, action) => {
   switch(action.type) {
-    case GET:
+    case MODULE_GET:
       return {
         ...state,
-        state: 'waiting',
+        state: 'loading',
         error: false
       }
 
-    case GET_SUCCESS:
+    case MODULE_GET_SUCCESS:
       return {
         ...state,
         active: action.module,
         state: 'success',
-        error: false
+        error: false,
+      }
+
+    case MODULE_GET_ERROR:
+      return {
+        ...state,
+        state: 'error',
+        error: action.error,
       }
 
     case GET_ERROR:

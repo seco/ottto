@@ -1,15 +1,15 @@
 // Action Types
-const GET = 'ROOMS/GET'
-const GET_SUCCESS = 'ROOMS/GET_SUCCESS'
-const GET_ERROR = 'ROOMS/GET_ERROR'
+const ROOMS_GET = 'ROOMS_GET'
+const ROOMS_GET_SUCCESS = 'ROOMS_GET_SUCCESS'
+const ROOMS_GET_ERROR = 'ROOMS_GET_ERROR'
 
-const CREATE = 'ROOMS/CREATE'
-const CREATE_SUCCESS = 'ROOMS/CREATE_SUCCESS'
-const CREATE_ERROR = 'ROOMS/CREATE_ERROR'
+const ROOM_CREATE = 'ROOM_CREATE'
+const ROOM_CREATE_SUCCESS = 'ROOM_CREATE_SUCCESS'
+const ROOM_CREATE_ERROR = 'ROOM_CREATE_ERROR'
 
-const ADD = 'ROOMS/ADD'
-const UPDATE = 'ROOMS/UPDATE'
-const REMOVE = 'ROOMS/REMOVE'
+const ROOM_ADD = 'ROOM_ADD'
+const ROOM_UPDATE = 'ROOM_UPDATE'
+const ROOM_REMOVE = 'ROOM_REMOVE'
 
 
 // Action Creators
@@ -24,13 +24,13 @@ export const getRooms = () => {
   }
 }
 export const gettingRooms = () => {
-  return { type: GET }
+  return { type: ROOMS_GET }
 }
 export const getRoomsSuccess = (rooms) => {
-  return { type: GET_SUCCESS, rooms }
+  return { type: ROOMS_GET_SUCCESS, rooms }
 }
 export const getRoomsError = (error) => {
-  return { type: GET_ERROR, error }
+  return { type: ROOMS_GET_ERROR, error }
 }
 
 export const createRoom = (room) => {
@@ -47,23 +47,23 @@ export const createRoom = (room) => {
   }
 }
 export const creatingRoom = () => {
-  return { type: CREATE }
+  return { type: ROOM_CREATE }
 }
 export const createRoomSuccess = (room) => {
-  return { type: CREATE_SUCCESS, room }
+  return { type: ROOM_CREATE_SUCCESS, room }
 }
 export const createRoomError = (error) => {
-  return { type: CREATE_ERROR, error }
+  return { type: ROOM_CREATE_ERROR, error }
 }
 
 export const addRoom = (room) => {
-  return { type: ADD, room }
+  return { type: ROOM_ADD, room }
 }
 export const updateRoom = (room) => {
-  return { type: UPDATE, room }
+  return { type: ROOM_UPDATE, room }
 }
 export const removeRoom = (room) => {
-  return { type: REMOVE, room }
+  return { type: ROOM_REMOVE, room }
 }
 
 
@@ -75,14 +75,14 @@ const initialState = {
 
 const roomsReducer = (state = initialState, action) => {
   switch(action.type) {
-    case GET:
+    case ROOMS_GET:
       return {
         ...state,
-        state: 'waiting',
+        state: 'loading',
         error: false
       }
 
-    case GET_SUCCESS:
+    case ROOMS_GET_SUCCESS:
       return {
         ...state,
         rooms: action.rooms,
@@ -90,20 +90,20 @@ const roomsReducer = (state = initialState, action) => {
         error: false
       }
 
-    case GET_ERROR:
+    case ROOMS_GET_ERROR:
       return {
         ...state,
         state: 'error',
         error: action.error,
       }
 
-    case ADD:
+    case ROOM_ADD:
       return {
         ...state,
         rooms: [ ...state.rooms, action.room ]
       }
 
-    case UPDATE:
+    case ROOM_UPDATE:
       return {
         ...state,
         rooms: state.rooms.map((room) => {
@@ -115,7 +115,7 @@ const roomsReducer = (state = initialState, action) => {
         })
       }
 
-    case REMOVE:
+    case ROOM_REMOVE:
       return {
         ...state,
         rooms: state.rooms.filter((room) => {
