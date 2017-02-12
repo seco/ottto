@@ -60,7 +60,7 @@ class Color extends Component {
       color
     })
 
-    this.props.onColorChange && this.props.onColorChange(color)
+    this.props.onValueChange && this.props.onValueChange(color)
   }
 
   onMoveEnd(event, gesture) {

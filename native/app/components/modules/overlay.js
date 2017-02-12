@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 import {
   Animated,
@@ -10,8 +9,8 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native'
-import Light from './light'
-import Motion from './motion'
+import Light from './types/light'
+import Motion from './types/motion'
 
 
 class ModuleOverlay extends Component {

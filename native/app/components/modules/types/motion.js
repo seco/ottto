@@ -31,17 +31,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   indicator: {
-    width: 200,
-    height: 200,
     alignItems: 'center',
     justifyContent: 'center',
+    width: 200,
+    height: 200,
+    borderRadius: 14,
   },
   active: {
-    backgroundColor: '#007AFF'
+    backgroundColor: '#007AFF',
   },
   inactive: {
     backgroundColor: '#ccc',
-    borderRadius: 14
   },
   text: {
     color: "#FFF"

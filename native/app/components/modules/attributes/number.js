@@ -22,7 +22,7 @@ class Number extends Component {
   }
 
   onValueChange(value) {
-     console.log('value', value)
+     this.props.onValueChange && this.props.onValueChange(value)
   }
 }
 

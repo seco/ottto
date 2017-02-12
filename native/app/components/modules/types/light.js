@@ -1,4 +1,10 @@
+import _ from 'lodash'
+
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { updateModule } from '../../../actions/modules'
+
 import {
   StyleSheet,
   Text,
@@ -6,8 +12,8 @@ import {
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-import Color from './attributes/color'
-import Number from './attributes/number'
+import Color from '../attributes/color'
+import Number from '../attributes/number'
 
 
 class Light extends Component {
@@ -28,17 +34,28 @@ class Light extends Component {
         <Color
           value={this.props.module.values.color}
           attribute={color}
-          onColorChange={this.onColorChange.bind(this)}/>
+          onValueChange={_.throttle(this.onColorChange.bind(this), 200)} />
         <Text style={styles.label}>Level</Text>
         <Number
-          value={this.props.module.values.level}
-          attribute={level} />
+          value={parseInt(this.props.module.values.level, 10)}
+          attribute={level}
+          onValueChange={_.throttle(this.onLevelChange.bind(this), 200)}/>
       </View>
     )
   }
 
   onColorChange(color) {
-    console.log('light', color)
+    let module = _.clone(this.props.module)
+    module.values.color = color
+
+    this.props.updateModule(module)
+  }
+
+  onLevelChange(number) {
+    let module = _.clone(this.props.module)
+    module.values.level = number
+
+    this.props.updateModule(module)
   }
 }
 
@@ -50,4 +67,8 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Light
+
+export default connect(
+  (state) => ({ }),
+  (dispatch) => bindActionCreators({ updateModule }, dispatch)
+)(Light)
