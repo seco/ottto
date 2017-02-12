@@ -91,6 +91,8 @@ module.exports = {
           qs: { plain: JSON.stringify(params) }
           // json: true,
           // body: params
+        }, function(error, response, body) {
+          console.log('response', error, response, body);
         });
         console.log('sending', pre.ip, params);
       } catch(err) {
