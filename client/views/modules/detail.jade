@@ -45,12 +45,19 @@ form(name='moduleForm')
   h2 {{module.$attributes.name}}
   
   hr
-
+  
   .form-group(ng-repeat='value in module.$attributes.type.attributes')
     label(for='{{value.name}}') {{value.label}}
     div(ng-switch='value.type')
+      
+      div(ng-switch-when='color')
+        .row
+          .col-xs-4
+            input.form-control(
+              type='color', name='{{value.name}}'
+              ng-model='module.$attributes.values[value.name]'
+            )
 
-      //- Number
       div(ng-switch-when='number')
         .row
           .col-xs-4

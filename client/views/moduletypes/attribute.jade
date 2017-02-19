@@ -28,13 +28,10 @@
 
     div(ng-switch='attribute.type')
 
-      //- Color
       div(ng-switch-when='color')
 
-      //- String
       div(ng-switch-when='string')
 
-      //- Number
       div(ng-switch-when='number')
         .form-group
           .col-sm-2
@@ -67,7 +64,6 @@
               ng-model='attribute.metric'
             )
 
-      //- Boolean
       div(ng-switch-when='boolean')
         .form-group
           .col-xs-4
@@ -93,7 +89,6 @@
                 )
                 | Default
 
-      //- Radios
       div(ng-switch-when='radios')
         .form-group(ng-repeat='option in attribute.options')
           .col-sm-2
@@ -113,7 +108,6 @@
 
         a.btn.btn-xs.btn-default(ng-click='addOption()') Add Option
 
-      //- Checkboxes
       div(ng-switch-when='checkboxes')
         .form-group(ng-repeat='option in attribute.options')
           .col-sm-6
