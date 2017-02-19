@@ -62,7 +62,7 @@ module.exports = {
         post = Modules
           .update(id, params)
           .then(function(updated) {
-            return _.cloneDeep(updated[0]);
+            return updated[0];
           });
 
     return Promise.all([ pre, post, params ]);
@@ -76,28 +76,30 @@ module.exports = {
 
         id = pre.id;
 
-    Modules.publishUpdate(id, params);
-
-    delete params.updatedAt;
+    Modules
+      .find(id)
+      .populateAll()
+      .then(function(modules) {
+        Modules.publishUpdate(id, modules[0]);
+        return modules[0]
+      });
 
     // TODO: Have some sort of action confirm that the values
     // sent were also received.  Fire some sort of messaging otherwise.
     if (pre.ip) {
-      try {
-        request({
-          url: 'http://' + pre.ip + '/',
-          method: 'PUT',
-          // TODO: Remove this hack, should be able to pass params as body
-          qs: { plain: JSON.stringify(params) }
-          // json: true,
-          // body: params
-        }, function(error, response, body) {
-          console.log('response', error, response, body);
-        });
-        console.log('sending', pre.ip, params);
-      } catch(err) {
-        console.log(err);
-      }
+      request({
+        url: 'http://' + pre.ip + '/',
+        method: 'PUT',
+        // TODO: Remove this hack, should be able to pass params as body
+        qs: { plain: JSON.stringify({ values: params.values }) }
+        // json: true,
+        // body: params
+      },
+      function(error, response, body) {
+        console.log('response', error, response, body);
+      });
+
+      console.log('sending', pre.ip, { values: params.values });
     }
 
     return Promise.all([ pre, post ]);
