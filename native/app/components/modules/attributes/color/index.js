@@ -21,13 +21,11 @@ class Color extends Component {
     let top = WHEEL_RADIUS
 
     this.state = {
-      previousLeft: left,
-      previousTop: top,
+      left: left,
+      top: top,
       cursorLeft: left - CURSOR_RADIUS,
       cursorTop: top - CURSOR_RADIUS,
 
-      hue: 0,
-      saturation: 0,
       color: '#FFF',
     }
 
@@ -39,16 +37,15 @@ class Color extends Component {
   }
 
   onMove(event, gesture) {
-    let left = this.state.previousLeft + gesture.dx
-    let top = this.state.previousTop + gesture.dy
-    let center = WHEEL_RADIUS
-    let x = left - center
-    let y = top - center
+    let left = this.state.left + gesture.dx
+    let top = this.state.top + gesture.dy
 
-    let rad = Math.atan2(y, x)
-    let distance = Math.sqrt(x * x + y * y)
+    let x = left - WHEEL_RADIUS
+    let y = top - WHEEL_RADIUS
+    let angle = this.getAngle(x, y)
+    let distance = this.getDistance(x, y)
 
-    let hue = (-rad * (180 / Math.PI) + 360) % 360
+    let hue = angle
     let saturation = 100
     let lightness = (1 - distance / WHEEL_RADIUS) * 50 + 50
     let color = tinycolor({ h: hue, s: saturation, l: lightness }).toHexString()
@@ -63,10 +60,18 @@ class Color extends Component {
     this.props.onValueChange && this.props.onValueChange(color)
   }
 
+  getAngle(x, y) {
+    return (-Math.atan2(y, x) * (180 / Math.PI) + 360) % 360
+  }
+
+  getDistance(x, y) {
+    return Math.sqrt(x * x + y * y)
+  }
+
   onMoveEnd(event, gesture) {
     this.setState({
-      previousLeft: this.state.previousLeft + gesture.dx,
-      previousTop: this.state.previousTop + gesture.dy,
+      left: this.state.left + gesture.dx,
+      top: this.state.top + gesture.dy,
     })
   }
 
