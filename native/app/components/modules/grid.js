@@ -22,7 +22,7 @@ class ModulesGrid extends Component {
     super(props);
 
     this.state = {
-      activeItem: false
+      showOverlay: false
     }
   }
 
@@ -99,14 +99,9 @@ class ModulesGrid extends Component {
 
 
   renderOverlay() {
-    if (this.state.activeItem) {
+    if (this.state.showOverlay) {
       return (
-        <ModuleOverlay module={this.state.activeItem}
-          onClose={this.onOverlayClose.bind(this)}/>
-      )
-    } else {
-      return (
-        <View />
+        <ModuleOverlay onClose={this.onOverlayClose.bind(this)}/>
       )
     }
   }
@@ -117,7 +112,7 @@ class ModulesGrid extends Component {
       .then((()=> {
         this.setState({
           ...this.state,
-          activeItem: module
+          showOverlay: module
         })
       }).bind(this))
   }
@@ -126,7 +121,7 @@ class ModulesGrid extends Component {
   onOverlayClose() {
     this.setState({
       ...this.state,
-      activeItem: false
+      showOverlay: false
     })
   }
 }
