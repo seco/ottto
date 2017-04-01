@@ -99,7 +99,12 @@ class ModuleOverlay extends Component {
 
 
   onModuleChange(module) {
-    this.props.putModule(module)
+    const params = {
+      id: module.id,
+      values: module.values,
+    }
+
+    this.props.putModule(params)
   }
 
 

@@ -7,9 +7,13 @@ io.sails.url = 'http://localhost:1337'
 io.sails.useCORSRouteToGetCookie = false
 
 const promisified = (method) => {
-  return (url) => {
+  return (url, data) => {
     return new Promise( (resolve, reject) => {
-      io.socket[method](url, resolve, reject)
+      if(method == 'get') {
+        io.socket[method](url, resolve, reject)
+      } else {
+        io.socket[method](url, data, resolve, reject)
+      }
     })
   }
 }
@@ -20,8 +24,8 @@ const methods = {
     post: promisified('post'),
     delete: promisified('delete'),
 
-    on: promisified('on'),
-    off: promisified('off'),
+    on: io.socket.on,
+    off: io.socket.off,
 }
 
 export default methods

@@ -19,8 +19,8 @@ export const getRooms = () => {
     dispatch(gettingRooms())
 
     return socket.get('/api/modulegroups')
-      .then( rooms => dispatch(getRoomsSuccess(rooms)) )
-      .catch( error => dispatch(getRoomsError(error)) )
+      .then(rooms => dispatch(getRoomsSuccess(rooms)))
+      .catch(error => dispatch(getRoomsError(error)))
   }
 }
 export const gettingRooms = () => {
@@ -37,11 +37,9 @@ export const postRoom = (room) => {
   return (dispatch, getState) => {
     dispatch(postingRoom())
 
-    return socket.post(
-      '/api/modulegroups',
-      response => dispatch(postRoomSuccess(response)),
-      response => dispatch(postRoomError(response)),
-    )
+    return socket.post('/api/modulegroups', room)
+      .then(room => dispatch(postRoomSuccess(room)))
+      .catch(error => dispatch(postRoomError(error)))
   }
 }
 export const postingRoom = () => {

@@ -34,12 +34,9 @@ export const putModule = (module) => {
   return (dispatch, getState) => {
     dispatch(updatingModule())
 
-    return socket.put(
-      '/api/modules' + module.id,
-      module,
-      module => dispatch(putModuleSuccess(module)),
-      error => dispatch(putModuleError(module)),
-    )
+    return socket.put('/api/modules/' + module.id, module)
+      .then(module => dispatch(putModuleSuccess(module)))
+      .catch(error => dispatch(putModuleError(module)))
   }
 }
 export const updatingModule = () => {

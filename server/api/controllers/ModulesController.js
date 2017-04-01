@@ -9,6 +9,8 @@ module.exports = {
 
   update: function(req, res) {
 
+    console.log('updating', req.body);
+
     ModulesService
       .update(req.param('id'), req.body)
       .catch(res.badRequest);
