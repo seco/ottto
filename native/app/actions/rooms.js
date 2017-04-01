@@ -1,15 +1,16 @@
+import socket from '../socket'
+
 // Action Types
 const ROOMS_GET = 'ROOMS_GET'
 const ROOMS_GET_SUCCESS = 'ROOMS_GET_SUCCESS'
 const ROOMS_GET_ERROR = 'ROOMS_GET_ERROR'
 
-const ROOM_CREATE = 'ROOM_CREATE'
-const ROOM_CREATE_SUCCESS = 'ROOM_CREATE_SUCCESS'
-const ROOM_CREATE_ERROR = 'ROOM_CREATE_ERROR'
+const ROOM_POST = 'ROOM_POST'
+const ROOM_POST_SUCCESS = 'ROOM_POST_SUCCESS'
+const ROOM_POST_ERROR = 'ROOM_POST_ERROR'
 
-const ROOM_ADD = 'ROOM_ADD'
-const ROOM_UPDATE = 'ROOM_UPDATE'
-const ROOM_REMOVE = 'ROOM_REMOVE'
+const ROOM_PUT = 'ROOM_PUT'
+const ROOM_DELETE = 'ROOM_DELETE'
 
 
 // Action Creators
@@ -17,8 +18,7 @@ export const getRooms = () => {
   return (dispatch, getState) => {
     dispatch(gettingRooms())
 
-    return fetch('http://localhost:1337/api/modulegroups')
-      .then( response => response.json() )
+    return socket.get('/api/modulegroups')
       .then( rooms => dispatch(getRoomsSuccess(rooms)) )
       .catch( error => dispatch(getRoomsError(error)) )
   }
@@ -33,37 +33,32 @@ export const getRoomsError = (error) => {
   return { type: ROOMS_GET_ERROR, error }
 }
 
-export const createRoom = (room) => {
+export const postRoom = (room) => {
   return (dispatch, getState) => {
-    dispatch(creatingRoom())
+    dispatch(postingRoom())
 
-    return fetch('http://localhost:1337/api/modulegroups', {
-        method: 'POST',
-        body: JSON.stringify(room)
-      })
-      .then( response => response.json() )
-      .then( room => dispatch(createRoomSuccess(room)) )
-      .catch( error => displatch(createRoomsError(error)) )
+    return socket.post(
+      '/api/modulegroups',
+      response => dispatch(postRoomSuccess(response)),
+      response => dispatch(postRoomError(response)),
+    )
   }
 }
-export const creatingRoom = () => {
-  return { type: ROOM_CREATE }
+export const postingRoom = () => {
+  return { type: ROOM_POST }
 }
-export const createRoomSuccess = (room) => {
-  return { type: ROOM_CREATE_SUCCESS, room }
+export const postRoomSuccess = (room) => {
+  return { type: ROOM_POST_SUCCESS, room }
 }
-export const createRoomError = (error) => {
-  return { type: ROOM_CREATE_ERROR, error }
+export const postRoomError = (error) => {
+  return { type: ROOM_POST_ERROR, error }
 }
 
-export const addRoom = (room) => {
-  return { type: ROOM_ADD, room }
+export const putRoom = (room) => {
+  return { type: ROOM_PUT, room }
 }
-export const updateRoom = (room) => {
-  return { type: ROOM_UPDATE, room }
-}
-export const removeRoom = (room) => {
-  return { type: ROOM_REMOVE, room }
+export const deleteRoom = (room) => {
+  return { type: ROOM_DELETE, room }
 }
 
 
@@ -79,15 +74,15 @@ const roomsReducer = (state = initialState, action) => {
       return {
         ...state,
         state: 'loading',
-        error: false
+        error: false,
       }
 
     case ROOMS_GET_SUCCESS:
       return {
         ...state,
         rooms: action.rooms,
-        state: 'success',
-        error: false
+        state: 'loaded',
+        error: false,
       }
 
     case ROOMS_GET_ERROR:
@@ -97,13 +92,22 @@ const roomsReducer = (state = initialState, action) => {
         error: action.error,
       }
 
-    case ROOM_ADD:
+    case ROOM_POST_SUCCESS:
       return {
         ...state,
-        rooms: [ ...state.rooms, action.room ]
+        rooms: state.rooms.concat([action.room]),
+        state: 'loaded',
+        error: false,
       }
 
-    case ROOM_UPDATE:
+    case ROOM_POST_ERROR:
+      return {
+        ...state,
+        state: 'error',
+        error: action.error,
+      }
+
+    case ROOM_PUT:
       return {
         ...state,
         rooms: state.rooms.map((room) => {
@@ -115,7 +119,7 @@ const roomsReducer = (state = initialState, action) => {
         })
       }
 
-    case ROOM_REMOVE:
+    case ROOM_DELETE:
       return {
         ...state,
         rooms: state.rooms.filter((room) => {

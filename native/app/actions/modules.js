@@ -1,11 +1,13 @@
+import socket from '../socket'
+
 // Action Types
 const MODULE_GET = 'MODULE_GET'
 const MODULE_GET_SUCCESS = 'MODULE_GET_SUCCESS'
 const MODULE_GET_ERROR = 'MODULE_GET_ERROR'
 
-const MODULE_UPDATE = 'MODULE_UPDATE'
-const MODULE_UPDATE_SUCCESS = 'MODULE_UPDATE_SUCCESS'
-const MODULE_UPDATE_ERROR = 'MODULE_UPDATE_ERROR'
+const MODULE_PUT = 'MODULE_PUT'
+const MODULE_PUT_SUCCESS = 'MODULE_PUT_SUCCESS'
+const MODULE_PUT_ERROR = 'MODULE_PUT_ERROR'
 
 
 // Action Creators
@@ -13,9 +15,8 @@ export const getModule = (id) => {
   return (dispatch, getState) => {
     dispatch(gettingModule())
 
-    return fetch('http://localhost:1337/api/modules/' + id)
-      .then( response => response.json() )
-      .then( modules => dispatch(getModuleSuccess(modules)) )
+    return socket.get('/api/modules/' + id)
+      .then( module => dispatch(getModuleSuccess(module)) )
       .catch( error => dispatch(getModuleError(error)) )
   }
 }
@@ -29,28 +30,34 @@ export const getModuleError = (error) => {
   return { type: MODULE_GET_ERROR, error }
 }
 
-export const updateModule = (module) => {
+export const putModule = (module) => {
   return (dispatch, getState) => {
     dispatch(updatingModule())
 
-    return fetch('http://localhost:1337/api/modules/' + module.id, {
-        method: 'PUT',
-        body: JSON.stringify(module)
-      })
-      .then(response => response.json())
-      .then(module => dispatch(updateModuleSuccess(module)))
-      .catch(error => dispatch(updateModuleError(error)))
+    return socket.put(
+      '/api/modules' + module.id,
+      module,
+      module => dispatch(putModuleSuccess(module)),
+      error => dispatch(putModuleError(module)),
+    )
+    // return fetch('http://localhost:1337/api/modules/' + module.id, {
+    //     method: 'PUT',
+    //     body: JSON.stringify(module)
+    //   })
+    //   .then(response => response.json())
+    //   .then(module => dispatch(putModuleSuccess(module)))
+    //   .catch(error => dispatch(putModuleError(error)))
   }
 }
 export const updatingModule = () => {
-  return { type: MODULE_UPDATE }
+  return { type: MODULE_PUT }
 }
-export const updateModuleSuccess = (response) => {
+export const putModuleSuccess = (response) => {
   // For some reason the response is an array, grab the first item
-  return { type: MODULE_UPDATE_SUCCESS, module: response[0] }
+  return { type: MODULE_PUT_SUCCESS, module: response[0] }
 }
-export const updateModuleError = (error) => {
-  return { type: MODULE_UPDATE_ERROR, error }
+export const putModuleError = (error) => {
+  return { type: MODULE_PUT_ERROR, error }
 }
 
 
@@ -84,20 +91,20 @@ const modulesReducer = (state = initialState, action) => {
         error: action.error,
       }
 
-    case MODULE_UPDATE:
+    case MODULE_PUT:
       return {
         ...state,
         state: 'loading',
       }
 
-    case MODULE_UPDATE_SUCCESS:
+    case MODULE_PUT_SUCCESS:
       return {
         ...state,
         state: 'success',
         error: false,
       }
 
-    case MODULE_UPDATE_ERROR:
+    case MODULE_PUT_ERROR:
       return {
         ...state,
         state: 'error',
