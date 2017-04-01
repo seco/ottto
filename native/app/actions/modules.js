@@ -40,13 +40,6 @@ export const putModule = (module) => {
       module => dispatch(putModuleSuccess(module)),
       error => dispatch(putModuleError(module)),
     )
-    // return fetch('http://localhost:1337/api/modules/' + module.id, {
-    //     method: 'PUT',
-    //     body: JSON.stringify(module)
-    //   })
-    //   .then(response => response.json())
-    //   .then(module => dispatch(putModuleSuccess(module)))
-    //   .catch(error => dispatch(putModuleError(error)))
   }
 }
 export const updatingModule = () => {

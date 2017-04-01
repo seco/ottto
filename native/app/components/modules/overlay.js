@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { putModule } from '../../actions/modules'
 
 import {
   Animated,
@@ -82,9 +84,22 @@ class ModuleOverlay extends Component {
 
   renderModule(module) {
     switch (this.props.module.type.id) {
-      case 1: return (<Light module={module} />)
-      case 2: return (<Motion module={module} />)
+      case 1:
+        return (
+          <Light module={module}
+            onModuleChange={this.onModuleChange.bind(this)} />
+        )
+      case 2:
+        return (
+          <Motion module={module}
+            onModuleChange={this.onModuleChange.bind(this)} />
+        )
     }
+  }
+
+
+  onModuleChange(module) {
+    this.props.putModule(module)
   }
 
 
@@ -159,5 +174,5 @@ const styles = StyleSheet.create({
 
 export default connect(
   (state) => ({ module: state.modules.active }),
-  (dispatch) => ({ })
+  (dispatch) => ( bindActionCreators({ putModule }, dispatch) )
 )(ModuleOverlay)

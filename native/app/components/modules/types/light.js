@@ -48,14 +48,14 @@ class Light extends Component {
     let module = _.clone(this.props.module)
     module.values.color = color
 
-    this.props.updateModule(module)
+    this.props.onModuleChange(module)
   }
 
   onLevelChange(number) {
     let module = _.clone(this.props.module)
     module.values.level = number
 
-    this.props.updateModule(module)
+    this.props.onModuleChange(module)
   }
 }
 
