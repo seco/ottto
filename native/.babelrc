@@ -1,6 +1,5 @@
 {
   "presets": [
-    "latest",
     "react-native"
   ]
 }
