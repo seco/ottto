@@ -9,11 +9,17 @@ const MODULE_PUT = 'MODULE_PUT'
 const MODULE_PUT_SUCCESS = 'MODULE_PUT_SUCCESS'
 const MODULE_PUT_ERROR = 'MODULE_PUT_ERROR'
 
+const MODULE_UPDATED = 'MODULE_UPDATED'
+
 
 // Action Creators
 export const getModule = (id) => {
   return (dispatch, getState) => {
     dispatch(gettingModule())
+
+    socket.on('modules', message => {
+      if(message.verb == 'updated') { dispatch(updatedModule(message.data)) }
+    })
 
     return socket.get('/api/modules/' + id)
       .then( module => dispatch(getModuleSuccess(module)) )
@@ -48,6 +54,10 @@ export const putModuleSuccess = (response) => {
 }
 export const putModuleError = (error) => {
   return { type: MODULE_PUT_ERROR, error }
+}
+
+export const updatedModule = (module) => {
+  return { type: MODULE_UPDATED, module }
 }
 
 
@@ -99,6 +109,12 @@ const modulesReducer = (state = initialState, action) => {
         ...state,
         state: 'error',
         error: action.error,
+      }
+
+    case MODULE_UPDATED:
+      return {
+        ...state,
+        active: { ...state.active, ...action.module }
       }
 
     default: return state;

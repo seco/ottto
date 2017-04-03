@@ -6,26 +6,44 @@ const io = sailsIO(socketIO)
 io.sails.url = 'http://localhost:1337'
 io.sails.useCORSRouteToGetCookie = false
 
-const promisified = (method) => {
-  return (url, data) => {
-    return new Promise( (resolve, reject) => {
-      if(method == 'get') {
-        io.socket[method](url, resolve, reject)
-      } else {
-        io.socket[method](url, data, resolve, reject)
-      }
-    })
+class Socket {
+
+  promisified(method) {
+    return (url, data) => {
+      return new Promise( (resolve, reject) => {
+        if(data == undefined) {
+          io.socket[method](url, resolve, reject)
+        } else {
+          io.socket[method](url, data, resolve, reject)
+        }
+      })
+    }
   }
+
+  get(url) {
+    return this.promisified('get')(url)
+  }
+
+  put(url, data) {
+    return this.promisified('put')(url, data)
+  }
+
+  post(url, data) {
+    return this.promisified('post')(url, data)
+  }
+
+  delete(url) {
+    return this.promisified('delete')(url)
+  }
+
+  on(name, callback) {
+    io.socket.on(name, callback)
+  }
+
+  off(name, callback) {
+    io.socket.off(name, callback)
+  }
+
 }
 
-const methods = {
-    get: promisified('get'),
-    put: promisified('put'),
-    post: promisified('post'),
-    delete: promisified('delete'),
-
-    on: io.socket.on,
-    off: io.socket.off,
-}
-
-export default methods
+export default new Socket

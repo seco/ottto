@@ -2,13 +2,13 @@ var request = require('request');
 
 module.exports = {
 
-  update: function(id, params) {
+  update: function(id, params, req) {
     if(!id || _.isEmpty(params)) return;
 
     return this._getModule(id)
       .then(this._coerceValuesTypes(params))
       .then(this._updateModule)
-      .then(this._broadcastChanges)
+      .then(this._broadcastChanges(req))
       .then(this._createEvents);
   },
 
@@ -69,40 +69,42 @@ module.exports = {
   },
 
 
-  _broadcastChanges: function(args) {
-    var pre = args[0],
-        post = args[1],
-        params = args[2],
+  _broadcastChanges: function(req) {
+    return function(args) {
+      var pre = args[0],
+          post = args[1],
+          params = args[2],
 
-        id = pre.id;
+          id = pre.id;
 
-    Modules
-      .find(id)
-      .populateAll()
-      .then(function(modules) {
-        Modules.publishUpdate(id, modules[0]);
-        return modules[0]
-      });
+      Modules
+        .find(id)
+        .populateAll()
+        .then(function(modules) {
+          Modules.publishUpdate(id, modules[0], req);
+          return modules[0]
+        });
 
-    // TODO: Have some sort of action confirm that the values
-    // sent were also received.  Fire some sort of messaging otherwise.
-    if (pre.ip) {
-      request({
-        url: 'http://' + pre.ip + '/',
-        method: 'PUT',
-        // TODO: Remove this hack, should be able to pass params as body
-        qs: { plain: JSON.stringify({ values: params.values }) }
-        // json: true,
-        // body: params
-      },
-      function(error, response, body) {
-        console.log('response', error, response, body);
-      });
+      // // TODO: Have some sort of action confirm that the values
+      // // sent were also received.  Fire some sort of messaging otherwise.
+      // if (pre.ip) {
+      //   request({
+      //     url: 'http://' + pre.ip + '/',
+      //     method: 'PUT',
+      //     // TODO: Remove this hack, should be able to pass params as body
+      //     qs: { plain: JSON.stringify({ values: params.values }) }
+      //     // json: true,
+      //     // body: params
+      //   },
+      //   function(error, response, body) {
+      //     console.log('response', error, response, body);
+      //   });
+      //
+      //   console.log('sending', pre.ip, { values: params.values });
+      // }
 
-      console.log('sending', pre.ip, { values: params.values });
+      return Promise.all([ pre, post ]);
     }
-
-    return Promise.all([ pre, post ]);
   },
 
 
