@@ -5,15 +5,12 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { updateModule } from '../../../actions/modules'
 
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import Color from '../attributes/color'
 import Number from '../attributes/number'
+import Boolean from '../attributes/boolean'
 
 
 class Light extends Component {
@@ -28,18 +25,28 @@ class Light extends Component {
         return attribute.name == 'level'
       })
 
+    const power =
+      this.props.module.type.attributes.find((attribute) => {
+        return attribute.name == 'power'
+      })
+
     return (
       <View style={styles.container}>
         <Text style={styles.label}>Color</Text>
         <Color
           value={this.props.module.values.color}
           attribute={color}
-          onValueChange={_.throttle(this.onColorChange.bind(this), 200)} />
+          onValueChange={this.onColorChange.bind(this)} />
         <Text style={styles.label}>Level</Text>
         <Number
           value={parseInt(this.props.module.values.level, 10)}
           attribute={level}
-          onValueChange={_.throttle(this.onLevelChange.bind(this), 200)}/>
+          onValueChange={this.onLevelChange.bind(this)}/>
+        <Text style={styles.label}>Power</Text>
+        <Boolean
+          value={this.props.module.values.power}
+          attribute={power}
+          onValueChange={this.onPowerChange.bind(this)} />
       </View>
     )
   }
@@ -54,6 +61,15 @@ class Light extends Component {
   onLevelChange(number) {
     let module = _.clone(this.props.module)
     module.values.level = number
+
+    console.log(number)
+
+    this.props.onModuleChange(module)
+  }
+
+  onPowerChange(power) {
+    let module = _.clone(this.props.module)
+    module.values.power = power
 
     this.props.onModuleChange(module)
   }

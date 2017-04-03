@@ -62,8 +62,12 @@ class ModuleOverlay extends Component {
           ]}>
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>{this.props.module.name}</Text>
-              <Text style={styles.modalSubtitle}>{this.props.module.type.name}</Text>
+              <Text style={styles.modalTitle}>
+                {this.props.module.name}
+              </Text>
+              <Text style={styles.modalSubtitle}>
+                {this.props.module.type.name}
+              </Text>
             </View>
 
             <View style={styles.modalBody}>

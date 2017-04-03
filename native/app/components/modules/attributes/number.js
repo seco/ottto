@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 import React, { Component } from 'react'
 import {
   StyleSheet,
@@ -14,15 +16,16 @@ class Number extends Component {
 
     return (
       <Slider value={this.props.value}
-        minimumValue={this.props.attribute.min}
-        maximumValue={this.props.attribute.max}
-        step={this.props.attribute.step}
-        onValueChange={this.onValueChange.bind(this)} />
+        minimumValue={attribute.min}
+        maximumValue={attribute.max}
+        step={attribute.step}
+        onValueChange={_.throttle(this.onValueChange.bind(this), 200, { leading: false })} />
     )
   }
 
   onValueChange(value) {
-     this.props.onValueChange && this.props.onValueChange(value)
+    console.log('value', value)
+    this.props.onValueChange && this.props.onValueChange(value)
   }
 }
 

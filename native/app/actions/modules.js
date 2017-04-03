@@ -94,6 +94,7 @@ const modulesReducer = (state = initialState, action) => {
     case MODULE_PUT:
       return {
         ...state,
+        active: { ...state.active, ...action.module },
         state: 'loading',
       }
 

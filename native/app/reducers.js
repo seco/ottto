@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
 
-import roomsReducer from '../actions/rooms';
-import modulesReducer from '../actions/modules';
+import roomsReducer from './actions/rooms';
+import modulesReducer from './actions/modules';
 
 
 export default combineReducers({

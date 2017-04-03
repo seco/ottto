@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 import React, { Component } from 'react'
 import {
   StyleSheet,
@@ -34,6 +36,9 @@ class Color extends Component {
       onPanResponderMove: this.onMove.bind(this),
       onPanResponderRelease: this.onMoveEnd.bind(this),
     })
+
+    this.onValueChange =
+      _.throttle(props.onValueChange.bind(this), 200, { leading: false })
   }
 
   onMove(event, gesture) {
@@ -57,7 +62,7 @@ class Color extends Component {
       color
     })
 
-    this.props.onValueChange && this.props.onValueChange(color)
+    this.onValueChange(color)
   }
 
   getAngle(x, y) {
