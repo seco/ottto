@@ -39,7 +39,7 @@ class Light extends Component {
           onValueChange={this.onColorChange.bind(this)} />
         <Text style={styles.label}>Level</Text>
         <Number
-          value={parseInt(this.props.module.values.level, 10)}
+          value={this.props.module.values.level}
           attribute={level}
           onValueChange={this.onLevelChange.bind(this)}/>
         <Text style={styles.label}>Power</Text>

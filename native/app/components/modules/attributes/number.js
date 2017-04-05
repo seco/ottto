@@ -15,7 +15,7 @@ class Number extends Component {
     const { value, attribute } = this.props
 
     return (
-      <Slider value={this.props.value}
+      <Slider value={parseInt(this.props.value, 10)}
         minimumValue={attribute.min}
         maximumValue={attribute.max}
         step={attribute.step}

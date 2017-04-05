@@ -23176,6 +23176,1662 @@
         "createdAt": "2017-04-03T08:38:49.049Z",
         "updatedAt": "2017-04-03T08:38:49.049Z",
         "id": 7805
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "81",
+        "value": "63",
+        "createdAt": "2017-04-05T09:08:07.725Z",
+        "updatedAt": "2017-04-05T09:08:07.725Z",
+        "id": 7806
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "63",
+        "value": "49",
+        "createdAt": "2017-04-05T09:08:07.869Z",
+        "updatedAt": "2017-04-05T09:08:07.869Z",
+        "id": 7807
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "49",
+        "value": "48",
+        "createdAt": "2017-04-05T09:08:08.007Z",
+        "updatedAt": "2017-04-05T09:08:08.007Z",
+        "id": 7808
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "48",
+        "value": "63",
+        "createdAt": "2017-04-05T09:08:11.104Z",
+        "updatedAt": "2017-04-05T09:08:11.104Z",
+        "id": 7809
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "63",
+        "value": "70",
+        "createdAt": "2017-04-05T09:08:11.334Z",
+        "updatedAt": "2017-04-05T09:08:11.334Z",
+        "id": 7810
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "70",
+        "value": "73",
+        "createdAt": "2017-04-05T09:08:12.748Z",
+        "updatedAt": "2017-04-05T09:08:12.748Z",
+        "id": 7811
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "73",
+        "value": "84",
+        "createdAt": "2017-04-05T09:08:12.961Z",
+        "updatedAt": "2017-04-05T09:08:12.961Z",
+        "id": 7812
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "84",
+        "value": "86",
+        "createdAt": "2017-04-05T09:08:13.174Z",
+        "updatedAt": "2017-04-05T09:08:13.174Z",
+        "id": 7813
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "86",
+        "value": "59",
+        "createdAt": "2017-04-05T09:08:13.904Z",
+        "updatedAt": "2017-04-05T09:08:13.904Z",
+        "id": 7814
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "59",
+        "value": "37",
+        "createdAt": "2017-04-05T09:08:14.137Z",
+        "updatedAt": "2017-04-05T09:08:14.137Z",
+        "id": 7815
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "37",
+        "value": "39",
+        "createdAt": "2017-04-05T09:08:15.031Z",
+        "updatedAt": "2017-04-05T09:08:15.031Z",
+        "id": 7816
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "39",
+        "value": "60",
+        "createdAt": "2017-04-05T09:08:15.248Z",
+        "updatedAt": "2017-04-05T09:08:15.248Z",
+        "id": 7817
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "60",
+        "value": "88",
+        "createdAt": "2017-04-05T09:08:15.477Z",
+        "updatedAt": "2017-04-05T09:08:15.477Z",
+        "id": 7818
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "88",
+        "value": "92",
+        "createdAt": "2017-04-05T09:08:15.711Z",
+        "updatedAt": "2017-04-05T09:08:15.711Z",
+        "id": 7819
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "92",
+        "value": "93",
+        "createdAt": "2017-04-05T09:08:15.945Z",
+        "updatedAt": "2017-04-05T09:08:15.945Z",
+        "id": 7820
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "100",
+        "createdAt": "2017-04-05T09:08:16.381Z",
+        "updatedAt": "2017-04-05T09:08:16.381Z",
+        "id": 7821
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "100",
+        "value": "95",
+        "createdAt": "2017-04-05T09:08:58.189Z",
+        "updatedAt": "2017-04-05T09:08:58.189Z",
+        "id": 7822
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "95",
+        "value": "93",
+        "createdAt": "2017-04-05T09:08:58.436Z",
+        "updatedAt": "2017-04-05T09:08:58.436Z",
+        "id": 7823
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "91",
+        "createdAt": "2017-04-05T09:08:58.812Z",
+        "updatedAt": "2017-04-05T09:08:58.812Z",
+        "id": 7824
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "90",
+        "createdAt": "2017-04-05T09:08:58.856Z",
+        "updatedAt": "2017-04-05T09:08:58.856Z",
+        "id": 7825
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "88",
+        "createdAt": "2017-04-05T09:08:58.897Z",
+        "updatedAt": "2017-04-05T09:08:58.897Z",
+        "id": 7826
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "87",
+        "createdAt": "2017-04-05T09:08:58.934Z",
+        "updatedAt": "2017-04-05T09:08:58.934Z",
+        "id": 7827
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "86",
+        "createdAt": "2017-04-05T09:08:59.148Z",
+        "updatedAt": "2017-04-05T09:08:59.148Z",
+        "id": 7828
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "85",
+        "createdAt": "2017-04-05T09:08:59.303Z",
+        "updatedAt": "2017-04-05T09:08:59.303Z",
+        "id": 7829
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "84",
+        "createdAt": "2017-04-05T09:08:59.349Z",
+        "updatedAt": "2017-04-05T09:08:59.349Z",
+        "id": 7830
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "83",
+        "createdAt": "2017-04-05T09:08:59.391Z",
+        "updatedAt": "2017-04-05T09:08:59.391Z",
+        "id": 7831
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "82",
+        "createdAt": "2017-04-05T09:08:59.432Z",
+        "updatedAt": "2017-04-05T09:08:59.432Z",
+        "id": 7832
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "93",
+        "value": "80",
+        "createdAt": "2017-04-05T09:08:59.831Z",
+        "updatedAt": "2017-04-05T09:08:59.831Z",
+        "id": 7833
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "87",
+        "value": "79",
+        "createdAt": "2017-04-05T09:08:59.941Z",
+        "updatedAt": "2017-04-05T09:08:59.941Z",
+        "id": 7834
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "86",
+        "value": "78",
+        "createdAt": "2017-04-05T09:09:00.000Z",
+        "updatedAt": "2017-04-05T09:09:00.000Z",
+        "id": 7835
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "86",
+        "value": "76",
+        "createdAt": "2017-04-05T09:09:00.073Z",
+        "updatedAt": "2017-04-05T09:09:00.073Z",
+        "id": 7836
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "86",
+        "value": "75",
+        "createdAt": "2017-04-05T09:09:00.160Z",
+        "updatedAt": "2017-04-05T09:09:00.160Z",
+        "id": 7837
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "86",
+        "value": "73",
+        "createdAt": "2017-04-05T09:09:00.197Z",
+        "updatedAt": "2017-04-05T09:09:00.197Z",
+        "id": 7838
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "86",
+        "value": "72",
+        "createdAt": "2017-04-05T09:09:00.241Z",
+        "updatedAt": "2017-04-05T09:09:00.241Z",
+        "id": 7839
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "86",
+        "value": "71",
+        "createdAt": "2017-04-05T09:09:00.281Z",
+        "updatedAt": "2017-04-05T09:09:00.281Z",
+        "id": 7840
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "86",
+        "value": "70",
+        "createdAt": "2017-04-05T09:09:00.324Z",
+        "updatedAt": "2017-04-05T09:09:00.324Z",
+        "id": 7841
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "86",
+        "value": "69",
+        "createdAt": "2017-04-05T09:09:00.366Z",
+        "updatedAt": "2017-04-05T09:09:00.366Z",
+        "id": 7842
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "86",
+        "value": "68",
+        "createdAt": "2017-04-05T09:09:00.462Z",
+        "updatedAt": "2017-04-05T09:09:00.462Z",
+        "id": 7843
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "80",
+        "value": "67",
+        "createdAt": "2017-04-05T09:09:00.631Z",
+        "updatedAt": "2017-04-05T09:09:00.631Z",
+        "id": 7844
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "69",
+        "value": "66",
+        "createdAt": "2017-04-05T09:09:01.132Z",
+        "updatedAt": "2017-04-05T09:09:01.132Z",
+        "id": 7845
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "69",
+        "value": "65",
+        "createdAt": "2017-04-05T09:09:01.178Z",
+        "updatedAt": "2017-04-05T09:09:01.178Z",
+        "id": 7846
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "68",
+        "value": "64",
+        "createdAt": "2017-04-05T09:09:01.244Z",
+        "updatedAt": "2017-04-05T09:09:01.244Z",
+        "id": 7847
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "68",
+        "value": "63",
+        "createdAt": "2017-04-05T09:09:01.289Z",
+        "updatedAt": "2017-04-05T09:09:01.289Z",
+        "id": 7848
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "68",
+        "value": "62",
+        "createdAt": "2017-04-05T09:09:01.332Z",
+        "updatedAt": "2017-04-05T09:09:01.332Z",
+        "id": 7849
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "68",
+        "value": "61",
+        "createdAt": "2017-04-05T09:09:01.372Z",
+        "updatedAt": "2017-04-05T09:09:01.372Z",
+        "id": 7850
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "68",
+        "value": "59",
+        "createdAt": "2017-04-05T09:09:01.414Z",
+        "updatedAt": "2017-04-05T09:09:01.414Z",
+        "id": 7851
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "68",
+        "value": "58",
+        "createdAt": "2017-04-05T09:09:01.457Z",
+        "updatedAt": "2017-04-05T09:09:01.457Z",
+        "id": 7852
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "68",
+        "value": "57",
+        "createdAt": "2017-04-05T09:09:01.501Z",
+        "updatedAt": "2017-04-05T09:09:01.501Z",
+        "id": 7853
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "68",
+        "value": "56",
+        "createdAt": "2017-04-05T09:09:01.544Z",
+        "updatedAt": "2017-04-05T09:09:01.544Z",
+        "id": 7854
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "68",
+        "value": "55",
+        "createdAt": "2017-04-05T09:09:01.588Z",
+        "updatedAt": "2017-04-05T09:09:01.588Z",
+        "id": 7855
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "67",
+        "value": "54",
+        "createdAt": "2017-04-05T09:09:02.066Z",
+        "updatedAt": "2017-04-05T09:09:02.066Z",
+        "id": 7856
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "56",
+        "createdAt": "2017-04-05T09:09:03.063Z",
+        "updatedAt": "2017-04-05T09:09:03.063Z",
+        "id": 7857
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "58",
+        "createdAt": "2017-04-05T09:09:03.108Z",
+        "updatedAt": "2017-04-05T09:09:03.108Z",
+        "id": 7858
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "60",
+        "createdAt": "2017-04-05T09:09:03.152Z",
+        "updatedAt": "2017-04-05T09:09:03.152Z",
+        "id": 7859
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "62",
+        "createdAt": "2017-04-05T09:09:03.248Z",
+        "updatedAt": "2017-04-05T09:09:03.248Z",
+        "id": 7860
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "64",
+        "createdAt": "2017-04-05T09:09:03.292Z",
+        "updatedAt": "2017-04-05T09:09:03.292Z",
+        "id": 7861
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "67",
+        "createdAt": "2017-04-05T09:09:03.336Z",
+        "updatedAt": "2017-04-05T09:09:03.336Z",
+        "id": 7862
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "68",
+        "createdAt": "2017-04-05T09:09:03.381Z",
+        "updatedAt": "2017-04-05T09:09:03.381Z",
+        "id": 7863
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "69",
+        "createdAt": "2017-04-05T09:09:03.422Z",
+        "updatedAt": "2017-04-05T09:09:03.422Z",
+        "id": 7864
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "70",
+        "createdAt": "2017-04-05T09:09:03.465Z",
+        "updatedAt": "2017-04-05T09:09:03.465Z",
+        "id": 7865
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "72",
+        "createdAt": "2017-04-05T09:09:03.509Z",
+        "updatedAt": "2017-04-05T09:09:03.509Z",
+        "id": 7866
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "73",
+        "createdAt": "2017-04-05T09:09:03.561Z",
+        "updatedAt": "2017-04-05T09:09:03.561Z",
+        "id": 7867
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "74",
+        "createdAt": "2017-04-05T09:09:03.641Z",
+        "updatedAt": "2017-04-05T09:09:03.641Z",
+        "id": 7868
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "75",
+        "createdAt": "2017-04-05T09:09:03.726Z",
+        "updatedAt": "2017-04-05T09:09:03.726Z",
+        "id": 7869
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "76",
+        "createdAt": "2017-04-05T09:09:03.768Z",
+        "updatedAt": "2017-04-05T09:09:03.768Z",
+        "id": 7870
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "77",
+        "createdAt": "2017-04-05T09:09:03.809Z",
+        "updatedAt": "2017-04-05T09:09:03.809Z",
+        "id": 7871
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "78",
+        "createdAt": "2017-04-05T09:09:03.851Z",
+        "updatedAt": "2017-04-05T09:09:03.851Z",
+        "id": 7872
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "79",
+        "createdAt": "2017-04-05T09:09:03.894Z",
+        "updatedAt": "2017-04-05T09:09:03.894Z",
+        "id": 7873
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "80",
+        "createdAt": "2017-04-05T09:09:03.938Z",
+        "updatedAt": "2017-04-05T09:09:03.938Z",
+        "id": 7874
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "81",
+        "createdAt": "2017-04-05T09:09:03.982Z",
+        "updatedAt": "2017-04-05T09:09:03.982Z",
+        "id": 7875
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "82",
+        "createdAt": "2017-04-05T09:09:04.027Z",
+        "updatedAt": "2017-04-05T09:09:04.027Z",
+        "id": 7876
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "83",
+        "createdAt": "2017-04-05T09:09:04.075Z",
+        "updatedAt": "2017-04-05T09:09:04.075Z",
+        "id": 7877
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "84",
+        "createdAt": "2017-04-05T09:09:04.121Z",
+        "updatedAt": "2017-04-05T09:09:04.121Z",
+        "id": 7878
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "55",
+        "value": "85",
+        "createdAt": "2017-04-05T09:09:05.012Z",
+        "updatedAt": "2017-04-05T09:09:05.012Z",
+        "id": 7879
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "84",
+        "createdAt": "2017-04-05T09:09:05.849Z",
+        "updatedAt": "2017-04-05T09:09:05.849Z",
+        "id": 7880
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "83",
+        "createdAt": "2017-04-05T09:09:05.895Z",
+        "updatedAt": "2017-04-05T09:09:05.895Z",
+        "id": 7881
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "81",
+        "createdAt": "2017-04-05T09:09:05.937Z",
+        "updatedAt": "2017-04-05T09:09:05.937Z",
+        "id": 7882
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "79",
+        "createdAt": "2017-04-05T09:09:05.980Z",
+        "updatedAt": "2017-04-05T09:09:05.980Z",
+        "id": 7883
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "77",
+        "createdAt": "2017-04-05T09:09:06.022Z",
+        "updatedAt": "2017-04-05T09:09:06.022Z",
+        "id": 7884
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "74",
+        "createdAt": "2017-04-05T09:09:06.065Z",
+        "updatedAt": "2017-04-05T09:09:06.065Z",
+        "id": 7885
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "71",
+        "createdAt": "2017-04-05T09:09:06.109Z",
+        "updatedAt": "2017-04-05T09:09:06.109Z",
+        "id": 7886
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "70",
+        "createdAt": "2017-04-05T09:09:06.150Z",
+        "updatedAt": "2017-04-05T09:09:06.150Z",
+        "id": 7887
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "68",
+        "createdAt": "2017-04-05T09:09:06.196Z",
+        "updatedAt": "2017-04-05T09:09:06.196Z",
+        "id": 7888
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "66",
+        "createdAt": "2017-04-05T09:09:06.242Z",
+        "updatedAt": "2017-04-05T09:09:06.242Z",
+        "id": 7889
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "65",
+        "createdAt": "2017-04-05T09:09:06.287Z",
+        "updatedAt": "2017-04-05T09:09:06.287Z",
+        "id": 7890
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "63",
+        "createdAt": "2017-04-05T09:09:06.330Z",
+        "updatedAt": "2017-04-05T09:09:06.330Z",
+        "id": 7891
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "62",
+        "createdAt": "2017-04-05T09:09:06.372Z",
+        "updatedAt": "2017-04-05T09:09:06.372Z",
+        "id": 7892
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "61",
+        "createdAt": "2017-04-05T09:09:06.415Z",
+        "updatedAt": "2017-04-05T09:09:06.415Z",
+        "id": 7893
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "60",
+        "createdAt": "2017-04-05T09:09:06.459Z",
+        "updatedAt": "2017-04-05T09:09:06.459Z",
+        "id": 7894
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "59",
+        "createdAt": "2017-04-05T09:09:06.503Z",
+        "updatedAt": "2017-04-05T09:09:06.503Z",
+        "id": 7895
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "58",
+        "createdAt": "2017-04-05T09:09:06.542Z",
+        "updatedAt": "2017-04-05T09:09:06.542Z",
+        "id": 7896
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "57",
+        "createdAt": "2017-04-05T09:09:06.582Z",
+        "updatedAt": "2017-04-05T09:09:06.582Z",
+        "id": 7897
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "56",
+        "createdAt": "2017-04-05T09:09:06.625Z",
+        "updatedAt": "2017-04-05T09:09:06.625Z",
+        "id": 7898
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "60",
+        "value": "55",
+        "createdAt": "2017-04-05T09:09:07.375Z",
+        "updatedAt": "2017-04-05T09:09:07.375Z",
+        "id": 7899
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "60",
+        "value": "54",
+        "createdAt": "2017-04-05T09:09:07.419Z",
+        "updatedAt": "2017-04-05T09:09:07.419Z",
+        "id": 7900
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "60",
+        "value": "53",
+        "createdAt": "2017-04-05T09:09:07.461Z",
+        "updatedAt": "2017-04-05T09:09:07.461Z",
+        "id": 7901
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "84",
+        "value": "52",
+        "createdAt": "2017-04-05T09:09:07.688Z",
+        "updatedAt": "2017-04-05T09:09:07.688Z",
+        "id": 7902
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "84",
+        "value": "51",
+        "createdAt": "2017-04-05T09:09:07.733Z",
+        "updatedAt": "2017-04-05T09:09:07.733Z",
+        "id": 7903
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "84",
+        "value": "50",
+        "createdAt": "2017-04-05T09:09:07.773Z",
+        "updatedAt": "2017-04-05T09:09:07.773Z",
+        "id": 7904
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "84",
+        "value": "49",
+        "createdAt": "2017-04-05T09:09:07.812Z",
+        "updatedAt": "2017-04-05T09:09:07.812Z",
+        "id": 7905
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "84",
+        "value": "48",
+        "createdAt": "2017-04-05T09:09:07.852Z",
+        "updatedAt": "2017-04-05T09:09:07.852Z",
+        "id": 7906
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "84",
+        "value": "47",
+        "createdAt": "2017-04-05T09:09:07.890Z",
+        "updatedAt": "2017-04-05T09:09:07.890Z",
+        "id": 7907
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "84",
+        "value": "46",
+        "createdAt": "2017-04-05T09:09:07.929Z",
+        "updatedAt": "2017-04-05T09:09:07.929Z",
+        "id": 7908
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "84",
+        "value": "45",
+        "createdAt": "2017-04-05T09:09:07.966Z",
+        "updatedAt": "2017-04-05T09:09:07.966Z",
+        "id": 7909
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "84",
+        "value": "44",
+        "createdAt": "2017-04-05T09:09:08.004Z",
+        "updatedAt": "2017-04-05T09:09:08.004Z",
+        "id": 7910
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "43",
+        "createdAt": "2017-04-05T09:09:08.306Z",
+        "updatedAt": "2017-04-05T09:09:08.306Z",
+        "id": 7911
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "42",
+        "createdAt": "2017-04-05T09:09:08.355Z",
+        "updatedAt": "2017-04-05T09:09:08.355Z",
+        "id": 7912
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "41",
+        "createdAt": "2017-04-05T09:09:08.396Z",
+        "updatedAt": "2017-04-05T09:09:08.396Z",
+        "id": 7913
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "40",
+        "createdAt": "2017-04-05T09:09:08.437Z",
+        "updatedAt": "2017-04-05T09:09:08.437Z",
+        "id": 7914
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "39",
+        "createdAt": "2017-04-05T09:09:08.476Z",
+        "updatedAt": "2017-04-05T09:09:08.476Z",
+        "id": 7915
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "40",
+        "createdAt": "2017-04-05T09:09:08.519Z",
+        "updatedAt": "2017-04-05T09:09:08.519Z",
+        "id": 7916
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "41",
+        "createdAt": "2017-04-05T09:09:08.572Z",
+        "updatedAt": "2017-04-05T09:09:08.572Z",
+        "id": 7917
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "43",
+        "createdAt": "2017-04-05T09:09:08.644Z",
+        "updatedAt": "2017-04-05T09:09:08.644Z",
+        "id": 7918
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "44",
+        "createdAt": "2017-04-05T09:09:08.732Z",
+        "updatedAt": "2017-04-05T09:09:08.732Z",
+        "id": 7919
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "46",
+        "createdAt": "2017-04-05T09:09:08.774Z",
+        "updatedAt": "2017-04-05T09:09:08.774Z",
+        "id": 7920
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "48",
+        "createdAt": "2017-04-05T09:09:08.817Z",
+        "updatedAt": "2017-04-05T09:09:08.817Z",
+        "id": 7921
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "50",
+        "createdAt": "2017-04-05T09:09:08.857Z",
+        "updatedAt": "2017-04-05T09:09:08.857Z",
+        "id": 7922
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "52",
+        "createdAt": "2017-04-05T09:09:08.896Z",
+        "updatedAt": "2017-04-05T09:09:08.896Z",
+        "id": 7923
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "53",
+        "createdAt": "2017-04-05T09:09:08.941Z",
+        "updatedAt": "2017-04-05T09:09:08.941Z",
+        "id": 7924
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "54",
+        "createdAt": "2017-04-05T09:09:08.980Z",
+        "updatedAt": "2017-04-05T09:09:08.980Z",
+        "id": 7925
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "56",
+        "createdAt": "2017-04-05T09:09:10.095Z",
+        "updatedAt": "2017-04-05T09:09:10.095Z",
+        "id": 7926
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "57",
+        "createdAt": "2017-04-05T09:09:10.146Z",
+        "updatedAt": "2017-04-05T09:09:10.146Z",
+        "id": 7927
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "85",
+        "value": "58",
+        "createdAt": "2017-04-05T09:09:10.221Z",
+        "updatedAt": "2017-04-05T09:09:10.221Z",
+        "id": 7928
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "56",
+        "value": "59",
+        "createdAt": "2017-04-05T09:09:10.823Z",
+        "updatedAt": "2017-04-05T09:09:10.823Z",
+        "id": 7929
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "56",
+        "value": "60",
+        "createdAt": "2017-04-05T09:09:10.864Z",
+        "updatedAt": "2017-04-05T09:09:10.864Z",
+        "id": 7930
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "56",
+        "value": "61",
+        "createdAt": "2017-04-05T09:09:10.906Z",
+        "updatedAt": "2017-04-05T09:09:10.906Z",
+        "id": 7931
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "56",
+        "value": "62",
+        "createdAt": "2017-04-05T09:09:10.944Z",
+        "updatedAt": "2017-04-05T09:09:10.944Z",
+        "id": 7932
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "56",
+        "value": "63",
+        "createdAt": "2017-04-05T09:09:10.983Z",
+        "updatedAt": "2017-04-05T09:09:10.983Z",
+        "id": 7933
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "64",
+        "createdAt": "2017-04-05T09:09:11.189Z",
+        "updatedAt": "2017-04-05T09:09:11.189Z",
+        "id": 7934
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "65",
+        "createdAt": "2017-04-05T09:09:11.233Z",
+        "updatedAt": "2017-04-05T09:09:11.233Z",
+        "id": 7935
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "66",
+        "createdAt": "2017-04-05T09:09:11.273Z",
+        "updatedAt": "2017-04-05T09:09:11.273Z",
+        "id": 7936
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "67",
+        "createdAt": "2017-04-05T09:09:11.317Z",
+        "updatedAt": "2017-04-05T09:09:11.317Z",
+        "id": 7937
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "68",
+        "createdAt": "2017-04-05T09:09:11.356Z",
+        "updatedAt": "2017-04-05T09:09:11.356Z",
+        "id": 7938
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "69",
+        "createdAt": "2017-04-05T09:09:11.404Z",
+        "updatedAt": "2017-04-05T09:09:11.404Z",
+        "id": 7939
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "70",
+        "createdAt": "2017-04-05T09:09:11.449Z",
+        "updatedAt": "2017-04-05T09:09:11.449Z",
+        "id": 7940
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "71",
+        "createdAt": "2017-04-05T09:09:11.492Z",
+        "updatedAt": "2017-04-05T09:09:11.492Z",
+        "id": 7941
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "72",
+        "createdAt": "2017-04-05T09:09:11.533Z",
+        "updatedAt": "2017-04-05T09:09:11.533Z",
+        "id": 7942
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "73",
+        "createdAt": "2017-04-05T09:09:11.578Z",
+        "updatedAt": "2017-04-05T09:09:11.578Z",
+        "id": 7943
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "74",
+        "createdAt": "2017-04-05T09:09:11.620Z",
+        "updatedAt": "2017-04-05T09:09:11.620Z",
+        "id": 7944
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "75",
+        "createdAt": "2017-04-05T09:09:11.662Z",
+        "updatedAt": "2017-04-05T09:09:11.662Z",
+        "id": 7945
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "76",
+        "createdAt": "2017-04-05T09:09:11.704Z",
+        "updatedAt": "2017-04-05T09:09:11.704Z",
+        "id": 7946
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "77",
+        "createdAt": "2017-04-05T09:09:11.748Z",
+        "updatedAt": "2017-04-05T09:09:11.748Z",
+        "id": 7947
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "76",
+        "createdAt": "2017-04-05T09:09:11.819Z",
+        "updatedAt": "2017-04-05T09:09:11.819Z",
+        "id": 7948
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "73",
+        "createdAt": "2017-04-05T09:09:11.910Z",
+        "updatedAt": "2017-04-05T09:09:11.910Z",
+        "id": 7949
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "63",
+        "createdAt": "2017-04-05T09:09:11.951Z",
+        "updatedAt": "2017-04-05T09:09:11.951Z",
+        "id": 7950
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "54",
+        "createdAt": "2017-04-05T09:09:11.998Z",
+        "updatedAt": "2017-04-05T09:09:11.998Z",
+        "id": 7951
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "39",
+        "createdAt": "2017-04-05T09:09:12.046Z",
+        "updatedAt": "2017-04-05T09:09:12.046Z",
+        "id": 7952
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "33",
+        "createdAt": "2017-04-05T09:09:12.088Z",
+        "updatedAt": "2017-04-05T09:09:12.088Z",
+        "id": 7953
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "23",
+        "createdAt": "2017-04-05T09:09:12.130Z",
+        "updatedAt": "2017-04-05T09:09:12.130Z",
+        "id": 7954
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "18",
+        "createdAt": "2017-04-05T09:09:12.169Z",
+        "updatedAt": "2017-04-05T09:09:12.169Z",
+        "id": 7955
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "16",
+        "createdAt": "2017-04-05T09:09:12.210Z",
+        "updatedAt": "2017-04-05T09:09:12.210Z",
+        "id": 7956
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "14",
+        "createdAt": "2017-04-05T09:09:12.256Z",
+        "updatedAt": "2017-04-05T09:09:12.256Z",
+        "id": 7957
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "53",
+        "value": "13",
+        "createdAt": "2017-04-05T09:09:12.302Z",
+        "updatedAt": "2017-04-05T09:09:12.302Z",
+        "id": 7958
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "44",
+        "value": "14",
+        "createdAt": "2017-04-05T09:09:13.229Z",
+        "updatedAt": "2017-04-05T09:09:13.229Z",
+        "id": 7959
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "44",
+        "value": "16",
+        "createdAt": "2017-04-05T09:09:13.276Z",
+        "updatedAt": "2017-04-05T09:09:13.276Z",
+        "id": 7960
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "44",
+        "value": "19",
+        "createdAt": "2017-04-05T09:09:13.346Z",
+        "updatedAt": "2017-04-05T09:09:13.346Z",
+        "id": 7961
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "44",
+        "value": "22",
+        "createdAt": "2017-04-05T09:09:13.412Z",
+        "updatedAt": "2017-04-05T09:09:13.412Z",
+        "id": 7962
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "44",
+        "value": "25",
+        "createdAt": "2017-04-05T09:09:13.504Z",
+        "updatedAt": "2017-04-05T09:09:13.504Z",
+        "id": 7963
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "44",
+        "value": "29",
+        "createdAt": "2017-04-05T09:09:13.615Z",
+        "updatedAt": "2017-04-05T09:09:13.615Z",
+        "id": 7964
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "44",
+        "value": "34",
+        "createdAt": "2017-04-05T09:09:13.698Z",
+        "updatedAt": "2017-04-05T09:09:13.698Z",
+        "id": 7965
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "44",
+        "value": "38",
+        "createdAt": "2017-04-05T09:09:13.746Z",
+        "updatedAt": "2017-04-05T09:09:13.746Z",
+        "id": 7966
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "44",
+        "value": "41",
+        "createdAt": "2017-04-05T09:09:13.795Z",
+        "updatedAt": "2017-04-05T09:09:13.795Z",
+        "id": 7967
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "44",
+        "value": "43",
+        "createdAt": "2017-04-05T09:09:13.837Z",
+        "updatedAt": "2017-04-05T09:09:13.837Z",
+        "id": 7968
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "46",
+        "createdAt": "2017-04-05T09:09:13.920Z",
+        "updatedAt": "2017-04-05T09:09:13.920Z",
+        "id": 7969
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "47",
+        "createdAt": "2017-04-05T09:09:13.981Z",
+        "updatedAt": "2017-04-05T09:09:13.981Z",
+        "id": 7970
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "54",
+        "value": "48",
+        "createdAt": "2017-04-05T09:09:14.029Z",
+        "updatedAt": "2017-04-05T09:09:14.029Z",
+        "id": 7971
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "49",
+        "createdAt": "2017-04-05T09:09:14.137Z",
+        "updatedAt": "2017-04-05T09:09:14.137Z",
+        "id": 7972
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "51",
+        "createdAt": "2017-04-05T09:09:14.199Z",
+        "updatedAt": "2017-04-05T09:09:14.199Z",
+        "id": 7973
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "53",
+        "createdAt": "2017-04-05T09:09:14.276Z",
+        "updatedAt": "2017-04-05T09:09:14.276Z",
+        "id": 7974
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "55",
+        "createdAt": "2017-04-05T09:09:14.334Z",
+        "updatedAt": "2017-04-05T09:09:14.334Z",
+        "id": 7975
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "62",
+        "createdAt": "2017-04-05T09:09:14.398Z",
+        "updatedAt": "2017-04-05T09:09:14.398Z",
+        "id": 7976
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "66",
+        "createdAt": "2017-04-05T09:09:14.451Z",
+        "updatedAt": "2017-04-05T09:09:14.451Z",
+        "id": 7977
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "68",
+        "createdAt": "2017-04-05T09:09:14.497Z",
+        "updatedAt": "2017-04-05T09:09:14.497Z",
+        "id": 7978
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "71",
+        "createdAt": "2017-04-05T09:09:14.544Z",
+        "updatedAt": "2017-04-05T09:09:14.544Z",
+        "id": 7979
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "73",
+        "createdAt": "2017-04-05T09:09:14.614Z",
+        "updatedAt": "2017-04-05T09:09:14.614Z",
+        "id": 7980
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "74",
+        "createdAt": "2017-04-05T09:09:14.659Z",
+        "updatedAt": "2017-04-05T09:09:14.659Z",
+        "id": 7981
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "76",
+        "createdAt": "2017-04-05T09:09:14.703Z",
+        "updatedAt": "2017-04-05T09:09:14.703Z",
+        "id": 7982
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "77",
+        "createdAt": "2017-04-05T09:09:14.760Z",
+        "updatedAt": "2017-04-05T09:09:14.760Z",
+        "id": 7983
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "78",
+        "createdAt": "2017-04-05T09:09:14.815Z",
+        "updatedAt": "2017-04-05T09:09:14.815Z",
+        "id": 7984
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "79",
+        "createdAt": "2017-04-05T09:09:14.860Z",
+        "updatedAt": "2017-04-05T09:09:14.860Z",
+        "id": 7985
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "80",
+        "createdAt": "2017-04-05T09:09:14.916Z",
+        "updatedAt": "2017-04-05T09:09:14.916Z",
+        "id": 7986
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "81",
+        "createdAt": "2017-04-05T09:09:14.982Z",
+        "updatedAt": "2017-04-05T09:09:14.982Z",
+        "id": 7987
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "82",
+        "createdAt": "2017-04-05T09:09:15.050Z",
+        "updatedAt": "2017-04-05T09:09:15.050Z",
+        "id": 7988
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "58",
+        "value": "83",
+        "createdAt": "2017-04-05T09:09:15.096Z",
+        "updatedAt": "2017-04-05T09:09:15.096Z",
+        "id": 7989
       }
     ],
     "modulegroups": [
@@ -23581,10 +25237,10 @@
         "group": 7,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2017-04-03T08:38:49.005Z",
+        "updatedAt": "2017-04-05T09:09:13.154Z",
         "values": {
           "color": "#ff92de",
-          "level": 81,
+          "level": 83,
           "power": true
         },
         "address": "10.0.0.5",
@@ -24013,7 +25669,7 @@
     },
     "modulegroups_modules__modules_group": {},
     "moduleevents": {
-      "id": 7805
+      "id": 7989
     }
   }
 }
