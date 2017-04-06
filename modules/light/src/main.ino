@@ -1,31 +1,29 @@
+#include <DNSServer.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
+#include <WiFiManager.h>
+
 #include <ArduinoJson.h>
 
 
-int powerPin = D2;
-
-const char* ssid = "...";
-const char* password = "...";
+int powerPin = D0;
 
 ESP8266WebServer server(80);
+WiFiManager wifiManager;
 
 
 void setup() {
   pinMode(powerPin, OUTPUT);
 
   Serial.begin(115200);
-  WiFi.begin(ssid, password);
+  wifiManager.autoConnect("Light Bulb");
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
 
-  Serial.println("");
-  Serial.print("Connected to: ");
-  Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
   Serial.print("Mac address: ");

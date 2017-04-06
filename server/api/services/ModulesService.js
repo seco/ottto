@@ -85,23 +85,23 @@ module.exports = {
           return modules[0]
         });
 
-      // // TODO: Have some sort of action confirm that the values
-      // // sent were also received.  Fire some sort of messaging otherwise.
-      // if (pre.ip) {
-      //   request({
-      //     url: 'http://' + pre.ip + '/',
-      //     method: 'PUT',
-      //     // TODO: Remove this hack, should be able to pass params as body
-      //     qs: { plain: JSON.stringify({ values: params.values }) }
-      //     // json: true,
-      //     // body: params
-      //   },
-      //   function(error, response, body) {
-      //     console.log('response', error, response, body);
-      //   });
-      //
-      //   console.log('sending', pre.ip, { values: params.values });
-      // }
+      // TODO: Have some sort of action confirm that the values
+      // sent were also received.  Fire some sort of messaging otherwise.
+      if (pre.ip) {
+        request({
+          url: 'http://' + pre.ip + '/',
+          method: 'PUT',
+          // TODO: Remove this hack, should be able to pass params as body
+          qs: { plain: JSON.stringify({ values: params.values }) }
+          // json: true,
+          // body: params
+        },
+        function(error, response, body) {
+          console.log('response', error, response, body);
+        });
+
+        console.log('sending', pre.ip, { values: params.values });
+      }
 
       return Promise.all([ pre, post ]);
     }
