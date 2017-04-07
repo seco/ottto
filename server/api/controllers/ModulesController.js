@@ -18,7 +18,8 @@ module.exports = {
     return Modules
       .find(req.param('id'))
       .populateAll()
-      .then(res.ok);
+      .then(res.ok)
+      .catch(res.badRequest);
 
   },
 

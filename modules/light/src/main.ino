@@ -8,6 +8,7 @@
 
 
 int powerPin = D0;
+String serverAddress = "http://192.168.1.11:1337";
 
 ESP8266WebServer server(80);
 WiFiManager wifiManager;
@@ -48,11 +49,11 @@ void connect() {
 
   String body;
   json.prettyPrintTo(body);
-  Serial.print("Connect: ");
+  Serial.print("Register: ");
   Serial.println(body);
 
   HTTPClient http;
-  http.begin("http://10.0.0.6:1337/api/modules/register");
+  http.begin(serverAddress + "/api/modules/register");
   http.addHeader("Content-Type", "application/json");
   http.POST(body);
   http.end();
@@ -76,7 +77,7 @@ void send() {
   Serial.println(body); // Debugging
 
   HTTPClient http;
-  http.begin("http://10.0.0.6:1337/api/modules/16");
+  http.begin(serverAddress + "/api/modules/16");
   http.addHeader("Content-Type", "application/json");
   http.POST(body);
   http.end();

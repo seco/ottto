@@ -35,9 +35,10 @@ module.exports = {
   },
 
   host:
-    require('os').networkInterfaces().en0.filter(function(interface) {
-      return interface.family == 'IPv4';
-    })[0].address,
+    require('os').networkInterfaces().en0
+      .find(function(interface) {
+        return interface.family == 'IPv4';
+      }).address,
   port: 1337
 
   /***************************************************************************

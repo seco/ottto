@@ -97,7 +97,7 @@ module.exports = {
           // body: params
         },
         function(error, response, body) {
-          console.log('response', error, response, body);
+          console.log('response', error);
         });
 
         console.log('sending', pre.ip, { values: params.values });
