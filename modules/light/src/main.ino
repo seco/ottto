@@ -3,12 +3,11 @@
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
 #include <WiFiManager.h>
-
 #include <ArduinoJson.h>
 
 
-int powerPin = D0;
-String serverAddress = "http://192.168.1.11:1337";
+const int powerPin = D2;
+String baseAddress = "http://192.168.1.11:1337";
 
 ESP8266WebServer server(80);
 WiFiManager wifiManager;
@@ -19,11 +18,6 @@ void setup() {
 
   Serial.begin(115200);
   wifiManager.autoConnect("Light Bulb");
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
 
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
@@ -53,7 +47,7 @@ void connect() {
   Serial.println(body);
 
   HTTPClient http;
-  http.begin(serverAddress + "/api/modules/register");
+  http.begin(baseAddress + "/api/modules/register");
   http.addHeader("Content-Type", "application/json");
   http.POST(body);
   http.end();
@@ -77,7 +71,7 @@ void send() {
   Serial.println(body); // Debugging
 
   HTTPClient http;
-  http.begin(serverAddress + "/api/modules/16");
+  http.begin(baseAddress + "/api/modules/16");
   http.addHeader("Content-Type", "application/json");
   http.POST(body);
   http.end();

@@ -1,35 +1,25 @@
+#include <DNSServer.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
+#include <WiFiManager.h>
 #include <ArduinoJson.h>
+
 
 const int motionPin = D2;
 bool motionState = LOW;
-
-const char* ssid = "...";
-const char* password = "...";
-
-const char* host = "localhost";
-const int port = 1337;
-const char* url = "/api/modules/9";
+String baseAddress = "http://192.168.1.11:1337";
 
 ESP8266WebServer server(80);
+WiFiManager wifiManager;
 
 
 void setup() {
   pinMode(motionPin, INPUT);
 
   Serial.begin(115200);
-  WiFi.begin(ssid, password);
+  wifiManager.autoConnect("Motion Sensor");
 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-
-  Serial.println("");
-  Serial.print("Connected to: ");
-  Serial.println(ssid);
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
   Serial.print("Mac address: ");
@@ -56,7 +46,7 @@ void connect() {
   Serial.println(body);
 
   HTTPClient http;
-  http.begin("http://10.0.0.6:1337/api/modules/register");
+  http.begin(baseAddress + "/api/modules/register");
   http.addHeader("Content-Type", "application/json");
   http.POST(body);
   http.end();
@@ -95,7 +85,7 @@ void send() {
   Serial.println(body); // Debugging
 
   HTTPClient http;
-  http.begin("http://10.0.0.6:1337/api/modules/9");
+  http.begin(baseAddress + "/api/modules/9");
   http.addHeader("Content-Type", "application/json");
   http.POST(body);
   http.end();
