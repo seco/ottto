@@ -21,8 +21,6 @@ class Room extends Component {
   }
 
   renderOverlay() {
-    console.log('renderOverlay', this.props.active);
-
     if(this.props.active) {
       return (
         <ModulesOverlay module={this.props.active} />

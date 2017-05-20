@@ -6490,6 +6490,105 @@
         "createdAt": "2017-05-20T06:25:29.148Z",
         "updatedAt": "2017-05-20T06:25:29.148Z",
         "id": 8763
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "100",
+        "value": "90",
+        "createdAt": "2017-05-20T06:35:20.930Z",
+        "updatedAt": "2017-05-20T06:35:20.930Z",
+        "id": 8764
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "90",
+        "value": "77",
+        "createdAt": "2017-05-20T06:35:21.099Z",
+        "updatedAt": "2017-05-20T06:35:21.099Z",
+        "id": 8765
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "77",
+        "value": "75",
+        "createdAt": "2017-05-20T06:35:21.294Z",
+        "updatedAt": "2017-05-20T06:35:21.294Z",
+        "id": 8766
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "75",
+        "value": "89",
+        "createdAt": "2017-05-20T06:35:23.348Z",
+        "updatedAt": "2017-05-20T06:35:23.348Z",
+        "id": 8767
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "89",
+        "value": "100",
+        "createdAt": "2017-05-20T06:35:23.602Z",
+        "updatedAt": "2017-05-20T06:35:23.602Z",
+        "id": 8768
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "100",
+        "value": "79",
+        "createdAt": "2017-05-20T06:35:24.738Z",
+        "updatedAt": "2017-05-20T06:35:24.738Z",
+        "id": 8769
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "79",
+        "value": "60",
+        "createdAt": "2017-05-20T06:35:24.922Z",
+        "updatedAt": "2017-05-20T06:35:24.922Z",
+        "id": 8770
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "60",
+        "value": "43",
+        "createdAt": "2017-05-20T06:35:25.311Z",
+        "updatedAt": "2017-05-20T06:35:25.311Z",
+        "id": 8771
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "43",
+        "value": "42",
+        "createdAt": "2017-05-20T06:35:25.554Z",
+        "updatedAt": "2017-05-20T06:35:25.554Z",
+        "id": 8772
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "42",
+        "value": "99",
+        "createdAt": "2017-05-20T06:35:25.797Z",
+        "updatedAt": "2017-05-20T06:35:25.797Z",
+        "id": 8773
+      },
+      {
+        "module": 16,
+        "attribute": "level",
+        "previous": "99",
+        "value": "100",
+        "createdAt": "2017-05-20T06:35:26.003Z",
+        "updatedAt": "2017-05-20T06:35:26.003Z",
+        "id": 8774
       }
     ],
     "modulegroups": [
@@ -6895,10 +6994,10 @@
         "group": 7,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2017-05-20T06:25:29.121Z",
+        "updatedAt": "2017-05-20T06:35:25.984Z",
         "values": {
           "power": true,
-          "level": "100"
+          "level": 100
         },
         "address": "10.0.0.5",
         "power": "false",
@@ -7318,7 +7417,7 @@
     },
     "modulegroups_modules__modules_group": {},
     "moduleevents": {
-      "id": 8763
+      "id": 8774
     }
   }
 }
