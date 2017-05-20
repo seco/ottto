@@ -3,7 +3,7 @@ import _ from 'lodash'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { getModule } from '../../actions/modules'
+import { getModule, activateModule } from '../../actions/modules'
 
 import {
   ListView,
@@ -14,19 +14,9 @@ import {
 } from 'react-native'
 import { BlurView } from 'react-native-blur'
 import GridView from '../grid-view'
-import ModuleOverlay from './overlay'
 
 
 class ModulesGrid extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      showOverlay: false
-    }
-  }
-
-
   render() {
     const count = 24
     const modules = this.props.modules.map((module) => {
@@ -46,8 +36,6 @@ class ModulesGrid extends Component {
           itemsPerRow={4}
           renderItem={this.renderModule.bind(this)}>
         </GridView>
-
-        {this.renderOverlay.bind(this)()}
       </View>
     )
   }
@@ -89,40 +77,12 @@ class ModulesGrid extends Component {
 
 
   iconPress(module) {
-    this.openOverlay.bind(this)(module)
+    this.props.activateModule(module.id)
   }
 
 
   emptyLongPress() {
     console.log('show "add module" menu')
-  }
-
-
-  renderOverlay() {
-    if (this.state.showOverlay) {
-      return (
-        <ModuleOverlay onClose={this.onOverlayClose.bind(this)}/>
-      )
-    }
-  }
-
-
-  openOverlay(module) {
-    this.props.getModule(module.id)
-      .then((()=> {
-        this.setState({
-          ...this.state,
-          showOverlay: module
-        })
-      }).bind(this))
-  }
-
-
-  onOverlayClose() {
-    this.setState({
-      ...this.state,
-      showOverlay: false
-    })
   }
 }
 
@@ -169,5 +129,5 @@ const styles = StyleSheet.create({
 
 export default connect(
   (state) => ({ }),
-  (dispatch) => ( bindActionCreators({ getModule }, dispatch) )
+  (dispatch) => ( bindActionCreators({ getModule, activateModule }, dispatch) )
 )(ModulesGrid)

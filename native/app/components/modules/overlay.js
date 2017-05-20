@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { putModule } from '../../actions/modules'
+import { deactivateModule, putModule } from '../../actions/modules'
 
 import {
   Animated,
@@ -133,9 +133,7 @@ class ModuleOverlay extends Component {
 
 
   onClose() {
-    if (this.props.onClose) {
-      this.props.onClose()
-    }
+    this.props.deactivateModule()
   }
 }
 
@@ -182,6 +180,6 @@ const styles = StyleSheet.create({
 
 
 export default connect(
-  (state) => ({ module: state.modules.active }),
-  (dispatch) => ( bindActionCreators({ putModule }, dispatch) )
+  (state) => ({ }),
+  (dispatch) => ( bindActionCreators({ deactivateModule, putModule }, dispatch) )
 )(ModuleOverlay)

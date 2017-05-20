@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getRooms } from '../../actions/rooms'
+import { getModules } from '../../actions/modules'
 import { Actions } from 'react-native-router-flux'
 
 import { ListView, TouchableHighlight, Text, View, StyleSheet } from 'react-native'
@@ -10,6 +11,7 @@ import { ListView, TouchableHighlight, Text, View, StyleSheet } from 'react-nati
 class Rooms extends Component {
   componentWillMount() {
     this.props.getRooms()
+    this.props.getModules()
   }
 
   render() {
@@ -117,5 +119,5 @@ const styles = StyleSheet.create({
 
 export default connect(
   (state) => ({ rooms: state.rooms.rooms }),
-  (dispatch) => bindActionCreators({ getRooms }, dispatch)
+  (dispatch) => bindActionCreators({ getRooms, getModules }, dispatch)
 )(Rooms)
