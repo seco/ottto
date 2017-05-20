@@ -19,8 +19,16 @@ class Color extends Component {
   constructor(props) {
     super(props)
 
-    let left = WHEEL_RADIUS
-    let top = WHEEL_RADIUS
+    let color = tinycolor(props.value || '#FFF').toHsl()
+    let hue = color.h
+    let lightness = color.l
+
+    let angle = hue
+    let distance = (1 - lightness) * (2 * WHEEL_RADIUS)
+    let { x, y } = this.getCoordinates(angle, distance)
+
+    let left = WHEEL_RADIUS + x
+    let top = WHEEL_RADIUS - y
 
     this.state = {
       left: left,
@@ -28,7 +36,7 @@ class Color extends Component {
       cursorLeft: left - CURSOR_RADIUS,
       cursorTop: top - CURSOR_RADIUS,
 
-      color: '#FFF',
+      color: props.value,
     }
 
     this.panResponder = PanResponder.create({
@@ -39,6 +47,13 @@ class Color extends Component {
 
     this.onValueChange =
       _.throttle(props.onValueChange.bind(this), 200, { leading: false })
+  }
+
+  getCoordinates(angle, distance) {
+    return {
+      x: Math.round(Math.cos(angle * Math.PI / 180) * distance),
+      y: Math.round(Math.sin(angle * Math.PI / 180) * distance),
+    }
   }
 
   onMove(event, gesture) {
@@ -52,7 +67,7 @@ class Color extends Component {
 
     let hue = angle
     let saturation = 100
-    let lightness = (1 - distance / WHEEL_RADIUS) * 50 + 50
+    let lightness = 1 - (distance / (2 * WHEEL_RADIUS))
     let color = tinycolor({ h: hue, s: saturation, l: lightness }).toHexString()
 
     this.setState({

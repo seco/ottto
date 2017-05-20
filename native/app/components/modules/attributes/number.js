@@ -11,6 +11,13 @@ import {
 
 
 class Number extends Component {
+  constructor(props) {
+    super(props)
+
+    this.onValueChange =
+      _.throttle(props.onValueChange.bind(this), 200, { leading: false })
+  }
+
   render() {
     const { value, attribute } = this.props
 
@@ -19,13 +26,8 @@ class Number extends Component {
         minimumValue={attribute.min}
         maximumValue={attribute.max}
         step={attribute.step}
-        onValueChange={_.throttle(this.onValueChange.bind(this), 200, { leading: false })} />
+        onValueChange={this.onValueChange.bind(this)} />
     )
-  }
-
-  onValueChange(value) {
-    console.log('value', value)
-    this.props.onValueChange && this.props.onValueChange(value)
   }
 }
 

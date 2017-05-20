@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
 
 export default connect(
   (state, props) => {
+    console.log('active', state.modules.active, [state.modules.active])
     return {
       modules: _.filter(state.modules.entities, (module) => {
         return module.group ? module.group.id == props.room.id : false

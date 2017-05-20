@@ -4,7 +4,6 @@ import { StyleSheet, View, Text, Switch } from 'react-native'
 
 class Boolean extends Component {
   render() {
-    console.log('render', this.props)
     const { attribute, value } = this.props
     const truthy = attribute.options[0]
     const falsey = attribute.options[1]

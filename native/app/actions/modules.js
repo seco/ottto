@@ -66,15 +66,15 @@ export const getModuleError = (error) => {
 
 export const putModule = (module) => {
   return (dispatch, getState) => {
-    dispatch(updatingModule())
+    dispatch(puttingModule(module))
 
     return socket.put('/api/modules/' + module.id, module)
       .then(module => dispatch(putModuleSuccess(module)))
       .catch(error => dispatch(putModuleError(module)))
   }
 }
-export const updatingModule = () => {
-  return { type: MODULE_PUT }
+export const puttingModule = (module) => {
+  return { type: MODULE_PUT, module }
 }
 export const putModuleSuccess = (response) => {
   // For some reason the response is an array, grab the first item
@@ -141,15 +141,25 @@ const modulesReducer = (state = {}, action) => {
     case MODULE_PUT:
       return {
         ...state,
+        entities: {
+          ...state.entities,
+          [action.module.id]: {
+            ...state.entities[action.module.id],
+            ...action.module
+          }
+        }
       }
 
     case MODULE_PUT_SUCCESS:
       return {
-        ...modules,
-        entities: {
-          ...state.entities,
-          [action.module.id]: action.module
-        }
+        ...state,
+        // entities: {
+        //   ...state.entities,
+        //   [action.module.id]: {
+        //     ...state.entities[action.module.id],
+        //     ...action.module
+        //   }
+        // }
       }
 
     case MODULE_PUT_ERROR:
