@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -118,6 +120,6 @@ const styles = StyleSheet.create({
 
 
 export default connect(
-  (state) => ({ rooms: state.rooms.rooms }),
+  (state) => ({ rooms: _.toArray(state.rooms.entities) }),
   (dispatch) => bindActionCreators({ getRooms, getModules }, dispatch)
 )(Rooms)

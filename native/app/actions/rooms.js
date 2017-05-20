@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import socket from '../socket'
 
 // Action Types
@@ -10,7 +11,12 @@ const ROOM_POST_SUCCESS = 'ROOM_POST_SUCCESS'
 const ROOM_POST_ERROR = 'ROOM_POST_ERROR'
 
 const ROOM_PUT = 'ROOM_PUT'
+const ROOM_PUT_SUCCESS = 'ROOM_PUT_SUCCESS'
+const ROOM_PUT_ERROR = 'ROOM_PUT_ERROR'
+
 const ROOM_DELETE = 'ROOM_DELETE'
+const ROOM_DELETE_SUCCESS = 'ROOM_DELETE_SUCCESS'
+const ROOM_DELETE_ERROR = 'ROOM_DELETE_ERROR'
 
 
 // Action Creators
@@ -35,15 +41,15 @@ export const getRoomsError = (error) => {
 
 export const postRoom = (room) => {
   return (dispatch, getState) => {
-    dispatch(postingRoom())
+    dispatch(postingRoom(room))
 
     return socket.post('/api/modulegroups', room)
       .then(room => dispatch(postRoomSuccess(room)))
       .catch(error => dispatch(postRoomError(error)))
   }
 }
-export const postingRoom = () => {
-  return { type: ROOM_POST }
+export const postingRoom = (room) => {
+  return { type: ROOM_POST, room }
 }
 export const postRoomSuccess = (room) => {
   return { type: ROOM_POST_SUCCESS, room }
@@ -53,17 +59,47 @@ export const postRoomError = (error) => {
 }
 
 export const putRoom = (room) => {
+  return (dispatch, getState) => {
+    dispatch(puttingRoom(room))
+
+    return socket.put('/api/modulegroups/' + room.id, room)
+      .then(room => dispatch(putRoomSuccess(room)))
+      .catch(error => dispatch(putRoomError(room)))
+  }
+}
+export const puttingRoom = (room) => {
   return { type: ROOM_PUT, room }
 }
+export const putRoomSuccess = (room) => {
+  return { type: ROOM_PUT_SUCCESS, room }
+}
+export const putRoomError = (error) => {
+  return { type: ROOM_PUT_ERROR, error }
+}
+
 export const deleteRoom = (room) => {
+  return (dispatch, getState) => {
+    dispatch(deletingRoom(room))
+
+    return socket.delete('/api/modulegroups/' + room.id)
+      .then(room => dispatch(deleteRoomSuccess(room)))
+      .catch(error => dispatch(deleteRoomError(room)))
+  }
+}
+export const deletingRoom = (room) => {
   return { type: ROOM_DELETE, room }
+}
+export const deleteRoomSuccess = (room) => {
+  return { type: ROOM_DELETE_SUCCESS, room }
+}
+export const deleteRoomError = (error) => {
+  return { type: ROOM_DELETE_ERROR, error }
 }
 
 
 // Reducers
 const initialState = {
-  rooms: [],
-  state: 'empty'
+  entities: [],
 }
 
 const roomsReducer = (state = initialState, action) => {
@@ -71,58 +107,61 @@ const roomsReducer = (state = initialState, action) => {
     case ROOMS_GET:
       return {
         ...state,
-        state: 'loading',
-        error: false,
       }
 
     case ROOMS_GET_SUCCESS:
       return {
         ...state,
-        rooms: action.rooms,
-        state: 'loaded',
-        error: false,
+        entities: {
+          ...state.entities,
+          ..._.keyBy(action.rooms, 'id'),
+        }
       }
 
     case ROOMS_GET_ERROR:
       return {
         ...state,
-        state: 'error',
-        error: action.error,
       }
 
     case ROOM_POST_SUCCESS:
       return {
         ...state,
-        rooms: state.rooms.concat([action.room]),
-        state: 'loaded',
-        error: false,
+        entities: {
+          ...state.entities,
+          [action.room.id]: action.room
+        }
       }
 
     case ROOM_POST_ERROR:
       return {
         ...state,
-        state: 'error',
-        error: action.error,
       }
 
     case ROOM_PUT:
       return {
         ...state,
-        rooms: state.rooms.map((room) => {
-          if (room.id == action.payload.id) {
-            return { ...room, ...action.room };
-          } else {
-            return room;
-          }
-        })
+        entities: {
+          ...state.entities,
+          [action.room.id]: action.room
+        }
       }
 
     case ROOM_DELETE:
       return {
         ...state,
-        rooms: state.rooms.filter((room) => {
-          return room.id !== action.room.id
+      }
+
+    case ROOM_DELETE_SUCCESS:
+      return {
+        ...state,
+        entities: state.entities.filter((room) => {
+          room.id !== action.room.id
         })
+      }
+
+    case ROOM_DELETE_ERROR:
+      return {
+        ...state,
       }
 
     default: return state;
