@@ -52,22 +52,20 @@ class Light extends Component {
   }
 
   onColorChange(color) {
-    let module = _.clone(this.props.module)
-    module.values.color = color
-
-    this.props.onModuleChange(module)
+    this.onValueChange('color', color)
   }
 
-  onLevelChange(number) {
-    let module = _.clone(this.props.module)
-    module.values.level = number
-
-    this.props.onModuleChange(module)
+  onLevelChange(level) {
+    this.onValueChange('level', level)
   }
 
   onPowerChange(power) {
+    this.onValueChange('power', power)
+  }
+
+  onValueChange(name, value) {
     let module = _.clone(this.props.module)
-    module.values.power = power
+    module.values[name] = value
 
     this.props.onModuleChange(module)
   }
