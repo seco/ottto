@@ -19,14 +19,27 @@ class Color extends Component {
   constructor(props) {
     super(props)
 
-    let color = tinycolor(props.value || '#FFF').toHsl()
+    this.onLoad()
+
+    this.panResponder = PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onPanResponderGrant: this.onMove.bind(this),
+      onPanResponderMove: this.onMove.bind(this),
+      onPanResponderRelease: this.onMoveEnd.bind(this),
+    })
+
+    this.onValueChange =
+      _.throttle(props.onValueChange.bind(this), 200, { leading: false })
+  }
+
+  onLoad() {
+    let color = tinycolor(this.props.value || '#FFF').toHsl()
     let hue = color.h
     let lightness = color.l
 
     let angle = hue
-    let distance = (1 - lightness) * (2 * WHEEL_RADIUS)
+    let distance = Math.min((1 - lightness) * (2 * WHEEL_RADIUS), WHEEL_RADIUS)
     let { x, y } = this.getCoordinates(angle, distance)
-
     let left = WHEEL_RADIUS + x
     let top = WHEEL_RADIUS - y
 
@@ -35,18 +48,8 @@ class Color extends Component {
       top: top,
       cursorLeft: left - CURSOR_RADIUS,
       cursorTop: top - CURSOR_RADIUS,
-
-      color: props.value,
+      color: this.props.value,
     }
-
-    this.panResponder = PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onPanResponderMove: this.onMove.bind(this),
-      onPanResponderRelease: this.onMoveEnd.bind(this),
-    })
-
-    this.onValueChange =
-      _.throttle(props.onValueChange.bind(this), 200, { leading: false })
   }
 
   getCoordinates(angle, distance) {
@@ -57,13 +60,16 @@ class Color extends Component {
   }
 
   onMove(event, gesture) {
-    let left = this.state.left + gesture.dx
-    let top = this.state.top + gesture.dy
+    let preLeft = event.nativeEvent.locationX
+    let preTop = event.nativeEvent.locationY
+    let preX = preLeft - WHEEL_RADIUS
+    let preY = preTop - WHEEL_RADIUS
 
-    let x = left - WHEEL_RADIUS
-    let y = top - WHEEL_RADIUS
-    let angle = this.getAngle(x, y)
-    let distance = this.getDistance(x, y)
+    let angle = this.getAngle(preX, preY)
+    let distance = Math.min(this.getDistance(preX, preY), WHEEL_RADIUS)
+    let { x, y } = this.getCoordinates(angle, distance)
+    let left = WHEEL_RADIUS + x
+    let top = WHEEL_RADIUS - y
 
     let hue = angle
     let saturation = 100
@@ -73,7 +79,6 @@ class Color extends Component {
     this.setState({
       cursorLeft: left - CURSOR_RADIUS,
       cursorTop: top - CURSOR_RADIUS,
-
       color
     })
 
@@ -97,13 +102,14 @@ class Color extends Component {
 
   render() {
     return (
-      <View style={[styles.container, this.getWheelStyles()]}>
+      <View style={[styles.container, this.getWheelStyles()]}
+        {...this.panResponder.panHandlers}>
         <Image style={styles.colorWheel}
           source={require('./colorwheel.png')}
           resizeMode='contain' />
-        <View style={styles.cursorContainer}>
-          <Animated.View style={[styles.cursor, this.getCursorStyles()]}
-            {...this.panResponder.panHandlers} />
+        <View style={styles.cursorContainer}
+          pointerEvents="none">
+          <Animated.View style={[styles.cursor, this.getCursorStyles()]} />
         </View>
       </View>
     )
