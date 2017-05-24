@@ -29287,6 +29287,312 @@
         "createdAt": "2017-05-24T06:53:27.317Z",
         "updatedAt": "2017-05-24T06:53:27.317Z",
         "id": 11296
+      },
+      {
+        "module": 16,
+        "attribute": "color",
+        "previous": "#57dbff",
+        "value": "#ffb66d",
+        "createdAt": "2017-05-24T06:54:18.683Z",
+        "updatedAt": "2017-05-24T06:54:18.683Z",
+        "id": 11297
+      },
+      {
+        "module": 16,
+        "attribute": "color",
+        "previous": "#ffb66d",
+        "value": "#ff6789",
+        "createdAt": "2017-05-24T06:54:19.732Z",
+        "updatedAt": "2017-05-24T06:54:19.732Z",
+        "id": 11298
+      },
+      {
+        "module": 16,
+        "attribute": "color",
+        "previous": "#ff6789",
+        "value": "#c275ff",
+        "createdAt": "2017-05-24T06:54:20.602Z",
+        "updatedAt": "2017-05-24T06:54:20.602Z",
+        "id": 11299
+      },
+      {
+        "module": 16,
+        "attribute": "color",
+        "previous": "#c275ff",
+        "value": "#4966ff",
+        "createdAt": "2017-05-24T06:54:21.720Z",
+        "updatedAt": "2017-05-24T06:54:21.720Z",
+        "id": 11300
+      },
+      {
+        "module": 16,
+        "attribute": "color",
+        "previous": "#4966ff",
+        "value": "#56ff30",
+        "createdAt": "2017-05-24T06:54:22.930Z",
+        "updatedAt": "2017-05-24T06:54:22.930Z",
+        "id": 11301
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T06:58:15.318Z",
+        "updatedAt": "2017-05-24T06:58:15.318Z",
+        "id": 11302
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T06:58:16.849Z",
+        "updatedAt": "2017-05-24T06:58:16.849Z",
+        "id": 11303
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T06:58:17.541Z",
+        "updatedAt": "2017-05-24T06:58:17.541Z",
+        "id": 11304
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T06:58:19.148Z",
+        "updatedAt": "2017-05-24T06:58:19.148Z",
+        "id": 11305
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T06:58:20.078Z",
+        "updatedAt": "2017-05-24T06:58:20.078Z",
+        "id": 11306
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T06:58:20.848Z",
+        "updatedAt": "2017-05-24T06:58:20.848Z",
+        "id": 11307
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T06:59:03.491Z",
+        "updatedAt": "2017-05-24T06:59:03.491Z",
+        "id": 11308
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:00:37.854Z",
+        "updatedAt": "2017-05-24T07:00:37.854Z",
+        "id": 11309
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:00:38.692Z",
+        "updatedAt": "2017-05-24T07:00:38.692Z",
+        "id": 11310
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:00:39.384Z",
+        "updatedAt": "2017-05-24T07:00:39.384Z",
+        "id": 11311
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:00:40.072Z",
+        "updatedAt": "2017-05-24T07:00:40.072Z",
+        "id": 11312
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:00:42.100Z",
+        "updatedAt": "2017-05-24T07:00:42.100Z",
+        "id": 11313
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:00:43.211Z",
+        "updatedAt": "2017-05-24T07:00:43.211Z",
+        "id": 11314
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:02:17.455Z",
+        "updatedAt": "2017-05-24T07:02:17.455Z",
+        "id": 11315
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:02:18.551Z",
+        "updatedAt": "2017-05-24T07:02:18.551Z",
+        "id": 11316
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:02:19.764Z",
+        "updatedAt": "2017-05-24T07:02:19.764Z",
+        "id": 11317
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:02:45.170Z",
+        "updatedAt": "2017-05-24T07:02:45.170Z",
+        "id": 11318
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:02:55.474Z",
+        "updatedAt": "2017-05-24T07:02:55.474Z",
+        "id": 11319
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:02:58.219Z",
+        "updatedAt": "2017-05-24T07:02:58.219Z",
+        "id": 11320
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:02:59.529Z",
+        "updatedAt": "2017-05-24T07:02:59.529Z",
+        "id": 11321
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:03:00.343Z",
+        "updatedAt": "2017-05-24T07:03:00.343Z",
+        "id": 11322
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:07:25.999Z",
+        "updatedAt": "2017-05-24T07:07:25.999Z",
+        "id": 11323
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:07:33.428Z",
+        "updatedAt": "2017-05-24T07:07:33.428Z",
+        "id": 11324
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:07:34.768Z",
+        "updatedAt": "2017-05-24T07:07:34.768Z",
+        "id": 11325
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:07:39.005Z",
+        "updatedAt": "2017-05-24T07:07:39.005Z",
+        "id": 11326
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:07:39.698Z",
+        "updatedAt": "2017-05-24T07:07:39.698Z",
+        "id": 11327
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:07:40.336Z",
+        "updatedAt": "2017-05-24T07:07:40.336Z",
+        "id": 11328
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "true",
+        "value": "false",
+        "createdAt": "2017-05-24T07:07:44.898Z",
+        "updatedAt": "2017-05-24T07:07:44.898Z",
+        "id": 11329
+      },
+      {
+        "module": 16,
+        "attribute": "power",
+        "previous": "false",
+        "value": "true",
+        "createdAt": "2017-05-24T07:07:45.864Z",
+        "updatedAt": "2017-05-24T07:07:45.864Z",
+        "id": 11330
       }
     ],
     "modulegroups": [
@@ -29692,10 +29998,10 @@
         "group": 7,
         "id": 16,
         "createdAt": "2014-10-05T07:40:20.834Z",
-        "updatedAt": "2017-05-24T06:53:27.268Z",
+        "updatedAt": "2017-05-24T07:07:45.772Z",
         "values": {
-          "power": false,
-          "color": "#57dbff",
+          "power": true,
+          "color": "#56ff30",
           "level": 100
         },
         "address": "10.0.0.5",
@@ -30116,7 +30422,7 @@
     },
     "modulegroups_modules__modules_group": {},
     "moduleevents": {
-      "id": 11296
+      "id": 11330
     }
   }
 }

@@ -11,15 +11,20 @@ class Boolean extends Component {
     }
   }
 
+  componentWillReceiveProps(props) {
+    this.setState({ value: props.value })
+  }
+
   render() {
     const { attribute } = this.props
+    const { value } = this.state
 
     const truthy = attribute.options[0]
     const falsey = attribute.options[1]
 
     return (
       <View>
-        <Switch value={this.state.value}
+        <Switch value={value}
           onValueChange={this.onValueChange.bind(this)} />
       </View>
     )
