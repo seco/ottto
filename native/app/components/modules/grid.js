@@ -77,7 +77,7 @@ class ModulesGrid extends Component {
 
 
   iconPress(module) {
-    this.props.activateModule(module.id)
+    this.props.onModulePress(module)
   }
 
 
@@ -129,5 +129,5 @@ const styles = StyleSheet.create({
 
 export default connect(
   (state) => ({ }),
-  (dispatch) => ( bindActionCreators({ getModule, activateModule }, dispatch) )
+  (dispatch) => ( bindActionCreators({ getModule }, dispatch) )
 )(ModulesGrid)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { deactivateModule, putModule } from '../../actions/modules'
+import { updateModule } from '../../actions/modules'
 
 import {
   Animated,
@@ -27,7 +27,7 @@ class ModuleOverlay extends Component {
   }
 
 
-  componentDidMount() {
+  componentWillReceiveProps() {
     Animated.parallel([
       Animated.timing(
         this.state.containerBottom,
@@ -46,6 +46,15 @@ class ModuleOverlay extends Component {
 
 
   render() {
+    if (this.props.module) {
+      return this.renderOverlay()
+    } else {
+      return this.renderEmpty()
+    }
+  }
+
+
+  renderOverlay() {
     return (
       <Modal
         visible={true}
@@ -86,6 +95,13 @@ class ModuleOverlay extends Component {
   }
 
 
+  renderEmpty() {
+    return (
+      <View />
+    )
+  }
+
+
   renderModule(module) {
     switch (this.props.module.type.id) {
       case 1:
@@ -108,7 +124,7 @@ class ModuleOverlay extends Component {
       values: module.values,
     }
 
-    this.props.putModule(params)
+    this.props.updateModule(params)
   }
 
 
@@ -133,7 +149,7 @@ class ModuleOverlay extends Component {
 
 
   onClose() {
-    this.props.deactivateModule()
+    this.props.onClose()
   }
 }
 
@@ -180,6 +196,8 @@ const styles = StyleSheet.create({
 
 
 export default connect(
-  (state) => ({ }),
-  (dispatch) => ( bindActionCreators({ deactivateModule, putModule }, dispatch) )
+  (state, props) => ({
+    module: props.module ? state.modules.entities[props.module.id] : null
+  }),
+  (dispatch) => ( bindActionCreators({ updateModule }, dispatch) )
 )(ModuleOverlay)

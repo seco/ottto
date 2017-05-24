@@ -10,26 +10,31 @@ import ModulesOverlay from '../../components/modules/overlay'
 
 
 class Room extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      active: null
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <ModulesGrid modules={this.props.modules} />
-
-        {this.renderOverlay.bind(this)()}
+        <ModulesGrid modules={this.props.modules}
+          onModulePress={this.onModulePress.bind(this) }/>
+        <ModulesOverlay module={this.state.active}
+          onClose={this.onOverlayClose.bind(this)} />
       </View>
     )
   }
 
-  renderOverlay() {
-    if(this.props.active) {
-      return (
-        <ModulesOverlay module={this.props.active} />
-      )
-    } else {
-      return (
-        <View />
-      )
-    }
+  onModulePress(module) {
+    this.setState({ active: module })
+  }
+
+  onOverlayClose() {
+    this.setState({ active: null })
   }
 }
 
@@ -47,8 +52,7 @@ export default connect(
     return {
       modules: _.filter(state.modules.entities, (module) => {
         return module.group ? module.group.id == props.room.id : false
-      }),
-      active: state.modules.entities[state.modules.active]
+      })
     }
   },
   (dispatch) => ({})

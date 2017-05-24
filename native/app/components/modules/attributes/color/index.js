@@ -19,7 +19,7 @@ class Color extends Component {
   constructor(props) {
     super(props)
 
-    this.onLoad()
+    this.state = this.calculateState(props)
 
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -29,11 +29,15 @@ class Color extends Component {
     })
 
     this.onValueChange =
-      _.throttle(props.onValueChange.bind(this), 200, { leading: false })
+      _.throttle(props.onValueChange.bind(this), 100, { leading: false })
   }
 
-  onLoad() {
-    let color = tinycolor(this.props.value || '#FFF').toHsl()
+  componentWillReceiveProps(props) {
+    this.setState(this.calculateState(props))
+  }
+
+  calculateState(props) {
+    let color = tinycolor(props.value || '#FFF').toHsl()
     let hue = color.h
     let lightness = color.l
 
@@ -43,12 +47,12 @@ class Color extends Component {
     let left = WHEEL_RADIUS + x
     let top = WHEEL_RADIUS - y
 
-    this.state = {
+    return {
       left: left,
       top: top,
       cursorLeft: left - CURSOR_RADIUS,
       cursorTop: top - CURSOR_RADIUS,
-      color: this.props.value,
+      color: props.value,
     }
   }
 
@@ -138,12 +142,15 @@ const styles = StyleSheet.create({
     height: WHEEL_RADIUS * 2 + 40,
     borderWidth: 20,
     borderColor: '#FFF',
-    borderRadius: WHEEL_RADIUS * 2 + 40
+    borderRadius: WHEEL_RADIUS * 2 + 40,
   },
   colorWheel: {
     width: WHEEL_RADIUS * 2,
     height: WHEEL_RADIUS * 2,
     borderRadius: WHEEL_RADIUS,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowColor: '#000000',
   },
   cursorContainer: {
     position: 'absolute',
