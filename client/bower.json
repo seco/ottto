@@ -11,6 +11,7 @@
     "angular-activerecord": "~0.3.0",
     "lodash": "~3.10.1",
     "bootstrap-sass": "bootstrap-sass-official#~3.3.6",
-    "sails.io.js": "0.11.3"
+    "sails.io.js": "0.11.3",
+    "angular-sails": "^1.1.4"
   }
 }

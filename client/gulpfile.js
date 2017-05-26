@@ -72,7 +72,7 @@ gulp.task('build-scripts-vendor', function() {
   return gulp.src([
       './bower_components/lodash/lodash.js',
       './bower_components/modernizr/modernizr.js',
-      './bower_components/jquery/jquery.js',
+      './bower_components/jquery/dist/jquery.js',
 
       './bower_components/angular/angular.js',
       './bower_components/angular-ui-router/release/angular-ui-router.js',
