@@ -21,8 +21,7 @@
     "nodemon": "^1.8.1"
   },
   "scripts": {
-    "prestart": "npm install",
-    "start": "nodemon app.js",
+    "start": "./node_modules/.bin/sails lift",
     "dev": "npm install && nodemon app.js --debug"
   }
 }

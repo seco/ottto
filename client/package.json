@@ -16,7 +16,6 @@
   },
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install",
-    "prestart": "npm install",
     "start": "./node_modules/.bin/gulp build --production",
     "dev": "npm install && ./node_modules/.bin/gulp"
   }
