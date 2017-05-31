@@ -27,6 +27,12 @@
  * http://sailsjs.org/#!/documentation/anatomy/myApp/config/local.js.html
  */
 
+var interfaces = require('os').networkInterfaces(),
+    ethernet = interfaces.en0 || interfaces.eth0,
+    ip = ethernet
+      .find(function(interface) { return interface.family == 'IPv4'; })
+      .address;
+
 module.exports = {
 
   paths: {
@@ -34,9 +40,7 @@ module.exports = {
     public: '../.tmp/public/'
   },
 
-  host: require('os')
-    .networkInterfaces().eth0
-    .find(function(interface) { return interface.family == 'IPv4'; }).address,
+  host: ip,
   port: 1337,
 
   /***************************************************************************

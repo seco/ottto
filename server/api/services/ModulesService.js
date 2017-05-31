@@ -15,38 +15,43 @@ module.exports = {
 
   _getModule: function(id) {
     return Modules
-      .find(id)
+      .findOne(id)
       .populate('type')
-      .then(function(found) {
-        return _.cloneDeep(found[0]);
-      });
+      .then(function(found) { return _.cloneDeep(found); });
   },
 
 
   // TODO JJ: build this out into full fledged validations (min/max/etc)
   _coerceValuesTypes: function(params) {
     return function(module) {
-      params.values = _.mapValues(params.values, function(value, key) {
-        var attribute = _.find(module.type.attributes, { name: key });
+      params.values = _({})
+        .extend(module.values, params.values)
+        .mapValues(function(value, key) {
+          if(module && module.type) {
+            var attribute = _.find(module.type.attributes, { name: key });
 
-        if (!attribute) return;
+            if (!attribute) return value;
 
-        switch(attribute.type) {
-          case 'float':
-            return Number(value);
+            switch(attribute.type) {
+              case 'float':
+                return Number(value);
 
-          case 'boolean':
-            if(typeof value == 'boolean') {
-              return value;
-            } else if(typeof value == 'string') {
-              return value == 'true';
+              case 'boolean':
+                if(typeof value == 'boolean') {
+                  return value;
+                } else if(typeof value == 'string') {
+                  return value == 'true';
+                }
+                break;
+
+              default:
+                return value;
             }
-            break;
-
-          default:
-            return value;
-        }
-      });
+          } else {
+            return value
+          }
+        })
+        .value();
 
       return Promise.all([ module, params ]);
     };
@@ -78,30 +83,24 @@ module.exports = {
           id = pre.id;
 
       Modules
-        .find(id)
+        .findOne(id)
         .populateAll()
-        .then(function(modules) {
-          Modules.publishUpdate(id, modules[0], req);
-          return modules[0]
-        });
+        .then(function(module) {
+          var simplified = _.pick(module, [ 'id', 'values' ]);
 
-      // TODO: Have some sort of action confirm that the values
-      // sent were also received.  Fire some sort of messaging otherwise.
-      if (pre.ip) {
-        request({
-          url: 'http://' + pre.ip + '/',
-          method: 'PUT',
-          // TODO: Remove this hack, should be able to pass params as body
-          qs: { plain: JSON.stringify({ values: params.values }) }
-          // json: true,
-          // body: params
-        },
-        function(error, response, body) {
-          console.log('response', error);
-        });
+          Modules.publishUpdate(id, simplified, req);
 
-        console.log('sending', pre.ip, { values: params.values });
-      }
+          if(req) {
+            console.log('Sending:', 'modules/' + id, simplified)
+            MqttService.publish({
+              topic: 'modules/' + id,
+              payload: JSON.stringify(simplified),
+              qos: 0,
+              retain: true
+            });
+          }
+          return module;
+        });
 
       return Promise.all([ pre, post ]);
     }

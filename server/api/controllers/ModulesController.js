@@ -9,8 +9,6 @@ module.exports = {
 
   update: function(req, res) {
 
-    console.log('updating', req.body)
-
     ModulesService
       .update(req.param('id'), req.body, req)
       .catch(res.badRequest);
@@ -25,8 +23,6 @@ module.exports = {
 
 
   register: function(req, res) {
-
-    console.log('registering', req.param('chip'), req.param('ip'));
 
     return ModulesRegistrationService
       .register(req.param('chip'), req.param('ip'))

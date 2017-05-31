@@ -8,22 +8,6 @@ var gulp = require('gulp'),
     coffee = require('gulp-coffee'),
     jade = require('gulp-jade');
 
-// var production = false;
-
-// var options = {
-//       sass: {
-//         style: production ? 'compressed' : 'nested',
-//         noCache: true
-//       },
-
-//       browserify: {
-//         transform: production
-//           ? [ 'coffeeify', 'uglifyify' ]
-//           : [ 'coffeeify'],
-//         extensions: [ '.coffee' ],
-//         debug: !production
-//       }
-//     };
 
 gulp.task('clean', function() {
   return gulp.src([ '../.tmp/public' ])
@@ -42,26 +26,15 @@ gulp.task('build', [
 ]);
 
 gulp.task('build-styles', [
-  // 'build-styles-vendor',
   'build-styles-application'
 ]);
 
-// gulp.task('build-styles-vendor', function() {
-//   return gulp.src([ './bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css' ])
-//     .pipe(rename({ prefix: '_', extname: '.scss' }))
-//     .pipe(gulp.dest('./styles/vendors/'));
-// });
-
-gulp.task('build-styles-application', [
-  // 'build-styles-vendor'
-  ],
-  function() {
-    return gulp.src([ './styles/main.scss' ])
-      .pipe(sass())
-      .pipe(rename('screen.css'))
-      .pipe(gulp.dest('../.tmp/public/styles/'));
-  }
-);
+gulp.task('build-styles-application', function() {
+  return gulp.src([ './styles/main.scss' ])
+    .pipe(sass())
+    .pipe(rename('screen.css'))
+    .pipe(gulp.dest('../.tmp/public/styles/'));
+});
 
 gulp.task('build-scripts', [
   'build-scripts-vendor',
@@ -79,7 +52,6 @@ gulp.task('build-scripts-vendor', function() {
       './bower_components/angular-resource/angular-resource.js',
       './bower_components/angular-activerecord/src/angular-activerecord.js',
 
-      // './bower_components/socket.io-client/socket.io.js',
       './bower_components/sails.io.js/dist/sails.io.js',
       './bower_components/angular-sails/dist/angular-sails.js',
 

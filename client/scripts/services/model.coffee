@@ -2,7 +2,11 @@ angular
   .module 'OtttoApp'
   .service 'Model', [
     '$sails'
-    ($sails) ->
+    'mqtt'
+    (
+      $sails
+      mqtt
+    ) ->
 
       class Model
 
@@ -20,7 +24,7 @@ angular
         constructor: (attributes) ->
           @$_reset attributes
 
-          $sails.on @$resource, @$_respond
+          mqtt.subscribe "#{@$resource}/#{@$attributes.id}", @$_respond
 
 
         $create: =>
@@ -67,31 +71,22 @@ angular
 
 
         $_set: (attributes) =>
-          attributes = _.assign {}, @$attributes, attributes
+          newAttributes = _.assign {}, @$attributes, attributes
 
-          @$attributes = _.cloneDeep attributes
+          @$attributes = _.cloneDeep newAttributes
 
 
         $_reset: (attributes) =>
-          attributes = _.extend {}, @$attributes, attributes
+          newAttributes = _.extend {}, @$attributes, attributes
 
-          @$_pristine = _.cloneDeep attributes
-          @$attributes = _.cloneDeep attributes
+          @$_pristine = _.cloneDeep newAttributes
+          @$attributes = _.cloneDeep newAttributes
 
 
         $_difference: => ObjectDifference @$_pristine, @$attributes
 
 
-        # $_filter: (attributes) ->
-        #   ObjectFilter attributes, (key, value) ->
-        #     key.substring(0,1) isnt '$'
-
-
         $_respond: (message) =>
-          return unless message.id is @$attributes.id
-
-          switch message.verb
-            when 'updated' then @$_reset message.data
-            when 'destroyed' then console.log 'delete'
+          @$_reset message
 
   ]

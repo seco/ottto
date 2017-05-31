@@ -4,6 +4,7 @@ angular
     'ngResource'
     'ngSails'
     'ActiveRecord'
+    'mqtt'
   ])
 
 
